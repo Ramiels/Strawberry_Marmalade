@@ -119,6 +119,11 @@ animations = [ {
 "name": "HurtAerialUgly",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "HurtGroundedHigh",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 36 ) ],
 "loop": true,
 "name": "HurtGroundedHighPretty",

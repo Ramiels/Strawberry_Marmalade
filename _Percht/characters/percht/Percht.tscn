@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/Percht_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://_Percht/characters/percht/states/Parry.gd" type="Script" id=7]
 [ext_resource path="res://_Percht/characters/percht/states/HurtGrounded.gd" type="Script" id=8]
 [ext_resource path="res://_Percht/characters/percht/states/HurtAerial.gd" type="Script" id=9]
+[ext_resource path="res://_Percht/characters/percht/states/ChangeForm.gd" type="Script" id=10]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -27,7 +28,8 @@ shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [node name="Percht" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
-extra_state_variables = "kind"
+extra_state_variables = "kind
+hurtbox"
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
@@ -72,3 +74,14 @@ script = ExtResource( 9 )
 
 [node name="HurtGrounded" parent="StateMachine" index="42"]
 script = ExtResource( 8 )
+
+[node name="ChangeForm" type="Node2D" parent="StateMachine" index="57"]
+script = ExtResource( 10 )
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "Burst"
+anim_length = 5
+title = "Change Kind"
+type = 2
+interrupt_from_string = "Grounded"

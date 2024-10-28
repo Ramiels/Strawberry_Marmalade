@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=78 format=2]
 
-[ext_resource path="res://_Percht/characters/percht/Percht_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
 [ext_resource path="res://_Percht/characters/percht/Percht.gd" type="Script" id=4]
@@ -12,7 +12,69 @@
 [ext_resource path="res://_Percht/characters/percht/states/ChangeForm.gd" type="Script" id=10]
 [ext_resource path="res://_Percht/characters/percht/projectiles/Smoke.tscn" type="PackedScene" id=11]
 [ext_resource path="res://_Percht/characters/percht/states/SmokeMoveTest.gd" type="Script" id=12]
-[ext_resource path="res://ui/steed.png" type="Texture" id=13]
+[ext_resource path="res://ui/ComboLevels/combo_level2.png" type="Texture" id=13]
+[ext_resource path="res://_Percht/characters/percht/states/EmptyState.gd" type="Script" id=14]
+[ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=15]
+[ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=16]
+[ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=17]
+[ext_resource path="res://characters/stickman/sprites/stickman8.png" type="Texture" id=18]
+[ext_resource path="res://characters/stickman/sprites/stickman6.png" type="Texture" id=19]
+[ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=20]
+[ext_resource path="res://characters/stickman/sprites/wall_slam.png" type="Texture" id=21]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Dash_Ugly.png" type="Texture" id=22]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Ugly.png" type="Texture" id=23]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Ugly.png" type="Texture" id=24]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtAerial_Ugly.png" type="Texture" id=25]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/BackDash_Ugly.png" type="Texture" id=26]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtAerial_Pretty.png" type="Texture" id=27]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Ugly.png" type="Texture" id=28]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtLow_Ugly.png" type="Texture" id=29]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Wait_Ugly.png" type="Texture" id=30]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Pretty.png" type="Texture" id=31]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryLow_Pretty.png" type="Texture" id=32]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Ugly.png" type="Texture" id=33]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryHigh_Ugly.png" type="Texture" id=34]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Jump_Pretty.png" type="Texture" id=35]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Pretty.png" type="Texture" id=36]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab3_Pretty.png" type="Texture" id=37]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/WhiffCancel_Ugly.png" type="Texture" id=38]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Ugly.png" type="Texture" id=39]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Pretty.png" type="Texture" id=40]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Pretty.png" type="Texture" id=41]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryLow_Ugly.png" type="Texture" id=42]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtLow_Pretty.png" type="Texture" id=43]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab3_Ugly.png" type="Texture" id=44]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtHigh_Ugly.png" type="Texture" id=45]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryHigh_Pretty.png" type="Texture" id=46]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/WhiffCancel_Pretty.png" type="Texture" id=47]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Jump_Ugly.png" type="Texture" id=48]
+[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty2.png" type="Texture" id=49]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty2.png" type="Texture" id=50]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty4.png" type="Texture" id=51]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty3.png" type="Texture" id=52]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Wait_Pretty.png" type="Texture" id=53]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Pretty.png" type="Texture" id=54]
+[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty3.png" type="Texture" id=55]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty1.png" type="Texture" id=56]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Burst_Ugly.png" type="Texture" id=57]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Dash_Pretty.png" type="Texture" id=58]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty7.png" type="Texture" id=59]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty8.png" type="Texture" id=60]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty5.png" type="Texture" id=61]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/Burst_Pretty.png" type="Texture" id=62]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/BackDash_Pretty.png" type="Texture" id=63]
+[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty1.png" type="Texture" id=64]
+[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty6.png" type="Texture" id=65]
+[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtHigh_Pretty.png" type="Texture" id=66]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty1.png" type="Texture" id=67]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty2.png" type="Texture" id=68]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty7.png" type="Texture" id=69]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty3.png" type="Texture" id=70]
+[ext_resource path="res://_Percht/characters/percht/states/SummonSmoke.gd" type="Script" id=71]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty5.png" type="Texture" id=72]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty4.png" type="Texture" id=73]
+[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty6.png" type="Texture" id=74]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokeDashActionUIData.tscn" type="PackedScene" id=75]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -29,15 +91,253 @@ shader_param/super_dim = false
 shader_param/use_outline = false
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 56 ), ExtResource( 56 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 59 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "AnkleCutterPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 62 ) ],
+"loop": true,
+"name": "BurstPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 57 ) ],
+"loop": true,
+"name": "BurstUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 63 ) ],
+"loop": true,
+"name": "DashBackwardPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "DashBackwardUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ) ],
+"loop": true,
+"name": "DashForwardPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "DashForwardUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "DoubleJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "ForwardThrowPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "ForwardThrowUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Getup",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 40 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "GrabPretty",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 39 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "GrabUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "Grabbed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "HurtAerialPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "HurtAerialUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "HurtGroundedHigh",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ) ],
+"loop": true,
+"name": "HurtGroundedHighPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "HurtGroundedHighUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "HurtGroundedLowPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": true,
+"name": "HurtGroundedLowUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 54 ) ],
+"loop": true,
+"name": "HurtGroundedMidPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "HurtGroundedMidUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "InstantCancelPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": true,
+"name": "InstantCancelUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 64 ), ExtResource( 64 ), ExtResource( 64 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "JabPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "JumpBack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "JumpPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "JumpUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Knockdown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ) ],
+"loop": true,
+"name": "LandingPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "LandingUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ) ],
+"loop": true,
+"name": "ParryHighPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ) ],
+"loop": true,
+"name": "ParryHighUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "ParryLowPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "ParryLowUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": true,
+"name": "RollBackwardPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "RollBackwardUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": true,
+"name": "RollForwardPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "RollForwardUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 67 ), ExtResource( 67 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 73 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 69 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "SmokescreenSummonPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ) ],
+"loop": true,
+"name": "ThrowTechPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "ThrowTechUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "Wait",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "WaitPretty",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "WaitUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "WallSlam",
+"speed": 5.0
+} ]
+
 [node name="Percht" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 extra_state_variables = "kind
-hurtbox"
+smoke_projectiles"
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
-frames = ExtResource( 1 )
-animation = "HurtGroundedHigh"
+frames = SubResource( 2 )
+animation = "SmokescreenSummonPretty"
 
 [node name="Start" parent="StateMachine" index="0"]
 script = ExtResource( 5 )
@@ -89,7 +389,261 @@ title = "Change Kind"
 type = 2
 interrupt_from_string = "Grounded"
 
-[node name="SmokeTest" type="Node2D" parent="StateMachine" index="58"]
+[node name="Jab" type="Node2D" parent="StateMachine" index="58"]
+script = ExtResource( 14 )
+apply_forces = true
+sprite_animation = "JabPretty"
+anim_length = 12
+refresh_loop = false
+force_dir_x = "1.0"
+force_speed = "2.0"
+force_tick = 5
+title = "Jab"
+type = 1
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded"
+hit_cancel_into_string = "GroundedAttack
+GroundedSuper
+GroundedSpecial"
+hit_cancel_exceptions_string = "GroundedMovement"
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Jab" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 21
+y = -22
+width = 13
+height = 16
+damage = 70
+hitstun_ticks = 14
+plus_frames = 1
+start_tick = 5
+active_ticks = 3
+
+[node name="AnkleCutter" type="Node2D" parent="StateMachine" index="59"]
+script = ExtResource( 14 )
+apply_forces = true
+sprite_animation = "AnkleCutterPretty"
+anim_length = 21
+refresh_loop = false
+force_dir_x = "1.0"
+force_speed = "4.0"
+force_tick = 5
+title = "Anklecutter"
+type = 1
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded"
+hit_cancel_into_string = "Grounded"
+
+[node name="SecondHit2" type="Node2D" parent="StateMachine/AnkleCutter" index="0"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = 42
+y = -13
+width = 12
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit3" type="Node2D" parent="StateMachine/AnkleCutter" index="1"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = 34
+y = -17
+width = 12
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit4" type="Node2D" parent="StateMachine/AnkleCutter" index="2"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = 14
+y = -20
+width = 7
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit5" type="Node2D" parent="StateMachine/AnkleCutter" index="3"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = 7
+y = -26
+width = 7
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit6" type="Node2D" parent="StateMachine/AnkleCutter" index="4"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = -4
+y = -28
+width = 7
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit7" type="Node2D" parent="StateMachine/AnkleCutter" index="5"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = -12
+y = -33
+width = 9
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit8" type="Node2D" parent="StateMachine/AnkleCutter" index="6"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = -26
+y = -37
+width = 6
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit9" type="Node2D" parent="StateMachine/AnkleCutter" index="7"]
+rotation = 0.00221293
+scale = Vector2( 1.00031, 0.631135 )
+z_index = 1000
+script = ExtResource( 15 )
+x = -33
+y = -43
+width = 6
+height = -4
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="SecondHit" type="Node2D" parent="StateMachine/AnkleCutter" index="8"]
+rotation = 0.00221293
+scale = Vector2( 1.02247, 0.504353 )
+z_index = 1000
+script = ExtResource( 15 )
+x = 50
+y = -9
+width = 23
+height = -7
+damage = 35
+hitstun_ticks = 16
+hitlag_ticks = 3
+plus_frames = 3
+hit_height = 2
+dir_x = "-2"
+dir_y = "-1.8"
+knockback = "9.0"
+grounded_hit_state = "HurtAerial"
+start_tick = 12
+active_ticks = 4
+
+[node name="FirstHit" type="Node2D" parent="StateMachine/AnkleCutter" index="9"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 35
+y = -9
+width = 21
+height = -8
+damage = 40
+hitstun_ticks = 16
+hitlag_ticks = 8
+plus_frames = 1
+hit_height = 2
+group = 1
+vacuum = true
+start_tick = 6
+active_ticks = 3
+
+[node name="SmokeTest" type="Node2D" parent="StateMachine" index="60"]
 script = ExtResource( 5 )
 sprite_animation = "Burst"
 anim_length = 5
@@ -98,16 +652,32 @@ projectile_pos_x = -40
 projectile_pos_y = -15
 projectile_match_facing = true
 title = "Smoke"
+show_in_menu = false
 type = 2
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded"
 
-[node name="SmokeMoveTest" type="Node2D" parent="StateMachine" index="59"]
+[node name="SummonSmoke" type="Node2D" parent="StateMachine" index="61"]
+script = ExtResource( 71 )
+sprite_animation = "SmokescreenSummonPretty"
+anim_length = 14
+title = "Summon Smokescreen"
+type = 2
+interrupt_from_string = "Grounded
+GroundedSpecial"
+
+[node name="SmokeMoveTest" type="Node2D" parent="StateMachine" index="62"]
 script = ExtResource( 12 )
-sprite_animation = "Burst"
-anim_length = 40
+apply_forces = true
+apply_fric = true
+apply_grav = true
+reset_momentum = true
+sprite_animation = "DashBackwardPretty"
+anim_length = 14
 title = "Smoke Move"
 type = 2
+data_ui_scene = ExtResource( 75 )
 button_texture = ExtResource( 13 )
 interrupt_from_string = "Grounded"
-interrupt_into_string = "Grounded"
+interrupt_into_string = "Grounded
+Aerial"

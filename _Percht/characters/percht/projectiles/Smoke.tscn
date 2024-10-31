@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://projectile/BaseProjectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_Percht/characters/percht/projectiles/SmokeState.gd" type="Script" id=2]
 [ext_resource path="res://_Percht/characters/percht/projectiles/Smoke.gd" type="Script" id=3]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=4]
 [ext_resource path="res://fx/ParticleEffect.tscn" type="PackedScene" id=5]
@@ -34,7 +35,12 @@ colors = PoolColorArray( 1, 1, 1, 0.207843, 1, 1, 1, 1 )
 
 [node name="Smoke" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-max_fall_speed = "15"
+__meta__ = {
+"_editor_description_": "scheduled_disable"
+}
+gravity = "0.2"
+extra_state_variables = "smokescreen
+percht_smoke"
 damages_own_team = true
 deletes_other_projectiles = false
 apply_hitlag_when_hit_by_melee = false
@@ -50,6 +56,7 @@ lifetime = -1.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="1"]
 amount = 30
+lifetime = 0.5
 texture = ExtResource( 6 )
 emission_shape = 2
 emission_rect_extents = Vector2( 20, 20 )
@@ -71,7 +78,13 @@ width = 28
 height = 28
 
 [node name="Default" parent="StateMachine" index="0"]
+script = ExtResource( 2 )
+apply_forces = true
+apply_fric = true
+apply_custom_y_fric = true
+custom_y_fric = "0.05"
 move_x = 0
+clash = false
 lifetime = 300
 fizzle_on_ground = false
 fizzle_on_walls = false

@@ -1,2 +1,2 @@
-extends CharacterState
+extends "res://_Percht/PerchtMove.gd"
 

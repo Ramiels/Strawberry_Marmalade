@@ -55,8 +55,8 @@ func smoke_teleport(smoke_index):
 	var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
 	var smoke_pos = smoke_obj.get_pos()
 	
-	print(smoke_pos.y)
 	if smoke_pos.y < 0:
 		set_grounded(false)
-	
+		
 	set_pos(smoke_pos.x, smoke_pos.y)
+	smoke_obj.disable()

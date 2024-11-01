@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://projectile/BaseProjectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Strawberry_Marmalade-main/_Percht/characters/percht/projectiles/SmokeState.gd" type="Script" id=2]
+[ext_resource path="res://Strawberry_Marmalade-main/_Percht/characters/percht/projectiles/Smoke.gd" type="Script" id=3]
+[ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=4]
+[ext_resource path="res://fx/ParticleEffect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fx/particle_round_4x4.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/use_extra_color_1 = false
+shader_param/use_extra_color_2 = false
+shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
+shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
+shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
+shader_param/max_color_distance = 0.01
+shader_param/super_dim = false
+shader_param/use_outline = false
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 1, 1, 1, 0.207843, 1, 1, 1, 1 )
+
+[node name="Smoke" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "scheduled_disable"
+}
+gravity = "0.2"
+extra_state_variables = "smokescreen
+percht_smoke"
+damages_own_team = true
+deletes_other_projectiles = false
+apply_hitlag_when_hit_by_melee = false
+
+[node name="Sprite" parent="Flip" index="0"]
+frames = SubResource( 1 )
+
+[node name="ParticleEffect" parent="Flip/Particles" index="0" instance=ExtResource( 5 )]
+material = SubResource( 3 )
+free = false
+one_shot = false
+lifetime = -1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="1"]
+amount = 30
+lifetime = 0.5
+texture = ExtResource( 6 )
+emission_shape = 2
+emission_rect_extents = Vector2( 20, 20 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 9.38
+initial_velocity_random = 1.0
+scale_amount = 5.69
+color = Color( 0.882353, 0.839216, 0.839216, 1 )
+color_ramp = SubResource( 4 )
+
+[node name="CollisionBox" parent="." index="2"]
+width = 28
+height = 28
+can_draw = false
+
+[node name="Hurtbox" parent="." index="3"]
+width = 28
+height = 28
+
+[node name="Default" parent="StateMachine" index="0"]
+script = ExtResource( 2 )
+apply_forces = true
+apply_fric = true
+apply_custom_y_fric = true
+custom_y_fric = "0.05"
+move_x = 0
+clash = false
+lifetime = 300
+fizzle_on_ground = false
+fizzle_on_walls = false

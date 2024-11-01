@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Transform2_Pretty.png-a3429f97f60778deed9652d94cdaaee5.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Strawberry_Marmalade-main/_Percht/characters/percht/generic_sprites/Transform2_Pretty.png"
+dest_files=[ "res://.import/Transform2_Pretty.png-a3429f97f60778deed9652d94cdaaee5.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

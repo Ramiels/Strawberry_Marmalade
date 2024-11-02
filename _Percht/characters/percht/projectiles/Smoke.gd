@@ -7,7 +7,7 @@ var scheduled_disable = false
 func disable():
 	.disable()
 	$Flip/Particles/ParticleEffect.queue_free()
-	creator.smoke_projectiles.erase(obj_name)
+	#creator.smoke_projectiles.erase(obj_name)
 
 func schedule_disable():
 	scheduled_disable = true

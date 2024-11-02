@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=142 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -136,6 +136,8 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly3.png" type="Texture" id=134]
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly2.png" type="Texture" id=135]
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly4.png" type="Texture" id=136]
+[ext_resource path="res://_Percht/characters/percht/PerchtExtra.tscn" type="PackedScene" id=137]
+[ext_resource path="res://_Percht/characters/percht/SmokeshiftParticle.tscn" type="PackedScene" id=138]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -445,14 +447,39 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/use_extra_color_1 = false
+shader_param/use_extra_color_2 = false
+shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
+shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
+shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
+shader_param/max_color_distance = 0.01
+shader_param/super_dim = false
+shader_param/use_outline = false
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
 [node name="Percht" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 max_ground_speed = "20"
 extra_state_variables = "kind
-smoke_projectiles"
+smoke_projectiles
+smokeshift_penalty_frames
+smokeshifting
+current_smoke
+can_smokeshift
+smokeshift_now
+smokeshift_destination
+smokeshift_pos_x
+smokeshift_pos_y
+smokeshift_frames"
 enable_extra_aesthetic_hitstop = true
 character_portrait = ExtResource( 127 )
 character_portrait2 = ExtResource( 30 )
+player_extra_params_scene = ExtResource( 137 )
 use_extra_color_1 = true
 extra_color_1 = Color( 0.470588, 0.388235, 0.388235, 1 )
 use_extra_color_2 = true
@@ -461,8 +488,11 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 2 )
-animation = "NeutralGroundSlamUgly"
-frame = 8
+animation = "WaitPretty"
+
+[node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
+unique_name_in_owner = true
+material = SubResource( 3 )
 
 [node name="Start" parent="StateMachine" index="0"]
 script = ExtResource( 5 )
@@ -529,8 +559,10 @@ type = 1
 self_hit_cancellable = false
 interrupt_from_string = "Grounded
 GroundedAttack"
-interrupt_into_string = "Grounded"
-hit_cancel_into_string = "Grounded"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
 kind = "Pretty"
 kind_locked = true
 
@@ -558,8 +590,10 @@ title = "Ankle Cutter"
 type = 1
 interrupt_from_string = "Grounded
 GroundedAttack"
-interrupt_into_string = "Grounded"
-hit_cancel_into_string = "Grounded"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
 kind = "Pretty"
 kind_locked = true
 
@@ -779,7 +813,8 @@ title = "Smokescreen"
 type = 2
 interrupt_from_string = "Grounded
 GroundedSpecial"
-interrupt_into_string = "Grounded"
+interrupt_into_string = "Grounded
+Aerial"
 kind = "Pretty"
 kind_locked = true
 
@@ -835,8 +870,10 @@ title = "Pierce"
 type = 1
 interrupt_from_string = "Grounded
 GroundedAttack"
-interrupt_into_string = "Grounded"
-hit_cancel_into_string = "Grounded"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
 kind = "Pretty"
 kind_locked = true
 
@@ -1055,7 +1092,7 @@ z_index = 1000
 script = ExtResource( 15 )
 x = 36
 y = -16
-width = 26
+width = 25
 height = 15
 damage = 60
 hitstun_ticks = 14

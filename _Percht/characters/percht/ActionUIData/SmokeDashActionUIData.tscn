@@ -4,6 +4,7 @@
 [ext_resource path="res://ui/HorizSlider/HorizSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokeDashActionUIData.gd" type="Script" id=3]
 
+
 [node name="ActionUIData" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 

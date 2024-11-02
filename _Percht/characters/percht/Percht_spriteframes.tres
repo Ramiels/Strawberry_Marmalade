@@ -53,6 +53,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty2.png" type="Texture" id=51]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty7.png" type="Texture" id=52]
 
+
 [resource]
 animations = [ {
 "frames": [ ExtResource( 48 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 49 ) ],

@@ -5,12 +5,20 @@ var smoke_projectiles = []
 
 func change_kind(new_kind):
 	kind = new_kind
-	#if kind == "Ugly":
+	if kind == "Ugly":
 		# Placeholder
-		#default_hurtbox.width = 20
-	#else:
+		default_hurtbox.width = 16
+		default_hurtbox.height = 17
+		default_hurtbox.x = 0
+		default_hurtbox.y = -17
+	else:
 		# Placeholder
-		#default_hurtbox.width = 14
+		default_hurtbox.width = 14
+		default_hurtbox.height = 16
+		default_hurtbox.x = 0
+		default_hurtbox.y = -16
+		
+		collision_box
 
 func _draw():
 	var curr_state = current_state()

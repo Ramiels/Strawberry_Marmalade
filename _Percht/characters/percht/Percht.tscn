@@ -29,7 +29,7 @@
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtAerial_Pretty.png" type="Texture" id=27]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Ugly.png" type="Texture" id=28]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtLow_Ugly.png" type="Texture" id=29]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Wait_Ugly.png" type="Texture" id=30]
+[ext_resource path="res://_Percht/characters/percht/real_animations/idle_ugly.png" type="Texture" id=30]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Pretty.png" type="Texture" id=31]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryLow_Pretty.png" type="Texture" id=32]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Ugly.png" type="Texture" id=33]
@@ -52,7 +52,6 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty2.png" type="Texture" id=50]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty4.png" type="Texture" id=51]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty3.png" type="Texture" id=52]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Wait_Pretty.png" type="Texture" id=53]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Pretty.png" type="Texture" id=54]
 [ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty3.png" type="Texture" id=55]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty1.png" type="Texture" id=56]
@@ -126,6 +125,7 @@
 [ext_resource path="res://characters/ThrowBox.gd" type="Script" id=124]
 [ext_resource path="res://_Percht/characters/percht/states/DashGrabThrow.gd" type="Script" id=125]
 [ext_resource path="res://HurtboxState.gd" type="Script" id=126]
+[ext_resource path="res://_Percht/characters/percht/real_animations/idle_pretty.png" type="Texture" id=127]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -394,12 +394,12 @@ animations = [ {
 "name": "UpswipePretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 53 ) ],
+"frames": [ ExtResource( 127 ) ],
 "loop": true,
 "name": "Wait",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 53 ) ],
+"frames": [ ExtResource( 127 ) ],
 "loop": true,
 "name": "WaitPretty",
 "speed": 30.0
@@ -421,11 +421,17 @@ max_ground_speed = "20"
 extra_state_variables = "kind
 smoke_projectiles"
 enable_extra_aesthetic_hitstop = true
+character_portrait = ExtResource( 127 )
+character_portrait2 = ExtResource( 30 )
+use_extra_color_1 = true
+extra_color_1 = Color( 0.470588, 0.388235, 0.388235, 1 )
+use_extra_color_2 = true
+extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 2 )
-animation = "DashGrabUgly"
+animation = "WaitUgly"
 
 [node name="Start" parent="StateMachine" index="0"]
 script = ExtResource( 5 )

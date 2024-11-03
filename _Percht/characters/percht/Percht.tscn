@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=157 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -106,7 +106,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty2.png" type="Texture" id=104]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty1.png" type="Texture" id=105]
 [ext_resource path="res://_Percht/characters/percht/states/AirZone.gd" type="Script" id=106]
-[ext_resource path="res://_Percht/characters/percht/ActionUIData/AirZoneActionUIData.tscn" type="PackedScene" id=107]
+[ext_resource path="res://_Percht/characters/percht/states/Whipcopter.gd" type="Script" id=107]
 [ext_resource path="res://_Percht/characters/percht/states/Upswipte.gd" type="Script" id=108]
 [ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.3.png" type="Texture" id=109]
 [ext_resource path="res://_Percht/characters/percht/real_animations/sword_upswipe_pretty1.png" type="Texture" id=110]
@@ -138,6 +138,21 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly4.png" type="Texture" id=136]
 [ext_resource path="res://_Percht/characters/percht/PerchtExtra.tscn" type="PackedScene" id=137]
 [ext_resource path="res://_Percht/characters/percht/SmokeshiftParticle.tscn" type="PackedScene" id=138]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty8.png" type="Texture" id=139]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty6.png" type="Texture" id=140]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty9.png" type="Texture" id=141]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty1.png" type="Texture" id=142]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty2.png" type="Texture" id=143]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty7.png" type="Texture" id=144]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty4.png" type="Texture" id=145]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty3.png" type="Texture" id=146]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty5.png" type="Texture" id=147]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty10.png" type="Texture" id=148]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/WhipcopterActionUIData.tscn" type="PackedScene" id=149]
+[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty3.png" type="Texture" id=150]
+[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty2.png" type="Texture" id=151]
+[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty1.png" type="Texture" id=152]
+[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty4.png" type="Texture" id=153]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -154,7 +169,7 @@ shader_param/super_dim = false
 shader_param/use_outline = false
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 100 ), ExtResource( 100 ), ExtResource( 100 ) ],
 "loop": true,
@@ -294,6 +309,11 @@ animations = [ {
 "frames": [ ExtResource( 28 ) ],
 "loop": true,
 "name": "HurtGroundedMidUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 152 ), ExtResource( 152 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 153 ), ExtResource( 153 ), ExtResource( 153 ) ],
+"loop": true,
+"name": "IncenseCloudAirPretty",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 76 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 78 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 79 ), ExtResource( 79 ) ],
@@ -445,6 +465,11 @@ animations = [ {
 "loop": true,
 "name": "WallSlam",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 142 ), ExtResource( 142 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 146 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 140 ), ExtResource( 140 ), ExtResource( 144 ), ExtResource( 144 ), ExtResource( 139 ), ExtResource( 141 ), ExtResource( 141 ), ExtResource( 141 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ) ],
+"loop": true,
+"name": "WhipcopterPretty",
+"speed": 5.0
 } ]
 
 [sub_resource type="ShaderMaterial" id=3]
@@ -487,11 +512,12 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
-frames = SubResource( 2 )
-animation = "WaitPretty"
+frames = SubResource( 4 )
+animation = "IncenseCloudAirPretty"
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
+visible = false
 material = SubResource( 3 )
 
 [node name="Start" parent="StateMachine" index="0"]
@@ -810,11 +836,14 @@ apply_grav = true
 sprite_animation = "SmokescreenSummonPretty"
 anim_length = 13
 title = "Smokescreen"
-type = 2
+type = 3
 interrupt_from_string = "Grounded
 GroundedSpecial"
 interrupt_into_string = "Grounded
 Aerial"
+super_level_ = 1
+supers_used_ = 1
+super_effect_ = true
 kind = "Pretty"
 kind_locked = true
 
@@ -844,7 +873,7 @@ apply_grav = true
 reset_momentum = true
 sprite_animation = "DashBackwardPretty"
 anim_length = 11
-title = "Smoke Move"
+title = "Smoke Blink"
 type = 2
 data_ui_scene = ExtResource( 75 )
 button_texture = ExtResource( 13 )
@@ -1235,18 +1264,18 @@ apply_forces = true
 apply_fric = true
 apply_grav = true
 sprite_animation = "AirZonePretty"
-anim_length = 23
+anim_length = 21
 title = "Air Zone"
-type = 2
-data_ui_scene = ExtResource( 107 )
+type = 1
 air_type = 1
-uses_air_movement = true
 land_cancel = true
 self_hit_cancellable = false
 interrupt_from_string = "Aerial
 AerialSpecial"
-interrupt_into_string = "Aerial"
-hit_cancel_into_string = "Aerial"
+interrupt_into_string = "Aerial
+Grounded"
+hit_cancel_into_string = "Aerial
+Grounded"
 kind = "Pretty"
 kind_locked = true
 
@@ -1349,6 +1378,7 @@ damage = 80
 hitstun_ticks = 14
 plus_frames = 1
 knockback = "5.0"
+grounded_hit_state = "HurtAerial"
 start_tick = 7
 active_ticks = 4
 
@@ -1363,6 +1393,7 @@ damage = 80
 hitstun_ticks = 14
 plus_frames = 1
 knockback = "5.0"
+grounded_hit_state = "HurtAerial"
 start_tick = 7
 active_ticks = 4
 
@@ -1377,6 +1408,7 @@ damage = 80
 hitstun_ticks = 14
 plus_frames = 1
 knockback = "5.0"
+grounded_hit_state = "HurtAerial"
 start_tick = 7
 active_ticks = 4
 
@@ -1433,21 +1465,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 114 ): {
-"x": -33,
-"y": 3
-},
-ExtResource( 117 ): {
-"x": 29,
-"y": 3
+ExtResource( 119 ): {
+"x": -27,
+"y": 2
 },
 ExtResource( 120 ): {
 "x": -23,
 "y": -2
 },
-ExtResource( 119 ): {
-"x": -27,
-"y": 2
+ExtResource( 117 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 114 ): {
+"x": -33,
+"y": 3
 }
 }
 show_in_menu = false
@@ -1467,3 +1499,99 @@ damage = 200
 screenshake_amount = 9
 screenshake_frames = 4
 increment_combo = false
+
+[node name="Whipcopter" type="Node2D" parent="StateMachine" index="73"]
+script = ExtResource( 107 )
+apply_forces = true
+apply_grav = true
+sprite_animation = "WhipcopterPretty"
+anim_length = 20
+title = "Whipcopter"
+type = 2
+data_ui_scene = ExtResource( 149 )
+air_type = 2
+uses_air_movement = true
+land_cancel = true
+min_land_cancel_frame = 10
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Grounded
+Aerial"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Pretty"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Whipcopter" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 2
+y = -43
+width = 72
+height = 11
+damage = 20
+hitstun_ticks = 15
+cancellable = false
+plus_frames = 1
+hit_height = 0
+knockback = "5.0"
+start_tick = 8
+active_ticks = 2
+looping = true
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Whipcopter" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 2
+y = -43
+width = 72
+height = 11
+damage = 20
+hitstun_ticks = 15
+cancellable = false
+plus_frames = 1
+hit_height = 0
+knockback = "5.0"
+start_tick = 10
+active_ticks = 2
+looping = true
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Whipcopter" index="2"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 47
+y = -4
+width = 29
+height = 9
+damage = 60
+hitstun_ticks = 28
+hitlag_ticks = 8
+victim_hitlag = 5
+plus_frames = 2
+hit_height = 0
+group = 2
+dir_y = "0.5"
+knockback = "6.0"
+start_tick = 13
+active_ticks = 3
+
+[node name="Hitbox4" type="Node2D" parent="StateMachine/Whipcopter" index="3"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 32
+y = -16
+width = 29
+height = 5
+damage = 60
+hitstun_ticks = 28
+hitlag_ticks = 8
+victim_hitlag = 5
+plus_frames = 2
+hit_height = 0
+group = 2
+dir_y = "0.5"
+knockback = "6.0"
+start_tick = 13
+active_ticks = 3

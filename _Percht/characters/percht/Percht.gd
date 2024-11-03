@@ -26,6 +26,9 @@ var can_smokeshift = false
 
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 
+func _ready():
+	smokeshift_particles.visible = true
+
 func change_kind(new_kind):
 	kind = new_kind
 	if kind == "Ugly":
@@ -115,6 +118,9 @@ func tick():
 	
 	.tick()
 
+func on_got_hit():
+	end_smokeshift()
+
 func smokeshift(smoke_index):
 	var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
 	var smoke_pos = smoke_obj.get_pos()
@@ -131,6 +137,7 @@ func smokeshift(smoke_index):
 
 	smokeshift_penalty_frames = 2
 	
+	print(current_smoke)
 	if current_smoke != null:
 		current_smoke.schedule_disable()
 	current_smoke = null
@@ -163,7 +170,7 @@ func smokeshift_move():
 	
 	var vel = fixed.normalized_vec_times(str(diff_x), str(diff_y), speed)
 	
-	print(speed)
+	#print(speed)
 	
 	apply_force(vel.x, vel.y)
 		
@@ -180,14 +187,15 @@ func apply_grav():
 		.apply_grav()
 
 func smoke_teleport(smoke_index):
-	var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
-	var smoke_pos = smoke_obj.get_pos()
-	
-	if smoke_pos.y < 0:
-		set_grounded(false)
+	if smoke_index < len(smoke_projectiles):
+		var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
+		var smoke_pos = smoke_obj.get_pos()
 		
-	set_pos(smoke_pos.x, smoke_pos.y)
-	smoke_obj.disable()
+		if smoke_pos.y < 0:
+			set_grounded(false)
+			
+		set_pos(smoke_pos.x, smoke_pos.y)
+		smoke_obj.disable()
 
 func process_extra(extra):
 	.process_extra(extra)

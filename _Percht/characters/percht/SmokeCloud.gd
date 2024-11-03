@@ -6,6 +6,12 @@ var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn
 #	for smoke in host.smoke_projectiles:
 #		host.objs_map[smoke].disable()
 
+func _enter():
+	if host.is_grounded():
+		anim_name = "IncenseCloudPretty"
+	else:
+		anim_name = "IncenseCloudAirPretty"
+
 const SPEED = "10"
 
 func _frame_7():

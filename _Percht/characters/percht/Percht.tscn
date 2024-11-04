@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -153,6 +153,18 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty2.png" type="Texture" id=151]
 [ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty1.png" type="Texture" id=152]
 [ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty4.png" type="Texture" id=153]
+[ext_resource path="res://_Percht/characters/percht/states/AirImpale.gd" type="Script" id=154]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty2.png" type="Texture" id=155]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty1.png" type="Texture" id=156]
+[ext_resource path="res://_Percht/characters/percht/states/AirImpaleDrag.gd" type="Script" id=157]
+[ext_resource path="res://_Percht/characters/percht/states/AirImpaleRelease.gd" type="Script" id=158]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty4.png" type="Texture" id=159]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty3.png" type="Texture" id=160]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty5.png" type="Texture" id=161]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty6.png" type="Texture" id=162]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty8.png" type="Texture" id=163]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty9.png" type="Texture" id=164]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty7.png" type="Texture" id=165]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -171,6 +183,21 @@ shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
+"frames": [ ExtResource( 155 ) ],
+"loop": true,
+"name": "AirImpaleDragPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ) ],
+"loop": true,
+"name": "AirImpalePretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 159 ), ExtResource( 159 ), ExtResource( 159 ), ExtResource( 161 ), ExtResource( 161 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 163 ), ExtResource( 163 ), ExtResource( 163 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 164 ) ],
+"loop": true,
+"name": "AirImpaleReleasePretty",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 100 ), ExtResource( 100 ), ExtResource( 100 ) ],
 "loop": true,
 "name": "AirZonePretty",
@@ -513,7 +540,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 4 )
-animation = "IncenseCloudAirPretty"
+animation = "AirImpaleReleasePretty"
+frame = 19
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1269,6 +1297,7 @@ title = "Air Zone"
 type = 1
 air_type = 1
 land_cancel = true
+landing_recovery = 3
 self_hit_cancellable = false
 interrupt_from_string = "Aerial
 AerialSpecial"
@@ -1465,6 +1494,14 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 114 ): {
+"x": -33,
+"y": 3
+},
+ExtResource( 117 ): {
+"x": 29,
+"y": 3
+},
 ExtResource( 119 ): {
 "x": -27,
 "y": 2
@@ -1472,14 +1509,6 @@ ExtResource( 119 ): {
 ExtResource( 120 ): {
 "x": -23,
 "y": -2
-},
-ExtResource( 117 ): {
-"x": 29,
-"y": 3
-},
-ExtResource( 114 ): {
-"x": -33,
-"y": 3
 }
 }
 show_in_menu = false
@@ -1516,7 +1545,9 @@ min_land_cancel_frame = 10
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
-Aerial"
+Aerial
+GroundedSpecial
+AerialSpecial"
 interrupt_into_string = "Grounded
 Aerial"
 hit_cancel_into_string = "Grounded
@@ -1595,3 +1626,96 @@ dir_y = "0.5"
 knockback = "6.0"
 start_tick = 13
 active_ticks = 3
+
+[node name="AirImpale" type="Node2D" parent="StateMachine" index="74"]
+script = ExtResource( 154 )
+apply_forces = true
+apply_forces_no_limit = true
+sprite_animation = "AirImpalePretty"
+anim_length = 43
+title = "Impale"
+type = 2
+air_type = 1
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Aerial
+AerialAttack"
+interrupt_into_string = "Aerial
+Grounded"
+hit_cancel_into_string = "Aerial
+Grounded"
+kind = "Pretty"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/AirImpale" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+y = -7
+width = 12
+height = 18
+followup_state = "AirImpaleDrag"
+guard_break = true
+plus_frames = -1
+hit_height = 0
+start_tick = 6
+always_on = true
+
+[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="75"]
+script = ExtResource( 157 )
+apply_forces = true
+apply_forces_no_limit = true
+sprite_animation = "AirImpaleDragPretty"
+endless = true
+force_same_direction_as_previous_state = true
+title = "Impale"
+show_in_menu = false
+selectable = false
+interrupt_into_string = "Grounded
+Aerial"
+start_throw_pos_y = 4
+release_throw_pos_y = 4
+knockdown = false
+damage = 30
+di_modifier = "0.0"
+
+[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="76"]
+script = ExtResource( 158 )
+apply_fric = true
+apply_grav = true
+sprite_animation = "AirImpaleReleasePretty"
+anim_length = 26
+force_same_direction_as_previous_state = true
+title = "Impale"
+show_in_menu = false
+selectable = false
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+release = true
+release_frame = 2
+hitstun_ticks = 35
+dir_x = "0.5"
+knockdown = false
+knockdown_extends_hitstun = false
+force_grounded = true
+di_modifier = "0.0"
+hit_height = 0
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/AirImpaleRelease" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+y = -17
+width = 75
+height = 75
+damage = 200
+damage_in_combo = 150
+hitstun_ticks = 25
+hitlag_ticks = 10
+victim_hitlag = 18
+combo_victim_hitlag = 10
+combo_scaling_amount = 2
+dir_x = "1.5"
+grounded_hit_state = "HurtAerial"
+start_tick = 20
+active_ticks = 4

@@ -34,8 +34,18 @@ func show_options():
 func block_jump_disable():
 	var move_state = fighter.current_state()
 	
+	print(move_state)
+	print(selected_move)
+	
 	if move_state is CharacterState:
-		if move_state.type == CharacterState.ActionType.Defense or move_state.name in no_smokeshift:
+		var disable = false
+		if move_state.type == CharacterState.ActionType.Defense:
+			disable = true
+		
+		if move_state.name in no_smokeshift and selected_move == null:
+			disable = true
+		
+		if disable:
 			smokeshift.set_pressed_no_signal(false)
 			smokeshift.disabled = true
 			destination.hide()

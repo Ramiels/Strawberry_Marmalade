@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=176 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -165,6 +165,13 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty8.png" type="Texture" id=163]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty9.png" type="Texture" id=164]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty7.png" type="Texture" id=165]
+[ext_resource path="res://_Percht/characters/percht/states/Scorch.gd" type="Script" id=166]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly1.png" type="Texture" id=167]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly2.png" type="Texture" id=168]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly3.png" type="Texture" id=169]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly4.png" type="Texture" id=170]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly5.png" type="Texture" id=171]
+[ext_resource path="res://_Percht/characters/percht/states/WhipStrike.gd" type="Script" id=172]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -188,7 +195,7 @@ animations = [ {
 "name": "AirImpaleDragPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ) ],
+"frames": [ ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ) ],
 "loop": true,
 "name": "AirImpalePretty",
 "speed": 5.0
@@ -223,7 +230,7 @@ animations = [ {
 "name": "CleavePretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 136 ) ],
+"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 134 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ) ],
 "loop": true,
 "name": "ComboGroundSlamUgly",
 "speed": 5.0
@@ -393,17 +400,17 @@ animations = [ {
 "name": "LandingUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 132 ), ExtResource( 132 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 130 ) ],
+"frames": [ ExtResource( 132 ), ExtResource( 132 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ) ],
 "loop": true,
 "name": "MashClaw2Ugly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 128 ), ExtResource( 129 ) ],
+"frames": [ ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 128 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ) ],
 "loop": true,
 "name": "MashClawUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 136 ) ],
+"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 134 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ) ],
 "loop": true,
 "name": "NeutralGroundSlamUgly",
 "speed": 5.0
@@ -451,6 +458,11 @@ animations = [ {
 "frames": [ ExtResource( 33 ) ],
 "loop": true,
 "name": "RollForwardUgly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 167 ), ExtResource( 167 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 168 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 170 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ) ],
+"loop": true,
+"name": "ScorchUgly",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 67 ), ExtResource( 67 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 73 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 69 ), ExtResource( 69 ) ],
@@ -540,8 +552,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 4 )
-animation = "AirImpaleReleasePretty"
-frame = 19
+animation = "ComboGroundSlamUgly"
+frame = 6
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -973,7 +985,7 @@ __meta__ = {
 }
 apply_forces = true
 sprite_animation = "MashClawUgly"
-anim_length = 6
+anim_length = 13
 force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
@@ -1030,7 +1042,7 @@ __meta__ = {
 }
 apply_forces = true
 sprite_animation = "NeutralGroundSlamUgly"
-anim_length = 9
+anim_length = 15
 force_dir_x = "2.0"
 force_speed = "3.0"
 state_screenshake_dir = Vector2( 0, 1 )
@@ -1043,8 +1055,9 @@ interrupt_from_string = "Grounded
 GroundedAttack
 "
 interrupt_into_string = "Grounded
-"
+Aerial"
 hit_cancel_into_string = "Grounded
+Aerial
 "
 kind = "Ugly"
 kind_locked = true
@@ -1079,7 +1092,7 @@ __meta__ = {
 }
 apply_forces = true
 sprite_animation = "ComboGroundSlamUgly"
-anim_length = 6
+anim_length = 12
 force_dir_x = "2.0"
 force_speed = "3.0"
 state_screenshake_dir = Vector2( 0, 1 )
@@ -1092,9 +1105,9 @@ interrupt_from_string = "Grounded
 GroundedAttack
 "
 interrupt_into_string = "Grounded
-"
+Aerial"
 hit_cancel_into_string = "Grounded
-"
+Aerial"
 kind = "Ugly"
 kind_locked = true
 
@@ -1130,7 +1143,7 @@ apply_forces = true
 apply_fric = true
 apply_grav = true
 sprite_animation = "MashClaw2Ugly"
-anim_length = 6
+anim_length = 13
 force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
@@ -1632,7 +1645,7 @@ script = ExtResource( 154 )
 apply_forces = true
 apply_forces_no_limit = true
 sprite_animation = "AirImpalePretty"
-anim_length = 43
+anim_length = 45
 title = "Impale"
 type = 2
 air_type = 1
@@ -1650,14 +1663,12 @@ kind_locked = true
 [node name="Hitbox" type="Node2D" parent="StateMachine/AirImpale" index="0"]
 z_index = 1000
 script = ExtResource( 15 )
-y = -7
-width = 12
-height = 18
+y = -5
+width = 7
 followup_state = "AirImpaleDrag"
-guard_break = true
 plus_frames = -1
 hit_height = 0
-start_tick = 6
+start_tick = 8
 always_on = true
 
 [node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="75"]
@@ -1676,6 +1687,7 @@ start_throw_pos_y = 4
 release_throw_pos_y = 4
 knockdown = false
 damage = 30
+hits_otg = true
 di_modifier = "0.0"
 
 [node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="76"]
@@ -1695,27 +1707,90 @@ Aerial"
 release = true
 release_frame = 2
 hitstun_ticks = 35
-dir_x = "0.5"
-knockdown = false
+knockback = "3.5"
+dir_y = "1.0"
 knockdown_extends_hitstun = false
-force_grounded = true
+grounded_hit_state = "HurtAerial"
+damage = 0
+ground_bounce = false
+hard_knockdown = true
 di_modifier = "0.0"
-hit_height = 0
 
 [node name="Hitbox" type="Node2D" parent="StateMachine/AirImpaleRelease" index="0"]
 z_index = 1000
 script = ExtResource( 15 )
-y = -17
-width = 75
-height = 75
+x = 12
+y = -20
+width = 39
+height = 22
 damage = 200
-damage_in_combo = 150
+damage_in_combo = 100
 hitstun_ticks = 25
 hitlag_ticks = 10
 victim_hitlag = 18
 combo_victim_hitlag = 10
 combo_scaling_amount = 2
+hits_otg = true
 dir_x = "1.5"
+knockback = "8.0"
 grounded_hit_state = "HurtAerial"
 start_tick = 20
 active_ticks = 4
+
+[node name="Scorch" type="Node2D" parent="StateMachine" index="77"]
+script = ExtResource( 166 )
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "ScorchUgly"
+anim_length = 17
+title = "Scorch"
+type = 1
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Scorch" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 40
+y = -6
+width = 21
+height = 5
+damage = 70
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+hits_vs_aerial = false
+can_counter_hit = false
+parriable = false
+plus_frames = 2
+hit_height = 2
+start_tick = 7
+active_ticks = 2
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Scorch" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 86
+y = -6
+width = 55
+height = 5
+damage = 50
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+hits_vs_aerial = false
+can_counter_hit = false
+parriable = false
+plus_frames = 1
+hit_height = 2
+group = 1
+start_tick = 9
+active_ticks = 3
+
+[node name="WhipStrike" type="Node2D" parent="StateMachine" index="78"]
+script = ExtResource( 172 )

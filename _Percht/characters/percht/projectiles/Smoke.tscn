@@ -41,7 +41,9 @@ __meta__ = {
 gravity = "0.2"
 extra_state_variables = "smokescreen
 percht_smoke
-scheduled_disable"
+scheduled_disable
+scheduled_explode
+scheduled_explode_tick"
 damages_own_team = true
 deletes_other_projectiles = false
 apply_hitlag_when_hit_by_melee = false

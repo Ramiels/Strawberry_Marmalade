@@ -1,6 +1,6 @@
 extends "res://_Percht/PerchtMove.gd"
 
-const DESCEND_SPEED = "20"
+const DESCEND_SPEED = "18"
 
 var descending = false
 
@@ -9,7 +9,7 @@ func _frame_0():
 	host.set_vel(fixed.mul(host.get_vel().x, "0.8"), "-5.0")
 
 
-func _frame_5():
+func _frame_7():
 	descending = true
 
 
@@ -19,7 +19,7 @@ func _tick():
 		descending = false
 	
 	if host.is_grounded():
-		queue_state_change("Landing", 6)
+		queue_state_change("Landing", 3)
 
 
 

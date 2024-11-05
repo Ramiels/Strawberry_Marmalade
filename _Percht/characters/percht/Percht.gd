@@ -14,7 +14,7 @@ var smokeshift_pos_y
 var SMOKESHIFT_SPEED = 10
 var SMOKESHIFT_MAX_RANGE = "35"
 var SMOKESHIFT_FALLOFF_RANGE = "700"
-var SMOKESHIFT_AIR_MULT = "1.2"
+var SMOKESHIFT_AIR_MULT = "1.0"
 
 var smokeshift_frames = 0
 var smokeshift_now = false

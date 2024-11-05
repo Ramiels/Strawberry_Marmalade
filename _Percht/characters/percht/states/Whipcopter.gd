@@ -18,12 +18,12 @@ func _enter():
 	
 	host.set_vel(fixed.mul(host.get_vel().x, "0.7"), fixed.mul(host.get_vel().y, "0.5"))
 
-func _frame_6():
+func _frame_9():
 	if host.is_grounded():
 		host.set_grounded(false)
 		host.apply_force_relative("0", LIFT_FORCE)
 
-func _frame_7():
+func _frame_10():
 	var speed = fixed.sub(SPEED, fixed.div(str(data["Length"].x), "1.2"))
 	
 	var force = xy_to_dir(data["Direction"].x, data["Direction"].y, speed)
@@ -32,9 +32,9 @@ func _frame_7():
 	host.apply_force_relative(force.x, force.y)
 
 func _tick_before():
-	if current_tick >= 7:
-		if current_tick >= 10 and whipcopter_repeats > 1:
-			current_tick = 6
+	if current_tick >= 10:
+		if current_tick >= 13 and whipcopter_repeats > 1:
+			current_tick = 9
 			
 			whipcopter_repeats -= 1
 			
@@ -42,5 +42,5 @@ func _tick_before():
 				hitbox.cancellable = true
 				hitbox2.cancellable = true
 
-func _frame_12():
+func _frame_13():
 	apply_fric = true

@@ -2,27 +2,35 @@ extends PlayerExtra
 
 onready var destination = $VBoxContainer/Destination
 onready var smokeshift = $VBoxContainer/Smokeshift
+onready var goodie_bag = $VBoxContainer/GoodieBag
 
 var no_smokeshift = ["Jump", "DoubleJump", "SuperJump"]
 
 func get_extra():
 	var extra = {
 		"smokeshift":smokeshift.pressed, 
-		"smokeshift_destination":(destination.get_data().x - 1)
+		"smokeshift_destination":(destination.get_data().x - 1),
+		"goodie_bag":goodie_bag.pressed
 	}
 	return extra
 
 func _ready():
 	smokeshift.connect("toggled", self, "_on_smokeshift_button_toggled")
 	destination.connect("data_changed", self, "_on_destination_changed")
+	goodie_bag.connect("toggled", self, "_on_goodie_bag_button_toggled")
 
 func show_options():
 	destination.hide()
 	smokeshift.disabled = true
 	smokeshift.set_pressed_no_signal(false)
+	goodie_bag.set_pressed_no_signal(false)
+	goodie_bag.visible = false
 	
 	if fighter.can_smokeshift and fighter.current_smoke != null:
 		smokeshift.disabled = false
+	
+	if fighter.goodie_bag != null and is_instance_valid(fighter.objs_map[fighter.goodie_bag]):
+		goodie_bag.visible = true
 	
 	block_jump_disable()
 
@@ -33,9 +41,6 @@ func show_options():
 
 func block_jump_disable():
 	var move_state = fighter.current_state()
-	
-	print(move_state)
-	print(selected_move)
 	
 	if move_state is CharacterState:
 		var disable = false
@@ -71,7 +76,11 @@ func _on_smokeshift_button_toggled(enabled):
 func _on_destination_changed():
 	emit_signal("data_changed")
 
+func _on_goodie_bag_button_toggled(enabled):
+	emit_signal("data_changed")
+
 func reset():
 	smokeshift.set_pressed_no_signal(false)
+	goodie_bag.set_pressed_no_signal(false)
 	destination.get_node("Direction").value = 1
 	#pass

@@ -24,6 +24,10 @@ var smokeshifting = false
 var current_smoke = 0
 var can_smokeshift = false
 
+var whip_combo = false
+
+var goodie_bag = null
+
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 
 func _ready():
@@ -203,3 +207,18 @@ func process_extra(extra):
 	if extra.has("smokeshift") and extra.has("smokeshift_destination"):
 		smokeshift_now = extra.smokeshift
 		smokeshift_destination = extra.smokeshift_destination
+	
+	if extra.has("goodie_bag"):
+		if extra.goodie_bag and goodie_bag != null and is_instance_valid(objs_map[goodie_bag]):
+			objs_map[goodie_bag].explode()
+
+func on_state_started(state):
+	if "is_whip_move" in state:
+		if whip_combo:
+			state.current_tick += 3
+		
+		whip_combo = true
+	else:
+		whip_combo = false
+	
+	.on_state_started(state)

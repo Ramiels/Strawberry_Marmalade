@@ -1,6 +1,6 @@
-[gd_scene load_steps=176 format=2]
+[gd_scene load_steps=43 format=2]
 
-[ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=1]
+[ext_resource path="res://_Percht/characters/percht/PerchtSpriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
 [ext_resource path="res://_Percht/characters/percht/Percht.gd" type="Script" id=4]
@@ -15,111 +15,16 @@
 [ext_resource path="res://ui/ComboLevels/combo_level2.png" type="Texture" id=13]
 [ext_resource path="res://_Percht/characters/percht/states/EmptyState.gd" type="Script" id=14]
 [ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=15]
-[ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=16]
-[ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=17]
-[ext_resource path="res://characters/stickman/sprites/stickman8.png" type="Texture" id=18]
-[ext_resource path="res://characters/stickman/sprites/stickman6.png" type="Texture" id=19]
-[ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=20]
-[ext_resource path="res://characters/stickman/sprites/wall_slam.png" type="Texture" id=21]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Dash_Ugly.png" type="Texture" id=22]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Ugly.png" type="Texture" id=23]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Ugly.png" type="Texture" id=24]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtAerial_Ugly.png" type="Texture" id=25]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/BackDash_Ugly.png" type="Texture" id=26]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtAerial_Pretty.png" type="Texture" id=27]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Ugly.png" type="Texture" id=28]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtLow_Ugly.png" type="Texture" id=29]
 [ext_resource path="res://_Percht/characters/percht/real_animations/idle_ugly.png" type="Texture" id=30]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Pretty.png" type="Texture" id=31]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryLow_Pretty.png" type="Texture" id=32]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Ugly.png" type="Texture" id=33]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryHigh_Ugly.png" type="Texture" id=34]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Jump_Pretty.png" type="Texture" id=35]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Pretty.png" type="Texture" id=36]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab3_Pretty.png" type="Texture" id=37]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/WhiffCancel_Ugly.png" type="Texture" id=38]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Ugly.png" type="Texture" id=39]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Pretty.png" type="Texture" id=40]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Pretty.png" type="Texture" id=41]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryLow_Ugly.png" type="Texture" id=42]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtLow_Pretty.png" type="Texture" id=43]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab3_Ugly.png" type="Texture" id=44]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtHigh_Ugly.png" type="Texture" id=45]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/ParryHigh_Pretty.png" type="Texture" id=46]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/WhiffCancel_Pretty.png" type="Texture" id=47]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Jump_Ugly.png" type="Texture" id=48]
-[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty2.png" type="Texture" id=49]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty2.png" type="Texture" id=50]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty4.png" type="Texture" id=51]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty3.png" type="Texture" id=52]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly1.png" type="Texture" id=53]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtMid_Pretty.png" type="Texture" id=54]
-[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty3.png" type="Texture" id=55]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty1.png" type="Texture" id=56]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Burst_Ugly.png" type="Texture" id=57]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Dash_Pretty.png" type="Texture" id=58]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty7.png" type="Texture" id=59]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty8.png" type="Texture" id=60]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty5.png" type="Texture" id=61]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Burst_Pretty.png" type="Texture" id=62]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/BackDash_Pretty.png" type="Texture" id=63]
-[ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty1.png" type="Texture" id=64]
-[ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty6.png" type="Texture" id=65]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtHigh_Pretty.png" type="Texture" id=66]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty1.png" type="Texture" id=67]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty2.png" type="Texture" id=68]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty7.png" type="Texture" id=69]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty3.png" type="Texture" id=70]
 [ext_resource path="res://_Percht/characters/percht/states/SummonSmoke.gd" type="Script" id=71]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty5.png" type="Texture" id=72]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty4.png" type="Texture" id=73]
-[ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty6.png" type="Texture" id=74]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokeDashActionUIData.tscn" type="PackedScene" id=75]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_pretty1.png" type="Texture" id=76]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_pretty2.png" type="Texture" id=77]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_pretty3.png" type="Texture" id=78]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_pretty4.png" type="Texture" id=79]
 [ext_resource path="res://_Percht/characters/percht/SmokeCloud.gd" type="Script" id=80]
 [ext_resource path="res://_Percht/characters/percht/AnkleCutter.gd" type="Script" id=81]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty2.png" type="Texture" id=82]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty6.png" type="Texture" id=83]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty2.png" type="Texture" id=84]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty1.png" type="Texture" id=85]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty5.png" type="Texture" id=86]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty3.png" type="Texture" id=87]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty4.png" type="Texture" id=88]
-[ext_resource path="res://_Percht/characters/percht/real_animations/pierce_pretty7.png" type="Texture" id=89]
 [ext_resource path="res://_Percht/characters/percht/states/Pierce.gd" type="Script" id=90]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty3.png" type="Texture" id=91]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty1.png" type="Texture" id=92]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty4.png" type="Texture" id=93]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty5.png" type="Texture" id=94]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty8.png" type="Texture" id=95]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty9.png" type="Texture" id=96]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty6.png" type="Texture" id=97]
-[ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty7.png" type="Texture" id=98]
 [ext_resource path="res://_Percht/characters/percht/states/Cleave.gd" type="Script" id=99]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty6.png" type="Texture" id=100]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty5.png" type="Texture" id=101]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty4.png" type="Texture" id=102]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty3.png" type="Texture" id=103]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty2.png" type="Texture" id=104]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_zone_pretty1.png" type="Texture" id=105]
 [ext_resource path="res://_Percht/characters/percht/states/AirZone.gd" type="Script" id=106]
 [ext_resource path="res://_Percht/characters/percht/states/Whipcopter.gd" type="Script" id=107]
 [ext_resource path="res://_Percht/characters/percht/states/Upswipte.gd" type="Script" id=108]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.3.png" type="Texture" id=109]
-[ext_resource path="res://_Percht/characters/percht/real_animations/sword_upswipe_pretty1.png" type="Texture" id=110]
-[ext_resource path="res://_Percht/characters/percht/real_animations/sword_upswipe_pretty3.png" type="Texture" id=111]
-[ext_resource path="res://_Percht/characters/percht/real_animations/sword_upswipe_pretty2.png" type="Texture" id=112]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.2.png" type="Texture" id=113]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.4.png" type="Texture" id=114]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.1.png" type="Texture" id=115]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_ugly.5.png" type="Texture" id=116]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly3.png" type="Texture" id=117]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly4.png" type="Texture" id=118]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly1.png" type="Texture" id=119]
-[ext_resource path="res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly2.png" type="Texture" id=120]
 [ext_resource path="res://_Percht/characters/percht/states/DashGrab.gd" type="Script" id=121]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/DashGrabActionUIData.tscn" type="PackedScene" id=122]
 [ext_resource path="res://sound/common/catch.wav" type="AudioStream" id=123]
@@ -127,50 +32,13 @@
 [ext_resource path="res://_Percht/characters/percht/states/DashGrabThrow.gd" type="Script" id=125]
 [ext_resource path="res://HurtboxState.gd" type="Script" id=126]
 [ext_resource path="res://_Percht/characters/percht/real_animations/idle_pretty.png" type="Texture" id=127]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly2.png" type="Texture" id=128]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly3.png" type="Texture" id=129]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly6.png" type="Texture" id=130]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly5.png" type="Texture" id=131]
-[ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly4.png" type="Texture" id=132]
-[ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly1.png" type="Texture" id=133]
-[ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly3.png" type="Texture" id=134]
-[ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly2.png" type="Texture" id=135]
-[ext_resource path="res://_Percht/characters/percht/real_animations/claw_slam_ugly4.png" type="Texture" id=136]
 [ext_resource path="res://_Percht/characters/percht/PerchtExtra.tscn" type="PackedScene" id=137]
 [ext_resource path="res://_Percht/characters/percht/SmokeshiftParticle.tscn" type="PackedScene" id=138]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty8.png" type="Texture" id=139]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty6.png" type="Texture" id=140]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty9.png" type="Texture" id=141]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty1.png" type="Texture" id=142]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty2.png" type="Texture" id=143]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty7.png" type="Texture" id=144]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty4.png" type="Texture" id=145]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty3.png" type="Texture" id=146]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty5.png" type="Texture" id=147]
-[ext_resource path="res://_Percht/characters/percht/real_animations/whipcopter_pretty10.png" type="Texture" id=148]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/WhipcopterActionUIData.tscn" type="PackedScene" id=149]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty3.png" type="Texture" id=150]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty2.png" type="Texture" id=151]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty1.png" type="Texture" id=152]
-[ext_resource path="res://_Percht/characters/percht/real_animations/incense_clouds_summon_air_pretty4.png" type="Texture" id=153]
 [ext_resource path="res://_Percht/characters/percht/states/AirImpale.gd" type="Script" id=154]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty2.png" type="Texture" id=155]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty1.png" type="Texture" id=156]
 [ext_resource path="res://_Percht/characters/percht/states/AirImpaleDrag.gd" type="Script" id=157]
 [ext_resource path="res://_Percht/characters/percht/states/AirImpaleRelease.gd" type="Script" id=158]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty4.png" type="Texture" id=159]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty3.png" type="Texture" id=160]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty5.png" type="Texture" id=161]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty6.png" type="Texture" id=162]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty8.png" type="Texture" id=163]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty9.png" type="Texture" id=164]
-[ext_resource path="res://_Percht/characters/percht/real_animations/air_impale_pretty7.png" type="Texture" id=165]
 [ext_resource path="res://_Percht/characters/percht/states/Scorch.gd" type="Script" id=166]
-[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly1.png" type="Texture" id=167]
-[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly2.png" type="Texture" id=168]
-[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly3.png" type="Texture" id=169]
-[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly4.png" type="Texture" id=170]
-[ext_resource path="res://_Percht/characters/percht/real_animations/scorch_ugly5.png" type="Texture" id=171]
 [ext_resource path="res://_Percht/characters/percht/states/WhipStrike.gd" type="Script" id=172]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -187,329 +55,6 @@ shader_param/max_color_distance = 0.01
 shader_param/super_dim = false
 shader_param/use_outline = false
 shader_param/outline_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 155 ) ],
-"loop": true,
-"name": "AirImpaleDragPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 155 ) ],
-"loop": true,
-"name": "AirImpalePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 160 ), ExtResource( 159 ), ExtResource( 159 ), ExtResource( 159 ), ExtResource( 161 ), ExtResource( 161 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 162 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 163 ), ExtResource( 163 ), ExtResource( 163 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 164 ) ],
-"loop": true,
-"name": "AirImpaleReleasePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 104 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 102 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 100 ), ExtResource( 100 ), ExtResource( 100 ) ],
-"loop": true,
-"name": "AirZonePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 56 ), ExtResource( 56 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 65 ), ExtResource( 59 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "AnkleCutterPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 62 ) ],
-"loop": true,
-"name": "BurstPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 57 ) ],
-"loop": true,
-"name": "BurstUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 92 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 91 ), ExtResource( 91 ), ExtResource( 91 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 97 ), ExtResource( 97 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 98 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 95 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ) ],
-"loop": true,
-"name": "CleavePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 134 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ) ],
-"loop": true,
-"name": "ComboGroundSlamUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 63 ) ],
-"loop": true,
-"name": "DashBackwardPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ) ],
-"loop": true,
-"name": "DashBackwardUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 58 ) ],
-"loop": true,
-"name": "DashForwardPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "DashForwardUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 114 ), ExtResource( 114 ), ExtResource( 114 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 118 ) ],
-"loop": true,
-"name": "DashGrabThrowUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 115 ), ExtResource( 115 ), ExtResource( 115 ), ExtResource( 115 ), ExtResource( 113 ), ExtResource( 113 ), ExtResource( 109 ), ExtResource( 109 ), ExtResource( 109 ), ExtResource( 114 ), ExtResource( 114 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 116 ) ],
-"loop": true,
-"name": "DashGrabUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "DoubleJump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "ForwardThrowPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "ForwardThrowUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Getup",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 41 ), ExtResource( 40 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "GrabPretty",
-"speed": 60.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 39 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "GrabUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "Grabbed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 27 ) ],
-"loop": true,
-"name": "HurtAerialPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
-"loop": true,
-"name": "HurtAerialUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "HurtGroundedHigh",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 66 ) ],
-"loop": true,
-"name": "HurtGroundedHighPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "HurtGroundedHighUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "HurtGroundedLowPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "HurtGroundedLowUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 54 ) ],
-"loop": true,
-"name": "HurtGroundedMidPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "HurtGroundedMidUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 152 ), ExtResource( 152 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 151 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 153 ), ExtResource( 153 ), ExtResource( 153 ) ],
-"loop": true,
-"name": "IncenseCloudAirPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 76 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 78 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 79 ), ExtResource( 79 ) ],
-"loop": true,
-"name": "IncenseCloudPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "InstantCancelPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 38 ) ],
-"loop": true,
-"name": "InstantCancelUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 64 ), ExtResource( 64 ), ExtResource( 64 ), ExtResource( 64 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ) ],
-"loop": true,
-"name": "JabPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "JumpBack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ) ],
-"loop": true,
-"name": "JumpPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ) ],
-"loop": true,
-"name": "JumpUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Knockdown",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ) ],
-"loop": true,
-"name": "LandingPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "LandingUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 132 ), ExtResource( 132 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ) ],
-"loop": true,
-"name": "MashClaw2Ugly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 53 ), ExtResource( 128 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 129 ) ],
-"loop": true,
-"name": "MashClawUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 133 ), ExtResource( 133 ), ExtResource( 133 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 134 ), ExtResource( 134 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ), ExtResource( 136 ) ],
-"loop": true,
-"name": "NeutralGroundSlamUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 46 ) ],
-"loop": true,
-"name": "ParryHighPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 34 ) ],
-"loop": true,
-"name": "ParryHighUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 32 ) ],
-"loop": true,
-"name": "ParryLowPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ) ],
-"loop": true,
-"name": "ParryLowUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 85 ), ExtResource( 85 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 82 ), ExtResource( 87 ), ExtResource( 87 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 86 ), ExtResource( 86 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 89 ), ExtResource( 89 ), ExtResource( 89 ) ],
-"loop": true,
-"name": "PiercePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ) ],
-"loop": true,
-"name": "RollBackwardPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "RollBackwardUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ) ],
-"loop": true,
-"name": "RollForwardPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ) ],
-"loop": true,
-"name": "RollForwardUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 167 ), ExtResource( 167 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 168 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 170 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ) ],
-"loop": true,
-"name": "ScorchUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 67 ), ExtResource( 67 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 73 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 69 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "SmokescreenSummonPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 66 ) ],
-"loop": true,
-"name": "ThrowTechPretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 45 ) ],
-"loop": true,
-"name": "ThrowTechUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 110 ), ExtResource( 110 ), ExtResource( 110 ), ExtResource( 110 ), ExtResource( 110 ), ExtResource( 110 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 111 ), ExtResource( 111 ), ExtResource( 111 ), ExtResource( 111 ), ExtResource( 111 ), ExtResource( 111 ) ],
-"loop": true,
-"name": "UpswipePretty",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 127 ) ],
-"loop": true,
-"name": "Wait",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 127 ) ],
-"loop": true,
-"name": "WaitPretty",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "WaitUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "WallSlam",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 142 ), ExtResource( 142 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 146 ), ExtResource( 145 ), ExtResource( 147 ), ExtResource( 140 ), ExtResource( 140 ), ExtResource( 144 ), ExtResource( 144 ), ExtResource( 139 ), ExtResource( 141 ), ExtResource( 141 ), ExtResource( 141 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ), ExtResource( 148 ) ],
-"loop": true,
-"name": "WhipcopterPretty",
-"speed": 5.0
-} ]
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -551,9 +96,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
-frames = SubResource( 4 )
-animation = "ComboGroundSlamUgly"
-frame = 6
+frames = ExtResource( 1 )
+animation = "WhipStrikePretty"
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -645,7 +189,44 @@ plus_frames = 1
 start_tick = 5
 active_ticks = 4
 
-[node name="AnkleCutter" type="Node2D" parent="StateMachine" index="59"]
+[node name="WhipStrike" type="Node2D" parent="StateMachine" index="59"]
+script = ExtResource( 172 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+sprite_animation = "WhipStrikePretty"
+anim_length = 14
+refresh_loop = false
+force_dir_x = "1.0"
+force_speed = "3"
+force_tick = 5
+title = "Whip Strike"
+type = 1
+self_hit_cancellable = false
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Pretty"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/WhipStrike" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 47
+y = -24
+width = 51
+height = 11
+damage = 75
+hitstun_ticks = 15
+plus_frames = 1
+start_tick = 8
+active_ticks = 2
+
+[node name="AnkleCutter" type="Node2D" parent="StateMachine" index="60"]
 script = ExtResource( 81 )
 apply_forces = true
 apply_fric = true
@@ -868,7 +449,7 @@ group = 1
 start_tick = 6
 active_ticks = 3
 
-[node name="Smokescreen" type="Node2D" parent="StateMachine" index="60"]
+[node name="Smokescreen" type="Node2D" parent="StateMachine" index="61"]
 script = ExtResource( 71 )
 apply_forces = true
 apply_fric = true
@@ -887,7 +468,7 @@ super_effect_ = true
 kind = "Pretty"
 kind_locked = true
 
-[node name="SmokeCloud" type="Node2D" parent="StateMachine" index="61"]
+[node name="SmokeCloud" type="Node2D" parent="StateMachine" index="62"]
 script = ExtResource( 80 )
 apply_forces = true
 apply_fric = true
@@ -905,7 +486,7 @@ Aerial"
 kind = "Pretty"
 kind_locked = true
 
-[node name="SmokeMove" type="Node2D" parent="StateMachine" index="62"]
+[node name="SmokeMove" type="Node2D" parent="StateMachine" index="63"]
 script = ExtResource( 12 )
 apply_forces = true
 apply_fric = true
@@ -928,7 +509,7 @@ Aerial"
 kind = "Pretty"
 kind_locked = true
 
-[node name="Pierce" type="Node2D" parent="StateMachine" index="63"]
+[node name="Pierce" type="Node2D" parent="StateMachine" index="64"]
 script = ExtResource( 90 )
 apply_forces = true
 apply_fric = true
@@ -978,7 +559,7 @@ group = 2
 start_tick = 16
 active_ticks = 3
 
-[node name="MashClaw1" type="Node2D" parent="StateMachine" index="64"]
+[node name="MashClaw1" type="Node2D" parent="StateMachine" index="65"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1035,7 +616,49 @@ group = 2
 start_tick = 5
 active_ticks = 1
 
-[node name="GroundSlamNeutral" type="Node2D" parent="StateMachine" index="65"]
+[node name="SlideKick" type="Node2D" parent="StateMachine" index="66"]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+sprite_animation = "Slide"
+anim_length = 12
+force_dir_x = "2.0"
+force_speed = "3.0"
+title = "Slide"
+type = 1
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Grounded
+GroundedAttack
+"
+interrupt_into_string = "Grounded
+"
+hit_cancel_into_string = "Grounded
+"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/SlideKick" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 17
+y = -6
+width = 30
+height = 6
+damage = 55
+hitstun_ticks = 16
+victim_hitlag = 2
+di_modifier = "0.2"
+group = 1
+knockback = "6.0"
+start_tick = 6
+active_ticks = 2
+loop_active_ticks = 5
+loop_inactive_ticks = 1
+
+[node name="GroundSlamNeutral" type="Node2D" parent="StateMachine" index="67"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1085,7 +708,7 @@ start_tick = 9
 active_ticks = 2
 loop_inactive_ticks = 1
 
-[node name="GroundSlamCombo" type="Node2D" parent="StateMachine" index="66"]
+[node name="GroundSlamCombo" type="Node2D" parent="StateMachine" index="68"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1134,7 +757,7 @@ start_tick = 6
 active_ticks = 2
 loop_inactive_ticks = 1
 
-[node name="MashClaw2" type="Node2D" parent="StateMachine" index="67"]
+[node name="MashClaw2" type="Node2D" parent="StateMachine" index="69"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1189,7 +812,7 @@ group = 2
 start_tick = 5
 active_ticks = 2
 
-[node name="Cleave" type="Node2D" parent="StateMachine" index="68"]
+[node name="Cleave" type="Node2D" parent="StateMachine" index="70"]
 script = ExtResource( 99 )
 __meta__ = {
 "_editor_description_": ""
@@ -1296,7 +919,7 @@ dir_x = "5.0"
 start_tick = 26
 active_ticks = 3
 
-[node name="AirZone" type="Node2D" parent="StateMachine" index="69"]
+[node name="AirZone" type="Node2D" parent="StateMachine" index="71"]
 script = ExtResource( 106 )
 __meta__ = {
 "_editor_description_": ""
@@ -1388,7 +1011,7 @@ dir_x = "5.0"
 start_tick = 12
 active_ticks = 3
 
-[node name="Upswipe" type="Node2D" parent="StateMachine" index="70"]
+[node name="Upswipe" type="Node2D" parent="StateMachine" index="72"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -1454,7 +1077,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 7
 active_ticks = 4
 
-[node name="DashGrab" type="Node2D" parent="StateMachine" index="71"]
+[node name="DashGrab" type="Node2D" parent="StateMachine" index="73"]
 script = ExtResource( 121 )
 apply_forces = true
 apply_fric = true
@@ -1495,7 +1118,7 @@ width = 30
 height = 14
 active_ticks = 9
 
-[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="72"]
+[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="74"]
 script = ExtResource( 125 )
 apply_forces = true
 apply_fric = true
@@ -1507,21 +1130,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 114 ): {
+Resource( "res://_Percht/characters/percht/real_animations/dash_grab_ugly.4.png" ): {
 "x": -33,
 "y": 3
 },
-ExtResource( 117 ): {
+Resource( "res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly2.png" ): {
+"x": -23,
+"y": -2
+},
+Resource( "res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly3.png" ): {
 "x": 29,
 "y": 3
 },
-ExtResource( 119 ): {
+Resource( "res://_Percht/characters/percht/real_animations/dash_grab_throw_ugly1.png" ): {
 "x": -27,
 "y": 2
-},
-ExtResource( 120 ): {
-"x": -23,
-"y": -2
 }
 }
 show_in_menu = false
@@ -1542,7 +1165,7 @@ screenshake_amount = 9
 screenshake_frames = 4
 increment_combo = false
 
-[node name="Whipcopter" type="Node2D" parent="StateMachine" index="73"]
+[node name="Whipcopter" type="Node2D" parent="StateMachine" index="75"]
 script = ExtResource( 107 )
 apply_forces = true
 apply_grav = true
@@ -1618,6 +1241,7 @@ hit_height = 0
 group = 2
 dir_y = "0.5"
 knockback = "6.0"
+knockdown = true
 start_tick = 13
 active_ticks = 3
 
@@ -1637,10 +1261,11 @@ hit_height = 0
 group = 2
 dir_y = "0.5"
 knockback = "6.0"
+knockdown = true
 start_tick = 13
 active_ticks = 3
 
-[node name="AirImpale" type="Node2D" parent="StateMachine" index="74"]
+[node name="AirImpale" type="Node2D" parent="StateMachine" index="76"]
 script = ExtResource( 154 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -1671,7 +1296,7 @@ hit_height = 0
 start_tick = 8
 always_on = true
 
-[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="75"]
+[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="77"]
 script = ExtResource( 157 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -1690,7 +1315,7 @@ damage = 30
 hits_otg = true
 di_modifier = "0.0"
 
-[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="76"]
+[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="78"]
 script = ExtResource( 158 )
 apply_fric = true
 apply_grav = true
@@ -1737,7 +1362,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 20
 active_ticks = 4
 
-[node name="Scorch" type="Node2D" parent="StateMachine" index="77"]
+[node name="Scorch" type="Node2D" parent="StateMachine" index="79"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -1791,6 +1416,3 @@ hit_height = 2
 group = 1
 start_tick = 9
 active_ticks = 3
-
-[node name="WhipStrike" type="Node2D" parent="StateMachine" index="78"]
-script = ExtResource( 172 )

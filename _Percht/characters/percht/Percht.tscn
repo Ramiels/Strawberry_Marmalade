@@ -713,6 +713,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 apply_forces = true
+apply_fric = true
 sprite_animation = "PointyShoePretty"
 anim_length = 22
 refresh_loop = false
@@ -739,7 +740,15 @@ y = -18
 width = 14
 damage = 80
 hitstun_ticks = 20
+hitlag_ticks = 10
+hits_otg = true
 plus_frames = 1
+dir_y = "2.0"
+knockback = "7.0"
+grounded_hit_state = "HurtAerial"
+knockdown = true
+knockdown_extends_hitstun = false
+ground_bounce = false
 start_tick = 11
 active_ticks = 2
 
@@ -1726,21 +1735,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
-},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 148 ): {
+"x": -33,
+"y": 3
 }
 }
 show_in_menu = false
@@ -1955,9 +1964,8 @@ victim_hitlag = 18
 combo_victim_hitlag = 10
 combo_scaling_amount = 2
 hits_otg = true
-dir_x = "1.5"
-knockback = "8.0"
 grounded_hit_state = "HurtAerial"
+air_ground_bounce = true
 start_tick = 20
 active_ticks = 4
 

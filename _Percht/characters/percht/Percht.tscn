@@ -1,4 +1,4 @@
-[gd_scene load_steps=200 format=2]
+[gd_scene load_steps=205 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -192,10 +192,15 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_goodie_bag_throw_ugly1.png" type="Texture" id=190]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/AirGoodieBagActionUIData.tscn" type="PackedScene" id=191]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_neutral_whip_pretty1.png" type="Texture" id=192]
+[ext_resource path="res://_Percht/characters/percht/real_animations/pointy_shoe_pretty1.png" type="Texture" id=193]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_neutral_whip_pretty5.png" type="Texture" id=194]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_neutral_whip_pretty3.png" type="Texture" id=195]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_neutral_whip_pretty2.png" type="Texture" id=196]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_neutral_whip_pretty4.png" type="Texture" id=197]
+[ext_resource path="res://_Percht/characters/percht/real_animations/pointy_shoe_pretty3.png" type="Texture" id=198]
+[ext_resource path="res://_Percht/characters/percht/real_animations/pointy_shoe_pretty4.png" type="Texture" id=199]
+[ext_resource path="res://_Percht/characters/percht/real_animations/pointy_shoe_pretty2.png" type="Texture" id=200]
+[ext_resource path="res://_Percht/characters/percht/states/PointyShoe.gd" type="Script" id=201]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -474,6 +479,11 @@ animations = [ {
 "name": "PiercePretty",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 193 ), ExtResource( 193 ), ExtResource( 193 ), ExtResource( 193 ), ExtResource( 193 ), ExtResource( 193 ), ExtResource( 200 ), ExtResource( 200 ), ExtResource( 200 ), ExtResource( 200 ), ExtResource( 198 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ), ExtResource( 199 ) ],
+"loop": true,
+"name": "PointyShoePretty",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "RollBackwardPretty",
@@ -604,7 +614,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 4 )
-animation = "WhipStrikeAirPretty"
+animation = "PointyShoePretty"
+frame = 10
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -696,7 +707,43 @@ plus_frames = 1
 start_tick = 5
 active_ticks = 4
 
-[node name="WhipStrike" type="Node2D" parent="StateMachine" index="59"]
+[node name="PointyShoe" type="Node2D" parent="StateMachine" index="59"]
+script = ExtResource( 201 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+sprite_animation = "PointyShoePretty"
+anim_length = 22
+refresh_loop = false
+force_dir_x = "1.0"
+force_speed = "3"
+force_tick = 5
+title = "Pointy Shoe"
+type = 1
+self_hit_cancellable = false
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Pretty"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/PointyShoe" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 14
+y = -18
+width = 14
+damage = 80
+hitstun_ticks = 20
+plus_frames = 1
+start_tick = 11
+active_ticks = 2
+
+[node name="WhipStrike" type="Node2D" parent="StateMachine" index="60"]
 script = ExtResource( 172 )
 __meta__ = {
 "_editor_description_": ""
@@ -734,7 +781,7 @@ plus_frames = 1
 start_tick = 9
 active_ticks = 2
 
-[node name="WhipStrikeAir" type="Node2D" parent="StateMachine" index="60"]
+[node name="WhipStrikeAir" type="Node2D" parent="StateMachine" index="61"]
 script = ExtResource( 172 )
 __meta__ = {
 "_editor_description_": ""
@@ -775,7 +822,7 @@ knockback = "7.0"
 start_tick = 9
 active_ticks = 2
 
-[node name="AnkleCutter" type="Node2D" parent="StateMachine" index="61"]
+[node name="AnkleCutter" type="Node2D" parent="StateMachine" index="62"]
 script = ExtResource( 81 )
 apply_forces = true
 apply_fric = true
@@ -998,7 +1045,7 @@ group = 1
 start_tick = 6
 active_ticks = 3
 
-[node name="Smokescreen" type="Node2D" parent="StateMachine" index="62"]
+[node name="Smokescreen" type="Node2D" parent="StateMachine" index="63"]
 script = ExtResource( 71 )
 apply_forces = true
 apply_fric = true
@@ -1017,7 +1064,7 @@ super_effect_ = true
 kind = "Pretty"
 kind_locked = true
 
-[node name="SmokeCloud" type="Node2D" parent="StateMachine" index="63"]
+[node name="SmokeCloud" type="Node2D" parent="StateMachine" index="64"]
 script = ExtResource( 80 )
 apply_forces = true
 apply_fric = true
@@ -1035,7 +1082,7 @@ Aerial"
 kind = "Pretty"
 kind_locked = true
 
-[node name="SmokeMove" type="Node2D" parent="StateMachine" index="64"]
+[node name="SmokeMove" type="Node2D" parent="StateMachine" index="65"]
 script = ExtResource( 12 )
 apply_forces = true
 apply_fric = true
@@ -1058,7 +1105,7 @@ Aerial"
 kind = "Pretty"
 kind_locked = true
 
-[node name="Pierce" type="Node2D" parent="StateMachine" index="65"]
+[node name="Pierce" type="Node2D" parent="StateMachine" index="66"]
 script = ExtResource( 90 )
 apply_forces = true
 apply_fric = true
@@ -1108,7 +1155,7 @@ group = 2
 start_tick = 16
 active_ticks = 3
 
-[node name="MashClaw1" type="Node2D" parent="StateMachine" index="66"]
+[node name="MashClaw1" type="Node2D" parent="StateMachine" index="67"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1165,7 +1212,7 @@ group = 2
 start_tick = 5
 active_ticks = 1
 
-[node name="SlideKick" type="Node2D" parent="StateMachine" index="67"]
+[node name="SlideKick" type="Node2D" parent="StateMachine" index="68"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1207,7 +1254,7 @@ active_ticks = 2
 loop_active_ticks = 5
 loop_inactive_ticks = 1
 
-[node name="GroundSlamNeutral" type="Node2D" parent="StateMachine" index="68"]
+[node name="GroundSlamNeutral" type="Node2D" parent="StateMachine" index="69"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1257,7 +1304,7 @@ start_tick = 9
 active_ticks = 2
 loop_inactive_ticks = 1
 
-[node name="GroundSlamCombo" type="Node2D" parent="StateMachine" index="69"]
+[node name="GroundSlamCombo" type="Node2D" parent="StateMachine" index="70"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1306,7 +1353,7 @@ start_tick = 6
 active_ticks = 2
 loop_inactive_ticks = 1
 
-[node name="MashClaw2" type="Node2D" parent="StateMachine" index="70"]
+[node name="MashClaw2" type="Node2D" parent="StateMachine" index="71"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -1361,7 +1408,7 @@ group = 2
 start_tick = 5
 active_ticks = 2
 
-[node name="Cleave" type="Node2D" parent="StateMachine" index="71"]
+[node name="Cleave" type="Node2D" parent="StateMachine" index="72"]
 script = ExtResource( 99 )
 __meta__ = {
 "_editor_description_": ""
@@ -1468,7 +1515,7 @@ dir_x = "5.0"
 start_tick = 26
 active_ticks = 3
 
-[node name="AirZone" type="Node2D" parent="StateMachine" index="72"]
+[node name="AirZone" type="Node2D" parent="StateMachine" index="73"]
 script = ExtResource( 106 )
 __meta__ = {
 "_editor_description_": ""
@@ -1560,7 +1607,7 @@ dir_x = "5.0"
 start_tick = 12
 active_ticks = 3
 
-[node name="Upswipe" type="Node2D" parent="StateMachine" index="73"]
+[node name="Upswipe" type="Node2D" parent="StateMachine" index="74"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -1626,7 +1673,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 8
 active_ticks = 4
 
-[node name="DashGrab" type="Node2D" parent="StateMachine" index="74"]
+[node name="DashGrab" type="Node2D" parent="StateMachine" index="75"]
 script = ExtResource( 121 )
 apply_forces = true
 apply_fric = true
@@ -1667,7 +1714,7 @@ width = 30
 height = 14
 active_ticks = 9
 
-[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="75"]
+[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="76"]
 script = ExtResource( 125 )
 apply_forces = true
 apply_fric = true
@@ -1687,13 +1734,13 @@ ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 148 ): {
 "x": -33,
 "y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 show_in_menu = false
@@ -1714,7 +1761,7 @@ screenshake_amount = 9
 screenshake_frames = 4
 increment_combo = false
 
-[node name="Whipcopter" type="Node2D" parent="StateMachine" index="76"]
+[node name="Whipcopter" type="Node2D" parent="StateMachine" index="77"]
 script = ExtResource( 107 )
 apply_forces = true
 apply_grav = true
@@ -1816,7 +1863,7 @@ knockdown = true
 start_tick = 16
 active_ticks = 3
 
-[node name="AirImpale" type="Node2D" parent="StateMachine" index="77"]
+[node name="AirImpale" type="Node2D" parent="StateMachine" index="78"]
 script = ExtResource( 154 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -1848,7 +1895,7 @@ hit_height = 0
 start_tick = 8
 always_on = true
 
-[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="78"]
+[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="79"]
 script = ExtResource( 157 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -1867,7 +1914,7 @@ damage = 30
 hits_otg = true
 di_modifier = "0.0"
 
-[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="79"]
+[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="80"]
 script = ExtResource( 158 )
 apply_fric = true
 apply_grav = true
@@ -1914,7 +1961,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 20
 active_ticks = 4
 
-[node name="Scorch" type="Node2D" parent="StateMachine" index="80"]
+[node name="Scorch" type="Node2D" parent="StateMachine" index="81"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -1969,7 +2016,7 @@ group = 1
 start_tick = 9
 active_ticks = 3
 
-[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="81"]
+[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="82"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true
@@ -1986,7 +2033,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="82"]
+[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="83"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true

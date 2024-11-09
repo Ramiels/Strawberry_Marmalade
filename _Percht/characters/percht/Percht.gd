@@ -25,8 +25,9 @@ var current_smoke = 0
 var can_smokeshift = false
 
 var whip_combo = false
-
 var goodie_bag = null
+var guardpoint = false
+var restand_grab_used = false
 
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 
@@ -66,9 +67,12 @@ func _draw():
 	
 	curr_state.anim_name = anim_name
 	
-	#if not is_ghost:
-	#	print("_draw() ", kind)
-	#	print(curr_state, curr_state.anim_name)
+	if is_ghost:
+		$GuardpointLabel.visible = guardpoint
+	else:
+		$GuardpointLabel.visible = false
+	
+	#print(curr_state.anim_name)
 	
 	._draw()
 
@@ -222,3 +226,8 @@ func on_state_started(state):
 		whip_combo = false
 	
 	.on_state_started(state)
+
+func reset_combo():
+	.reset_combo()
+
+	restand_grab_used = false

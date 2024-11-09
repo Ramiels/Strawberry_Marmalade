@@ -7,7 +7,7 @@ const SPEED = "9"
 func _frame_6():
 	var pos_y = -15
 	if !host.is_grounded():
-		pos_y = 15
+		pos_y = 10
 	
 	var obj = host.spawn_object(PROJ_SCENE, 20, pos_y, true)
 

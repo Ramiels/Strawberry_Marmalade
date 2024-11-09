@@ -57,15 +57,15 @@ func _draw():
 
 	
 	# This is ATROCIOUS.
-	if not anim_name.ends_with("BOTH"):
-		if anim_name.ends_with("Pretty"):
-			anim_name.erase(anim_name.length() - 6, 6)
-		if anim_name.ends_with("Ugly"):
-			anim_name.erase(anim_name.length() - 4, 4)
-		
-		anim_name += kind
-	
-	curr_state.anim_name = anim_name
+#	if not anim_name.ends_with("BOTH"):
+#		if anim_name.ends_with("Pretty"):
+#			anim_name.erase(anim_name.length() - 6, 6)
+#		if anim_name.ends_with("Ugly"):
+#			anim_name.erase(anim_name.length() - 4, 4)
+#
+#		anim_name += kind
+#
+#	curr_state.anim_name = anim_name
 	
 	if is_ghost:
 		$GuardpointLabel.visible = guardpoint
@@ -231,3 +231,13 @@ func reset_combo():
 	.reset_combo()
 
 	restand_grab_used = false
+
+func block_hitbox(hitbox, force_parry = false, force_block = false, ignore_guard_break = false, autoblock_armor = false):
+	.block_hitbox(hitbox, force_parry, force_block, ignore_guard_break, autoblock_armor)
+	if current_state().get("IS_NEW_PARRY"):
+		var anim_name = current_state().anim_name
+
+		anim_name = anim_name + kind
+
+		current_state().anim_name = anim_name
+		current_state().update_sprite_frame()

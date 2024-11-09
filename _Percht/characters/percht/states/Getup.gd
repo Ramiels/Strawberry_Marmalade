@@ -1,9 +1,9 @@
-extends "res://characters/states/Idle.gd"
+extends "res://characters/states/Getup.gd"
 
 func _enter():
 	var next_state = ._enter()
 	if host.kind == "Pretty":
-		anim_name = "WaitPretty"
+		anim_name = "GetupPretty"
 	if host.kind == "Ugly":
-		anim_name = "WaitUgly"
+		anim_name = "GetupUgly"
 	return next_state

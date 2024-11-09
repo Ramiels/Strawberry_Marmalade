@@ -1,4 +1,4 @@
-[gd_scene load_steps=277 format=2]
+[gd_scene load_steps=298 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -273,6 +273,27 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_scorch_ugly5.png" type="Texture" id=271]
 [ext_resource path="res://_Percht/characters/percht/real_animations/air_scorch_ugly4.png" type="Texture" id=272]
 [ext_resource path="res://mechanics/SweptHitbox.gd" type="Script" id=273]
+[ext_resource path="res://_Percht/characters/percht/states/Fall.gd" type="Script" id=274]
+[ext_resource path="res://_Percht/characters/percht/states/Grabbed.gd" type="Script" id=275]
+[ext_resource path="res://_Percht/characters/percht/states/Knockdown.gd" type="Script" id=276]
+[ext_resource path="res://_Percht/characters/percht/states/Landing.gd" type="Script" id=277]
+[ext_resource path="res://_Percht/characters/percht/states/Jump.gd" type="Script" id=278]
+[ext_resource path="res://_Percht/characters/percht/states/SuperFallStartup.gd" type="Script" id=279]
+[ext_resource path="res://_Percht/characters/percht/states/Roll.gd" type="Script" id=280]
+[ext_resource path="res://_Percht/characters/percht/states/SuperFall.gd" type="Script" id=281]
+[ext_resource path="res://_Percht/characters/percht/states/Burst.gd" type="Script" id=282]
+[ext_resource path="res://_Percht/characters/percht/states/OffensiveBurst.gd" type="Script" id=283]
+[ext_resource path="res://_Percht/characters/percht/states/Getup.gd" type="Script" id=284]
+[ext_resource path="res://_Percht/characters/percht/states/DashForward.gd" type="Script" id=285]
+[ext_resource path="res://_Percht/characters/percht/states/DashBackward.gd" type="Script" id=286]
+[ext_resource path="res://_Percht/characters/percht/states/ChargeDash.gd" type="Script" id=287]
+[ext_resource path="res://_Percht/characters/percht/states/AirDash.gd" type="Script" id=288]
+[ext_resource path="res://_Percht/characters/percht/states/InstantCancel.gd" type="Script" id=289]
+[ext_resource path="res://_Percht/characters/percht/states/WhiffInstantCancel.gd" type="Script" id=290]
+[ext_resource path="res://_Percht/characters/percht/states/WallSlam.gd" type="Script" id=291]
+[ext_resource path="res://_Percht/characters/percht/states/Grab.gd" type="Script" id=292]
+[ext_resource path="res://_Percht/characters/percht/states/Throw.gd" type="Script" id=293]
+[ext_resource path="res://_Percht/characters/percht/states/ThrowTech.gd" type="Script" id=294]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -778,9 +799,9 @@ material = SubResource( 3 )
 
 [node name="Start" parent="StateMachine" index="0"]
 script = ExtResource( 5 )
-_c_Percht = 0
-kind = ""
-kind_locked = false
+
+[node name="ParrySuper" parent="StateMachine" index="1"]
+script = ExtResource( 6 )
 
 [node name="ParryHigh" parent="StateMachine" index="2"]
 script = ExtResource( 6 )
@@ -800,14 +821,152 @@ script = ExtResource( 6 )
 [node name="ParryAir" parent="StateMachine" index="6"]
 script = ExtResource( 7 )
 
+[node name="Roll" parent="StateMachine" index="7"]
+script = ExtResource( 280 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="Wait" parent="StateMachine" index="11"]
 script = ExtResource( 5 )
-_c_Percht = 0
-kind = ""
-kind_locked = false
+
+[node name="Burst" parent="StateMachine" index="12"]
+script = ExtResource( 282 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DefensiveBurst" parent="StateMachine" index="13"]
+script = ExtResource( 282 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="OffensiveBurst" parent="StateMachine" index="14"]
+script = ExtResource( 283 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Fall" parent="StateMachine" index="18"]
+script = ExtResource( 274 )
+
+[node name="SuperFallStartup" parent="StateMachine" index="19"]
+script = ExtResource( 279 )
+
+[node name="SuperFall" parent="StateMachine" index="20"]
+script = ExtResource( 281 )
+interruptible_on_opponent_turn = false
+
+[node name="Landing" parent="StateMachine" index="21"]
+script = ExtResource( 277 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Knockdown" parent="StateMachine" index="22"]
+script = ExtResource( 276 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HardKnockdown" parent="StateMachine" index="23"]
+script = ExtResource( 276 )
+fallback_state = "Wait"
+sprite_animation = ""
+anim_length = 1
+particle_scene = null
+spawn_particle_on_enter = false
+enter_sfx = null
+enter_sfx_volume = -15.0
+iasa_at = -1
+busy_interrupt_type = 0
+interrupt_exceptions_string = ""
+change_stance_to = ""
+hard = false
+
+[node name="Getup" parent="StateMachine" index="24"]
+script = ExtResource( 284 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TechRoll" parent="StateMachine" index="25"]
+script = ExtResource( 280 )
+
+[node name="DashForward" parent="StateMachine" index="27"]
+script = ExtResource( 285 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ChargeDashForward" parent="StateMachine" index="28"]
+script = ExtResource( 285 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DashBackward" parent="StateMachine" index="29"]
+script = ExtResource( 286 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Jump" parent="StateMachine" index="32"]
+script = ExtResource( 278 )
+
+[node name="ChargeDash" parent="StateMachine" index="33"]
+script = ExtResource( 287 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SuperJump" parent="StateMachine" index="34"]
+script = ExtResource( 278 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="DoubleJump" parent="StateMachine" index="35"]
+script = ExtResource( 278 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AirDash" parent="StateMachine" index="36"]
+script = ExtResource( 288 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="InstantCancel" parent="StateMachine" index="37"]
+script = ExtResource( 289 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WhiffInstantCancel" parent="StateMachine" index="38"]
+script = ExtResource( 290 )
+hit_cancel_exceptions_string = ""
 
 [node name="HurtDizzy" parent="StateMachine" index="39"]
 script = ExtResource( 8 )
+
+[node name="WallSlam" parent="StateMachine" index="40"]
+script = ExtResource( 291 )
+reset_momentum = false
+endless = false
+particle_scene = null
+particle_position = Vector2( 0, 0 )
+spawn_particle_on_enter = false
+enter_sfx = null
+enter_sfx_volume = -15.0
+sfx = null
+sfx_volume = -15.0
+busy_interrupt_type = 0
+interrupt_into_string = ""
+interrupt_exceptions_string = ""
+auto_fall = true
 
 [node name="HurtAerial" parent="StateMachine" index="41"]
 script = ExtResource( 9 )
@@ -815,7 +974,29 @@ script = ExtResource( 9 )
 [node name="HurtGrounded" parent="StateMachine" index="42"]
 script = ExtResource( 8 )
 
+[node name="Grabbed" parent="StateMachine" index="43"]
+script = ExtResource( 275 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Grab" parent="StateMachine" index="46"]
+script = ExtResource( 292 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AirGrab" parent="StateMachine" index="47"]
+script = ExtResource( 292 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="ForwardThrow" parent="StateMachine" index="49"]
+script = ExtResource( 293 )
+__meta__ = {
+"_editor_description_": ""
+}
 dir_y = "0"
 
 [node name="BackThrow" parent="StateMachine" index="50"]
@@ -826,6 +1007,12 @@ dir_y = ".5"
 
 [node name="AirBackThrow" parent="StateMachine" index="52"]
 dir_y = ".5"
+
+[node name="ThrowTech" parent="StateMachine" index="54"]
+script = ExtResource( 294 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="ChangeForm" type="Node2D" parent="StateMachine" index="57"]
 script = ExtResource( 10 )
@@ -2014,21 +2201,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 102 ): {
 "x": 29,
+"y": 3
+},
+ExtResource( 148 ): {
+"x": -33,
 "y": 3
 },
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 show_in_menu = false
@@ -2939,6 +3126,10 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
+},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
@@ -2946,10 +3137,6 @@ ExtResource( 233 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
-},
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
 }
 }
 selectable = false
@@ -2990,21 +3177,21 @@ ExtResource( 231 ): {
 "x": -3,
 "y": -1
 },
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
 ExtResource( 239 ): {
 "x": 35,
 "y": -1
 },
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
-},
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
+},
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 },
 ExtResource( 251 ): {
 "x": -31,

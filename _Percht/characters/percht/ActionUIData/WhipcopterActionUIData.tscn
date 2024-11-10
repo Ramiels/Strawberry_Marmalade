@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/HorizSlider/HorizSlider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/XYPlot/XYPlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://theme.tres" type="Theme" id=3]
+[ext_resource path="res://ui/ActionSelector/ActionUIData/ActionUIData.gd" type="Script" id=4]
+
+[node name="ActionUIData" type="VBoxContainer"]
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 3 )
+alignment = 1
+script = ExtResource( 4 )
+
+[node name="Direction" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+
+[node name="Length" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 67.0
+margin_right = 60.0
+margin_bottom = 103.0
+alignment = 1
+
+[node name="Label" parent="Length" index="0"]
+margin_right = 60.0
+
+[node name="Direction" parent="Length" index="1"]
+margin_right = 60.0
+min_value = 1.0
+max_value = 6.0
+value = 1.0
+
+[node name="ValueLabel" parent="Length" index="2"]
+margin_right = 60.0
+
+[editable path="Length"]

@@ -21,7 +21,7 @@ var smokeshift_now = false
 var smokeshift_destination = 0
 var smokeshifting = false
 
-var current_smoke = 0
+var current_smoke = null
 var can_smokeshift = false
 
 var QUICKSWAP_HITLAG = 7
@@ -45,6 +45,7 @@ func copy_to(t):
 	.copy_to(t)
 	t.quickswap = quickswap
 	t.quickswap_hit = quickswap_hit
+	#t.smoke_projectiles = smoke_projectiles
 
 
 func change_kind(new_kind):
@@ -107,22 +108,17 @@ func overlapping_smoke():
 		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.collision_box) and obj != Hitbox:
 			#print('overlapping', obj)
 			if "percht_smoke" in obj:
-				overlapped_smoke = obj
+				overlapped_smoke = obj.name
 				#print('overlapped_smoke')
 
 	return overlapped_smoke
 
 func tick():
-	for smoke in smoke_projectiles:
-		if !obj_from_name(smoke):
-			smoke_projectiles.erase(smoke)
-	
-	if overlapping_smoke() != null:
-		current_smoke = overlapping_smoke()
-		can_smokeshift = true
-	else:
-		current_smoke = null
-		can_smokeshift = false
+	if !is_ghost:
+		for smoke in smoke_projectiles:
+			if !obj_from_name(smoke):
+				print('test')
+				smoke_projectiles.erase(smoke)
 	
 	if smokeshift_penalty_frames > 0:
 		smokeshift_penalty_frames -= 1
@@ -143,10 +139,17 @@ func tick():
 		
 		if smokeshift_frames <= 0:
 			end_smokeshift()
-		
+	
 	if smokeshift_now:
 		smokeshift_now = false
 		smokeshift(smokeshift_destination)
+	
+	if overlapping_smoke() != null:
+		current_smoke = overlapping_smoke()
+		can_smokeshift = true
+	else:
+		current_smoke = null
+		can_smokeshift = false
 	
 	if goodie_bag_delay > 0:
 		goodie_bag_delay -= 1
@@ -176,9 +179,9 @@ func smokeshift(smoke_index):
 
 	smokeshift_penalty_frames = 2
 	
-	print(current_smoke)
+	print("current_smoke:", current_smoke)
 	if current_smoke != null:
-		current_smoke.schedule_disable()
+		objs_map[current_smoke].schedule_disable()
 	current_smoke = null
 	
 	smokeshifting = true
@@ -187,6 +190,8 @@ func smokeshift(smoke_index):
 	if smoke_pos.y <= -10:
 		smokeshift_frames = 10
 		smokeshift_move()
+	
+	play_sound("Smokeshift")
 
 func smokeshift_move():
 	var diff_x = fixed.sub(str(smokeshift_pos_x), str(get_pos().x))

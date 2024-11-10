@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fireswap.wav-7349a89fdb356e3de0821f83a58305de.sample"
+
+[deps]
+
+source_file="res://_Percht/characters/percht/SFXs/fireswap.wav"
+dest_files=[ "res://.import/fireswap.wav-7349a89fdb356e3de0821f83a58305de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

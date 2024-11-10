@@ -8,6 +8,10 @@ var scheduled_explode_tick = 0
 
 var EXPLOSION = preload("res://_Percht/characters/percht/projectiles/SmokeExplosion.tscn")
 
+func copy_to(f):
+	.copy_to(f)
+	f.scheduled_disable = scheduled_disable
+
 func disable():
 	.disable()
 	$Flip/Particles/ParticleEffect.queue_free()

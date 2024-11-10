@@ -71,7 +71,7 @@ func _tick():
 	
 	opp_hitboxes = get_hitboxes() #i cant be bothered to implement a toggle for projectile guarding
 	for hitbox in opp_hitboxes:
-		if hitbox.active and hitbox.overlaps(host.hurtbox) and not host.name in hitbox.hit_objects: #and hitbox != prev_hitbox:
+		if hitbox.active and hitbox.overlaps(host.hurtbox) and not host.name in hitbox.hit_objects and not hitbox is ThrowBox: #and hitbox != prev_hitbox:
 			host.play_sound("Block2")
 			host.play_sound("Block3")
 			host.global_hitlag(6)
@@ -90,7 +90,7 @@ func _exit():
 func get_hitboxes_inactive():
 	var all_hitbox_nodes = []
 	for child in host.opponent.current_state().get_children():
-		if child is Hitbox:
+		if child is Hitbox and not child is ThrowBox:
 			all_hitbox_nodes.append(child)
 			
 	return all_hitbox_nodes

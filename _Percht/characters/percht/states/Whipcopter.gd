@@ -16,7 +16,7 @@ func _enter():
 	hitbox.cancellable = false
 	hitbox2.cancellable = false
 	
-	host.set_vel(fixed.mul(host.get_vel().x, "0.7"), fixed.mul(host.get_vel().y, "0.5"))
+	#host.set_vel(fixed.mul(host.get_vel().x, "0.7"), fixed.mul(host.get_vel().y, "0.5"))
 
 func _frame_9():
 	if host.is_grounded():

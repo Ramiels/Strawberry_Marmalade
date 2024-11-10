@@ -3,10 +3,14 @@ extends "res://_Percht/PerchtMove.gd"
 var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/GoodieBag.tscn")
 
 const SPEED = "9"
+var grounded = false
+
+func _enter():
+	grounded = host.is_grounded()
 
 func _frame_6():
 	var pos_y = -15
-	if !host.is_grounded():
+	if !grounded:
 		pos_y = 10
 	
 	var obj = host.spawn_object(PROJ_SCENE, 20, pos_y, true)
@@ -20,4 +24,4 @@ func _frame_6():
 	host.goodie_bag = obj.obj_name
 
 func is_usable():
-	return (.is_usable() and host.goodie_bag == null)
+	return (.is_usable() and host.goodie_bag == null and host.goodie_bag_delay == 0)

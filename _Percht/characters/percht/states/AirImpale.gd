@@ -6,7 +6,7 @@ var descending = false
 
 func _frame_0():
 	descending = false
-	host.set_vel(fixed.mul(host.get_vel().x, "0.8"), "-5.0")
+	host.set_vel(fixed.mul(host.get_vel().x, "0.9"), "-5.0")
 
 
 func _frame_7():

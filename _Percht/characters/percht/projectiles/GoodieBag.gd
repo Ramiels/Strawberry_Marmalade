@@ -6,6 +6,7 @@ var dirs = [["2.0", "-4.0", "1.2"], ["2.0", "-2.0", "0.9"], ["5.0", "-1.0", "0.7
 
 func disable():
 	creator.goodie_bag = null
+	creator.goodie_bag_die()
 	.disable()
 
 func explode():

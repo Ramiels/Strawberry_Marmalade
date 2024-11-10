@@ -24,8 +24,15 @@ var smokeshifting = false
 var current_smoke = 0
 var can_smokeshift = false
 
+var QUICKSWAP_HITLAG = 7
+
+var quickswap_buffer = false
+var quickswap = false
+var quickswap_hit = false
+
 var whip_combo = false
 var goodie_bag = null
+var goodie_bag_delay = 0
 var guardpoint = false
 var restand_grab_used = false
 
@@ -33,6 +40,12 @@ onready var smokeshift_particles = $"%SmokeshiftParticles"
 
 func _ready():
 	smokeshift_particles.visible = true
+
+func copy_to(t):
+	.copy_to(t)
+	t.quickswap = quickswap
+	t.quickswap_hit = quickswap_hit
+
 
 func change_kind(new_kind):
 	kind = new_kind
@@ -48,8 +61,19 @@ func change_kind(new_kind):
 		default_hurtbox.height = 16
 		default_hurtbox.x = 0
 		default_hurtbox.y = -16
-		
-		collision_box
+
+func try_quickswap():
+	#print(quickswap, quickswap_buffer)
+	if got_parried:
+		return 
+	if not quickswap:
+		return 
+	quickswap = false
+	
+	if quickswap_hit:
+		opponent.hitlag_ticks += QUICKSWAP_HITLAG
+	
+	change_state("Quickswap")
 
 func _draw():
 	var curr_state = current_state()
@@ -80,7 +104,7 @@ func overlapping_smoke():
 	var overlapped_smoke = null
 	for obj_name in objs_map:
 		var obj = objs_map[obj_name]
-		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.hurtbox) and obj != Hitbox:
+		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.collision_box) and obj != Hitbox:
 			#print('overlapping', obj)
 			if "percht_smoke" in obj:
 				overlapped_smoke = obj
@@ -123,6 +147,13 @@ func tick():
 	if smokeshift_now:
 		smokeshift_now = false
 		smokeshift(smokeshift_destination)
+	
+	if goodie_bag_delay > 0:
+		goodie_bag_delay -= 1
+	
+	if quickswap_buffer:
+		quickswap_buffer = false
+		quickswap = true
 	
 	.tick()
 
@@ -215,6 +246,12 @@ func process_extra(extra):
 	if extra.has("goodie_bag"):
 		if extra.goodie_bag and goodie_bag != null and is_instance_valid(objs_map[goodie_bag]):
 			objs_map[goodie_bag].explode()
+	
+	if extra.has("quickswap"):
+		quickswap_buffer = extra.quickswap
+
+func goodie_bag_die():
+	goodie_bag_delay = 20
 
 func on_state_started(state):
 	if "is_whip_move" in state:
@@ -226,6 +263,29 @@ func on_state_started(state):
 		whip_combo = false
 	
 	.on_state_started(state)
+
+func on_state_ended(state):
+	#quickswap_buffer = false
+	quickswap = false
+	quickswap_hit = false
+	
+	.on_state_ended(state)
+
+func on_attack_blocked():
+	if quickswap:
+		quickswap = false
+		change_state("QuickswapBlock")
+
+func can_block_cancel():
+	if current_state().name == "QuickswapBlock":
+		return false
+	return .can_block_cancel()
+
+func _on_hit_something(obj, hitbox):
+	if quickswap:
+		quickswap_hit = true
+	
+	._on_hit_something(obj, hitbox)
 
 func reset_combo():
 	.reset_combo()

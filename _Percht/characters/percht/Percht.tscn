@@ -1,4 +1,4 @@
-[gd_scene load_steps=347 format=2]
+[gd_scene load_steps=382 format=2]
 
 [ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -23,10 +23,10 @@
 [ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=21]
 [ext_resource path="res://_Percht/characters/percht/real_animations/KnockdownPretty.png" type="Texture" id=22]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Pretty.png" type="Texture" id=23]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab3_Ugly.png" type="Texture" id=24]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly5.png" type="Texture" id=24]
 [ext_resource path="res://_Percht/characters/percht/real_animations/HurtGroundedLowPretty.png" type="Texture" id=25]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty6.png" type="Texture" id=26]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Pretty.png" type="Texture" id=27]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_ugly1.png" type="Texture" id=27]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ParryLowUgly.png" type="Texture" id=28]
 [ext_resource path="res://_Percht/characters/percht/real_animations/GetUpPretty.png" type="Texture" id=29]
 [ext_resource path="res://_Percht/characters/percht/real_animations/idle_ugly.png" type="Texture" id=30]
@@ -41,7 +41,7 @@
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/BackDash_Ugly.png" type="Texture" id=39]
 [ext_resource path="res://_Percht/characters/percht/real_animations/smokescreen_summon_pretty5.png" type="Texture" id=40]
 [ext_resource path="res://_Percht/characters/percht/real_animations/cleave_pretty6.png" type="Texture" id=41]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Ugly.png" type="Texture" id=42]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly6.png" type="Texture" id=42]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Ugly.png" type="Texture" id=43]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab2_Pretty.png" type="Texture" id=44]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty7.png" type="Texture" id=45]
@@ -55,7 +55,7 @@
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/HurtHigh_Ugly.png" type="Texture" id=53]
 [ext_resource path="res://_Percht/characters/percht/real_animations/AerialWait2.png" type="Texture" id=54]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Landing_Pretty.png" type="Texture" id=55]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Roll_Ugly.png" type="Texture" id=56]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_pretty2.png" type="Texture" id=56]
 [ext_resource path="res://_Percht/characters/percht/real_animations/sprint_pretty1.png" type="Texture" id=57]
 [ext_resource path="res://_Percht/characters/percht/real_animations/jab_pretty3.png" type="Texture" id=58]
 [ext_resource path="res://_Percht/characters/percht/generic_sprites/Burst_Pretty.png" type="Texture" id=59]
@@ -66,7 +66,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/ParryHighUgly.png" type="Texture" id=64]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty2.png" type="Texture" id=65]
 [ext_resource path="res://_Percht/characters/percht/real_animations/HurtGroundedMidPretty.png" type="Texture" id=66]
-[ext_resource path="res://_Percht/characters/percht/generic_sprites/Grab1_Ugly.png" type="Texture" id=67]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly7.png" type="Texture" id=67]
 [ext_resource path="res://_Percht/characters/percht/real_animations/ankle_cutter_pretty5.png" type="Texture" id=68]
 [ext_resource path="res://_Percht/characters/percht/real_animations/sprint_ugly8.png" type="Texture" id=69]
 [ext_resource path="res://_Percht/characters/percht/real_animations/mash_claw_ugly1.png" type="Texture" id=70]
@@ -342,6 +342,41 @@
 [ext_resource path="res://characters/swordandgun/sounds/swing2.wav" type="AudioStream" id=340]
 [ext_resource path="res://characters/swordandgun/sounds/swing3.wav" type="AudioStream" id=341]
 [ext_resource path="res://characters/swordandgun/sounds/swing4.wav" type="AudioStream" id=342]
+[ext_resource path="res://ui/ActionSelector/StateIcons/taunt.png" type="Texture" id=343]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly17.png" type="Texture" id=344]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly3.png" type="Texture" id=345]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly16.png" type="Texture" id=346]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly13.png" type="Texture" id=347]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly14.png" type="Texture" id=348]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly9.png" type="Texture" id=349]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly10.png" type="Texture" id=350]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly12.png" type="Texture" id=351]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly2.png" type="Texture" id=352]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly11.png" type="Texture" id=353]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly8.png" type="Texture" id=354]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly18.png" type="Texture" id=355]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly19.png" type="Texture" id=356]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly1.png" type="Texture" id=357]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly5.png" type="Texture" id=358]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly7.png" type="Texture" id=359]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly4.png" type="Texture" id=360]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly23.png" type="Texture" id=361]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly15.png" type="Texture" id=362]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly22.png" type="Texture" id=363]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly6.png" type="Texture" id=364]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly20.png" type="Texture" id=365]
+[ext_resource path="res://_Percht/characters/percht/real_animations/hustle_ugly21.png" type="Texture" id=366]
+[ext_resource path="res://_Percht/characters/percht/states/HustleUgly.gd" type="Script" id=367]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_pretty1.png" type="Texture" id=368]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_pretty4.png" type="Texture" id=369]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_ugly4.png" type="Texture" id=370]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_ugly3.png" type="Texture" id=371]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_pretty3.png" type="Texture" id=372]
+[ext_resource path="res://_Percht/characters/percht/real_animations/roll_ugly2.png" type="Texture" id=373]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly3.png" type="Texture" id=374]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly4.png" type="Texture" id=375]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly2.png" type="Texture" id=376]
+[ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_ugly1.png" type="Texture" id=377]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -359,7 +394,6 @@ shader_param/use_outline = false
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StreamTexture" id=5]
-load_path = "res://.import/knocked1.png-02e67fa22b264377ff342153104776e9.stex"
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -483,7 +517,7 @@ animations = [ {
 "name": "ForwardThrowPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 375 ), ExtResource( 375 ), ExtResource( 375 ), ExtResource( 375 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 42 ), ExtResource( 42 ), ExtResource( 42 ), ExtResource( 67 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "ForwardThrowUgly",
 "speed": 5.0
@@ -513,7 +547,7 @@ animations = [ {
 "name": "GrabPretty",
 "speed": 60.0
 }, {
-"frames": [ ExtResource( 67 ), ExtResource( 42 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 377 ), ExtResource( 377 ), ExtResource( 376 ), ExtResource( 374 ), ExtResource( 374 ), ExtResource( 374 ), ExtResource( 374 ), ExtResource( 374 ) ],
 "loop": true,
 "name": "GrabUgly",
 "speed": 5.0
@@ -581,11 +615,6 @@ animations = [ {
 "frames": [ ExtResource( 52 ) ],
 "loop": true,
 "name": "HurtGroundedMidUgly",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 318 ), ExtResource( 318 ), ExtResource( 318 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 314 ), ExtResource( 314 ), ExtResource( 314 ) ],
-"loop": true,
-"name": "HustlePretty",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 85 ), ExtResource( 85 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 169 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 130 ), ExtResource( 167 ), ExtResource( 167 ), ExtResource( 167 ) ],
@@ -748,22 +777,22 @@ animations = [ {
 "name": "RestandGrab_GMR_Ugly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ) ],
+"frames": [ ExtResource( 369 ), ExtResource( 372 ), ExtResource( 56 ), ExtResource( 368 ) ],
 "loop": true,
 "name": "RollBackwardPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 56 ) ],
+"frames": [ ExtResource( 370 ), ExtResource( 371 ), ExtResource( 373 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "RollBackwardUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ) ],
+"frames": [ ExtResource( 368 ), ExtResource( 56 ), ExtResource( 372 ), ExtResource( 369 ) ],
 "loop": true,
 "name": "RollForwardPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 56 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 373 ), ExtResource( 371 ), ExtResource( 370 ) ],
 "loop": true,
 "name": "RollForwardUgly",
 "speed": 5.0
@@ -781,6 +810,16 @@ animations = [ {
 "frames": [ ExtResource( 77 ), ExtResource( 77 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 35 ), ExtResource( 146 ), ExtResource( 146 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 143 ), ExtResource( 34 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "SmokescreenSummonPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 318 ), ExtResource( 318 ), ExtResource( 318 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 314 ), ExtResource( 314 ), ExtResource( 314 ) ],
+"loop": true,
+"name": "TauntPretty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 357 ), ExtResource( 357 ), ExtResource( 352 ), ExtResource( 352 ), ExtResource( 345 ), ExtResource( 345 ), ExtResource( 360 ), ExtResource( 360 ), ExtResource( 358 ), ExtResource( 358 ), ExtResource( 364 ), ExtResource( 364 ), ExtResource( 359 ), ExtResource( 359 ), ExtResource( 354 ), ExtResource( 354 ), ExtResource( 349 ), ExtResource( 349 ), ExtResource( 350 ), ExtResource( 350 ), ExtResource( 353 ), ExtResource( 353 ), ExtResource( 351 ), ExtResource( 351 ), ExtResource( 347 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 348 ), ExtResource( 362 ), ExtResource( 362 ), ExtResource( 346 ), ExtResource( 346 ), ExtResource( 344 ), ExtResource( 344 ), ExtResource( 355 ), ExtResource( 355 ), ExtResource( 356 ), ExtResource( 356 ), ExtResource( 365 ), ExtResource( 365 ), ExtResource( 366 ), ExtResource( 366 ), ExtResource( 363 ), ExtResource( 363 ), ExtResource( 361 ), ExtResource( 361 ) ],
+"loop": true,
+"name": "TauntUgly",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 48 ) ],
@@ -889,8 +928,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 4 )
-animation = "CleavePretty"
-frame = 27
+animation = "TauntUgly"
+frame = 24
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1108,7 +1147,7 @@ script = ExtResource( 320 )
 __meta__ = {
 "_editor_description_": ""
 }
-sprite_animation = "HustlePretty"
+sprite_animation = "TauntPretty"
 anim_length = 21
 _c_Percht = 0
 kind = "Pretty"
@@ -2505,21 +2544,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
 },
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
+},
 ExtResource( 148 ): {
 "x": -33,
 "y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
 }
 }
 show_in_menu = false
@@ -3471,6 +3510,10 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
+},
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
@@ -3478,10 +3521,6 @@ ExtResource( 247 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
-},
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
 }
 }
 selectable = false
@@ -3518,6 +3557,22 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
+},
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
+},
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
@@ -3525,22 +3580,6 @@ ExtResource( 247 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
-},
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
-},
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
-},
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
 }
 }
 selectable = false
@@ -3747,6 +3786,44 @@ anim_length = 7
 air_type = 2
 next_state_on_hold_on_opponent_turn = true
 selectable = false
+
+[node name="TauntUgly" type="Node2D" parent="StateMachine" index="105"]
+script = ExtResource( 367 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "TauntUgly"
+anim_length = 46
+title = "Hustle"
+type = 4
+button_texture = ExtResource( 343 )
+interruptible_on_opponent_turn = true
+next_state_on_hold = false
+can_feint_if_possible = false
+interrupt_from_string = "Grounded
+Aerial
+GroundedSuper
+AerialSuper
+Hustle"
+interrupt_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="ThrowBox" type="Node2D" parent="StateMachine/TauntUgly" index="0"]
+script = ExtResource( 124 )
+x = 34
+y = -16
+width = 10
+height = 9
+hits_otg = true
+hits_vs_standing = false
+hits_vs_aerial = false
+start_tick = 24
+throw_state = "RestandGrabGroundThrow"
 
 [node name="GuardpointLabel" type="Node2D" parent="." index="15"]
 visible = false

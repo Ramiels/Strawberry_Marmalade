@@ -1,4 +1,4 @@
-[gd_scene load_steps=389 format=2]
+[gd_scene load_steps=415 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_pretty1.png" type="Texture" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -334,7 +334,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/sprint_pretty7.png" type="Texture" id=332]
 [ext_resource path="res://_Percht/characters/percht/real_animations/sprint_pretty4.png" type="Texture" id=333]
 [ext_resource path="res://_Percht/characters/percht/SFXs/whipwhiff.wav" type="AudioStream" id=334]
-[ext_resource path="res://sound/common/slash2.wav" type="AudioStream" id=335]
+[ext_resource path="res://_Percht/characters/percht/SFXs/saber_hit.wav" type="AudioStream" id=335]
 [ext_resource path="res://sound/common/slash1.wav" type="AudioStream" id=336]
 [ext_resource path="res://sound/common/slash3.wav" type="AudioStream" id=337]
 [ext_resource path="res://sound/common/slash4.wav" type="AudioStream" id=338]
@@ -382,8 +382,34 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/base_grab_pretty3.png" type="Texture" id=380]
 [ext_resource path="res://_Percht/characters/percht/SFXs/fireswap.wav" type="AudioStream" id=381]
 [ext_resource path="res://_Percht/characters/percht/SFXs/smokeswap2.wav" type="AudioStream" id=382]
+[ext_resource path="res://_Percht/characters/percht/action_icons/pointy_shoe.png" type="Texture" id=383]
 [ext_resource path="res://_Percht/characters/percht/SFXs/fire_attack3.wav" type="AudioStream" id=384]
 [ext_resource path="res://_Percht/characters/percht/SFXs/fire_attack5.wav" type="AudioStream" id=385]
+[ext_resource path="res://_Percht/characters/percht/action_icons/claw.png" type="Texture" id=386]
+[ext_resource path="res://_Percht/characters/percht/action_icons/smokescreen.png" type="Texture" id=387]
+[ext_resource path="res://_Percht/characters/percht/action_icons/whip_strike.png" type="Texture" id=388]
+[ext_resource path="res://_Percht/characters/percht/action_icons/change_ugly.png" type="Texture" id=389]
+[ext_resource path="res://_Percht/characters/percht/action_icons/air_zone.png" type="Texture" id=390]
+[ext_resource path="res://_Percht/characters/percht/action_icons/cleave.png" type="Texture" id=391]
+[ext_resource path="res://_Percht/characters/percht/action_icons/impale.png" type="Texture" id=392]
+[ext_resource path="res://_Percht/characters/percht/action_icons/scorch.png" type="Texture" id=393]
+[ext_resource path="res://_Percht/characters/percht/action_icons/jab.png" type="Texture" id=394]
+[ext_resource path="res://_Percht/characters/percht/action_icons/charge_punch.png" type="Texture" id=395]
+[ext_resource path="res://_Percht/characters/percht/action_icons/restand_grab.png" type="Texture" id=396]
+[ext_resource path="res://_Percht/characters/percht/action_icons/slide.png" type="Texture" id=397]
+[ext_resource path="res://_Percht/characters/percht/action_icons/spin_claw.png" type="Texture" id=398]
+[ext_resource path="res://_Percht/characters/percht/action_icons/torch_jab.png" type="Texture" id=399]
+[ext_resource path="res://_Percht/characters/percht/action_icons/upswipe.png" type="Texture" id=400]
+[ext_resource path="res://_Percht/characters/percht/action_icons/whipcopter.png" type="Texture" id=401]
+[ext_resource path="res://_Percht/characters/percht/action_icons/dash_grab.png" type="Texture" id=402]
+[ext_resource path="res://_Percht/characters/percht/action_icons/ground_slam.png" type="Texture" id=403]
+[ext_resource path="res://_Percht/characters/percht/action_icons/smoke_cloud.png" type="Texture" id=404]
+[ext_resource path="res://_Percht/characters/percht/action_icons/pierce.png" type="Texture" id=405]
+[ext_resource path="res://_Percht/characters/percht/action_icons/change_pretty.png" type="Texture" id=406]
+[ext_resource path="res://_Percht/characters/percht/action_icons/incinerate.png" type="Texture" id=407]
+[ext_resource path="res://_Percht/characters/percht/action_icons/ankle_cutter.png" type="Texture" id=408]
+[ext_resource path="res://_Percht/characters/percht/action_icons/goodie_bag.png" type="Texture" id=409]
+[ext_resource path="res://_Percht/characters/percht/action_icons/hammer_fist.png" type="Texture" id=410]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -1303,8 +1329,9 @@ apply_fric = true
 apply_grav = true
 sprite_animation = "QuickswapPretty"
 anim_length = 10
-title = "Change Kind"
+title = "Change Form"
 type = 2
+button_texture = ExtResource( 389 )
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded"
 kind = "Pretty"
@@ -1317,8 +1344,9 @@ apply_fric = true
 apply_grav = true
 sprite_animation = "QuickswapUgly"
 anim_length = 10
-title = "Change Kind"
+title = "Change Form"
 type = 2
+button_texture = ExtResource( 406 )
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded"
 kind = "Ugly"
@@ -1335,6 +1363,7 @@ force_speed = "3"
 force_tick = 5
 title = "Jab"
 type = 1
+button_texture = ExtResource( 394 )
 self_hit_cancellable = false
 interrupt_from_string = "Grounded
 GroundedAttack"
@@ -1375,6 +1404,7 @@ force_speed = "3"
 force_tick = 5
 title = "Pointy Shoe"
 type = 1
+button_texture = ExtResource( 383 )
 self_hit_cancellable = false
 interrupt_from_string = "Grounded
 GroundedAttack"
@@ -1426,6 +1456,7 @@ force_speed = "3"
 force_tick = 5
 title = "Whip Strike"
 type = 1
+button_texture = ExtResource( 388 )
 self_hit_cancellable = false
 interrupt_from_string = "Grounded
 GroundedAttack"
@@ -1474,6 +1505,7 @@ force_speed = "5.5"
 force_tick = 5
 title = "Whip Strike"
 type = 1
+button_texture = ExtResource( 388 )
 air_type = 1
 self_hit_cancellable = false
 interrupt_from_string = "Aerial
@@ -1513,6 +1545,7 @@ sprite_animation = "AnkleCutterPretty"
 anim_length = 23
 title = "Ankle Cutter"
 type = 1
+button_texture = ExtResource( 408 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -1758,6 +1791,8 @@ sfx = ExtResource( 48 )
 sfx_tick = 5
 title = "Smokescreen"
 type = 3
+button_texture = ExtResource( 387 )
+flip_icon = false
 interrupt_from_string = "Grounded
 GroundedSpecial"
 interrupt_into_string = "Grounded
@@ -1781,6 +1816,7 @@ sfx_volume = 0.0
 title = "Smoke Cloud"
 type = 2
 data_ui_scene = ExtResource( 11 )
+button_texture = ExtResource( 404 )
 air_type = 2
 interrupt_from_string = "Grounded
 Aerial"
@@ -1803,6 +1839,7 @@ reset_momentum = true
 sprite_animation = "DashBackwardPretty"
 anim_length = 11
 title = "Smoke Blink"
+show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 75 )
 button_texture = ExtResource( 13 )
@@ -1810,8 +1847,7 @@ air_type = 2
 uses_air_movement = true
 iasa_at = 7
 interruptible_on_opponent_turn = true
-interrupt_from_string = "Grounded
-Aerial"
+selectable = false
 interrupt_into_string = "Grounded
 Aerial"
 kind = "Pretty"
@@ -1826,6 +1862,7 @@ sprite_animation = "PiercePretty"
 anim_length = 21
 title = "Pierce"
 type = 1
+button_texture = ExtResource( 405 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -1848,7 +1885,7 @@ victim_hitlag = 2
 di_modifier = "0.2"
 group = 1
 whiff_sound = ExtResource( 341 )
-hit_sound = ExtResource( 337 )
+hit_sound = ExtResource( 335 )
 knockback = "6.0"
 start_tick = 7
 active_ticks = 3
@@ -1889,6 +1926,7 @@ force_speed = "3.0"
 force_tick = 6
 title = "Spin Claw"
 type = 1
+button_texture = ExtResource( 398 )
 air_type = 1
 self_hit_cancellable = false
 self_interruptable = false
@@ -1950,6 +1988,7 @@ force_speed = "5.0"
 force_tick = 4
 title = "Hammer Fist"
 type = 1
+button_texture = ExtResource( 410 )
 air_type = 1
 land_cancel = true
 self_hit_cancellable = false
@@ -1994,6 +2033,7 @@ force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
 type = 1
+button_texture = ExtResource( 386 )
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
@@ -2058,6 +2098,7 @@ force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Slide"
 type = 1
+button_texture = ExtResource( 397 )
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
@@ -2109,6 +2150,7 @@ force_speed = "3.0"
 state_screenshake_dir = Vector2( 0, 1 )
 title = "Ground Slam"
 type = 1
+button_texture = ExtResource( 403 )
 neutral_only = true
 self_hit_cancellable = false
 self_interruptable = false
@@ -2166,6 +2208,7 @@ force_speed = "3.0"
 state_screenshake_dir = Vector2( 0, 1 )
 title = "Ground Slam"
 type = 1
+button_texture = ExtResource( 403 )
 combo_only = true
 self_hit_cancellable = false
 self_interruptable = false
@@ -2221,6 +2264,7 @@ force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
 type = 1
+button_texture = ExtResource( 386 )
 interrupt_from_string = "MashClaw2
 "
 interrupt_into_string = "Grounded
@@ -2277,6 +2321,7 @@ sprite_animation = "CleavePretty"
 anim_length = 34
 title = "Cleave"
 type = 1
+button_texture = ExtResource( 391 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded"
@@ -2398,6 +2443,7 @@ sprite_animation = "AirZonePretty"
 anim_length = 21
 title = "Air Zone"
 type = 1
+button_texture = ExtResource( 390 )
 air_type = 1
 land_cancel = true
 landing_recovery = 3
@@ -2498,6 +2544,7 @@ sprite_animation = "UpswipePretty"
 anim_length = 20
 title = "Upswipe"
 type = 1
+button_texture = ExtResource( 400 )
 air_type = 2
 interrupt_from_string = "Aerial
 AerialAttack
@@ -2574,6 +2621,7 @@ force_speed = "5.0"
 force_tick = 6
 title = "Aerial Pierce"
 type = 1
+button_texture = ExtResource( 405 )
 air_type = 1
 land_cancel = true
 interrupt_from_string = "Aerial
@@ -2675,6 +2723,7 @@ anim_length = 30
 title = "Dash Grab"
 type = 2
 data_ui_scene = ExtResource( 122 )
+button_texture = ExtResource( 402 )
 neutral_only = true
 reversible = false
 interrupt_from_string = "Grounded
@@ -2734,7 +2783,10 @@ ExtResource( 148 ): {
 "y": 3
 }
 }
+title = "Dash Grab"
 show_in_menu = false
+type = 2
+button_texture = ExtResource( 402 )
 selectable = false
 interrupt_into_string = "Grounded"
 release_opponent_on_exit = true
@@ -2760,6 +2812,7 @@ anim_length = 23
 title = "Whipcopter"
 type = 2
 data_ui_scene = ExtResource( 149 )
+button_texture = ExtResource( 401 )
 air_type = 2
 uses_air_movement = true
 land_cancel = true
@@ -2861,6 +2914,7 @@ sprite_animation = "AirImpalePretty"
 anim_length = 45
 title = "Impale"
 type = 2
+button_texture = ExtResource( 392 )
 air_type = 1
 self_hit_cancellable = false
 self_interruptable = false
@@ -2894,6 +2948,8 @@ endless = true
 force_same_direction_as_previous_state = true
 title = "Impale"
 show_in_menu = false
+type = 2
+button_texture = ExtResource( 392 )
 selectable = false
 interrupt_into_string = "Grounded
 Aerial"
@@ -2913,6 +2969,8 @@ anim_length = 26
 force_same_direction_as_previous_state = true
 title = "Impale"
 show_in_menu = false
+type = 2
+button_texture = ExtResource( 392 )
 selectable = false
 interrupt_into_string = "Grounded
 Aerial"
@@ -2961,6 +3019,7 @@ sprite_animation = "ScorchUgly"
 anim_length = 19
 title = "Scorch"
 type = 1
+button_texture = ExtResource( 393 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3025,6 +3084,7 @@ sprite_animation = "AirScorchUgly"
 anim_length = 24
 title = "Scorch"
 type = 1
+button_texture = ExtResource( 393 )
 air_type = 1
 interrupt_from_string = "Aerial
 AerialAttack"
@@ -3165,6 +3225,7 @@ force_speed = "4.0"
 force_tick = 3
 title = "Torch Jab"
 type = 1
+button_texture = ExtResource( 399 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3209,6 +3270,7 @@ sprite_animation = "IncinerateUgly"
 anim_length = 24
 title = "Incinerate"
 type = 1
+button_texture = ExtResource( 407 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3457,6 +3519,7 @@ anim_length = 14
 title = "Goodie Bag"
 type = 2
 data_ui_scene = ExtResource( 187 )
+button_texture = ExtResource( 409 )
 interrupt_from_string = "Grounded
 GroundedSpecial"
 interrupt_into_string = "Grounded
@@ -3474,6 +3537,7 @@ anim_length = 14
 title = "Goodie Bag"
 type = 2
 data_ui_scene = ExtResource( 191 )
+button_texture = ExtResource( 409 )
 air_type = 1
 interrupt_from_string = "Aerial
 AerialSpecial"
@@ -3495,6 +3559,7 @@ force_tick = 10
 title = "Charge Punch"
 type = 2
 data_ui_scene = ExtResource( 226 )
+button_texture = ExtResource( 395 )
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded
 Aerial"
@@ -3537,6 +3602,7 @@ force_speed = "7.0"
 force_tick = 12
 title = "Charge Punch"
 type = 1
+button_texture = ExtResource( 395 )
 selectable = false
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded
@@ -3578,6 +3644,7 @@ force_speed = "9.0"
 force_tick = 14
 title = "Charge Punch"
 type = 1
+button_texture = ExtResource( 395 )
 selectable = false
 interrupt_from_string = "Grounded"
 interrupt_into_string = "Grounded
@@ -3643,6 +3710,7 @@ apply_grav = true
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 interrupt_from_string = "Grounded
 Aerial"
@@ -3710,6 +3778,9 @@ ExtResource( 247 ): {
 "y": -1
 }
 }
+title = "Restand Grab"
+type = 2
+button_texture = ExtResource( 396 )
 selectable = false
 interrupt_into_string = "Grounded
 Aerial"
@@ -3769,6 +3840,9 @@ ExtResource( 231 ): {
 "y": -1
 }
 }
+title = "Restand Grab"
+type = 2
+button_texture = ExtResource( 396 )
 selectable = false
 interrupt_into_string = "Grounded
 Aerial"
@@ -3802,6 +3876,7 @@ force_tick = 8
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 selectable = false
 interrupt_into_string = "Grounded
@@ -3834,6 +3909,7 @@ force_tick = 8
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 selectable = false
 interrupt_into_string = "Grounded
@@ -3866,6 +3942,7 @@ force_tick = 8
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 selectable = false
 interrupt_into_string = "Grounded
@@ -3898,6 +3975,7 @@ force_tick = 8
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 selectable = false
 interrupt_into_string = "Grounded
@@ -3929,6 +4007,7 @@ force_tick = 8
 title = "Restand Grab"
 type = 2
 data_ui_scene = ExtResource( 253 )
+button_texture = ExtResource( 396 )
 air_type = 2
 selectable = false
 interrupt_into_string = "Grounded

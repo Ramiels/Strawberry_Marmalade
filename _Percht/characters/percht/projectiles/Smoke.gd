@@ -15,7 +15,8 @@ func copy_to(f):
 func disable():
 	.disable()
 	$Flip/Particles/ParticleEffect.queue_free()
-	#creator.smoke_projectiles.erase(obj_name)
+	creator.smoke_projectiles.erase(obj_name)
+	print('disabled')
 
 func schedule_disable():
 	scheduled_disable = true

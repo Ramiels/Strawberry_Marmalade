@@ -1211,34 +1211,34 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 dir_y = "0"
 
 [node name="BackThrow" parent="StateMachine" index="50"]
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 dir_y = "0"
@@ -1249,17 +1249,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 dir_y = ".5"
@@ -1270,17 +1270,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 dir_y = ".5"
@@ -1291,17 +1291,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 
@@ -2770,10 +2770,6 @@ ExtResource( 102 ): {
 "x": 29,
 "y": 3
 },
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
@@ -2781,6 +2777,10 @@ ExtResource( 110 ): {
 ExtResource( 148 ): {
 "x": -33,
 "y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 title = "Dash Grab"
@@ -3765,10 +3765,6 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
@@ -3776,6 +3772,10 @@ ExtResource( 242 ): {
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
 }
 }
 title = "Restand Grab"
@@ -3815,21 +3815,13 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
-},
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
-},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
 },
 ExtResource( 247 ): {
 "x": 36,
@@ -3837,6 +3829,14 @@ ExtResource( 247 ): {
 },
 ExtResource( 231 ): {
 "x": -3,
+"y": -1
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
+},
+ExtResource( 239 ): {
+"x": 35,
 "y": -1
 }
 }
@@ -4065,30 +4065,6 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -16
-},
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
-},
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
-},
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
@@ -4097,13 +4073,37 @@ ExtResource( 347 ): {
 "x": 33,
 "y": 2
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
+},
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
 }
 }
 title = "Hustle"
@@ -4144,38 +4144,6 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
-},
 ExtResource( 346 ): {
 "x": 36,
 "y": -16
@@ -4184,13 +4152,45 @@ ExtResource( 347 ): {
 "x": 35,
 "y": 2
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
+},
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
 }
 }
 selectable = false

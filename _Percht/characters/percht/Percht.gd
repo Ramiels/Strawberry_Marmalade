@@ -45,7 +45,6 @@ func copy_to(t):
 	.copy_to(t)
 	t.quickswap = quickswap
 	t.quickswap_hit = quickswap_hit
-	#t.smoke_projectiles = smoke_projectiles
 
 
 func change_kind(new_kind):
@@ -107,18 +106,19 @@ func overlapping_smoke():
 		var obj = objs_map[obj_name]
 		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.collision_box) and obj != Hitbox:
 			#print('overlapping', obj)
-			if "percht_smoke" in obj:
+			if "percht_smoke" in obj and obj.name in smoke_projectiles:
 				overlapped_smoke = obj.name
 				#print('overlapped_smoke')
 
 	return overlapped_smoke
 
 func tick():
-	if !is_ghost:
-		for smoke in smoke_projectiles:
-			if !obj_from_name(smoke):
-				print('test')
-				smoke_projectiles.erase(smoke)
+	.tick()
+	
+	for smoke in smoke_projectiles:
+		if !obj_from_name(smoke):
+			#print('test')
+			smoke_projectiles.erase(smoke)
 	
 	if smokeshift_penalty_frames > 0:
 		smokeshift_penalty_frames -= 1
@@ -140,10 +140,6 @@ func tick():
 		if smokeshift_frames <= 0:
 			end_smokeshift()
 	
-	if smokeshift_now:
-		smokeshift_now = false
-		smokeshift(smokeshift_destination)
-	
 	if overlapping_smoke() != null:
 		current_smoke = overlapping_smoke()
 		can_smokeshift = true
@@ -151,19 +147,22 @@ func tick():
 		current_smoke = null
 		can_smokeshift = false
 	
+	if smokeshift_now:
+		smokeshift_now = false
+		smokeshift(smokeshift_destination)
+	
 	if goodie_bag_delay > 0:
 		goodie_bag_delay -= 1
 	
 	if quickswap_buffer:
 		quickswap_buffer = false
 		quickswap = true
-	
-	.tick()
 
 func on_got_hit():
 	end_smokeshift()
 
 func smokeshift(smoke_index):
+
 	var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
 	var smoke_pos = smoke_obj.get_pos()
 	

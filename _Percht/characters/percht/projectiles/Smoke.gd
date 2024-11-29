@@ -46,7 +46,7 @@ func explode():
 
 	for obj_name in objs_map:
 		var obj = objs_map[obj_name]
-		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.hurtbox) and obj != Hitbox and obj != self:
+		if obj and not obj.disabled and obj.id == id and collision_box.overlaps(obj.collision_box) and obj != Hitbox and obj != self:
 			#print('overlapping', obj)
 			if "percht_smoke" in obj:
 				obj.schedule_explode()

@@ -2,7 +2,7 @@ extends "res://_Percht/PerchtMove.gd"
 
 var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/GoodieBag.tscn")
 
-const SPEED = "9"
+const SPEED = "10"
 var grounded = false
 
 func _enter():
@@ -19,7 +19,13 @@ func _frame_6():
 	force.x = fixed.mul(force.x, str(host.get_facing_int()))
 	obj.set_grounded(false)
 	obj.apply_force_relative(force.x, force.y)
-	obj.apply_force(host.get_vel().x, host.get_vel().y)
+	obj.apply_force(host.get_vel().x, "0")
+	var vel_y = 0
+	if fixed.lt(host.get_vel().y, "0"):
+		vel_y = host.get_vel().y
+	else:
+		vel_y = "0"
+	obj.apply_force("0", vel_y)
 	
 	host.goodie_bag = obj.obj_name
 

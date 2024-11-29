@@ -4,6 +4,7 @@ onready var destination = $VBoxContainer/Destination
 onready var smokeshift = $VBoxContainer/Smokeshift
 onready var goodie_bag = $VBoxContainer/GoodieBag
 onready var quickswap = $VBoxContainer/Quickswap
+onready var shift_cancel = $VBoxContainer/ShiftCancel
 
 var no_smokeshift = ["Jump", "DoubleJump", "SuperJump"]
 
@@ -12,7 +13,8 @@ func get_extra():
 		"smokeshift":smokeshift.pressed, 
 		"smokeshift_destination":(destination.get_data().x - 1),
 		"goodie_bag":goodie_bag.pressed,
-		"quickswap":quickswap.pressed
+		"quickswap":quickswap.pressed,
+		"shift_cancel":shift_cancel.pressed
 	}
 	return extra
 
@@ -21,7 +23,9 @@ func _ready():
 	destination.connect("data_changed", self, "_on_destination_changed")
 	goodie_bag.connect("toggled", self, "_on_goodie_bag_button_toggled")
 	quickswap.connect("toggled", self, "_on_quickswap_button_toggled")
+	shift_cancel.connect("toggled", self, "_on_shift_cancel_toggled")
 
+	
 func show_options():
 	destination.hide()
 	smokeshift.disabled = true
@@ -29,6 +33,8 @@ func show_options():
 	goodie_bag.set_pressed_no_signal(false)
 	goodie_bag.visible = false
 	quickswap.visible = false
+	
+	shift_cancel.visible = fighter.smokeshifting
 	
 	if fighter.can_smokeshift and fighter.current_smoke != null:
 		smokeshift.disabled = false
@@ -48,7 +54,7 @@ func block_jump_disable():
 	
 	if move_state is CharacterState:
 		var disable = false
-		if move_state.type == CharacterState.ActionType.Defense:
+		if move_state.type == CharacterState.ActionType.Defense and not move_state.name == "Taunt":
 			disable = true
 		
 		if move_state.name in no_smokeshift and selected_move == null:
@@ -65,8 +71,10 @@ func update_selected_move(move_state):
 	if fighter.can_smokeshift and fighter.current_smoke != null:
 		smokeshift.disabled = false
 	
+	shift_cancel.visible = fighter.smokeshifting
+	
 	if selected_move:
-		if selected_move.type == CharacterState.ActionType.Defense or selected_move.name in no_smokeshift:
+		if (selected_move.type == CharacterState.ActionType.Defense and not move_state.name == "Taunt") or selected_move.name in no_smokeshift:
 			smokeshift.set_pressed_no_signal(false)
 			smokeshift.disabled = true
 			destination.hide()
@@ -80,6 +88,8 @@ func update_selected_move(move_state):
 
 func _on_smokeshift_button_toggled(enabled):
 	destination.visible = enabled
+	if enabled:
+		shift_cancel.set_pressed_no_signal(false)
 	emit_signal("data_changed")
 
 func _on_destination_changed():
@@ -91,9 +101,16 @@ func _on_goodie_bag_button_toggled(enabled):
 func _on_quickswap_button_toggled(enabled):
 	emit_signal("data_changed")
 
+func _on_shift_cancel_toggled(enabled):
+	emit_signal("data_changed")
+	if enabled:
+		destination.visible = false
+		smokeshift.set_pressed_no_signal(false)
+
 func reset():
 	smokeshift.set_pressed_no_signal(false)
 	goodie_bag.set_pressed_no_signal(false)
 	destination.get_node("Direction").value = 1
 	quickswap.set_pressed_no_signal(false)
+	shift_cancel.set_pressed_no_signal(false)
 	#pass

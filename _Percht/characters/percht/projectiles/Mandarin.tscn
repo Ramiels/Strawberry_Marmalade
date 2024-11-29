@@ -38,6 +38,7 @@ z_index = 1000
 script = ExtResource( 3 )
 width = 6
 height = 6
+damage = 15
 hitstun_ticks = 12
 knockback = "2.0"
 start_tick = 1

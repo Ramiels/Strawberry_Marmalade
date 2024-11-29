@@ -866,7 +866,7 @@ animations = [ {
 "name": "SmokescreenSummonPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 318 ), ExtResource( 318 ), ExtResource( 318 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 313 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 319 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 317 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 315 ), ExtResource( 314 ), ExtResource( 314 ), ExtResource( 314 ) ],
+"frames": [ ExtResource( 318 ), ExtResource( 313 ), ExtResource( 319 ), ExtResource( 316 ), ExtResource( 317 ), ExtResource( 315 ), ExtResource( 314 ), ExtResource( 314 ) ],
 "loop": true,
 "name": "TauntPretty",
 "speed": 5.0
@@ -983,7 +983,8 @@ guardpoint
 restand_grab_used
 quickswap_buffer
 quickswap
-quickswap_hit"
+quickswap_hit
+shift_cancel_now"
 enable_extra_aesthetic_hitstop = true
 character_portrait = ExtResource( 127 )
 character_portrait2 = ExtResource( 30 )
@@ -1080,7 +1081,6 @@ script = ExtResource( 279 )
 
 [node name="SuperFall" parent="StateMachine" index="20"]
 script = ExtResource( 281 )
-interruptible_on_opponent_turn = false
 
 [node name="Landing" parent="StateMachine" index="21"]
 script = ExtResource( 277 )
@@ -1318,7 +1318,9 @@ __meta__ = {
 "_editor_description_": ""
 }
 sprite_animation = "TauntPretty"
-anim_length = 21
+anim_length = 48
+ticks_per_frame = 6
+iasa_at = 12
 _c_Percht = 0
 kind = "Pretty"
 kind_locked = true
@@ -1532,6 +1534,7 @@ height = 11
 damage = 70
 hitstun_ticks = 20
 plus_frames = 1
+whiff_sound = ExtResource( 334 )
 dir_y = "0.5"
 knockback = "6.0"
 start_tick = 9
@@ -1819,7 +1822,6 @@ type = 2
 data_ui_scene = ExtResource( 11 )
 button_texture = ExtResource( 404 )
 air_type = 2
-uses_air_movement = true
 interrupt_from_string = "Grounded
 Aerial"
 interrupt_into_string = "Grounded
@@ -2101,7 +2103,6 @@ title = "Slide"
 type = 1
 button_texture = ExtResource( 397 )
 self_hit_cancellable = false
-self_interruptable = false
 interrupt_from_string = "Grounded
 GroundedAttack
 "
@@ -2125,11 +2126,12 @@ damage = 55
 hitstun_ticks = 16
 combo_hitstun_ticks = 14
 victim_hitlag = 2
+plus_frames = 1
 hit_height = 2
 group = 1
 knockback = "6.0"
 start_tick = 6
-active_ticks = 2
+active_ticks = 4
 loop_active_ticks = 5
 loop_inactive_ticks = 1
 
@@ -2152,7 +2154,6 @@ state_screenshake_dir = Vector2( 0, 1 )
 title = "Ground Slam"
 type = 1
 button_texture = ExtResource( 403 )
-neutral_only = true
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
@@ -2210,12 +2211,9 @@ state_screenshake_dir = Vector2( 0, 1 )
 title = "Ground Slam"
 type = 1
 button_texture = ExtResource( 403 )
-combo_only = true
 self_hit_cancellable = false
 self_interruptable = false
-interrupt_from_string = "Grounded
-GroundedAttack
-GroundSlamClaw"
+interrupt_from_string = "GroundSlamClaw"
 interrupt_into_string = "Grounded
 Aerial"
 hit_cancel_into_string = "Grounded
@@ -2449,6 +2447,7 @@ air_type = 1
 land_cancel = true
 landing_recovery = 3
 self_hit_cancellable = false
+self_interruptable = false
 interrupt_from_string = "Aerial
 AerialSpecial"
 interrupt_into_string = "Aerial
@@ -2727,6 +2726,7 @@ data_ui_scene = ExtResource( 122 )
 button_texture = ExtResource( 402 )
 neutral_only = true
 reversible = false
+can_feint_if_possible = false
 interrupt_from_string = "Grounded
 GroundedSpecial"
 interrupt_into_string = "Grounded"
@@ -2767,14 +2767,6 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
@@ -2782,6 +2774,14 @@ ExtResource( 102 ): {
 ExtResource( 148 ): {
 "x": -33,
 "y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 title = "Dash Grab"
@@ -2879,6 +2879,7 @@ victim_hitlag = 5
 plus_frames = 2
 hit_height = 0
 group = 2
+whiff_sound = ExtResource( 334 )
 dir_y = "1.0"
 knockback = "6.0"
 grounded_hit_state = "HurtAerial"
@@ -2901,6 +2902,7 @@ victim_hitlag = 5
 plus_frames = 2
 hit_height = 0
 group = 2
+whiff_sound = ExtResource( 334 )
 dir_y = "1.0"
 knockback = "6.0"
 knockdown = true
@@ -3043,6 +3045,7 @@ hitstun_ticks = 14
 cancellable = false
 hits_vs_aerial = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 2
 whiff_sound = ExtResource( 384 )
@@ -3061,6 +3064,7 @@ chip_damage_modifier = "1.2"
 hitstun_ticks = 14
 hits_vs_aerial = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 2
 group = 1
@@ -3079,7 +3083,7 @@ apply_forces = true
 apply_fric = true
 reset_y_momentum = true
 apply_custom_grav = true
-custom_grav = "0.1"
+custom_grav = "0.3"
 custom_grav_max_fall_speed = "8.0"
 sprite_animation = "AirScorchUgly"
 anim_length = 24
@@ -3107,6 +3111,7 @@ damage = 40
 hitstun_ticks = 13
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 hit_height = 0
 whiff_sound = ExtResource( 385 )
 dir_y = "1.0"
@@ -3127,6 +3132,7 @@ damage = 50
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3148,6 +3154,7 @@ damage = 50
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3168,6 +3175,7 @@ height = 3
 damage = 50
 hitstun_ticks = 15
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
 dir_y = "0.0"
@@ -3185,6 +3193,7 @@ height = 15
 damage = 50
 hitstun_ticks = 15
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
 dir_y = "0.0"
@@ -3202,6 +3211,7 @@ height = 19
 damage = 50
 hitstun_ticks = 15
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
 dir_y = "0.0"
@@ -3245,7 +3255,6 @@ width = 17
 height = 7
 damage = 25
 hitstun_ticks = 11
-parriable = false
 start_tick = 4
 active_ticks = 2
 
@@ -3258,7 +3267,6 @@ width = 17
 height = 7
 damage = 25
 hitstun_ticks = 11
-parriable = false
 start_tick = 4
 active_ticks = 2
 
@@ -3295,6 +3303,7 @@ hitstun_ticks = 16
 victim_hitlag = 3
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
 whiff_sound = ExtResource( 385 )
@@ -3314,6 +3323,7 @@ hitstun_ticks = 16
 victim_hitlag = 3
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
 whiff_sound = ExtResource( 385 )
@@ -3332,6 +3342,7 @@ damage = 60
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 1
@@ -3351,6 +3362,7 @@ damage = 60
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 1
@@ -3370,6 +3382,7 @@ damage = 60
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 1
@@ -3389,6 +3402,7 @@ damage = 60
 hitstun_ticks = 14
 cancellable = false
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 1
@@ -3407,6 +3421,7 @@ height = 17
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3425,6 +3440,7 @@ height = 6
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3443,6 +3459,7 @@ height = 6
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3461,6 +3478,7 @@ height = 6
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3479,6 +3497,7 @@ height = 6
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3497,6 +3516,7 @@ height = 14
 damage = 60
 hitstun_ticks = 13
 parriable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 group = 3
@@ -3580,9 +3600,9 @@ y = -19
 width = 14
 height = 10
 damage = 50
-hitstun_ticks = 15
+hitstun_ticks = 7
 hitlag_ticks = 7
-victim_hitlag = 17
+victim_hitlag = 15
 plus_frames = 1
 knockback = "7.0"
 start_tick = 11
@@ -3624,7 +3644,7 @@ y = -19
 width = 19
 height = 10
 damage = 70
-hitstun_ticks = 5
+hitstun_ticks = 9
 hitlag_ticks = 10
 victim_hitlag = 15
 plus_frames = 2
@@ -3670,7 +3690,7 @@ y = -12
 width = 22
 height = 12
 damage = 80
-hitstun_ticks = 5
+hitstun_ticks = 11
 hitlag_ticks = 10
 victim_hitlag = 15
 plus_frames = 3
@@ -3686,7 +3706,7 @@ y = -28
 width = 17
 height = 6
 damage = 80
-hitstun_ticks = 5
+hitstun_ticks = 11
 hitlag_ticks = 10
 victim_hitlag = 15
 plus_frames = 3
@@ -3703,7 +3723,7 @@ y = -38
 width = 17
 height = 6
 damage = 80
-hitstun_ticks = 5
+hitstun_ticks = 11
 hitlag_ticks = 10
 victim_hitlag = 15
 plus_frames = 3
@@ -3726,6 +3746,7 @@ type = 2
 data_ui_scene = ExtResource( 253 )
 button_texture = ExtResource( 396 )
 air_type = 2
+can_feint_if_possible = false
 interrupt_from_string = "Grounded
 Aerial"
 interrupt_into_string = "Grounded
@@ -3779,10 +3800,6 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
-},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
@@ -3790,6 +3807,10 @@ ExtResource( 233 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -3829,29 +3850,29 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
-},
-ExtResource( 247 ): {
-"x": 36,
+ExtResource( 231 ): {
+"x": -3,
 "y": -1
 },
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
 },
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
+},
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
-},
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
 }
 }
 title = "Restand Grab"
@@ -4079,21 +4100,9 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
+ExtResource( 351 ): {
+"x": 30,
+"y": 1
 },
 ExtResource( 347 ): {
 "x": 33,
@@ -4103,21 +4112,33 @@ ExtResource( 356 ): {
 "x": 26,
 "y": -1
 },
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
 },
 ExtResource( 362 ): {
 "x": 34,
 "y": -14
 },
-ExtResource( 344 ): {
-"x": 32,
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 346 ): {
+"x": 34,
 "y": -16
 },
-ExtResource( 351 ): {
-"x": 30,
-"y": 1
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
 }
 }
 title = "Hustle"
@@ -4158,25 +4179,9 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 355 ): {
+ExtResource( 351 ): {
 "x": 32,
-"y": -11
+"y": 1
 },
 ExtResource( 347 ): {
 "x": 35,
@@ -4186,27 +4191,44 @@ ExtResource( 356 ): {
 "x": 25,
 "y": -2
 },
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
 },
 ExtResource( 362 ): {
 "x": 33,
 "y": -17
 },
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
+},
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
 ExtResource( 361 ): {
 "x": 30,
 "y": -25
 },
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 }
 }
+instant_cancellable = false
 selectable = false
 interrupt_into_string = "Grounded
 Aerial"
@@ -4230,6 +4252,8 @@ y = -37
 damage = 30
 hitbox_type = 2
 hitstun_ticks = 0
+cancellable = false
+block_cancel_allowed = false
 start_tick = 10
 active_ticks = 2
 

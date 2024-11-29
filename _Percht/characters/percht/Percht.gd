@@ -20,6 +20,7 @@ var smokeshift_frames = 0
 var smokeshift_now = false
 var smokeshift_destination = 0
 var smokeshifting = false
+var shift_cancel_now = false
 
 var current_smoke = null
 var can_smokeshift = false
@@ -39,25 +40,22 @@ var restand_grab_used = false
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 
 func _ready():
+	#._ready()
 	smokeshift_particles.visible = true
 
 func copy_to(t):
 	.copy_to(t)
 	t.quickswap = quickswap
 	t.quickswap_hit = quickswap_hit
-	#t.smoke_projectiles = smoke_projectiles
-
 
 func change_kind(new_kind):
 	kind = new_kind
 	if kind == "Ugly":
-		# Placeholder
 		default_hurtbox.width = 16
 		default_hurtbox.height = 17
 		default_hurtbox.x = 0
 		default_hurtbox.y = -17
 	else:
-		# Placeholder
 		default_hurtbox.width = 14
 		default_hurtbox.height = 16
 		default_hurtbox.x = 0
@@ -79,25 +77,11 @@ func try_quickswap():
 func _draw():
 	var curr_state = current_state()
 	var anim_name = curr_state.anim_name
-
-	
-	# This is ATROCIOUS.
-#	if not anim_name.ends_with("BOTH"):
-#		if anim_name.ends_with("Pretty"):
-#			anim_name.erase(anim_name.length() - 6, 6)
-#		if anim_name.ends_with("Ugly"):
-#			anim_name.erase(anim_name.length() - 4, 4)
-#
-#		anim_name += kind
-#
-#	curr_state.anim_name = anim_name
 	
 	if is_ghost:
 		$GuardpointLabel.visible = guardpoint
 	else:
 		$GuardpointLabel.visible = false
-	
-	#print(curr_state.anim_name)
 	
 	._draw()
 
@@ -107,26 +91,28 @@ func overlapping_smoke():
 		var obj = objs_map[obj_name]
 		if obj and not obj.disabled and obj.id == id and hurtbox.overlaps(obj.collision_box) and obj != Hitbox:
 			#print('overlapping', obj)
-			if "percht_smoke" in obj:
+			if "percht_smoke" in obj and obj.name in smoke_projectiles:
 				overlapped_smoke = obj.name
 				#print('overlapped_smoke')
 
 	return overlapped_smoke
 
 func tick():
-	if !is_ghost:
-		for smoke in smoke_projectiles:
-			if !obj_from_name(smoke):
-				print('test')
-				smoke_projectiles.erase(smoke)
+	for smoke in smoke_projectiles:
+		if !obj_from_name(smoke):
+			#print('test')
+			smoke_projectiles.erase(smoke)
 	
 	if smokeshift_penalty_frames > 0:
 		smokeshift_penalty_frames -= 1
-		current_state().current_tick -= 1
-		current_state().current_real_tick -= 1
-
+		#current_state().current_tick = -50
+		#current_state().current_real_tick = -50
+	
+	if shift_cancel_now:
+		print('cancel')
+		end_smokeshift()
+	
 	if smokeshifting:
-		can_smokeshift = false
 		colliding_with_opponent = false
 		
 		if smokeshift_pos_y > -10:
@@ -144,13 +130,6 @@ func tick():
 		smokeshift_now = false
 		smokeshift(smokeshift_destination)
 	
-	if overlapping_smoke() != null:
-		current_smoke = overlapping_smoke()
-		can_smokeshift = true
-	else:
-		current_smoke = null
-		can_smokeshift = false
-	
 	if goodie_bag_delay > 0:
 		goodie_bag_delay -= 1
 	
@@ -159,39 +138,57 @@ func tick():
 		quickswap = true
 	
 	.tick()
+	
+	if overlapping_smoke() != null:
+		current_smoke = overlapping_smoke()
+		can_smokeshift = true
+	else:
+		current_smoke = null
+		can_smokeshift = false
+	
+	if !is_grounded() and air_movements_left < 1:
+		can_smokeshift = false
+
+func state_tick():
+	if smokeshift_penalty_frames <= 0:
+		.state_tick()
 
 func on_got_hit():
 	end_smokeshift()
 
-func smokeshift(smoke_index):
-	var smoke_obj = objs_map[smoke_projectiles[smoke_index]]
-	var smoke_pos = smoke_obj.get_pos()
-	
-	smoke_pos.y += 20
-	
-	smokeshift_pos_x = smoke_pos.x
-	smokeshift_pos_y = smoke_pos.y
-	
-	smokeshift_particles.start_emitting()
-	
-	if smoke_pos.y < 0:
-		set_grounded(false)
+func smokeshift(target_smoke):
+	if is_instance_valid(objs_map[target_smoke]) and target_smoke in smoke_projectiles:
+		var smoke_obj = objs_map[target_smoke]
+		var smoke_pos = smoke_obj.get_pos()
+		
+		smoke_pos.y += 20
+		
+		smokeshift_pos_x = smoke_pos.x
+		smokeshift_pos_y = smoke_pos.y
+		
+		smokeshift_particles.start_emitting()
+		
+		if !is_grounded():
+			air_movements_left -= 1
+		
+		if smoke_pos.y < 0:
+			set_grounded(false)
 
-	smokeshift_penalty_frames = 2
-	
-	print("current_smoke:", current_smoke)
-	if current_smoke != null:
-		objs_map[current_smoke].schedule_disable()
-	current_smoke = null
-	
-	smokeshifting = true
-	
-	smokeshift_frames = 100
-	if smoke_pos.y <= -10:
-		smokeshift_frames = 10
-		smokeshift_move()
-	
-	play_sound("Smokeshift")
+		smokeshift_penalty_frames = 2
+		
+		#print("current_smoke:", current_smoke)
+		if current_smoke != null and is_instance_valid(objs_map[current_smoke]):
+			objs_map[current_smoke].schedule_disable()
+		current_smoke = null
+		
+		smokeshifting = true
+		
+		smokeshift_frames = 100
+		if smoke_pos.y <= -10:
+			smokeshift_frames = 10
+			smokeshift_move()
+		
+		play_sound("Smokeshift")
 
 func smokeshift_move():
 	var diff_x = fixed.sub(str(smokeshift_pos_x), str(get_pos().x))
@@ -211,17 +208,18 @@ func smokeshift_move():
 	
 	if smokeshift_pos_y <= -10:
 		speed = fixed.mul(str(SMOKESHIFT_SPEED), SMOKESHIFT_AIR_MULT)
+	else:
+		if fixed.le(dist, SMOKESHIFT_MAX_RANGE):
+			end_smokeshift()
 	
 	var vel = fixed.normalized_vec_times(str(diff_x), str(diff_y), speed)
 	
 	#print(speed)
 	
 	apply_force(vel.x, vel.y)
-		
-	if fixed.le(dist, SMOKESHIFT_MAX_RANGE):
-		end_smokeshift()
 
 func end_smokeshift():
+	
 	smokeshifting = false
 	smokeshift_frames = 0
 	smokeshift_particles.stop_emitting()
@@ -246,7 +244,11 @@ func process_extra(extra):
 	
 	if extra.has("smokeshift") and extra.has("smokeshift_destination"):
 		smokeshift_now = extra.smokeshift
-		smokeshift_destination = extra.smokeshift_destination
+		if len(smoke_projectiles) > extra.smokeshift_destination:
+			smokeshift_destination = smoke_projectiles[extra.smokeshift_destination]
+	
+	if extra.has("shift_cancel"):
+		shift_cancel_now = extra.shift_cancel
 	
 	if extra.has("goodie_bag"):
 		if extra.goodie_bag and goodie_bag != null and is_instance_valid(objs_map[goodie_bag]):

@@ -1,6 +1,7 @@
 extends "res://_Percht/PerchtMove.gd"
 
-var SPEED = "7"
+var SPEED = "5"
+var Y_VEL_MOD = "0.5"
 var LIFT_FORCE = "-6"
 var whipcopter_repeats = 0
 
@@ -24,10 +25,11 @@ func _frame_9():
 		host.apply_force_relative("0", LIFT_FORCE)
 
 func _frame_10():
-	var speed = fixed.sub(SPEED, fixed.div(str(data["Length"].x), "1.2"))
+	var speed = SPEED
 	
 	var force = xy_to_dir(data["Direction"].x, data["Direction"].y, speed)
 	force.x = fixed.mul(force.x, str(host.get_facing_int()))
+	force.y = fixed.mul(force.y, Y_VEL_MOD)
 	
 	host.apply_force_relative(force.x, force.y)
 

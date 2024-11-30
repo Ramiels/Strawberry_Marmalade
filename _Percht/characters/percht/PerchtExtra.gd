@@ -54,7 +54,7 @@ func block_jump_disable():
 	
 	if move_state is CharacterState:
 		var disable = false
-		if move_state.type == CharacterState.ActionType.Defense and not move_state.name == "Taunt":
+		if move_state.type == CharacterState.ActionType.Defense and not (move_state.name == "Taunt" or move_state.name == "TauntUgly"):
 			disable = true
 		
 		if move_state.name in no_smokeshift and selected_move == null:
@@ -74,7 +74,7 @@ func update_selected_move(move_state):
 	shift_cancel.visible = fighter.smokeshifting
 	
 	if selected_move:
-		if (selected_move.type == CharacterState.ActionType.Defense and not move_state.name == "Taunt") or selected_move.name in no_smokeshift:
+		if (selected_move.type == CharacterState.ActionType.Defense and not (move_state.name == "Taunt" or move_state.name == "TauntUgly")) or selected_move.name in no_smokeshift:
 			smokeshift.set_pressed_no_signal(false)
 			smokeshift.disabled = true
 			destination.hide()

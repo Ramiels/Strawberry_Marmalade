@@ -14,6 +14,7 @@ func _frame_6():
 		var force = fixed.normalized_vec_times("1.0", "-0.75", "5.0")
 		host.apply_force_relative(force.x, force.y)
 	else:
-		host.apply_force_relative("4.0", "0.0")
+		host.set_grounded(false)
+		host.apply_force_relative("4.0", "-4.0")
 		
 		

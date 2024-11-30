@@ -736,12 +736,12 @@ animations = [ {
 "name": "LandingUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ) ],
+"frames": [ ExtResource( 101 ), ExtResource( 101 ), ExtResource( 101 ), ExtResource( 129 ), ExtResource( 129 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ), ExtResource( 131 ) ],
 "loop": true,
 "name": "MashClaw2Ugly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 70 ), ExtResource( 70 ), ExtResource( 70 ), ExtResource( 70 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ) ],
+"frames": [ ExtResource( 70 ), ExtResource( 70 ), ExtResource( 70 ), ExtResource( 116 ), ExtResource( 116 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ), ExtResource( 83 ) ],
 "loop": true,
 "name": "MashClawUgly",
 "speed": 5.0
@@ -891,7 +891,7 @@ animations = [ {
 "name": "ThrowTechUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 205 ), ExtResource( 205 ), ExtResource( 205 ), ExtResource( 202 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ) ],
+"frames": [ ExtResource( 205 ), ExtResource( 205 ), ExtResource( 205 ), ExtResource( 205 ), ExtResource( 202 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ), ExtResource( 203 ) ],
 "loop": true,
 "name": "TorchJabUgly",
 "speed": 5.0
@@ -999,6 +999,7 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 material = SubResource( 1 )
 frames = SubResource( 6 )
 animation = "MashClaw2Ugly"
+frame = 4
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -2032,7 +2033,7 @@ apply_forces = true
 apply_fric = true
 apply_grav = true
 sprite_animation = "MashClawUgly"
-anim_length = 13
+anim_length = 14
 force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
@@ -2070,24 +2071,10 @@ hitstun_ticks = 12
 victim_hitlag = 2
 group = 1
 knockback = "6.0"
-start_tick = 5
+start_tick = 4
 active_ticks = 2
 loop_active_ticks = 5
 loop_inactive_ticks = 1
-
-[node name="Hitbox2" type="Node2D" parent="StateMachine/MashClaw1" index="1"]
-z_index = 1000
-script = ExtResource( 15 )
-x = 35
-y = -41
-height = 10
-damage = 60
-hitstun_ticks = 11
-victim_hitlag = 6
-plus_frames = 1
-group = 1
-start_tick = 5
-active_ticks = 1
 
 [node name="SlideKick" type="Node2D" parent="StateMachine" index="71"]
 script = ExtResource( 14 )
@@ -2258,7 +2245,7 @@ apply_forces = true
 apply_fric = true
 apply_grav = true
 sprite_animation = "MashClaw2Ugly"
-anim_length = 13
+anim_length = 14
 force_dir_x = "2.0"
 force_speed = "3.0"
 title = "Claw"
@@ -2289,24 +2276,9 @@ hitstun_ticks = 12
 victim_hitlag = 2
 group = 1
 knockback = "6.0"
-start_tick = 5
+start_tick = 4
 active_ticks = 1
 loop_active_ticks = 4
-
-[node name="Hitbox2" type="Node2D" parent="StateMachine/MashClaw2" index="1"]
-z_index = 1000
-script = ExtResource( 15 )
-x = 32
-y = -41
-width = 26
-height = 10
-damage = 60
-hitstun_ticks = 11
-victim_hitlag = 6
-plus_frames = 1
-group = 1
-start_tick = 5
-active_ticks = 2
 
 [node name="Cleave" type="Node2D" parent="StateMachine" index="75"]
 script = ExtResource( 99 )
@@ -2771,10 +2743,6 @@ ExtResource( 102 ): {
 "x": 29,
 "y": 3
 },
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
-},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
@@ -2782,6 +2750,10 @@ ExtResource( 110 ): {
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 148 ): {
+"x": -33,
+"y": 3
 }
 }
 title = "Dash Grab"
@@ -3081,7 +3053,6 @@ command = "try_quickswap"
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
-reset_y_momentum = true
 apply_custom_grav = true
 custom_grav = "0.3"
 custom_grav_max_fall_speed = "8.0"
@@ -3135,7 +3106,7 @@ parriable = false
 block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
-group = 3
+group = 2
 dir_y = "0.8"
 knockback = "5.0"
 start_tick = 11
@@ -3157,7 +3128,7 @@ parriable = false
 block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
-group = 3
+group = 2
 dir_y = "0.8"
 knockback = "5.0"
 start_tick = 11
@@ -3178,6 +3149,7 @@ parriable = false
 block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
+group = 3
 dir_y = "0.0"
 knockback = "6.0"
 start_tick = 14
@@ -3196,6 +3168,7 @@ parriable = false
 block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
+group = 3
 dir_y = "0.0"
 knockback = "6.0"
 start_tick = 14
@@ -3214,6 +3187,7 @@ parriable = false
 block_cancel_allowed = false
 plus_frames = 2
 hit_height = 0
+group = 3
 dir_y = "0.0"
 knockback = "6.0"
 start_tick = 14
@@ -3255,7 +3229,7 @@ width = 17
 height = 7
 damage = 25
 hitstun_ticks = 11
-start_tick = 4
+start_tick = 5
 active_ticks = 2
 
 [node name="Hitbox2" type="Node2D" parent="StateMachine/TorchJab" index="1"]
@@ -3267,7 +3241,7 @@ width = 17
 height = 7
 damage = 25
 hitstun_ticks = 11
-start_tick = 4
+start_tick = 5
 active_ticks = 2
 
 [node name="Incinerate" type="Node2D" parent="StateMachine" index="88"]
@@ -3644,7 +3618,7 @@ y = -19
 width = 19
 height = 10
 damage = 70
-hitstun_ticks = 9
+hitstun_ticks = 12
 hitlag_ticks = 10
 victim_hitlag = 15
 plus_frames = 2
@@ -3690,8 +3664,8 @@ y = -12
 width = 22
 height = 12
 damage = 80
-hitstun_ticks = 11
-hitlag_ticks = 10
+hitstun_ticks = 16
+hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
 knockback = "9.0"
@@ -3706,8 +3680,8 @@ y = -28
 width = 17
 height = 6
 damage = 80
-hitstun_ticks = 11
-hitlag_ticks = 10
+hitstun_ticks = 16
+hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
 screenshake_frames = 11
@@ -3723,8 +3697,8 @@ y = -38
 width = 17
 height = 6
 damage = 80
-hitstun_ticks = 11
-hitlag_ticks = 10
+hitstun_ticks = 16
+hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
 knockback = "9.0"
@@ -3850,6 +3824,10 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
 ExtResource( 231 ): {
 "x": -3,
 "y": -1
@@ -3857,10 +3835,6 @@ ExtResource( 231 ): {
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
-},
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
 },
 ExtResource( 242 ): {
 "x": -31,
@@ -4100,29 +4074,17 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 351 ): {
-"x": 30,
-"y": 1
-},
-ExtResource( 347 ): {
-"x": 33,
-"y": 2
-},
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
 ExtResource( 344 ): {
 "x": 32,
 "y": -16
 },
-ExtResource( 362 ): {
+ExtResource( 346 ): {
 "x": 34,
-"y": -14
+"y": -16
 },
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
+ExtResource( 351 ): {
+"x": 30,
+"y": 1
 },
 ExtResource( 365 ): {
 "x": 4,
@@ -4132,13 +4094,25 @@ ExtResource( 366 ): {
 "x": 8,
 "y": -3
 },
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
 ExtResource( 348 ): {
 "x": 32,
 "y": -11
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
+ExtResource( 347 ): {
+"x": 33,
+"y": 2
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
 }
 }
 title = "Hustle"
@@ -4179,29 +4153,17 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
 ExtResource( 344 ): {
 "x": 32,
 "y": -17
 },
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
 },
-ExtResource( 355 ): {
+ExtResource( 351 ): {
 "x": 32,
-"y": -11
+"y": 1
 },
 ExtResource( 365 ): {
 "x": 5,
@@ -4211,21 +4173,33 @@ ExtResource( 366 ): {
 "x": 7,
 "y": -1
 },
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 361 ): {
 "x": 30,
 "y": -25
 },
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
 }
 }
 instant_cancellable = false

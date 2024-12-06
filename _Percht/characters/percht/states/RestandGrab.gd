@@ -2,6 +2,8 @@ extends "res://_Percht/PerchtMove.gd"
 
 export var off_ground_frame = -1
 
+var keep_quickswap = true
+
 func _enter():
 	if data:
 		if host.is_grounded():

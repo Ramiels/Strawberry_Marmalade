@@ -273,8 +273,9 @@ func on_state_started(state):
 
 func on_state_ended(state):
 	#quickswap_buffer = false
-	quickswap = false
-	quickswap_hit = false
+	if not "keep_quickswap" in state:
+		quickswap = false
+		quickswap_hit = false
 	
 	.on_state_ended(state)
 

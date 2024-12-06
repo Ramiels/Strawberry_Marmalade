@@ -1,6 +1,6 @@
 extends "res://_Percht/PerchtMove.gd"
 
-func _enter():
+func _tick_0():
 	landing_recovery = 3
 	land_cancel = true
 

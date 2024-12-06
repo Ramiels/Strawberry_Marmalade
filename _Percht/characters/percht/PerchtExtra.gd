@@ -42,6 +42,11 @@ func show_options():
 	if fighter.goodie_bag != null and is_instance_valid(fighter.objs_map[fighter.goodie_bag]):
 		goodie_bag.visible = true
 	
+	if fighter.current_state().name in ["Knockdown", "HardKnockdown"]:
+		smokeshift.set_pressed_no_signal(false)
+		smokeshift.disabled = true
+		destination.hide()
+	
 	block_jump_disable()
 
 	destination.min_value = 1
@@ -73,14 +78,19 @@ func update_selected_move(move_state):
 	
 	shift_cancel.visible = fighter.smokeshifting
 	
+	if fighter.current_state().name in ["Knockdown", "HardKnockdown"]:
+		smokeshift.set_pressed_no_signal(false)
+		smokeshift.disabled = true
+		destination.hide()
+	
 	if selected_move:
 		if (selected_move.type == CharacterState.ActionType.Defense and not (move_state.name == "Taunt" or move_state.name == "TauntUgly")) or selected_move.name in no_smokeshift:
 			smokeshift.set_pressed_no_signal(false)
 			smokeshift.disabled = true
 			destination.hide()
 	
+	quickswap.visible = false
 	if move_state:
-		quickswap.visible = false
 		if move_state.get_host_command("try_quickswap"):
 			quickswap.visible = true
 	

@@ -27,7 +27,15 @@ func smokescreen_disable():
 
 func tick():
 	.tick()
-	hurtbox
+	
+	var id = "?"
+	if creator and name in creator.smoke_projectiles:
+		id = str(creator.smoke_projectiles.find(name) + 1)
+	
+	$IndicatorDraw/ID.text = id
+	
+	var life_left = current_state().lifetime - current_state().current_tick
+	$IndicatorDraw/Lifetime.text = str(life_left)
 	
 	if scheduled_disable:
 		disable()

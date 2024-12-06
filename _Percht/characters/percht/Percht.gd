@@ -98,11 +98,6 @@ func overlapping_smoke():
 	return overlapped_smoke
 
 func tick():
-	for smoke in smoke_projectiles:
-		if !obj_from_name(smoke):
-			#print('test')
-			smoke_projectiles.erase(smoke)
-	
 	if smokeshift_penalty_frames > 0:
 		smokeshift_penalty_frames -= 1
 		#current_state().current_tick = -50
@@ -138,6 +133,11 @@ func tick():
 		quickswap = true
 	
 	.tick()
+	
+	for smoke in smoke_projectiles:
+		if !obj_from_name(smoke):
+			#print('test')
+			smoke_projectiles.erase(smoke)
 	
 	if overlapping_smoke() != null:
 		current_smoke = overlapping_smoke()

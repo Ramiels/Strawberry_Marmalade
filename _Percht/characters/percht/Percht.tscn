@@ -1,4 +1,4 @@
-[gd_scene load_steps=450 format=2]
+[gd_scene load_steps=451 format=2]
 
 [ext_resource path="res://ui/ActionSelector/ActionUIData/GrabActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -445,6 +445,7 @@
 [ext_resource path="res://fx/JumpParticle.tscn" type="PackedScene" id=443]
 [ext_resource path="res://sound/common/landing.wav" type="AudioStream" id=444]
 [ext_resource path="res://_Percht/characters/percht/states/Jab.gd" type="Script" id=445]
+[ext_resource path="res://_Percht/characters/percht/action_icons/leap_slash.png" type="Texture" id=446]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -545,7 +546,7 @@ animations = [ {
 "name": "ChargePunch3Ugly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 41 ), ExtResource( 41 ), ExtResource( 41 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 98 ) ],
+"frames": [ ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 93 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 96 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 145 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 150 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 88 ), ExtResource( 41 ), ExtResource( 41 ), ExtResource( 41 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 94 ), ExtResource( 94 ) ],
 "loop": true,
 "name": "CleavePretty",
 "speed": 5.0
@@ -1047,7 +1048,8 @@ extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 6 )
-animation = "AnkleCutterPretty"
+animation = "CleavePretty"
+frame = 32
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1395,33 +1397,33 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 430 ): {
-"x": 14,
-"y": -16
-},
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
-},
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
-},
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
-},
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 },
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
 },
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
+},
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
+},
+ExtResource( 430 ): {
+"x": 14,
+"y": -16
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
+},
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
 }
 }
 show_in_menu = false
@@ -1501,21 +1503,21 @@ ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
 },
 ExtResource( 436 ): {
 "x": -4,
@@ -1525,9 +1527,9 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1559,21 +1561,21 @@ ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
 },
 ExtResource( 436 ): {
 "x": -4,
@@ -1583,9 +1585,9 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1617,21 +1619,21 @@ ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
 },
 ExtResource( 436 ): {
 "x": -4,
@@ -1641,9 +1643,9 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1674,21 +1676,21 @@ ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
 },
 ExtResource( 436 ): {
 "x": -4,
@@ -1698,9 +1700,9 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -2630,7 +2632,6 @@ width = 27
 height = -32
 damage = 20
 hitstun_ticks = 20
-hitlag_ticks = 10
 victim_hitlag = 4
 plus_frames = 1
 group = 2
@@ -2786,7 +2787,7 @@ script = ExtResource( 304 )
 tick = 15
 command = "try_quickswap"
 
-[node name="Upswipe" type="Node2D" parent="StateMachine" index="82"]
+[node name="LeapSlash2" type="Node2D" parent="StateMachine" index="82"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -2810,7 +2811,7 @@ Aerial"
 kind = "Pretty"
 kind_locked = true
 
-[node name="Hitbox" type="Node2D" parent="StateMachine/Upswipe" index="0"]
+[node name="Hitbox" type="Node2D" parent="StateMachine/LeapSlash2" index="0"]
 z_index = 1000
 script = ExtResource( 15 )
 x = 12
@@ -2827,7 +2828,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 8
 active_ticks = 4
 
-[node name="Hitbox2" type="Node2D" parent="StateMachine/Upswipe" index="1"]
+[node name="Hitbox2" type="Node2D" parent="StateMachine/LeapSlash2" index="1"]
 z_index = 1000
 script = ExtResource( 15 )
 x = 24
@@ -2844,7 +2845,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 8
 active_ticks = 4
 
-[node name="Hitbox3" type="Node2D" parent="StateMachine/Upswipe" index="2"]
+[node name="Hitbox3" type="Node2D" parent="StateMachine/LeapSlash2" index="2"]
 z_index = 1000
 script = ExtResource( 15 )
 x = 38
@@ -2876,7 +2877,7 @@ sfx = ExtResource( 420 )
 title = "Leap Slash"
 type = 2
 data_ui_scene = ExtResource( 419 )
-button_texture = ExtResource( 400 )
+button_texture = ExtResource( 446 )
 air_type = 2
 uses_air_movement = true
 land_cancel = true
@@ -3180,10 +3181,6 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
-},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
@@ -3194,6 +3191,10 @@ ExtResource( 111 ): {
 },
 ExtResource( 102 ): {
 "x": 29,
+"y": 3
+},
+ExtResource( 148 ): {
+"x": -33,
 "y": 3
 }
 }
@@ -4225,17 +4226,17 @@ state_screenshake_amount = 15
 enter_sfx = ExtResource( 444 )
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
 },
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
 },
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 }
 }
 title = "Restand Grab"
@@ -4280,17 +4281,13 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
-},
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
-},
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
 },
 ExtResource( 239 ): {
 "x": 35,
@@ -4300,9 +4297,13 @@ ExtResource( 247 ): {
 "x": 36,
 "y": -1
 },
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
+},
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 }
 }
 title = "Restand Grab"
@@ -4535,21 +4536,21 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 3
 throw_positions = {
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
-},
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
 },
 ExtResource( 347 ): {
 "x": 33,
 "y": 2
 },
-ExtResource( 348 ): {
+ExtResource( 344 ): {
 "x": 32,
-"y": -11
+"y": -16
 },
 ExtResource( 351 ): {
 "x": 30,
@@ -4559,21 +4560,21 @@ ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
 },
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 344 ): {
+ExtResource( 348 ): {
 "x": 32,
-"y": -16
+"y": -11
 },
 ExtResource( 366 ): {
 "x": 8,
 "y": -3
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
 }
 }
 title = "Hustle"
@@ -4614,52 +4615,52 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
 },
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
 },
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
 ExtResource( 347 ): {
 "x": 35,
 "y": 2
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
 },
 ExtResource( 344 ): {
 "x": 32,
 "y": -17
 },
+ExtResource( 351 ): {
+"x": 32,
+"y": 1
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
 ExtResource( 366 ): {
 "x": 7,
+"y": -1
+},
+ExtResource( 365 ): {
+"x": 5,
 "y": -1
 }
 }

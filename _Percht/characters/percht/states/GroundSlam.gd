@@ -7,6 +7,6 @@ func _tick():
 	if current_tick == JUMP_FRAME - 1:
 		host.set_grounded(false)
 	if current_tick == JUMP_FRAME - 1:
-		host.apply_force("0.0", "-5.0")
+		host.apply_force("0.0", JUMP_FORCE)
 		
 	._tick()

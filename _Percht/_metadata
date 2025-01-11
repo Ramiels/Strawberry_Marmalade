@@ -3,7 +3,7 @@
   "friendly_name": "Percht",
   "description": "Percht - Characted mod for Modded Mountain Modded Marmelade",
   "author": "The Percht Team",
-  "version": "0.1",
+  "version": "0.2",
   "link": "",
   "id": "5012384750775918237",
   "requires": ["char_loader"],

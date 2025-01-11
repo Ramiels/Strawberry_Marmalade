@@ -1,6 +1,6 @@
-[gd_scene load_steps=454 format=2]
+[gd_scene load_steps=455 format=2]
 
-[ext_resource path="res://ui/ActionSelector/ActionUIData/GrabActionUIData.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
 [ext_resource path="res://_Percht/characters/percht/Percht.gd" type="Script" id=4]
@@ -449,6 +449,7 @@
 [ext_resource path="res://sound/common/explosion4.wav" type="AudioStream" id=447]
 [ext_resource path="res://_Percht/characters/percht/GroundSlamEffect.tscn" type="PackedScene" id=448]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokescreenActionUIData.tscn" type="PackedScene" id=449]
+[ext_resource path="res://ui/ActionSelector/ActionUIData/AirGrabActionUIData2.tscn" type="PackedScene" id=450]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -1282,7 +1283,7 @@ sprite_animation = "GrabUgly"
 anim_length = 16
 title = "Throw"
 type = 1
-data_ui_scene = ExtResource( 422 )
+data_ui_scene = ExtResource( 1 )
 button_texture = ExtResource( 423 )
 air_type = 1
 throw_techable = true
@@ -1474,7 +1475,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 sprite_animation = "GrabPretty"
-data_ui_scene = ExtResource( 1 )
+data_ui_scene = ExtResource( 450 )
 
 [node name="ThrowBox" parent="StateMachine/AirGrab" index="0"]
 damage_proration = 2

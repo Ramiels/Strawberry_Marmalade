@@ -37,16 +37,32 @@ var goodie_bag_delay = 0
 var guardpoint = false
 var restand_grab_used = false
 
+export var mask_color : Color
+
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 
 func _ready():
 	#._ready()
 	smokeshift_particles.visible = true
 
+func apply_style(style):
+	.apply_style(style)
+
+	if style != null and not is_ghost:
+		var e2 = style.get("extra_color_1")
+		sprite.get_material().set_shader_param("extra_replace_color_3", mask_color)
+		sprite.get_material().set_shader_param("extra_color_3", e2)
+		sprite.get_material().set_shader_param("use_extra_color_3", true)
+	if is_ghost or style == null or !use_extra_color_1:
+		sprite.get_material().set_shader_param("use_extra_color_3", true)
+		sprite.get_material().set_shader_param("extra_replace_color_3", mask_color)
+		sprite.get_material().set_shader_param("extra_color_3", extra_color_1)
+
 func copy_to(t):
 	.copy_to(t)
 	t.quickswap = quickswap
 	t.quickswap_hit = quickswap_hit
+	t.whip_combo = whip_combo
 
 func change_kind(new_kind):
 	kind = new_kind

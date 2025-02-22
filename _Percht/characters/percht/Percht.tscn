@@ -450,21 +450,7 @@
 [ext_resource path="res://_Percht/characters/percht/GroundSlamEffect.tscn" type="PackedScene" id=448]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokescreenActionUIData.tscn" type="PackedScene" id=449]
 [ext_resource path="res://ui/ActionSelector/ActionUIData/AirGrabActionUIData2.tscn" type="PackedScene" id=450]
-
-[sub_resource type="ShaderMaterial" id=1]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/use_extra_color_1 = false
-shader_param/use_extra_color_2 = false
-shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
-shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
-shader_param/color = Color( 1, 1, 1, 1 )
-shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
-shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
-shader_param/max_color_distance = 0.01
-shader_param/super_dim = false
-shader_param/use_outline = false
-shader_param/outline_color = Color( 0, 0, 0, 1 )
+[ext_resource path="res://_Percht/characters/percht/PerchtShader.tres" type="Material" id=451]
 
 [sub_resource type="StreamTexture" id=5]
 
@@ -1048,10 +1034,12 @@ use_extra_color_1 = true
 extra_color_1 = Color( 0.470588, 0.388235, 0.388235, 1 )
 use_extra_color_2 = true
 extra_color_2 = Color( 0.717647, 0.788235, 0.835294, 1 )
+mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 
 [node name="Sprite" parent="Flip" index="0"]
-material = SubResource( 1 )
+material = ExtResource( 451 )
 frames = SubResource( 6 )
+animation = "TauntPretty"
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1388,33 +1376,33 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
-},
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
+ExtResource( 430 ): {
+"x": 14,
+"y": -16
 },
 ExtResource( 428 ): {
 "x": -35,
 "y": 5
 },
-ExtResource( 429 ): {
-"x": -30,
-"y": 8
-},
-ExtResource( 430 ): {
-"x": 14,
-"y": -16
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
 },
 ExtResource( 431 ): {
 "x": -23,
 "y": 13
+},
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
+},
+ExtResource( 429 ): {
+"x": -30,
+"y": 8
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 show_in_menu = false
@@ -1490,13 +1478,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
@@ -1522,13 +1510,13 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1548,13 +1536,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
@@ -1580,13 +1568,13 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1606,13 +1594,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
@@ -1638,13 +1626,13 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -1663,13 +1651,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
@@ -1695,13 +1683,13 @@ ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 }
 }
 release_frame = 24
@@ -3187,13 +3175,13 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
 },
 ExtResource( 110 ): {
 "x": -27,
@@ -4232,10 +4220,6 @@ state_screenshake_amount = 15
 enter_sfx = ExtResource( 444 )
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
-},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
@@ -4243,6 +4227,10 @@ ExtResource( 233 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -4287,25 +4275,25 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 247 ): {
-"x": 36,
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
+},
+ExtResource( 231 ): {
+"x": -3,
 "y": -1
 },
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
 },
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
-},
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 },
 ExtResource( 239 ): {
 "x": 35,
@@ -4542,34 +4530,6 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 347 ): {
-"x": 33,
-"y": 2
-},
-ExtResource( 351 ): {
-"x": 30,
-"y": 1
-},
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -16
-},
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
 ExtResource( 362 ): {
 "x": 34,
 "y": -14
@@ -4578,9 +4538,37 @@ ExtResource( 366 ): {
 "x": 8,
 "y": -3
 },
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
+},
+ExtResource( 347 ): {
+"x": 33,
+"y": 2
+},
 ExtResource( 365 ): {
 "x": 4,
 "y": 0
+},
+ExtResource( 346 ): {
+"x": 34,
+"y": -16
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
+},
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 351 ): {
+"x": 30,
+"y": 1
 }
 }
 title = "Hustle"
@@ -4621,53 +4609,53 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
-},
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
 ExtResource( 362 ): {
 "x": 33,
 "y": -17
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
 },
 ExtResource( 366 ): {
 "x": 7,
 "y": -1
 },
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
+},
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
+},
 ExtResource( 365 ): {
 "x": 5,
 "y": -1
 },
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 351 ): {
+"x": 32,
+"y": 1
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
 }
 }
 instant_cancellable = false

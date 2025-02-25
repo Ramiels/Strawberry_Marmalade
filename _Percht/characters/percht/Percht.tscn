@@ -1,4 +1,4 @@
-[gd_scene load_steps=455 format=2]
+[gd_scene load_steps=468 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -451,6 +451,19 @@
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/SmokescreenActionUIData.tscn" type="PackedScene" id=449]
 [ext_resource path="res://ui/ActionSelector/ActionUIData/AirGrabActionUIData2.tscn" type="PackedScene" id=450]
 [ext_resource path="res://_Percht/characters/percht/PerchtShader.tres" type="Material" id=451]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly8.png" type="Texture" id=452]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly2.png" type="Texture" id=453]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly9.png" type="Texture" id=454]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly6.png" type="Texture" id=455]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly10.png" type="Texture" id=456]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly5.png" type="Texture" id=457]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly4.png" type="Texture" id=458]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly7.png" type="Texture" id=459]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly1.png" type="Texture" id=460]
+[ext_resource path="res://_Percht/characters/percht/real_animations/scissor_ugly3.png" type="Texture" id=461]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/ScissorsActionUIData.tscn" type="PackedScene" id=462]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/ScissorsGroundedActionUIData.tscn" type="PackedScene" id=463]
+[ext_resource path="res://_Percht/characters/percht/states/Scissors.gd" type="Script" id=464]
 
 [sub_resource type="StreamTexture" id=5]
 
@@ -891,6 +904,11 @@ animations = [ {
 "name": "RollForwardUgly",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 460 ), ExtResource( 453 ), ExtResource( 461 ), ExtResource( 458 ), ExtResource( 457 ), ExtResource( 455 ), ExtResource( 459 ), ExtResource( 452 ), ExtResource( 454 ), ExtResource( 456 ) ],
+"loop": true,
+"name": "ScissorUgly",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 182 ), ExtResource( 182 ), ExtResource( 182 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 165 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 164 ), ExtResource( 178 ), ExtResource( 178 ), ExtResource( 178 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ), ExtResource( 171 ) ],
 "loop": true,
 "name": "ScorchUgly",
@@ -1039,7 +1057,8 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 6 )
-animation = "TauntPretty"
+animation = "ScissorUgly"
+frame = 7
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1318,13 +1337,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 377 ): {
-"x": 23,
-"y": -3
-},
 ExtResource( 421 ): {
 "x": 5,
 "y": -2
+},
+ExtResource( 377 ): {
+"x": 23,
+"y": -3
 }
 }
 selectable = false
@@ -1344,13 +1363,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 377 ): {
-"x": 23,
-"y": -3
-},
 ExtResource( 421 ): {
 "x": 5,
 "y": -2
+},
+ExtResource( 377 ): {
+"x": 23,
+"y": -3
 }
 }
 selectable = false
@@ -1372,6 +1391,18 @@ sprite_animation = "GrabThrowUgly"
 anim_length = 40
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
+},
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
+},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
@@ -1384,25 +1415,13 @@ ExtResource( 428 ): {
 "x": -35,
 "y": 5
 },
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
-},
 ExtResource( 431 ): {
 "x": -23,
 "y": 13
 },
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
-},
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
-},
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
 }
 }
 show_in_menu = false
@@ -1478,45 +1497,45 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 },
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
 }
 }
 release_frame = 24
@@ -1536,45 +1555,45 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 },
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
 }
 }
 release_frame = 24
@@ -1594,45 +1613,45 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 },
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
 }
 }
 release_frame = 24
@@ -1651,45 +1670,45 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 },
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
 }
 }
 release_frame = 24
@@ -1705,6 +1724,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -1712,10 +1735,6 @@ ExtResource( 24 ): {
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 }
 }
 
@@ -2293,7 +2312,258 @@ knockback = "6.0"
 start_tick = 5
 active_ticks = 3
 
-[node name="MashClaw1" type="Node2D" parent="StateMachine" index="75"]
+[node name="Scissors" type="Node2D" parent="StateMachine" index="75"]
+script = ExtResource( 464 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "ScissorUgly"
+anim_length = 10
+force_dir_x = "0.2"
+force_dir_y = "1.0"
+force_speed = "5.0"
+force_tick = 4
+title = "Scissors"
+type = 2
+data_ui_scene = ExtResource( 462 )
+button_texture = ExtResource( 410 )
+air_type = 1
+land_cancel = true
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Aerial
+AerialAttack
+"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox1" type="Node2D" parent="StateMachine/Scissors" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 43
+width = 10
+height = 25
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Scissors" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 50
+y = -53
+width = 10
+height = 10
+damage = 30
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Scissors" index="2"]
+z_index = 1000
+script = ExtResource( 273 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 28
+y = -55
+width = 12
+height = 12
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox4" type="Node2D" parent="StateMachine/Scissors" index="3"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 28
+y = 19
+width = 12
+height = 12
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox5" type="Node2D" parent="StateMachine/Scissors" index="4"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 50
+y = 17
+width = 10
+height = 10
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Scissorsgrounded" type="Node2D" parent="StateMachine" index="76"]
+script = ExtResource( 464 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "ScissorUgly"
+anim_length = 10
+force_dir_x = "0.2"
+force_dir_y = "1.0"
+force_speed = "5.0"
+force_tick = 4
+title = "Scissors"
+type = 2
+data_ui_scene = ExtResource( 463 )
+button_texture = ExtResource( 410 )
+land_cancel = true
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Aerial
+AerialAttack
+"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox1" type="Node2D" parent="StateMachine/Scissorsgrounded" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 43
+width = 25
+height = 25
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Scissorsgrounded" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 50
+y = -53
+width = 10
+height = 10
+damage = 30
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Scissorsgrounded" index="2"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 28
+y = -55
+width = 12
+height = 12
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox4" type="Node2D" parent="StateMachine/Scissorsgrounded" index="3"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 28
+y = 19
+width = 12
+height = 12
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="Hitbox5" type="Node2D" parent="StateMachine/Scissorsgrounded" index="4"]
+z_index = 1000
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 50
+y = 17
+width = 10
+height = 10
+damage = 35
+hitstun_ticks = 13
+hit_height = 0
+dir_x = "0.5"
+dir_y = "0.8"
+knockback = "6.0"
+start_tick = 8
+active_ticks = 1
+
+[node name="MashClaw1" type="Node2D" parent="StateMachine" index="77"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -2345,7 +2615,7 @@ active_ticks = 2
 loop_active_ticks = 5
 loop_inactive_ticks = 1
 
-[node name="SlideKick" type="Node2D" parent="StateMachine" index="76"]
+[node name="SlideKick" type="Node2D" parent="StateMachine" index="78"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -2396,7 +2666,7 @@ script = ExtResource( 304 )
 tick = 9
 command = "try_quickswap"
 
-[node name="GroundSlam" type="Node2D" parent="StateMachine" index="77"]
+[node name="GroundSlam" type="Node2D" parent="StateMachine" index="79"]
 script = ExtResource( 63 )
 __meta__ = {
 "_editor_description_": ""
@@ -2456,7 +2726,7 @@ script = ExtResource( 304 )
 tick = 11
 command = "try_quickswap"
 
-[node name="GroundSlamClaw" type="Node2D" parent="StateMachine" index="78"]
+[node name="GroundSlamClaw" type="Node2D" parent="StateMachine" index="80"]
 script = ExtResource( 63 )
 __meta__ = {
 "_editor_description_": ""
@@ -2511,7 +2781,7 @@ script = ExtResource( 304 )
 tick = 7
 command = "try_quickswap"
 
-[node name="MashClaw2" type="Node2D" parent="StateMachine" index="79"]
+[node name="MashClaw2" type="Node2D" parent="StateMachine" index="81"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -2555,7 +2825,7 @@ start_tick = 4
 active_ticks = 1
 loop_active_ticks = 4
 
-[node name="Cleave" type="Node2D" parent="StateMachine" index="80"]
+[node name="Cleave" type="Node2D" parent="StateMachine" index="82"]
 script = ExtResource( 99 )
 __meta__ = {
 "_editor_description_": ""
@@ -2677,7 +2947,7 @@ air_ground_bounce = true
 start_tick = 26
 active_ticks = 3
 
-[node name="AirZone" type="Node2D" parent="StateMachine" index="81"]
+[node name="AirZone" type="Node2D" parent="StateMachine" index="83"]
 script = ExtResource( 106 )
 __meta__ = {
 "_editor_description_": ""
@@ -2781,7 +3051,7 @@ script = ExtResource( 304 )
 tick = 15
 command = "try_quickswap"
 
-[node name="LeapSlash2" type="Node2D" parent="StateMachine" index="82"]
+[node name="LeapSlash2" type="Node2D" parent="StateMachine" index="84"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -2856,7 +3126,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 8
 active_ticks = 4
 
-[node name="LeapSlash" type="Node2D" parent="StateMachine" index="83"]
+[node name="LeapSlash" type="Node2D" parent="StateMachine" index="85"]
 script = ExtResource( 418 )
 __meta__ = {
 "_editor_description_": ""
@@ -3016,7 +3286,7 @@ knockback = "5.0"
 start_tick = 15
 active_ticks = 4
 
-[node name="AerialPierce" type="Node2D" parent="StateMachine" index="84"]
+[node name="AerialPierce" type="Node2D" parent="StateMachine" index="86"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -3119,7 +3389,7 @@ script = ExtResource( 304 )
 tick = 9
 command = "try_quickswap"
 
-[node name="DashGrab" type="Node2D" parent="StateMachine" index="85"]
+[node name="DashGrab" type="Node2D" parent="StateMachine" index="87"]
 script = ExtResource( 121 )
 apply_forces = true
 apply_fric = true
@@ -3163,7 +3433,7 @@ width = 30
 height = 14
 active_ticks = 9
 
-[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="86"]
+[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="88"]
 script = ExtResource( 125 )
 apply_forces = true
 apply_fric = true
@@ -3175,10 +3445,6 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
@@ -3186,6 +3452,10 @@ ExtResource( 102 ): {
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 },
 ExtResource( 148 ): {
 "x": -33,
@@ -3212,7 +3482,7 @@ damage = 100
 screenshake_amount = 9
 screenshake_frames = 4
 
-[node name="Whipcopter" type="Node2D" parent="StateMachine" index="87"]
+[node name="Whipcopter" type="Node2D" parent="StateMachine" index="89"]
 script = ExtResource( 107 )
 apply_forces = true
 apply_grav = true
@@ -3317,7 +3587,7 @@ knockdown = true
 start_tick = 16
 active_ticks = 3
 
-[node name="AirImpale" type="Node2D" parent="StateMachine" index="88"]
+[node name="AirImpale" type="Node2D" parent="StateMachine" index="90"]
 script = ExtResource( 154 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -3349,7 +3619,7 @@ hit_height = 0
 start_tick = 8
 always_on = true
 
-[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="89"]
+[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="91"]
 script = ExtResource( 157 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -3370,7 +3640,7 @@ damage = 30
 hits_otg = true
 di_modifier = "0.0"
 
-[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="90"]
+[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="92"]
 script = ExtResource( 158 )
 apply_fric = true
 apply_grav = true
@@ -3420,7 +3690,7 @@ air_ground_bounce = true
 start_tick = 20
 active_ticks = 4
 
-[node name="Scorch" type="Node2D" parent="StateMachine" index="91"]
+[node name="Scorch" type="Node2D" parent="StateMachine" index="93"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -3484,7 +3754,7 @@ script = ExtResource( 304 )
 tick = 14
 command = "try_quickswap"
 
-[node name="AirScorch" type="Node2D" parent="StateMachine" index="92"]
+[node name="AirScorch" type="Node2D" parent="StateMachine" index="94"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -3633,7 +3903,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="TorchJab" type="Node2D" parent="StateMachine" index="93"]
+[node name="TorchJab" type="Node2D" parent="StateMachine" index="95"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -3681,7 +3951,7 @@ parriable = false
 start_tick = 5
 active_ticks = 2
 
-[node name="Incinerate" type="Node2D" parent="StateMachine" index="94"]
+[node name="Incinerate" type="Node2D" parent="StateMachine" index="96"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -3941,7 +4211,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="95"]
+[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="97"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true
@@ -3959,7 +4229,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="96"]
+[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="98"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true
@@ -3978,7 +4248,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="ChargePunchDefault" type="Node2D" parent="StateMachine" index="97"]
+[node name="ChargePunchDefault" type="Node2D" parent="StateMachine" index="99"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -4024,7 +4294,7 @@ script = ExtResource( 304 )
 tick = 18
 command = "try_quickswap"
 
-[node name="ChargePunch2" type="Node2D" parent="StateMachine" index="98"]
+[node name="ChargePunch2" type="Node2D" parent="StateMachine" index="100"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -4070,7 +4340,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="ChargePunch3" type="Node2D" parent="StateMachine" index="99"]
+[node name="ChargePunch3" type="Node2D" parent="StateMachine" index="101"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -4147,7 +4417,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="RestandGrab" type="Node2D" parent="StateMachine" index="100"]
+[node name="RestandGrab" type="Node2D" parent="StateMachine" index="102"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4181,7 +4451,7 @@ script = ExtResource( 304 )
 tick = 15
 command = "try_quickswap"
 
-[node name="RestandGrabAirHold" type="Node2D" parent="StateMachine" index="101"]
+[node name="RestandGrabAirHold" type="Node2D" parent="StateMachine" index="103"]
 script = ExtResource( 254 )
 apply_forces = true
 apply_fric = true
@@ -4201,7 +4471,7 @@ ExtResource( 232 ): {
 show_in_menu = false
 selectable = false
 
-[node name="RestandGrabAirThrow" type="Node2D" parent="StateMachine" index="102"]
+[node name="RestandGrabAirThrow" type="Node2D" parent="StateMachine" index="104"]
 script = ExtResource( 255 )
 apply_forces = true
 apply_fric = true
@@ -4259,7 +4529,7 @@ script = ExtResource( 304 )
 tick = 21
 command = "try_quickswap"
 
-[node name="RestandGrabGroundThrow" type="Node2D" parent="StateMachine" index="103"]
+[node name="RestandGrabGroundThrow" type="Node2D" parent="StateMachine" index="105"]
 script = ExtResource( 255 )
 apply_forces = true
 apply_fric = true
@@ -4275,28 +4545,28 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
 ExtResource( 231 ): {
 "x": -3,
 "y": -1
 },
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
 },
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
 },
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
 },
 ExtResource( 239 ): {
 "x": 35,
+"y": -1
+},
+ExtResource( 247 ): {
+"x": 36,
 "y": -1
 }
 }
@@ -4327,7 +4597,7 @@ script = ExtResource( 304 )
 tick = 21
 command = "try_quickswap"
 
-[node name="RestandGrabAirU" type="Node2D" parent="StateMachine" index="104"]
+[node name="RestandGrabAirU" type="Node2D" parent="StateMachine" index="106"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4360,7 +4630,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabAirF" type="Node2D" parent="StateMachine" index="105"]
+[node name="RestandGrabAirF" type="Node2D" parent="StateMachine" index="107"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4393,7 +4663,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabAirD" type="Node2D" parent="StateMachine" index="106"]
+[node name="RestandGrabAirD" type="Node2D" parent="StateMachine" index="108"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4426,7 +4696,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabGroundF" type="Node2D" parent="StateMachine" index="107"]
+[node name="RestandGrabGroundF" type="Node2D" parent="StateMachine" index="109"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4459,7 +4729,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabGroundD" type="Node2D" parent="StateMachine" index="108"]
+[node name="RestandGrabGroundD" type="Node2D" parent="StateMachine" index="110"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -4493,7 +4763,7 @@ hits_vs_aerial = false
 start_tick = 9
 throw_state = "RestandGrabGroundThrow"
 
-[node name="Quickswap" type="Node2D" parent="StateMachine" index="109"]
+[node name="Quickswap" type="Node2D" parent="StateMachine" index="111"]
 script = ExtResource( 303 )
 apply_forces = true
 apply_fric = true
@@ -4505,7 +4775,7 @@ selectable = false
 interrupt_into_string = "Aerial
 Grounded"
 
-[node name="QuickswapBlock" type="Node2D" parent="StateMachine" index="110"]
+[node name="QuickswapBlock" type="Node2D" parent="StateMachine" index="112"]
 script = ExtResource( 305 )
 __meta__ = {
 "_editor_description_": ""
@@ -4518,7 +4788,7 @@ air_type = 2
 next_state_on_hold_on_opponent_turn = true
 selectable = false
 
-[node name="TauntUgly" type="Node2D" parent="StateMachine" index="111"]
+[node name="TauntUgly" type="Node2D" parent="StateMachine" index="113"]
 script = ExtResource( 367 )
 __meta__ = {
 "_editor_description_": ""
@@ -4534,41 +4804,41 @@ ExtResource( 362 ): {
 "x": 34,
 "y": -14
 },
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
-},
 ExtResource( 344 ): {
 "x": 32,
 "y": -16
-},
-ExtResource( 347 ): {
-"x": 33,
-"y": 2
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
 },
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
 },
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
+},
+ExtResource( 347 ): {
+"x": 33,
+"y": 2
 }
 }
 title = "Hustle"
@@ -4597,7 +4867,7 @@ start_tick = 19
 active_ticks = 19
 throw_state = "TauntUglyThrow"
 
-[node name="TauntUglyThrow" type="Node2D" parent="StateMachine" index="112"]
+[node name="TauntUglyThrow" type="Node2D" parent="StateMachine" index="114"]
 script = ExtResource( 378 )
 __meta__ = {
 "_editor_description_": ""
@@ -4609,53 +4879,53 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
 ExtResource( 362 ): {
 "x": 33,
 "y": -17
-},
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
 },
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
-ExtResource( 355 ): {
+ExtResource( 344 ): {
 "x": 32,
-"y": -11
+"y": -17
+},
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
 },
 ExtResource( 348 ): {
 "x": 34,
 "y": -12
 },
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
+},
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
 },
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
 }
 }
 instant_cancellable = false

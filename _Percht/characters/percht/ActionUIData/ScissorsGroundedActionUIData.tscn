@@ -8,9 +8,10 @@
 [node name="Direction" parent="." index="0" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-min_length = 0.5
+min_length = 0.15
 limit_angle = true
-limit_range_degrees = 75.0
-limit_center_degrees = -45.0
+limit_range_degrees = 84.0
+limit_center_degrees = -91.0
 limit_symmetrical = false
 default_value = Vector2( 0.707107, -0.707107 )
+snap_angles = 2

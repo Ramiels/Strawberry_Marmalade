@@ -41,6 +41,16 @@ func show_options():
 	
 	if fighter.cloak_current and fighter.smoke_cloak:
 		smokeshift.set("custom_colors/font_color", Color("d440b6"))
+		smokeshift.set("custom_colors/font_color_focus", Color("d440b6"))
+		smokeshift.set("custom_colors/font_color_hover_pressed", Color("d440b6"))
+		smokeshift.set("custom_colors/font_color_hover", Color("d440b6"))
+		smokeshift.set("custom_colors/font_color_pressed", Color("d440b6"))
+	else:
+		smokeshift.set("custom_colors/font_color", Color("f0f0f0"))
+		smokeshift.set("custom_colors/font_color_focus", Color("f0f0f0"))
+		smokeshift.set("custom_colors/font_color_hover_pressed", Color("f0f0f0"))
+		smokeshift.set("custom_colors/font_color_hover", Color("f0f0f0"))
+		smokeshift.set("custom_colors/font_color_pressed", Color("f0f0f0"))
 	
 	if fighter.goodie_bag != null and is_instance_valid(fighter.objs_map[fighter.goodie_bag]):
 		goodie_bag.visible = true

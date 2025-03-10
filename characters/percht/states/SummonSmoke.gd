@@ -23,6 +23,6 @@ func _frame_6():
 		var pos = fixed.vec_add(start_x, start_y, move_by.x, move_by.y)
 		if int(floor(float(pos.y))) > -20:
 			pos.y = -20
-		var smoke = host.spawn_object(PROJ_SCENE, int(floor(float(pos.x))), int(floor(float(pos.y))), true)
+		var smoke = host.spawn_object(PROJ_SCENE, int(floor(float(pos.x))), int(floor(float(pos.y))), false)
 		host.smoke_projectiles.append(smoke.obj_name)
 		smoke.smokescreen = true

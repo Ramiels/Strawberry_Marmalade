@@ -24,6 +24,8 @@ var shift_cancel_now = false
 
 var current_smoke = null
 var can_smokeshift = false
+var smoke_cloak = false
+var cloak_current = false
 
 var QUICKSWAP_HITLAG = 7
 
@@ -40,10 +42,13 @@ var restand_grab_used = false
 export var mask_color : Color
 
 onready var smokeshift_particles = $"%SmokeshiftParticles"
+onready var smoke_cloak_particles = $"%SmokeCloakParticles"
+onready var scissors_sprite = $"%ScissorsSprite"
 
 func _ready():
 	#._ready()
 	smokeshift_particles.visible = true
+	smoke_cloak_particles.visible = true
 
 func apply_style(style):
 	.apply_style(style)
@@ -148,6 +153,10 @@ func tick():
 		quickswap_buffer = false
 		quickswap = true
 	
+	if smoke_cloak:
+		if !smoke_cloak_particles.emitting:
+			smoke_cloak_particles.start_emitting()
+	
 	.tick()
 	
 	for smoke in smoke_projectiles:
@@ -155,12 +164,20 @@ func tick():
 			#print('test')
 			smoke_projectiles.erase(smoke)
 	
+	cloak_current = false
+	
 	if overlapping_smoke() != null:
 		current_smoke = overlapping_smoke()
 		can_smokeshift = true
 	else:
 		current_smoke = null
 		can_smokeshift = false
+		print(smoke_projectiles)
+		if smoke_cloak and smoke_projectiles.size() > 0:
+			can_smokeshift = true
+			cloak_current = true
+			
+		
 	
 	if !is_grounded() and air_movements_left < 1:
 		can_smokeshift = false
@@ -195,6 +212,10 @@ func smokeshift(target_smoke):
 		#print("current_smoke:", current_smoke)
 		if current_smoke != null and is_instance_valid(objs_map[current_smoke]):
 			objs_map[current_smoke].schedule_disable()
+		if cloak_current:
+			end_cloak()
+			cloak_current = false
+		
 		current_smoke = null
 		
 		smokeshifting = true
@@ -325,3 +346,11 @@ func block_hitbox(hitbox, force_parry = false, force_block = false, ignore_guard
 
 		current_state().anim_name = anim_name
 		current_state().update_sprite_frame()
+
+func start_cloak():
+	smoke_cloak = true
+	smoke_cloak_particles.start_emitting()
+
+func end_cloak():
+	smoke_cloak = false
+	smoke_cloak_particles.stop_emitting()

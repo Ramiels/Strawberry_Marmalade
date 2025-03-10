@@ -36,8 +36,11 @@ func show_options():
 	
 	shift_cancel.visible = fighter.smokeshifting
 	
-	if fighter.can_smokeshift and fighter.current_smoke != null:
+	if fighter.can_smokeshift and (fighter.current_smoke != null or fighter.cloak_current):
 		smokeshift.disabled = false
+	
+	if fighter.cloak_current and fighter.smoke_cloak:
+		smokeshift.set("custom_colors/font_color", Color("d440b6"))
 	
 	if fighter.goodie_bag != null and is_instance_valid(fighter.objs_map[fighter.goodie_bag]):
 		goodie_bag.visible = true
@@ -73,7 +76,7 @@ func block_jump_disable():
 func update_selected_move(move_state):
 	.update_selected_move(move_state)
 	
-	if fighter.can_smokeshift and fighter.current_smoke != null:
+	if fighter.can_smokeshift and (fighter.current_smoke != null or fighter.cloak_current):
 		smokeshift.disabled = false
 	
 	shift_cancel.visible = fighter.smokeshifting

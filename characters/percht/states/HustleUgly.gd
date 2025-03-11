@@ -10,16 +10,15 @@ func _frame_4():
 	host.play_sound("Block")
 	pass
 
-#swish sfx not playing, needs fixing
-func _frame_16():
+func _frame_14():
 	host.play_sound("Swish")
 	pass
 
-func _frame_24():
+func _frame_22():
 	host.play_sound("Swish")
 	pass
 	
-func _frame_32():
+func _frame_30():
 	host.play_sound("Swish")
 	pass
 

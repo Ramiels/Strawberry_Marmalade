@@ -1,4 +1,4 @@
-[gd_scene load_steps=484 format=2]
+[gd_scene load_steps=485 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -478,6 +478,7 @@
 [ext_resource path="res://sound/common/explosion5.wav" type="AudioStream" id=476]
 [ext_resource path="res://sound/common/swish.wav" type="AudioStream" id=477]
 [ext_resource path="res://_Percht/characters/percht/SFXs/whiplight.wav" type="AudioStream" id=478]
+[ext_resource path="res://_Percht/characters/percht/real_animations/whip_strike_pretty6.png" type="Texture" id=479]
 
 [sub_resource type="StreamTexture" id=5]
 
@@ -753,7 +754,7 @@ animations = [ {
 "name": "InstantCancelUgly",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 74 ), ExtResource( 74 ), ExtResource( 74 ), ExtResource( 74 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ) ],
+"frames": [ ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 50 ), ExtResource( 74 ), ExtResource( 74 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "JabPretty",
 "speed": 5.0
@@ -1013,7 +1014,7 @@ animations = [ {
 "name": "WhipStrikeAirPretty",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 175 ), ExtResource( 175 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 176 ), ExtResource( 176 ), ExtResource( 181 ), ExtResource( 181 ), ExtResource( 177 ), ExtResource( 177 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 174 ) ],
+"frames": [ ExtResource( 175 ), ExtResource( 175 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 176 ), ExtResource( 176 ), ExtResource( 181 ), ExtResource( 181 ), ExtResource( 177 ), ExtResource( 177 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 174 ), ExtResource( 479 ) ],
 "loop": true,
 "name": "WhipStrikePretty",
 "speed": 5.0
@@ -1636,8 +1637,8 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 7 )
-animation = "TauntUgly"
-frame = 9
+animation = "WhipStrikePretty"
+frame = 8
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -2003,10 +2004,6 @@ ExtResource( 421 ): {
 "x": 5,
 "y": -2
 },
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
-},
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
@@ -2015,13 +2012,17 @@ ExtResource( 430 ): {
 "x": 14,
 "y": -16
 },
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
 },
 ExtResource( 426 ): {
 "x": 10,
 "y": -4
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
 },
 ExtResource( 428 ): {
 "x": -35,
@@ -2101,18 +2102,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -2133,13 +2122,25 @@ ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
 "y": -5
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 }
 }
 release_frame = 24
@@ -2159,18 +2160,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -2191,13 +2180,25 @@ ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
 "y": -5
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 }
 }
 release_frame = 24
@@ -2217,18 +2218,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -2249,13 +2238,25 @@ ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
 "y": -5
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 }
 }
 release_frame = 24
@@ -2274,18 +2275,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -2306,13 +2295,25 @@ ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 49 ): {
+"x": -16,
 "y": -5
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 }
 }
 release_frame = 24
@@ -2328,6 +2329,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2335,10 +2340,6 @@ ExtResource( 24 ): {
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 }
 }
 
@@ -2475,6 +2476,7 @@ hitlag_ticks = 10
 hits_otg = true
 plus_frames = 1
 hit_height = 2
+hit_sound = ExtResource( 476 )
 dir_y = "2.0"
 knockback = "7.0"
 grounded_hit_state = "HurtAerial"
@@ -2601,6 +2603,7 @@ interrupt_into_string = "Grounded
 Aerial"
 hit_cancel_into_string = "Grounded
 Aerial"
+hit_cancel_exceptions_string = "AnkleCutter"
 kind = "Pretty"
 kind_locked = true
 
@@ -4107,21 +4110,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
-ExtResource( 102 ): {
-"x": 29,
+ExtResource( 148 ): {
+"x": -33,
 "y": 3
 },
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
-ExtResource( 148 ): {
-"x": -33,
+ExtResource( 102 ): {
+"x": 29,
 "y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 title = "Dash Grab"
@@ -4220,6 +4223,7 @@ plus_frames = 2
 hit_height = 0
 group = 2
 whiff_sound = ExtResource( 334 )
+hit_sound = ExtResource( 336 )
 dir_y = "1.0"
 knockback = "6.0"
 grounded_hit_state = "HurtAerial"
@@ -4243,6 +4247,7 @@ plus_frames = 2
 hit_height = 0
 group = 2
 whiff_sound = ExtResource( 334 )
+hit_sound = ExtResource( 336 )
 dir_y = "1.0"
 knockback = "6.0"
 knockdown = true
@@ -5156,13 +5161,13 @@ ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
-},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -5211,25 +5216,25 @@ ExtResource( 231 ): {
 "x": -3,
 "y": -1
 },
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
-},
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
 },
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
 },
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
-},
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -5462,9 +5467,9 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
+ExtResource( 347 ): {
+"x": 33,
+"y": 2
 },
 ExtResource( 344 ): {
 "x": 32,
@@ -5474,29 +5479,29 @@ ExtResource( 348 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
-},
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
-},
-ExtResource( 347 ): {
-"x": 33,
-"y": 2
 },
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
 ExtResource( 362 ): {
 "x": 34,
 "y": -14
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
 },
 ExtResource( 365 ): {
 "x": 4,
@@ -5542,9 +5547,9 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
 },
 ExtResource( 344 ): {
 "x": 32,
@@ -5554,6 +5559,22 @@ ExtResource( 348 ): {
 "x": 34,
 "y": -12
 },
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
+ExtResource( 351 ): {
+"x": 32,
+"y": 1
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
@@ -5562,29 +5583,13 @@ ExtResource( 366 ): {
 "x": 7,
 "y": -1
 },
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 351 ): {
+ExtResource( 355 ): {
 "x": 32,
-"y": 1
+"y": -11
 },
 ExtResource( 356 ): {
 "x": 25,
 "y": -2
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
 },
 ExtResource( 365 ): {
 "x": 5,

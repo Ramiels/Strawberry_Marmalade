@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=493 format=2]
+=======
+[gd_scene load_steps=504 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -482,6 +486,11 @@
 [ext_resource path="res://sound/common/block.wav" type="AudioStream" id=480]
 [ext_resource path="res://sound/common/swish2.wav" type="AudioStream" id=481]
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slide_ugly.png" type="Texture" id=482]
+<<<<<<< Updated upstream
+=======
+[ext_resource path="res://_Percht/characters/percht/real_animations/whiplash_pretty.png" type="Texture" id=483]
+[ext_resource path="res://_Percht/characters/percht/states/Whiplash.gd" type="Script" id=484]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 482 )
@@ -504,6 +513,42 @@ atlas = ExtResource( 482 )
 region = Rect2( 1024, 0, 256, 128 )
 
 [sub_resource type="StreamTexture" id=5]
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 483 )
+region = Rect2( 0, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 483 )
+region = Rect2( 256, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 483 )
+region = Rect2( 512, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 483 )
+region = Rect2( 768, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 483 )
+region = Rect2( 1024, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 483 )
+region = Rect2( 1280, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 483 )
+region = Rect2( 1536, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 483 )
+region = Rect2( 1792, 0, 256, 128 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 483 )
+region = Rect2( 2048, 0, 256, 128 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -1045,6 +1090,11 @@ animations = [ {
 "frames": [ ExtResource( 135 ), ExtResource( 135 ), ExtResource( 135 ), ExtResource( 109 ), ExtResource( 109 ), ExtResource( 117 ), ExtResource( 117 ), ExtResource( 155 ), ExtResource( 155 ), ExtResource( 119 ), ExtResource( 180 ), ExtResource( 180 ), ExtResource( 118 ), ExtResource( 118 ), ExtResource( 159 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 120 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 105 ) ],
 "loop": true,
 "name": "WhipcopterPretty",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "WhiplashPretty",
 "speed": 5.0
 } ]
 
@@ -1660,8 +1710,13 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 7 )
+<<<<<<< Updated upstream
 animation = "SlideUgly"
 frame = 2
+=======
+animation = "WhiplashPretty"
+frame = 6
+>>>>>>> Stashed changes
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1672,6 +1727,11 @@ material = SubResource( 3 )
 unique_name_in_owner = true
 visible = false
 material = SubResource( 8 )
+
+[node name="SmokeshiftParticles2" parent="Flip/Particles" index="2" instance=ExtResource( 138 )]
+unique_name_in_owner = true
+visible = false
+material = SubResource( 3 )
 
 [node name="ScissorsSprite" type="AnimatedSprite" parent="Flip" index="2"]
 unique_name_in_owner = true
@@ -2027,29 +2087,49 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
-},
 ExtResource( 427 ): {
 "x": 3,
 "y": -21
 },
+<<<<<<< Updated upstream
+=======
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
+},
+>>>>>>> Stashed changes
 ExtResource( 428 ): {
 "x": -35,
 "y": 5
 },
+<<<<<<< Updated upstream
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
 },
+=======
+>>>>>>> Stashed changes
 ExtResource( 431 ): {
 "x": -23,
 "y": 13
 },
+<<<<<<< Updated upstream
 ExtResource( 430 ): {
 "x": 14,
 "y": -16
+=======
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
+},
+ExtResource( 430 ): {
+"x": 14,
+"y": -16
+},
+ExtResource( 429 ): {
+"x": -30,
+"y": 8
+>>>>>>> Stashed changes
 }
 }
 show_in_menu = false
@@ -2127,6 +2207,13 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+>>>>>>> Stashed changes
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2135,26 +2222,40 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
+<<<<<<< Updated upstream
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
+=======
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+>>>>>>> Stashed changes
 },
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+<<<<<<< Updated upstream
+=======
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+>>>>>>> Stashed changes
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
+<<<<<<< Updated upstream
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
@@ -2163,6 +2264,8 @@ ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
+=======
+>>>>>>> Stashed changes
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
@@ -2187,6 +2290,13 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+>>>>>>> Stashed changes
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2195,26 +2305,40 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
+<<<<<<< Updated upstream
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
+=======
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+>>>>>>> Stashed changes
 },
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+<<<<<<< Updated upstream
+=======
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+>>>>>>> Stashed changes
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
+<<<<<<< Updated upstream
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
@@ -2223,6 +2347,8 @@ ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
+=======
+>>>>>>> Stashed changes
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
@@ -2245,6 +2371,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+>>>>>>> Stashed changes
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2253,26 +2386,40 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
+<<<<<<< Updated upstream
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
+=======
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+>>>>>>> Stashed changes
 },
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+<<<<<<< Updated upstream
+=======
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+>>>>>>> Stashed changes
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
+<<<<<<< Updated upstream
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
@@ -2281,6 +2428,8 @@ ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
+=======
+>>>>>>> Stashed changes
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
@@ -2302,6 +2451,13 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+>>>>>>> Stashed changes
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2310,26 +2466,40 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
+<<<<<<< Updated upstream
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
+=======
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+>>>>>>> Stashed changes
 },
 ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+<<<<<<< Updated upstream
+=======
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+>>>>>>> Stashed changes
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
+<<<<<<< Updated upstream
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
@@ -2338,6 +2508,8 @@ ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
+=======
+>>>>>>> Stashed changes
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
@@ -5254,10 +5426,22 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
+},
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
+>>>>>>> Stashed changes
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
+<<<<<<< Updated upstream
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
@@ -5268,6 +5452,10 @@ ExtResource( 247 ): {
 },
 ExtResource( 239 ): {
 "x": 35,
+=======
+ExtResource( 231 ): {
+"x": -3,
+>>>>>>> Stashed changes
 "y": -1
 },
 ExtResource( 242 ): {
@@ -5509,6 +5697,13 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
+<<<<<<< Updated upstream
+=======
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
+},
+>>>>>>> Stashed changes
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
@@ -5516,6 +5711,7 @@ ExtResource( 346 ): {
 ExtResource( 347 ): {
 "x": 33,
 "y": 2
+<<<<<<< Updated upstream
 },
 ExtResource( 356 ): {
 "x": 26,
@@ -5532,6 +5728,28 @@ ExtResource( 351 ): {
 ExtResource( 348 ): {
 "x": 32,
 "y": -11
+=======
+},
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 351 ): {
+"x": 30,
+"y": 1
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+>>>>>>> Stashed changes
 },
 ExtResource( 344 ): {
 "x": 32,
@@ -5589,9 +5807,15 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
+<<<<<<< Updated upstream
 ExtResource( 361 ): {
 "x": 30,
 "y": -25
+=======
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
+>>>>>>> Stashed changes
 },
 ExtResource( 346 ): {
 "x": 36,
@@ -5601,6 +5825,7 @@ ExtResource( 347 ): {
 "x": 35,
 "y": 2
 },
+<<<<<<< Updated upstream
 ExtResource( 356 ): {
 "x": 25,
 "y": -2
@@ -5608,11 +5833,21 @@ ExtResource( 356 ): {
 ExtResource( 362 ): {
 "x": 33,
 "y": -17
+=======
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+>>>>>>> Stashed changes
 },
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
 },
+<<<<<<< Updated upstream
 ExtResource( 348 ): {
 "x": 34,
 "y": -12
@@ -5624,6 +5859,19 @@ ExtResource( 344 ): {
 ExtResource( 355 ): {
 "x": 32,
 "y": -11
+=======
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+>>>>>>> Stashed changes
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
 },
 ExtResource( 363 ): {
 "x": 15,
@@ -5666,6 +5914,64 @@ cancellable = false
 block_cancel_allowed = false
 start_tick = 10
 active_ticks = 2
+
+[node name="whiplash" type="Node2D" parent="StateMachine" index="116"]
+script = ExtResource( 484 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+sprite_animation = "WhiplashPretty"
+anim_length = 9
+refresh_loop = false
+force_dir_x = "1.0"
+force_speed = "3"
+force_tick = 5
+title = "Jab"
+type = 1
+button_texture = ExtResource( 394 )
+self_hit_cancellable = false
+interrupt_from_string = "Grounded
+GroundedAttack"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Pretty"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/whiplash" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 63
+y = -16
+width = 54
+height = 10
+damage = 10
+hitstun_ticks = 1
+plus_frames = 1
+whiff_sound = ExtResource( 339 )
+hit_sound = ExtResource( 338 )
+knockback = "0"
+start_tick = 7
+active_ticks = 2
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/whiplash" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 63
+y = -16
+width = 54
+height = 10
+damage = 70
+hitstun_ticks = 15
+plus_frames = 1
+group = 1
+whiff_sound = ExtResource( 339 )
+hit_sound = ExtResource( 338 )
+knockback = "0"
+start_tick = 9
+active_ticks = 0
 
 [node name="GuardpointLabel" type="Node2D" parent="." index="15"]
 visible = false

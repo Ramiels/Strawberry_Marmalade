@@ -1,4 +1,4 @@
-[gd_scene load_steps=493 format=2]
+[gd_scene load_steps=494 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -396,7 +396,7 @@
 [ext_resource path="res://_Percht/characters/percht/action_icons/jab.png" type="Texture" id=394]
 [ext_resource path="res://_Percht/characters/percht/action_icons/charge_punch.png" type="Texture" id=395]
 [ext_resource path="res://_Percht/characters/percht/action_icons/restand_grab.png" type="Texture" id=396]
-[ext_resource path="res://_Percht/characters/percht/action_icons/slide.png" type="Texture" id=397]
+[ext_resource path="res://_Percht/characters/percht/states/ClawSlide.gd" type="Script" id=397]
 [ext_resource path="res://_Percht/characters/percht/action_icons/spin_claw.png" type="Texture" id=398]
 [ext_resource path="res://_Percht/characters/percht/action_icons/torch_jab.png" type="Texture" id=399]
 [ext_resource path="res://_Percht/characters/percht/action_icons/upswipe.png" type="Texture" id=400]
@@ -482,6 +482,7 @@
 [ext_resource path="res://sound/common/block.wav" type="AudioStream" id=480]
 [ext_resource path="res://sound/common/swish2.wav" type="AudioStream" id=481]
 [ext_resource path="res://_Percht/characters/percht/real_animations/claw_slide_ugly.png" type="Texture" id=482]
+[ext_resource path="res://_Percht/characters/percht/action_icons/slide.png" type="Texture" id=483]
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 482 )
@@ -952,7 +953,7 @@ animations = [ {
 "name": "ScorchUgly",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "SlideUgly",
 "speed": 5.0
@@ -1661,7 +1662,7 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 material = ExtResource( 451 )
 frames = SubResource( 7 )
 animation = "SlideUgly"
-frame = 2
+frame = 15
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -1965,13 +1966,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -1991,13 +1992,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -2019,13 +2020,21 @@ sprite_animation = "GrabThrowUgly"
 anim_length = 40
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
+},
+ExtResource( 430 ): {
+"x": 14,
+"y": -16
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
 },
 ExtResource( 426 ): {
 "x": 10,
@@ -2035,21 +2044,13 @@ ExtResource( 427 ): {
 "x": 3,
 "y": -21
 },
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 },
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
-},
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
-},
-ExtResource( 430 ): {
-"x": 14,
-"y": -16
 }
 }
 show_in_menu = false
@@ -2127,6 +2128,34 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2138,34 +2167,6 @@ ExtResource( 42 ): {
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
 }
 }
 release_frame = 24
@@ -2187,6 +2188,34 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2198,34 +2227,6 @@ ExtResource( 42 ): {
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
 }
 }
 release_frame = 24
@@ -2245,6 +2246,34 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2256,34 +2285,6 @@ ExtResource( 42 ): {
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
 }
 }
 release_frame = 24
@@ -2302,6 +2303,34 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2313,34 +2342,6 @@ ExtResource( 42 ): {
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
-},
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
 }
 }
 release_frame = 24
@@ -2356,6 +2357,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2363,10 +2368,6 @@ ExtResource( 24 ): {
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
-},
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
 }
 }
 
@@ -3309,38 +3310,36 @@ loop_active_ticks = 5
 loop_inactive_ticks = 1
 
 [node name="ClawSlide" type="Node2D" parent="StateMachine" index="79"]
-script = ExtResource( 14 )
+script = ExtResource( 397 )
 __meta__ = {
 "_editor_description_": ""
 }
 apply_forces = true
 sprite_animation = "SlideUgly"
-anim_length = 13
+anim_length = 24
 force_dir_x = "2.0"
-force_speed = "3.0"
-title = "Claw Slide"
+force_speed = "7.0"
+force_tick = 4
+enter_force_dir_x = "1.0"
+enter_force_speed = "3.0"
+title = "Claw-By"
 type = 1
-button_texture = ExtResource( 397 )
-self_hit_cancellable = false
+button_texture = ExtResource( 483 )
 interrupt_from_string = "Grounded
-GroundedAttack
-"
+GroundedAttack"
 interrupt_into_string = "Grounded
-Aerial"
+GroundedAttack"
 hit_cancel_into_string = "Grounded
-Aerial"
-hit_cancel_exceptions_string = "GroundedAttack
-AerialAttack"
+GroundedAttack"
 kind = "Ugly"
 kind_locked = true
 
 [node name="Hitbox" type="Node2D" parent="StateMachine/ClawSlide" index="0"]
 z_index = 1000
 script = ExtResource( 15 )
-x = 28
-y = -9
-width = 36
-height = 9
+x = -52
+y = -7
+height = 7
 damage = 55
 hitstun_ticks = 16
 combo_hitstun_ticks = 14
@@ -3349,12 +3348,25 @@ plus_frames = 1
 hit_height = 2
 group = 1
 knockback = "6.0"
-start_tick = 5
-active_ticks = 2
+start_tick = 6
+active_ticks = 9
 loop_active_ticks = 5
 loop_inactive_ticks = 1
 
-[node name="HostCommand" type="Node" parent="StateMachine/ClawSlide" index="1"]
+[node name="Hitbox2" type="Node2D" parent="StateMachine/ClawSlide" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 10
+y = -9
+width = 53
+height = 9
+whiff_sound = ExtResource( 337 )
+hit_sound = ExtResource( 338 )
+grounded_hit_state = "HurtAerial"
+start_tick = 15
+active_ticks = 2
+
+[node name="HostCommand" type="Node" parent="StateMachine/ClawSlide" index="2"]
 script = ExtResource( 304 )
 tick = 9
 command = "try_quickswap"
@@ -4146,10 +4158,6 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
@@ -4157,6 +4165,10 @@ ExtResource( 110 ): {
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
 },
 ExtResource( 148 ): {
 "x": -33,
@@ -5203,13 +5215,13 @@ ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
-},
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -5254,9 +5266,21 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
+},
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
+},
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 },
 ExtResource( 251 ): {
 "x": -31,
@@ -5264,18 +5288,6 @@ ExtResource( 251 ): {
 },
 ExtResource( 247 ): {
 "x": 36,
-"y": -1
-},
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
-},
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
-},
-ExtResource( 231 ): {
-"x": -3,
 "y": -1
 }
 }
@@ -5509,29 +5521,25 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 347 ): {
 "x": 33,
 "y": 2
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
-ExtResource( 362 ): {
+ExtResource( 346 ): {
 "x": 34,
-"y": -14
+"y": -16
 },
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
-},
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
 },
 ExtResource( 344 ): {
 "x": 32,
@@ -5540,6 +5548,10 @@ ExtResource( 344 ): {
 ExtResource( 355 ): {
 "x": 31,
 "y": -13
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
 },
 ExtResource( 365 ): {
 "x": 4,
@@ -5593,29 +5605,25 @@ ExtResource( 361 ): {
 "x": 30,
 "y": -25
 },
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
 ExtResource( 347 ): {
 "x": 35,
 "y": 2
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
 },
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
 },
 ExtResource( 344 ): {
 "x": 32,
@@ -5628,6 +5636,10 @@ ExtResource( 355 ): {
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
 },
 ExtResource( 365 ): {
 "x": 5,

@@ -392,7 +392,7 @@
 [ext_resource path="res://_Percht/characters/percht/action_icons/air_zone.png" type="Texture" id=390]
 [ext_resource path="res://_Percht/characters/percht/action_icons/cleave.png" type="Texture" id=391]
 [ext_resource path="res://_Percht/characters/percht/action_icons/impale.png" type="Texture" id=392]
-[ext_resource path="res://_Percht/characters/percht/action_icons/scorch.png" type="Texture" id=393]
+[ext_resource path="res://_Percht/characters/percht/action_icons/scorchSpecial.png" type="Texture" id=393]
 [ext_resource path="res://_Percht/characters/percht/action_icons/jab.png" type="Texture" id=394]
 [ext_resource path="res://_Percht/characters/percht/action_icons/charge_punch.png" type="Texture" id=395]
 [ext_resource path="res://_Percht/characters/percht/action_icons/restand_grab.png" type="Texture" id=396]
@@ -406,7 +406,7 @@
 [ext_resource path="res://_Percht/characters/percht/action_icons/smoke_cloud.png" type="Texture" id=404]
 [ext_resource path="res://_Percht/characters/percht/action_icons/pierce.png" type="Texture" id=405]
 [ext_resource path="res://_Percht/characters/percht/action_icons/change_pretty.png" type="Texture" id=406]
-[ext_resource path="res://_Percht/characters/percht/action_icons/incinerate.png" type="Texture" id=407]
+[ext_resource path="res://_Percht/characters/percht/action_icons/incinerateSpecial.png" type="Texture" id=407]
 [ext_resource path="res://_Percht/characters/percht/action_icons/ankle_cutter.png" type="Texture" id=408]
 [ext_resource path="res://_Percht/characters/percht/action_icons/goodie_bag.png" type="Texture" id=409]
 [ext_resource path="res://_Percht/characters/percht/action_icons/hammer_fist.png" type="Texture" id=410]
@@ -2024,33 +2024,33 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 },
 ExtResource( 430 ): {
 "x": 14,
 "y": -16
 },
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
-},
 ExtResource( 426 ): {
 "x": 10,
 "y": -4
+},
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
 },
 ExtResource( 427 ): {
 "x": 3,
 "y": -21
 },
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
 }
 }
 show_in_menu = false
@@ -2140,21 +2140,21 @@ ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 24 ): {
 "x": -22,
@@ -2200,21 +2200,21 @@ ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 24 ): {
 "x": -22,
@@ -2258,21 +2258,21 @@ ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 24 ): {
 "x": -22,
@@ -2315,21 +2315,21 @@ ExtResource( 433 ): {
 "x": 28,
 "y": 3
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
-},
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
+ExtResource( 440 ): {
+"x": -3,
+"y": -5
 },
 ExtResource( 439 ): {
 "x": 72,
 "y": -4
 },
-ExtResource( 440 ): {
-"x": -3,
-"y": -5
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 24 ): {
 "x": -22,
@@ -3271,6 +3271,7 @@ force_speed = "3.0"
 title = "Claw"
 type = 1
 button_texture = ExtResource( 386 )
+iasa_on_hit = 5
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
@@ -3301,6 +3302,7 @@ height = 15
 damage = 40
 hitstun_ticks = 12
 victim_hitlag = 2
+cancellable = false
 group = 1
 whiff_sound = ExtResource( 476 )
 knockback = "6.0"
@@ -3344,10 +3346,11 @@ damage = 55
 hitstun_ticks = 16
 combo_hitstun_ticks = 14
 victim_hitlag = 2
+cancellable = false
 plus_frames = 1
 hit_height = 2
 group = 1
-knockback = "6.0"
+knockback = "7.0"
 start_tick = 6
 active_ticks = 9
 loop_active_ticks = 5
@@ -3360,6 +3363,7 @@ x = 10
 y = -9
 width = 53
 height = 9
+damage = 100
 whiff_sound = ExtResource( 337 )
 hit_sound = ExtResource( 338 )
 grounded_hit_state = "HurtAerial"
@@ -3368,7 +3372,7 @@ active_ticks = 2
 
 [node name="HostCommand" type="Node" parent="StateMachine/ClawSlide" index="2"]
 script = ExtResource( 304 )
-tick = 9
+tick = 13
 command = "try_quickswap"
 
 [node name="GroundSlam" type="Node2D" parent="StateMachine" index="80"]
@@ -3388,6 +3392,7 @@ sfx_tick = 11
 title = "Ground Slam"
 type = 1
 button_texture = ExtResource( 403 )
+iasa_on_hit = 13
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "Grounded
@@ -3413,8 +3418,8 @@ y = -28
 width = 31
 height = 27
 damage = 70
-hitstun_ticks = 20
 victim_hitlag = 2
+cancellable = false
 group = 1
 screenshake_frames = 9
 whiff_particle = ExtResource( 448 )
@@ -3431,7 +3436,7 @@ loop_inactive_ticks = 1
 
 [node name="HostCommand" type="Node" parent="StateMachine/GroundSlam" index="1"]
 script = ExtResource( 304 )
-tick = 11
+tick = 12
 command = "try_quickswap"
 
 [node name="GroundSlamClaw" type="Node2D" parent="StateMachine" index="81"]
@@ -3451,6 +3456,7 @@ sfx_tick = 8
 title = "Ground Slam"
 type = 1
 button_texture = ExtResource( 403 )
+iasa_on_hit = 10
 self_hit_cancellable = false
 self_interruptable = false
 interrupt_from_string = "GroundSlamClaw"
@@ -3471,8 +3477,8 @@ y = -28
 width = 31
 height = 27
 damage = 60
-hitstun_ticks = 11
 victim_hitlag = 2
+cancellable = false
 hit_height = 0
 group = 1
 screenshake_frames = 9
@@ -3490,7 +3496,7 @@ loop_inactive_ticks = 1
 
 [node name="HostCommand" type="Node" parent="StateMachine/GroundSlamClaw" index="1"]
 script = ExtResource( 304 )
-tick = 7
+tick = 8
 command = "try_quickswap"
 
 [node name="MashClaw2" type="Node2D" parent="StateMachine" index="82"]
@@ -3508,6 +3514,7 @@ force_speed = "3.0"
 title = "Claw"
 type = 1
 button_texture = ExtResource( 386 )
+iasa_on_hit = 5
 interrupt_from_string = "MashClaw2
 "
 interrupt_into_string = "Grounded
@@ -3531,6 +3538,7 @@ height = 15
 damage = 40
 hitstun_ticks = 12
 victim_hitlag = 2
+cancellable = false
 group = 1
 whiff_sound = ExtResource( 476 )
 knockback = "6.0"
@@ -4158,6 +4166,14 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 148 ): {
+"x": -33,
+"y": 3
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
@@ -4165,14 +4181,6 @@ ExtResource( 110 ): {
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
-},
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
 }
 }
 title = "Dash Grab"
@@ -4419,7 +4427,7 @@ apply_grav = true
 sprite_animation = "ScorchUgly"
 anim_length = 19
 title = "Scorch"
-type = 1
+type = 2
 button_texture = ExtResource( 393 )
 interrupt_from_string = "Grounded
 GroundedAttack"
@@ -4485,7 +4493,7 @@ custom_grav_max_fall_speed = "8.0"
 sprite_animation = "AirScorchUgly"
 anim_length = 24
 title = "Scorch"
-type = 1
+type = 2
 button_texture = ExtResource( 393 )
 air_type = 1
 interrupt_from_string = "Aerial
@@ -4680,7 +4688,7 @@ apply_grav = true
 sprite_animation = "IncinerateUgly"
 anim_length = 24
 title = "Incinerate"
-type = 1
+type = 2
 button_texture = ExtResource( 407 )
 interrupt_from_string = "Grounded
 GroundedAttack"
@@ -5266,14 +5274,6 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
-},
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
-},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
@@ -5282,13 +5282,21 @@ ExtResource( 242 ): {
 "x": -31,
 "y": -9
 },
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
-},
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
+},
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
+},
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
 }
 }
 title = "Restand Grab"
@@ -5521,13 +5529,33 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
+},
 ExtResource( 356 ): {
 "x": 26,
 "y": -1
 },
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
+},
 ExtResource( 348 ): {
 "x": 32,
 "y": -11
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
 },
 ExtResource( 347 ): {
 "x": 33,
@@ -5540,26 +5568,6 @@ ExtResource( 346 ): {
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -16
-},
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
-},
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
 }
 }
 title = "Hustle"
@@ -5601,17 +5609,41 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
 },
 ExtResource( 356 ): {
 "x": 25,
 "y": -2
 },
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
+},
 ExtResource( 348 ): {
 "x": 34,
 "y": -12
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 347 ): {
 "x": 35,
@@ -5624,30 +5656,6 @@ ExtResource( 346 ): {
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
 }
 }
 instant_cancellable = false

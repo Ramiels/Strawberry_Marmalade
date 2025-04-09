@@ -11,4 +11,7 @@ func _frame_10():
 
 func _frame_15():
 	host.colliding_with_opponent = true
-	
+
+func _tick():
+	if current_tick >= 5 && current_tick <= 11:
+		host.play_sound("Scrape")

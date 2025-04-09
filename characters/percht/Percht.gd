@@ -38,6 +38,7 @@ var goodie_bag = null
 var goodie_bag_delay = 0
 var guardpoint = false
 var restand_grab_used = false
+var swap_scaling_reduction = 2
 
 export var mask_color : Color
 
@@ -81,6 +82,7 @@ func change_kind(new_kind):
 		default_hurtbox.height = 16
 		default_hurtbox.x = 0
 		default_hurtbox.y = -16
+	
 
 func try_quickswap():
 	#print(quickswap, quickswap_buffer)
@@ -92,6 +94,8 @@ func try_quickswap():
 	
 	if quickswap_hit:
 		opponent.hitlag_ticks += QUICKSWAP_HITLAG
+
+	combo_count = max(0, combo_count - swap_scaling_reduction)
 	
 	change_state("Quickswap")
 

@@ -84,7 +84,7 @@ func change_kind(new_kind):
 		default_hurtbox.y = -16
 	
 
-func try_quickswap():
+func try_quickswap(swap_scaling_reduction = 0):
 	#print(quickswap, quickswap_buffer)
 	if got_parried:
 		return 
@@ -95,7 +95,7 @@ func try_quickswap():
 	if quickswap_hit:
 		opponent.hitlag_ticks += QUICKSWAP_HITLAG
 
-	combo_count = max(0, combo_count - swap_scaling_reduction)
+	combo_count = max(1, combo_count - swap_scaling_reduction)
 	
 	change_state("Quickswap")
 
@@ -176,7 +176,7 @@ func tick():
 	else:
 		current_smoke = null
 		can_smokeshift = false
-		print(smoke_projectiles)
+		#print(smoke_projectiles)
 		if smoke_cloak and smoke_projectiles.size() > 0:
 			can_smokeshift = true
 			cloak_current = true

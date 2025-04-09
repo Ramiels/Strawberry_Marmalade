@@ -1,6 +1,6 @@
 extends "res://_Percht/PerchtMove.gd"
 
-const SPEED = "10"
+const SPEED = "15"
 
 var move_x
 var move_y

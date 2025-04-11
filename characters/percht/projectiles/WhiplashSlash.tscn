@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://theme.tres" type="Theme" id=1]
+[ext_resource path="res://_Percht/characters/percht/projectiles/WhipSlashDefault.gd" type="Script" id=2]
+[ext_resource path="res://projectile/BaseProjectile.gd" type="Script" id=3]
+[ext_resource path="res://projectile/IndicatorDraw.gd" type="Script" id=4]
+[ext_resource path="res://obj/BaseObj.tscn" type="PackedScene" id=5]
+[ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle3.png" type="Texture" id=6]
+[ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle1.png" type="Texture" id=7]
+[ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle2.png" type="Texture" id=8]
+[ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle4.png" type="Texture" id=9]
+[ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ null ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "slash",
+"speed": 20.0
+} ]
+
+[node name="BaseProjectile" instance=ExtResource( 5 )]
+script = ExtResource( 3 )
+max_fall_speed = "10"
+immunity_susceptible = true
+deletes_other_projectiles = true
+fizzle_on_ceiling = false
+movable = true
+can_be_hit_by_melee = false
+hit_by_self_projectiles = false
+hit_cancel_on_hit = false
+free_cancel_on_hit = false
+apply_hitlag_when_hit_by_melee = true
+projectile_immune = false
+hitlag_modifier = "1.0"
+
+[node name="Sprite" parent="Flip" index="0"]
+z_index = 5
+frames = SubResource( 1 )
+
+[node name="Default" type="Node2D" parent="StateMachine" index="0"]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+fallback_state = "Slash"
+sprite_animation = "default"
+anim_length = 16
+num_hits = 27
+fizzle_on_ground = false
+fizzle_on_walls = false
+
+[node name="Slash" type="Node2D" parent="StateMachine" index="1"]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+fallback_state = ""
+sprite_animation = "slash"
+anim_length = 11
+endless = true
+move_x = 0
+num_hits = 27
+lifetime = 10
+fizzle_on_ground = false
+fizzle_on_walls = false
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Slash" index="0"]
+z_index = 1000
+script = ExtResource( 10 )
+width = 28
+height = 5
+damage = 60
+hitstun_ticks = 13
+victim_hitlag = 6
+scale_combo = false
+increment_combo = false
+di_modifier = "0.0"
+sdi_modifier = "0.0"
+dir_x = "0.0"
+dir_y = "0.0"
+knockback = "0.0"
+grounded_hit_state = "HurtAerial"
+knockdown = true
+knockdown_extends_hitstun = false
+start_tick = 3
+active_ticks = 2
+
+[node name="IndicatorDraw" type="Node2D" parent="." index="6"]
+visible = false
+modulate = Color( 1, 1, 1, 0.588235 )
+z_index = 4096
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="IndicatorDraw" index="0"]
+margin_left = -20.0
+margin_top = -16.0
+margin_right = 20.0
+margin_bottom = 15.0
+theme = ExtResource( 1 )
+text = "P1"
+align = 1
+valign = 1

@@ -285,7 +285,8 @@ func process_extra(extra):
 	
 	if extra.has("smokeshift") and extra.has("smokeshift_destination"):
 		smokeshift_now = extra.smokeshift
-		if len(smoke_projectiles) > extra.smokeshift_destination:
+		if len(smoke_projectiles) > extra.smokeshift_destination and extra.smokeshift_destination > 0:
+			print("processing extra")
 			smokeshift_destination = smoke_projectiles[extra.smokeshift_destination]
 	
 	if extra.has("shift_cancel"):

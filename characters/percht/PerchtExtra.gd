@@ -61,7 +61,7 @@ func show_options():
 		destination.hide()
 	
 	block_jump_disable()
-
+	
 	destination.min_value = 1
 	destination.max_value = len(fighter.smoke_projectiles)
 	destination.get_node("Direction").min_value = destination.min_value

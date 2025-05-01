@@ -25,6 +25,7 @@ margin_right = 110.0
 
 [node name="Direction" parent="VBoxContainer/Destination" index="1"]
 margin_right = 110.0
+value = 1.0
 
 [node name="ValueLabel" parent="VBoxContainer/Destination" index="2"]
 margin_right = 110.0

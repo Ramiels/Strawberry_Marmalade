@@ -194,7 +194,7 @@ func on_got_hit():
 	end_smokeshift()
 
 func smokeshift(target_smoke):
-	if is_instance_valid(objs_map[target_smoke]) and target_smoke in smoke_projectiles:
+	if target_smoke in objs_map and is_instance_valid(objs_map[target_smoke]) and target_smoke in smoke_projectiles:
 		var smoke_obj = objs_map[target_smoke]
 		var smoke_pos = smoke_obj.get_pos()
 		
@@ -285,8 +285,9 @@ func process_extra(extra):
 	
 	if extra.has("smokeshift") and extra.has("smokeshift_destination"):
 		smokeshift_now = extra.smokeshift
-		if len(smoke_projectiles) > extra.smokeshift_destination and extra.smokeshift_destination > 0:
-			print("processing extra")
+		#print(extra.smokeshift_destination)
+		if len(smoke_projectiles) > extra.smokeshift_destination and extra.smokeshift_destination >= 0:
+			print("processing extra ", extra.smokeshift_destination)
 			smokeshift_destination = smoke_projectiles[extra.smokeshift_destination]
 	
 	if extra.has("shift_cancel"):

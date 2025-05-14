@@ -2,9 +2,12 @@ extends Fighter
 
 var kind : String = "Pretty"
 var smoke_projectiles = []
+var incense_mace_smoke
 
 var mandarin = preload("res://_Percht/characters/percht/Mandarin/mandarin.png")
 var peanut = preload("res://_Percht/characters/percht/Peanut/peanut.png")
+
+var SMOKE_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn")
 
 var smokeshift_penalty_frames = 0
 
@@ -161,6 +164,10 @@ func tick():
 		if !smoke_cloak_particles.emitting:
 			smoke_cloak_particles.start_emitting()
 	
+	if incense_mace_smoke and incense_mace_smoke in objs_map and is_instance_valid(objs_map[incense_mace_smoke]) and incense_mace_smoke in smoke_projectiles:
+		var smoke_obj = objs_map[incense_mace_smoke]
+		smoke_obj.set_pos(opponent.get_pos().x, opponent.get_pos().y - 20)
+	
 	.tick()
 	
 	for smoke in smoke_projectiles:
@@ -287,7 +294,7 @@ func process_extra(extra):
 		smokeshift_now = extra.smokeshift
 		#print(extra.smokeshift_destination)
 		if len(smoke_projectiles) > extra.smokeshift_destination and extra.smokeshift_destination >= 0:
-			print("processing extra ", extra.smokeshift_destination)
+			#print("processing extra ", extra.smokeshift_destination)
 			smokeshift_destination = smoke_projectiles[extra.smokeshift_destination]
 	
 	if extra.has("shift_cancel"):
@@ -360,3 +367,16 @@ func start_cloak():
 func end_cloak():
 	smoke_cloak = false
 	smoke_cloak_particles.stop_emitting()
+
+func incense_mace():
+	if not (incense_mace_smoke and incense_mace_smoke in objs_map and is_instance_valid(objs_map[incense_mace_smoke]) and incense_mace_smoke in smoke_projectiles):
+		var smoke = spawn_object(SMOKE_SCENE, 0, 0, true)
+
+		smoke.set_grounded(false)
+		
+		smoke.state_machine.get_node("Default").lifetime = 100
+			
+		incense_mace_smoke = smoke.obj_name
+		smoke_projectiles.append(smoke.obj_name)
+	else:
+		objs_map[incense_mace_smoke].state_machine.get_state("Default").lifetime += 100

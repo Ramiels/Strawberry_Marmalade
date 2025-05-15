@@ -1,4 +1,4 @@
-[gd_scene load_steps=573 format=2]
+[gd_scene load_steps=585 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -502,6 +502,12 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/Megafist_Ugly.png" type="Texture" id=500]
 [ext_resource path="res://_Percht/characters/percht/states/IncenseMace.gd" type="Script" id=501]
 [ext_resource path="res://_Percht/characters/percht/real_animations/Incense_mace_pretty.png" type="Texture" id=502]
+[ext_resource path="res://_Percht/characters/percht/states/jumpscareGrabThrow.gd" type="Script" id=503]
+[ext_resource path="res://_Percht/characters/percht/real_animations/air_mash_claw_ugly.png" type="Texture" id=504]
+[ext_resource path="res://sound/common/hit3.wav" type="AudioStream" id=505]
+[ext_resource path="res://sound/common/hit5.wav" type="AudioStream" id=506]
+[ext_resource path="res://_Percht/characters/percht/SFXs/GoatNoise2.wav" type="AudioStream" id=507]
+[ext_resource path="res://_Percht/characters/percht/SFXs/GoatNoise3.wav" type="AudioStream" id=508]
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 488 )
@@ -522,6 +528,30 @@ region = Rect2( 384, 0, 128, 128 )
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 488 )
 region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 504 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 504 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 504 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 504 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 504 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 504 )
+region = Rect2( 256, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 488 )
@@ -772,7 +802,7 @@ animations = [ {
 "name": "AerialPiercePretty",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 45 ), SubResource( 46 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ) ],
+"frames": [ SubResource( 43 ), SubResource( 43 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 45 ), SubResource( 45 ), SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ), SubResource( 47 ) ],
 "loop": true,
 "name": "AirClawSlam",
 "speed": 5.0
@@ -810,6 +840,16 @@ animations = [ {
 "frames": [ ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 112 ), ExtResource( 152 ), ExtResource( 152 ), ExtResource( 152 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 128 ), ExtResource( 128 ), ExtResource( 128 ), ExtResource( 128 ), ExtResource( 91 ), ExtResource( 91 ), ExtResource( 91 ), ExtResource( 87 ), ExtResource( 87 ), ExtResource( 87 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ) ],
 "loop": true,
 "name": "AirImpaleReleasePretty",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 79 ), SubResource( 80 ), SubResource( 80 ), SubResource( 81 ) ],
+"loop": true,
+"name": "AirMashClaw2Ugly",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 82 ), SubResource( 82 ), SubResource( 82 ), SubResource( 83 ), SubResource( 83 ), SubResource( 84 ) ],
+"loop": true,
+"name": "AirMashClawUgly",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 270 ), ExtResource( 270 ), ExtResource( 270 ), ExtResource( 270 ), ExtResource( 270 ), ExtResource( 270 ), ExtResource( 270 ), ExtResource( 268 ), ExtResource( 268 ), ExtResource( 268 ), ExtResource( 269 ), ExtResource( 269 ), ExtResource( 269 ), ExtResource( 272 ), ExtResource( 272 ), ExtResource( 272 ), ExtResource( 271 ), ExtResource( 271 ), ExtResource( 271 ), ExtResource( 267 ), ExtResource( 267 ), ExtResource( 267 ), ExtResource( 267 ), ExtResource( 267 ) ],
@@ -1027,7 +1067,7 @@ animations = [ {
 "name": "IncenseCloudPretty",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 68 ), SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 76 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ) ],
+"frames": [ SubResource( 68 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 70 ), SubResource( 70 ), SubResource( 71 ), SubResource( 71 ), SubResource( 72 ), SubResource( 72 ), SubResource( 73 ), SubResource( 73 ), SubResource( 73 ), SubResource( 74 ), SubResource( 74 ), SubResource( 75 ), SubResource( 75 ), SubResource( 75 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 76 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ) ],
 "loop": true,
 "name": "IncenseMacePretty",
 "speed": 5.0
@@ -1072,7 +1112,7 @@ animations = [ {
 "name": "JumpUgly",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ) ],
+"frames": [ SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 49 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 50 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ), SubResource( 51 ) ],
 "loop": true,
 "name": "JumpscareGrabUgly",
 "speed": 5.0
@@ -1122,7 +1162,7 @@ animations = [ {
 "name": "MashClawUgly",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 62 ), SubResource( 62 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ) ],
+"frames": [ SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 62 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 63 ), SubResource( 64 ), SubResource( 64 ), SubResource( 65 ), SubResource( 65 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ), SubResource( 66 ) ],
 "loop": true,
 "name": "MegafistUgly",
 "speed": 5.0
@@ -1961,8 +2001,8 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 78 )
-animation = "IncenseMacePretty"
-frame = 7
+animation = "AirMashClawUgly"
+frame = 4
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -2013,6 +2053,18 @@ script = ExtResource( 53 )
 [node name="Scrape" type="AudioStreamPlayer2D" parent="Sounds" index="26"]
 stream = ExtResource( 486 )
 volume_db = -8.0
+bus = "Fx"
+script = ExtResource( 53 )
+
+[node name="Bell1" type="AudioStreamPlayer2D" parent="Sounds" index="27"]
+stream = ExtResource( 487 )
+volume_db = -2.0
+bus = "Fx"
+script = ExtResource( 53 )
+
+[node name="SmokeSpawn" type="AudioStreamPlayer2D" parent="Sounds" index="28"]
+stream = ExtResource( 52 )
+volume_db = -2.0
 bus = "Fx"
 script = ExtResource( 53 )
 
@@ -2272,13 +2324,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -2298,13 +2350,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -2326,37 +2378,37 @@ sprite_animation = "GrabThrowUgly"
 anim_length = 40
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 429 ): {
-"x": -30,
-"y": 8
-},
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
-},
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
+ExtResource( 377 ): {
+"x": 23,
+"y": -3
 },
 ExtResource( 427 ): {
 "x": 3,
 "y": -21
 },
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
-},
-ExtResource( 377 ): {
-"x": 23,
-"y": -3
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
 },
 ExtResource( 430 ): {
 "x": 14,
 "y": -16
+},
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
+},
+ExtResource( 429 ): {
+"x": -30,
+"y": 8
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
 }
 }
 show_in_menu = false
@@ -2438,21 +2490,13 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
@@ -2465,6 +2509,14 @@ ExtResource( 380 ): {
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
@@ -2498,21 +2550,13 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
@@ -2525,6 +2569,14 @@ ExtResource( 380 ): {
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
@@ -2556,21 +2608,13 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
@@ -2583,6 +2627,14 @@ ExtResource( 380 ): {
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
@@ -2613,21 +2665,13 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
-"y": -2
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
@@ -2640,6 +2684,14 @@ ExtResource( 380 ): {
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
+},
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 439 ): {
 "x": 72,
@@ -2869,6 +2921,7 @@ damage = 60
 hitstun_ticks = 20
 plus_frames = 1
 whiff_sound = ExtResource( 334 )
+hit_sound = ExtResource( 506 )
 whiff_sound_volume = 0.0
 knockback = "6.0"
 start_tick = 9
@@ -2915,6 +2968,7 @@ hitstun_ticks = 18
 plus_frames = 1
 hit_height = 0
 whiff_sound = ExtResource( 334 )
+hit_sound = ExtResource( 506 )
 whiff_sound_volume = 0.0
 dir_y = "-2.0"
 knockback = "3.0"
@@ -2965,6 +3019,7 @@ damage = 70
 hitstun_ticks = 20
 plus_frames = 1
 whiff_sound = ExtResource( 334 )
+hit_sound = ExtResource( 506 )
 dir_y = "0.5"
 knockback = "6.0"
 start_tick = 9
@@ -3231,6 +3286,11 @@ apply_fric = true
 apply_grav = true
 sprite_animation = "IncenseMacePretty"
 anim_length = 32
+state_screenshake_tick = 16
+state_screenshake_dir = Vector2( 0, 1 )
+sfx = ExtResource( 505 )
+sfx_tick = 16
+sfx_volume = -5.0
 title = "Incense Mace"
 type = 3
 interrupt_from_string = "Grounded
@@ -3256,6 +3316,8 @@ hitstun_ticks = 19
 victim_hitlag = 6
 di_modifier = "0.2"
 group = 1
+whiff_sound = ExtResource( 481 )
+hit_sound = ExtResource( 506 )
 knockback = "3.0"
 start_tick = 8
 active_ticks = 2
@@ -3270,9 +3332,12 @@ width = 32
 height = 28
 damage = 80
 hitstun_ticks = 20
+hitlag_ticks = 6
 victim_hitlag = 6
 plus_frames = 1
 group = 2
+whiff_sound = ExtResource( 481 )
+hit_sound = ExtResource( 506 )
 start_tick = 17
 active_ticks = 2
 
@@ -3353,12 +3418,16 @@ __meta__ = {
 apply_forces = true
 apply_fric = true
 apply_grav = true
+reset_y_momentum = true
 sprite_animation = "MegafistUgly"
 anim_length = 21
 force_dir_x = "0.5"
 force_dir_y = "1.0"
 force_speed = "5.0"
-force_tick = 5
+force_tick = 7
+enter_force_dir_x = "1.0"
+enter_force_dir_y = "-2.0"
+enter_force_speed = "3"
 title = "Hammer Fist"
 type = 1
 button_texture = ExtResource( 410 )
@@ -3376,22 +3445,86 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="Hitbox2" type="Node2D" parent="StateMachine/HammerFist" index="0"]
+[node name="SweptHitbox" type="Node2D" parent="StateMachine/HammerFist" index="0"]
 z_index = 1000
-script = ExtResource( 15 )
+script = ExtResource( 273 )
+__meta__ = {
+"_editor_description_": ""
+}
 x = 24
 y = 4
 width = 18
 height = 18
 damage = 40
 hitstun_ticks = 15
+hitlag_ticks = 6
 hit_height = 0
+screenshake_amount = 5
+hit_sound = ExtResource( 447 )
 dir_y = "1.0"
 knockback = "4.5"
-start_tick = 5
+start_tick = 9
 active_ticks = 3
+to_x = -23
+to_y = -17
 
-[node name="Scissors" type="Node2D" parent="StateMachine" index="78"]
+[node name="GroundedHammerFist" type="Node2D" parent="StateMachine" index="78"]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+reset_y_momentum = true
+sprite_animation = "MegafistUgly"
+anim_length = 21
+force_dir_y = "1.0"
+force_speed = "5.0"
+force_tick = 7
+enter_force_dir_x = "-1.0"
+enter_force_dir_y = "-2.0"
+enter_force_speed = "4"
+title = "Hammer Fist"
+type = 1
+button_texture = ExtResource( 410 )
+land_cancel = true
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Aerial
+AerialAttack
+"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="SweptHitbox" type="Node2D" parent="StateMachine/GroundedHammerFist" index="0"]
+z_index = 1000
+script = ExtResource( 273 )
+__meta__ = {
+"_editor_description_": ""
+}
+x = 24
+y = 4
+width = 18
+height = 18
+damage = 40
+hitstun_ticks = 15
+hitlag_ticks = 6
+hit_height = 0
+screenshake_amount = 5
+hit_sound = ExtResource( 447 )
+dir_y = "1.0"
+knockback = "4.5"
+start_tick = 9
+active_ticks = 3
+to_x = -23
+to_y = -17
+
+[node name="Scissors" type="Node2D" parent="StateMachine" index="79"]
 script = ExtResource( 464 )
 __meta__ = {
 "_editor_description_": ""
@@ -3531,7 +3664,7 @@ height = 18
 start_tick = 5
 endless = true
 
-[node name="Scissorsgrounded" type="Node2D" parent="StateMachine" index="79"]
+[node name="Scissorsgrounded" type="Node2D" parent="StateMachine" index="80"]
 script = ExtResource( 464 )
 __meta__ = {
 "_editor_description_": ""
@@ -3667,61 +3800,6 @@ width = 18
 height = 18
 start_tick = 5
 endless = true
-
-[node name="MashClaw1" type="Node2D" parent="StateMachine" index="80"]
-script = ExtResource( 14 )
-__meta__ = {
-"_editor_description_": ""
-}
-apply_forces = true
-apply_fric = true
-apply_grav = true
-sprite_animation = "MashClawUgly"
-anim_length = 14
-force_dir_x = "2.0"
-force_speed = "3.0"
-title = "Claw"
-type = 1
-button_texture = ExtResource( 386 )
-iasa_on_hit = 5
-self_hit_cancellable = false
-self_interruptable = false
-interrupt_from_string = "Grounded
-GroundedAttack
-"
-interrupt_into_string = "Grounded
-Aerial
-MashClaw2
-GroundSlamClaw"
-hit_cancel_into_string = "Grounded
-Aerial
-MashClaw2
-GroundSlamClaw"
-interrupt_exceptions_string = "GroundSlamRegular"
-hit_cancel_exceptions_string = "GroundedMovement
-AerialMovement
-GroundSlamRegular"
-kind = "Ugly"
-kind_locked = true
-
-[node name="Hitbox" type="Node2D" parent="StateMachine/MashClaw1" index="0"]
-z_index = 1000
-script = ExtResource( 15 )
-x = 34
-y = -16
-width = 26
-height = 15
-damage = 40
-hitstun_ticks = 12
-victim_hitlag = 2
-cancellable = false
-group = 1
-whiff_sound = ExtResource( 476 )
-knockback = "6.0"
-start_tick = 4
-active_ticks = 2
-loop_active_ticks = 5
-loop_inactive_ticks = 1
 
 [node name="LowClaw" type="Node2D" parent="StateMachine" index="81"]
 script = ExtResource( 14 )
@@ -4037,10 +4115,12 @@ __meta__ = {
 apply_forces = true
 apply_grav = true
 reset_y_momentum = true
+apply_custom_limits = true
+custom_max_air_speed = "25.0"
 sprite_animation = "AirClawSlam"
 anim_length = 19
-force_dir_x = "2.0"
-force_speed = "3.0"
+enter_force_dir_x = "1.0"
+enter_force_speed = "2.0"
 state_screenshake_tick = 5
 state_screenshake_dir = Vector2( 0, 1 )
 sfx = ExtResource( 420 )
@@ -4061,7 +4141,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 JUMP_FORCE = "-7.0"
-JUMP_FRAME = 7
+JUMP_FRAME = 6
 
 [node name="Hitbox" type="Node2D" parent="StateMachine/AirSlamClaw" index="0"]
 z_index = 1000
@@ -4094,7 +4174,62 @@ script = ExtResource( 304 )
 tick = 8
 command = "try_quickswap"
 
-[node name="MashClaw2" type="Node2D" parent="StateMachine" index="87"]
+[node name="MashClaw1" type="Node2D" parent="StateMachine" index="87"]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "MashClawUgly"
+anim_length = 14
+force_dir_x = "2.0"
+force_speed = "3.0"
+title = "Claw"
+type = 1
+button_texture = ExtResource( 386 )
+iasa_on_hit = 5
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Grounded
+GroundedAttack
+"
+interrupt_into_string = "Grounded
+Aerial
+MashClaw2
+GroundSlamClaw"
+hit_cancel_into_string = "Grounded
+Aerial
+MashClaw2
+GroundSlamClaw"
+interrupt_exceptions_string = "GroundSlamRegular"
+hit_cancel_exceptions_string = "GroundedMovement
+AerialMovement
+GroundSlamRegular"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/MashClaw1" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 34
+y = -16
+width = 26
+height = 15
+damage = 40
+hitstun_ticks = 12
+victim_hitlag = 2
+cancellable = false
+group = 1
+whiff_sound = ExtResource( 476 )
+knockback = "6.0"
+start_tick = 4
+active_ticks = 2
+loop_active_ticks = 5
+loop_inactive_ticks = 1
+
+[node name="MashClaw2" type="Node2D" parent="StateMachine" index="88"]
 script = ExtResource( 14 )
 __meta__ = {
 "_editor_description_": ""
@@ -4141,7 +4276,107 @@ start_tick = 4
 active_ticks = 1
 loop_active_ticks = 4
 
-[node name="Cleave" type="Node2D" parent="StateMachine" index="88"]
+[node name="AirMashClaw1" type="Node2D" parent="StateMachine" index="89"]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "AirMashClawUgly"
+anim_length = 14
+force_dir_x = "1.0"
+force_speed = "1.0"
+title = "Claw"
+type = 1
+button_texture = ExtResource( 386 )
+air_type = 1
+iasa_on_hit = 5
+self_hit_cancellable = false
+self_interruptable = false
+interrupt_from_string = "Aerial
+AerialAttack
+"
+interrupt_into_string = "Grounded
+Aerial
+AirMashClaw2"
+hit_cancel_into_string = "Grounded
+Aerial
+AirMashClaw2"
+hit_cancel_exceptions_string = "GroundedMovement
+AerialMovement
+GroundSlamRegular"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/AirMashClaw1" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 32
+y = -16
+width = 12
+height = 23
+damage = 40
+hitstun_ticks = 12
+victim_hitlag = 2
+cancellable = false
+group = 1
+whiff_sound = ExtResource( 485 )
+dir_y = "0"
+knockback = "6.0"
+start_tick = 5
+active_ticks = 2
+loop_active_ticks = 5
+loop_inactive_ticks = 1
+
+[node name="AirMashClaw2" type="Node2D" parent="StateMachine" index="90"]
+script = ExtResource( 14 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "AirMashClaw2Ugly"
+anim_length = 14
+force_dir_x = "2.0"
+force_speed = "3.0"
+title = "Claw"
+type = 1
+button_texture = ExtResource( 386 )
+air_type = 1
+iasa_on_hit = 5
+interrupt_from_string = "AirMashClaw2
+"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "Grounded
+Aerial"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/AirMashClaw2" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 32
+y = -16
+width = 12
+height = 23
+damage = 40
+hitstun_ticks = 12
+victim_hitlag = 2
+cancellable = false
+group = 1
+whiff_sound = ExtResource( 485 )
+dir_y = "0"
+knockback = "6.0"
+start_tick = 5
+active_ticks = 2
+loop_active_ticks = 5
+loop_inactive_ticks = 1
+
+[node name="Cleave" type="Node2D" parent="StateMachine" index="91"]
 script = ExtResource( 99 )
 __meta__ = {
 "_editor_description_": ""
@@ -4263,7 +4498,7 @@ air_ground_bounce = true
 start_tick = 26
 active_ticks = 3
 
-[node name="AirZone" type="Node2D" parent="StateMachine" index="89"]
+[node name="AirZone" type="Node2D" parent="StateMachine" index="92"]
 script = ExtResource( 106 )
 __meta__ = {
 "_editor_description_": ""
@@ -4367,7 +4602,7 @@ script = ExtResource( 304 )
 tick = 15
 command = "try_quickswap"
 
-[node name="LeapSlash2" type="Node2D" parent="StateMachine" index="90"]
+[node name="LeapSlash2" type="Node2D" parent="StateMachine" index="93"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -4442,7 +4677,7 @@ grounded_hit_state = "HurtAerial"
 start_tick = 8
 active_ticks = 4
 
-[node name="LeapSlash" type="Node2D" parent="StateMachine" index="91"]
+[node name="LeapSlash" type="Node2D" parent="StateMachine" index="94"]
 script = ExtResource( 418 )
 __meta__ = {
 "_editor_description_": ""
@@ -4602,7 +4837,7 @@ knockback = "5.0"
 start_tick = 15
 active_ticks = 4
 
-[node name="AerialPierce" type="Node2D" parent="StateMachine" index="92"]
+[node name="AerialPierce" type="Node2D" parent="StateMachine" index="95"]
 script = ExtResource( 108 )
 apply_forces = true
 apply_fric = true
@@ -4705,7 +4940,7 @@ script = ExtResource( 304 )
 tick = 9
 command = "try_quickswap"
 
-[node name="DashGrab" type="Node2D" parent="StateMachine" index="93"]
+[node name="DashGrab" type="Node2D" parent="StateMachine" index="96"]
 script = ExtResource( 121 )
 apply_forces = true
 apply_fric = true
@@ -4749,7 +4984,7 @@ width = 30
 height = 14
 active_ticks = 9
 
-[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="94"]
+[node name="DashGrabThrow" type="Node2D" parent="StateMachine" index="97"]
 script = ExtResource( 125 )
 apply_forces = true
 apply_fric = true
@@ -4761,13 +4996,13 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 },
 ExtResource( 110 ): {
 "x": -27,
@@ -4798,7 +5033,7 @@ damage = 100
 screenshake_amount = 9
 screenshake_frames = 4
 
-[node name="JumpscareGrab" type="Node2D" parent="StateMachine" index="95"]
+[node name="JumpscareGrab" type="Node2D" parent="StateMachine" index="98"]
 script = ExtResource( 499 )
 __meta__ = {
 "_editor_description_": ""
@@ -4813,27 +5048,29 @@ endless = true
 title = "Jumpscare Grab"
 type = 3
 button_texture = ExtResource( 402 )
+update_facing_on_exit = false
 can_feint_if_possible = false
 interrupt_from_string = "Grounded
 GroundedSpecial
 GroundedSuper"
 interrupt_into_string = "Grounded"
-super_level_ = 1
-supers_used_ = 1
+super_level_ = 3
+supers_used_ = 3
+super_effect_ = true
 kind = "Ugly"
 kind_locked = true
 
 [node name="ThrowBox" type="Node2D" parent="StateMachine/JumpscareGrab" index="0"]
 script = ExtResource( 124 )
-x = 30
+x = 24
 y = -18
-width = 12
+width = 18
 height = 12
 hitlag_ticks = 15
 hit_height = 0
 hit_sound = ExtResource( 123 )
-start_tick = 8
-active_ticks = 3
+start_tick = 6
+always_on = true
 throw_state = "JumpscareGrabThrow"
 
 [node name="HurtboxState" type="Node2D" parent="StateMachine/JumpscareGrab" index="1"]
@@ -4844,26 +5081,66 @@ width = 30
 height = 14
 active_ticks = 9
 
-[node name="JumpscareGrabThrow" type="Node2D" parent="StateMachine" index="96"]
-script = ExtResource( 125 )
+[node name="JumpscareGrabThrow" type="Node2D" parent="StateMachine" index="99"]
+script = ExtResource( 503 )
+__meta__ = {
+"_editor_description_": ""
+}
 apply_forces = true
 apply_fric = true
 apply_grav = true
+reset_momentum = true
 sprite_animation = "JumpscareThrowUgly"
 anim_length = 27
-force_dir_x = "1.0"
+force_dir_x = "-1.0"
 force_dir_y = "-4.0"
 force_speed = "2.0"
-force_tick = 1
+force_tick = 19
+enter_force_dir_x = "3.0"
+enter_force_dir_y = "-2.0"
+enter_force_speed = "4.0"
+enter_sfx = ExtResource( 508 )
+enter_sfx_volume = -5.0
+sfx = ExtResource( 507 )
+sfx_tick = 19
+sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
+SubResource( 56 ): {
+"x": -20,
+"y": -14
+},
+SubResource( 53 ): {
+"x": 10,
+"y": 12
+},
+SubResource( 55 ): {
+"x": -26,
+"y": -5
+},
+SubResource( 58 ): {
+"x": 26,
+"y": 22
+},
+SubResource( 52 ): {
+"x": 29,
+"y": 0
+},
+SubResource( 54 ): {
+"x": -11,
+"y": 10
+},
+SubResource( 57 ): {
+"x": -16,
+"y": -16
 },
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 },
 ExtResource( 110 ): {
 "x": -27,
@@ -4872,34 +5149,6 @@ ExtResource( 110 ): {
 ExtResource( 148 ): {
 "x": -33,
 "y": 3
-},
-SubResource( 53 ): {
-"x": 10,
-"y": 12
-},
-SubResource( 52 ): {
-"x": 29,
-"y": 0
-},
-SubResource( 55 ): {
-"x": -26,
-"y": -5
-},
-SubResource( 56 ): {
-"x": -20,
-"y": -14
-},
-SubResource( 57 ): {
-"x": -16,
-"y": -16
-},
-SubResource( 58 ): {
-"x": 26,
-"y": 22
-},
-SubResource( 54 ): {
-"x": -11,
-"y": 10
 }
 }
 title = "Jumpscare Grab"
@@ -4920,13 +5169,15 @@ dir_y = "2.0"
 knockdown = false
 knockdown_extends_hitstun = false
 grounded_hit_state = "HurtAerial"
-damage = 300
+damage = 150
 screenshake_amount = 9
 screenshake_frames = 4
 air_ground_bounce = true
 wall_slam = true
+release_sfx = ExtResource( 476 )
+release_sfx_volume = -2.0
 
-[node name="Whipcopter" type="Node2D" parent="StateMachine" index="97"]
+[node name="Whipcopter" type="Node2D" parent="StateMachine" index="100"]
 script = ExtResource( 107 )
 apply_forces = true
 apply_grav = true
@@ -4968,6 +5219,7 @@ hitstun_ticks = 15
 cancellable = false
 plus_frames = 1
 hit_height = 0
+hit_sound = ExtResource( 506 )
 knockback = "5.0"
 start_tick = 11
 active_ticks = 2
@@ -4985,6 +5237,7 @@ hitstun_ticks = 15
 cancellable = false
 plus_frames = 1
 hit_height = 0
+hit_sound = ExtResource( 506 )
 knockback = "5.0"
 start_tick = 13
 active_ticks = 2
@@ -5005,7 +5258,7 @@ plus_frames = 2
 hit_height = 0
 group = 2
 whiff_sound = ExtResource( 334 )
-hit_sound = ExtResource( 336 )
+hit_sound = ExtResource( 506 )
 dir_y = "1.0"
 knockback = "6.0"
 grounded_hit_state = "HurtAerial"
@@ -5029,14 +5282,14 @@ plus_frames = 2
 hit_height = 0
 group = 2
 whiff_sound = ExtResource( 334 )
-hit_sound = ExtResource( 336 )
+hit_sound = ExtResource( 506 )
 dir_y = "1.0"
 knockback = "6.0"
 knockdown = true
 start_tick = 16
 active_ticks = 3
 
-[node name="AirImpale" type="Node2D" parent="StateMachine" index="98"]
+[node name="AirImpale" type="Node2D" parent="StateMachine" index="101"]
 script = ExtResource( 154 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -5070,7 +5323,7 @@ hit_sound = ExtResource( 338 )
 start_tick = 8
 always_on = true
 
-[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="99"]
+[node name="AirImpaleDrag" type="Node2D" parent="StateMachine" index="102"]
 script = ExtResource( 157 )
 apply_forces = true
 apply_forces_no_limit = true
@@ -5091,7 +5344,7 @@ damage = 30
 hits_otg = true
 di_modifier = "0.0"
 
-[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="100"]
+[node name="AirImpaleRelease" type="Node2D" parent="StateMachine" index="103"]
 script = ExtResource( 158 )
 apply_fric = true
 apply_grav = true
@@ -5142,7 +5395,7 @@ air_ground_bounce = true
 start_tick = 20
 active_ticks = 4
 
-[node name="Scorch" type="Node2D" parent="StateMachine" index="101"]
+[node name="Scorch" type="Node2D" parent="StateMachine" index="104"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -5206,7 +5459,7 @@ script = ExtResource( 304 )
 tick = 14
 command = "try_quickswap"
 
-[node name="AirScorch" type="Node2D" parent="StateMachine" index="102"]
+[node name="AirScorch" type="Node2D" parent="StateMachine" index="105"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -5355,7 +5608,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="TorchJab" type="Node2D" parent="StateMachine" index="103"]
+[node name="TorchJab" type="Node2D" parent="StateMachine" index="106"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -5403,7 +5656,7 @@ parriable = false
 start_tick = 5
 active_ticks = 2
 
-[node name="Incinerate" type="Node2D" parent="StateMachine" index="104"]
+[node name="Incinerate" type="Node2D" parent="StateMachine" index="107"]
 script = ExtResource( 166 )
 apply_forces = true
 apply_fric = true
@@ -5663,7 +5916,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="105"]
+[node name="GoodieBagThrow" type="Node2D" parent="StateMachine" index="108"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true
@@ -5681,7 +5934,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="106"]
+[node name="AirGoodieBagThrow" type="Node2D" parent="StateMachine" index="109"]
 script = ExtResource( 186 )
 apply_forces = true
 apply_fric = true
@@ -5700,7 +5953,7 @@ Aerial"
 kind = "Ugly"
 kind_locked = true
 
-[node name="ChargePunchDefault" type="Node2D" parent="StateMachine" index="107"]
+[node name="ChargePunchDefault" type="Node2D" parent="StateMachine" index="110"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -5746,7 +5999,7 @@ script = ExtResource( 304 )
 tick = 18
 command = "try_quickswap"
 
-[node name="ChargePunch2" type="Node2D" parent="StateMachine" index="108"]
+[node name="ChargePunch2" type="Node2D" parent="StateMachine" index="111"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -5792,7 +6045,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="ChargePunch3" type="Node2D" parent="StateMachine" index="109"]
+[node name="ChargePunch3" type="Node2D" parent="StateMachine" index="112"]
 script = ExtResource( 210 )
 apply_forces = true
 apply_fric = true
@@ -5869,7 +6122,7 @@ script = ExtResource( 304 )
 tick = 17
 command = "try_quickswap"
 
-[node name="RestandGrab" type="Node2D" parent="StateMachine" index="110"]
+[node name="RestandGrab" type="Node2D" parent="StateMachine" index="113"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -5903,7 +6156,7 @@ script = ExtResource( 304 )
 tick = 15
 command = "try_quickswap"
 
-[node name="RestandGrabAirHold" type="Node2D" parent="StateMachine" index="111"]
+[node name="RestandGrabAirHold" type="Node2D" parent="StateMachine" index="114"]
 script = ExtResource( 254 )
 apply_forces = true
 apply_fric = true
@@ -5923,7 +6176,7 @@ ExtResource( 232 ): {
 show_in_menu = false
 selectable = false
 
-[node name="RestandGrabAirThrow" type="Node2D" parent="StateMachine" index="112"]
+[node name="RestandGrabAirThrow" type="Node2D" parent="StateMachine" index="115"]
 script = ExtResource( 255 )
 apply_forces = true
 apply_fric = true
@@ -5942,10 +6195,6 @@ state_screenshake_amount = 15
 enter_sfx = ExtResource( 444 )
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 247 ): {
-"x": 36,
-"y": -1
-},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
@@ -5953,6 +6202,10 @@ ExtResource( 233 ): {
 ExtResource( 242 ): {
 "x": -31,
 "y": -9
+},
+ExtResource( 247 ): {
+"x": 36,
+"y": -1
 }
 }
 title = "Restand Grab"
@@ -5981,7 +6234,7 @@ script = ExtResource( 304 )
 tick = 21
 command = "try_quickswap"
 
-[node name="RestandGrabGroundThrow" type="Node2D" parent="StateMachine" index="113"]
+[node name="RestandGrabGroundThrow" type="Node2D" parent="StateMachine" index="116"]
 script = ExtResource( 255 )
 apply_forces = true
 apply_fric = true
@@ -5997,6 +6250,10 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
+},
 ExtResource( 231 ): {
 "x": -3,
 "y": -1
@@ -6005,17 +6262,13 @@ ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 },
 ExtResource( 251 ): {
 "x": -31,
 "y": -10
-},
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
 }
 }
 title = "Restand Grab"
@@ -6045,7 +6298,7 @@ script = ExtResource( 304 )
 tick = 21
 command = "try_quickswap"
 
-[node name="RestandGrabAirU" type="Node2D" parent="StateMachine" index="114"]
+[node name="RestandGrabAirU" type="Node2D" parent="StateMachine" index="117"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -6078,7 +6331,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabAirF" type="Node2D" parent="StateMachine" index="115"]
+[node name="RestandGrabAirF" type="Node2D" parent="StateMachine" index="118"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -6111,7 +6364,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabAirD" type="Node2D" parent="StateMachine" index="116"]
+[node name="RestandGrabAirD" type="Node2D" parent="StateMachine" index="119"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -6144,7 +6397,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabGroundF" type="Node2D" parent="StateMachine" index="117"]
+[node name="RestandGrabGroundF" type="Node2D" parent="StateMachine" index="120"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -6177,7 +6430,7 @@ hits_vs_grounded = false
 start_tick = 9
 throw_state = "RestandGrabAirHold"
 
-[node name="RestandGrabGroundD" type="Node2D" parent="StateMachine" index="118"]
+[node name="RestandGrabGroundD" type="Node2D" parent="StateMachine" index="121"]
 script = ExtResource( 252 )
 apply_forces = true
 apply_fric = true
@@ -6211,7 +6464,7 @@ hits_vs_aerial = false
 start_tick = 9
 throw_state = "RestandGrabGroundThrow"
 
-[node name="Quickswap" type="Node2D" parent="StateMachine" index="119"]
+[node name="Quickswap" type="Node2D" parent="StateMachine" index="122"]
 script = ExtResource( 303 )
 apply_forces = true
 apply_fric = true
@@ -6223,7 +6476,7 @@ selectable = false
 interrupt_into_string = "Aerial
 Grounded"
 
-[node name="QuickswapBlock" type="Node2D" parent="StateMachine" index="120"]
+[node name="QuickswapBlock" type="Node2D" parent="StateMachine" index="123"]
 script = ExtResource( 305 )
 __meta__ = {
 "_editor_description_": ""
@@ -6236,7 +6489,7 @@ air_type = 2
 next_state_on_hold_on_opponent_turn = true
 selectable = false
 
-[node name="TauntUgly" type="Node2D" parent="StateMachine" index="121"]
+[node name="TauntUgly" type="Node2D" parent="StateMachine" index="124"]
 script = ExtResource( 367 )
 __meta__ = {
 "_editor_description_": ""
@@ -6248,22 +6501,6 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
-ExtResource( 347 ): {
-"x": 33,
-"y": 2
-},
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
-},
 ExtResource( 344 ): {
 "x": 32,
 "y": -16
@@ -6272,21 +6509,37 @@ ExtResource( 346 ): {
 "x": 34,
 "y": -16
 },
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 347 ): {
+"x": 33,
+"y": 2
+},
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
+},
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
 },
 ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
-},
 ExtResource( 365 ): {
 "x": 4,
 "y": 0
+},
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
 }
 }
 title = "Hustle"
@@ -6316,7 +6569,7 @@ start_tick = 19
 active_ticks = 19
 throw_state = "TauntUglyThrow"
 
-[node name="TauntUglyThrow" type="Node2D" parent="StateMachine" index="122"]
+[node name="TauntUglyThrow" type="Node2D" parent="StateMachine" index="125"]
 script = ExtResource( 378 )
 __meta__ = {
 "_editor_description_": ""
@@ -6328,26 +6581,6 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
-},
 ExtResource( 344 ): {
 "x": 32,
 "y": -17
@@ -6356,25 +6589,45 @@ ExtResource( 346 ): {
 "x": 36,
 "y": -16
 },
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
+},
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
 },
 ExtResource( 355 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
-},
 ExtResource( 365 ): {
 "x": 5,
 "y": -1
 },
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
 }
 }
 instant_cancellable = false

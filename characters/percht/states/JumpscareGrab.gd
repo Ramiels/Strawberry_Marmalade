@@ -2,7 +2,7 @@ extends "res://_Percht/PerchtMove.gd"
 
 var SPEED = "8.0"
 var VEL_X_MULT = "2.2"
-var VEL_Y = "-2.0"
+var VEL_Y = "-2.5"
 
 func _frame_1():
 	host.set_grounded(false)

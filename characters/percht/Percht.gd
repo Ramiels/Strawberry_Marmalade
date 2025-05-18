@@ -113,6 +113,13 @@ func _draw():
 	
 	._draw()
 
+func consume_smoke():
+	if current_smoke != null and is_instance_valid(objs_map[current_smoke]):
+		objs_map[current_smoke].schedule_disable()
+	elif smoke_cloak:
+		end_cloak()
+		#cloak_current = false
+
 func overlapping_smoke():
 	var overlapped_smoke = null
 	for obj_name in objs_map:
@@ -169,6 +176,8 @@ func tick():
 		smoke_obj.set_pos(opponent.get_pos().x, opponent.get_pos().y - 20)
 	
 	.tick()
+	
+	print(get_facing_int())
 	
 	for smoke in smoke_projectiles:
 		if !obj_from_name(smoke):

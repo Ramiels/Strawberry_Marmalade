@@ -4,6 +4,8 @@ export  var _c_Percht = 0
 export (String) var kind
 export (bool) var kind_locked = false
 
+var is_whip_move = true
+
 func is_usable():
 	var correct = true
 	if kind != "":
@@ -19,7 +21,7 @@ func is_usable():
 func _enter():
 	var next_state = ._enter()
 	if host.kind == "Pretty":
-		anim_name = "DashForwardPretty"
+		anim_name = "SwagdashGroundedPretty"
 	if host.kind == "Ugly":
 		anim_name = "DashForwardUgly"
 	return next_state
@@ -27,6 +29,7 @@ func _enter():
 func _frame_0():
 	host.consume_smoke()
 	._frame_0()
+	host.colliding_with_opponent = false
 
 func _tick():
 	host.apply_x_fric(fric)
@@ -49,3 +52,5 @@ func _tick():
 			updated = true
 			host.set_vel(fixed.mul(fixed.abs(vel.x), str(host.get_opponent_dir())), vel.y)
 
+func _exit():
+	host.colliding_with_opponent = true

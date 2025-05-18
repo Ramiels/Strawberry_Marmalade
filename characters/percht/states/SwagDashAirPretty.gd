@@ -4,6 +4,8 @@ export  var _c_Percht = 0
 export (String) var kind
 export (bool) var kind_locked = false
 
+var is_whip_move = true
+
 func is_usable():
 	var correct = true
 	if kind != "":
@@ -19,6 +21,7 @@ func is_usable():
 func _enter():
 	._enter()
 	anim_name = "Fall" + host.kind
+	host.colliding_with_opponent = false
 	
 	#print("enter: ", anim_name)
 
@@ -33,3 +36,6 @@ func _frame_0():
 func _tick():
 	._tick()
 	host.apply_y_fric(fric)
+
+func _exit():
+	host.colliding_with_opponent = true

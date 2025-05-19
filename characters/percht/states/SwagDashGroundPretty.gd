@@ -6,6 +6,8 @@ export (bool) var kind_locked = false
 
 var is_whip_move = true
 
+var SmokeDashParticle = preload("res://_Percht/characters/percht/SmokeDashEffect.tscn")
+
 func is_usable():
 	var correct = true
 	if kind != "":
@@ -24,6 +26,8 @@ func _enter():
 		anim_name = "SwagdashGroundedPretty"
 	if host.kind == "Ugly":
 		anim_name = "DashForwardUgly"
+	
+	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(0.0, -18.0))
 	return next_state
 
 func _frame_0():

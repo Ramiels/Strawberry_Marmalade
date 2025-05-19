@@ -6,6 +6,8 @@ export (bool) var kind_locked = false
 
 var is_whip_move = true
 
+var SmokeDashParticle = preload("res://_Percht/characters/percht/SmokeDashEffect.tscn")
+
 func is_usable():
 	var correct = true
 	if kind != "":
@@ -22,6 +24,8 @@ func _enter():
 	._enter()
 	anim_name = "Fall" + host.kind
 	host.colliding_with_opponent = false
+	
+	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(), Vector2(float(data.x), float(data.y)))
 	
 	#print("enter: ", anim_name)
 

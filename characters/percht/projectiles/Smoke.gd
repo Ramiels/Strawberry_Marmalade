@@ -8,11 +8,14 @@ var scheduled_explode_tick = 0
 
 var EXPLOSION = preload("res://_Percht/characters/percht/projectiles/SmokeExplosion.tscn")
 
+var SMOKEVANISHEFFECT = preload("res://_Percht/characters/percht/SmokeVanishEffect.tscn")
+
 func copy_to(f):
 	.copy_to(f)
 	f.scheduled_disable = scheduled_disable
 
 func disable():
+	spawn_particle_effect_relative(SMOKEVANISHEFFECT, Vector2())
 	.disable()
 	$Flip/Particles/ParticleEffect.queue_free()
 	#creator.smoke_projectiles.erase(obj_name)

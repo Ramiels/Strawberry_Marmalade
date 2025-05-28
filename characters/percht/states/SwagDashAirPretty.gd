@@ -22,7 +22,7 @@ func is_usable():
 
 func _enter():
 	._enter()
-	anim_name = "Fall" + host.kind
+	anim_name = "SwagdashAerialPretty"
 	host.colliding_with_opponent = false
 	
 	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(), Vector2(float(data.x), float(data.y)))
@@ -32,7 +32,8 @@ func _enter():
 func _frame_0():
 	host.consume_smoke()
 	var next_state = ._frame_0()
-	anim_name = anim_name + host.kind
+	#anim_name = anim_name + host.kind
+	anim_name = "SwagdashAerialPretty"
 	#print("frame0: ", anim_name)
 	return next_state
 

@@ -58,3 +58,4 @@ func _tick():
 
 func _exit():
 	host.colliding_with_opponent = true
+	host.whip_combo = true

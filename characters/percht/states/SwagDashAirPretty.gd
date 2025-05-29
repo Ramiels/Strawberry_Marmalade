@@ -4,8 +4,6 @@ export  var _c_Percht = 0
 export (String) var kind
 export (bool) var kind_locked = false
 
-var is_whip_move = true
-
 var SmokeDashParticle = preload("res://_Percht/characters/percht/SmokeDashEffect.tscn")
 
 func is_usable():
@@ -44,3 +42,4 @@ func _tick():
 
 func _exit():
 	host.colliding_with_opponent = true
+	host.whip_combo = true

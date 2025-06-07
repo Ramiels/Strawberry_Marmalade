@@ -32,6 +32,7 @@ func _frame_0():
 	host.consume_smoke()
 
 func _frame_4():
+	
 	if data["Teleport"].x == 0 || data["Teleport"].y == 0:
 		#MOVE_DIST = fixed.round(fixed.mul("1,414", MOVE_DIST))
 		MOVE_DIST = "100"

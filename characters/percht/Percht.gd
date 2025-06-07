@@ -37,6 +37,7 @@ var quickswap = false
 var quickswap_hit = false
 
 var whip_combo = false
+var whip_combo_previous_turn = false # this is for whip juggle specifically so the variations donw auto speed-up
 var goodie_bag = null
 var goodie_bag_delay = 0
 var guardpoint = false
@@ -323,9 +324,13 @@ func on_state_started(state):
 	if "is_whip_move" in state:
 		if whip_combo:
 			state.current_tick += 3
+			whip_combo_previous_turn = true
 		
 		whip_combo = true
 	else:
+		if whip_combo:
+			whip_combo_previous_turn = false
+		
 		whip_combo = false
 	
 	.on_state_started(state)

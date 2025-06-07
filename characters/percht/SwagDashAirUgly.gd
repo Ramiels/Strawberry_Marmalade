@@ -8,7 +8,7 @@ const MAX_IASA = 14
 const COMBO_IASA = 7
 const MAX_EXTRA_LAG_FRAMES = 5
 const NEUTRAL_MIN_IASA = 9
-const MOVE_DIST = "80"
+var MOVE_DIST = "70"
 
 export  var dir_x = "3.0"
 export  var dir_y = "-5.0"
@@ -23,10 +23,19 @@ var startup_lag_frames = 0
 #func _frame_1():
 #	spawn_particle_relative(preload("res://fx/DashParticle.tscn"), host.hurtbox_pos_relative_float(), Vector2(data.x, data.y))
 
+
+var SmokeDashParticle = preload("res://_Percht/characters/percht/SmokeDashEffect.tscn")
+var SmokeTeleportParticle = preload("res://_Percht/characters/percht/SmokeVanishEffect.tscn")
+
+
 func _frame_0():
 	host.consume_smoke()
 
 func _frame_4():
+	if data["Teleport"].x == 0 || data["Teleport"].y == 0:
+		#MOVE_DIST = fixed.round(fixed.mul("1,414", MOVE_DIST))
+		MOVE_DIST = "100"
+	
 	var dir = xy_to_dir(data["Teleport"].x, data["Teleport"].y, MOVE_DIST, "1.0")
 
 	host.move_directly(dir.x, dir.y)
@@ -72,6 +81,9 @@ func _frame_5():
 	anim_name = "SwagdashAerialUgly"
 	
 	host.apply_force(force.x, fixed.mul(force.y, Y_MODIFIER) if "-" in force.y else force.y)
+	
+	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(0.0, -18.0), Vector2(float(data["Dash"].x), float(data["Dash"].y)))
+	host.spawn_particle_effect_relative(SmokeTeleportParticle, Vector2(0.0, -18.0))
 
 func _tick():
 
@@ -96,7 +108,7 @@ export  var _c_Percht = 0
 export (String) var kind
 export (bool) var kind_locked = false
 
-var SmokeDashParticle = preload("res://_Percht/characters/percht/SmokeDashEffect.tscn")
+
 
 func is_usable():
 	var correct = true
@@ -115,7 +127,7 @@ func _enter():
 	anim_name = "SwagdashAerialUgly"
 	host.colliding_with_opponent = false
 	
-	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(), Vector2(float(data["Teleport"].x), float(data["Teleport"].y)))
+	#host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(), Vector2(float(data["Dash"].x), float(data["Dash"].y)))
 	
 	#print("enter: ", anim_name)
 

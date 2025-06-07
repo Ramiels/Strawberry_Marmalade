@@ -178,8 +178,6 @@ func tick():
 	
 	.tick()
 	
-	print(get_facing_int())
-	
 	for smoke in smoke_projectiles:
 		if !obj_from_name(smoke):
 			#print('test')

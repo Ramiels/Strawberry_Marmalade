@@ -10,7 +10,7 @@ func _enter():
 		elif data.y == 1:
 			check_previous_turn()
 			return "WhipJuggleDownward"
-		elif data.x == -1:
+		elif data.x * host.get_facing_int() == -1:
 			check_previous_turn()
 			return "WhipJuggleBackward"
 

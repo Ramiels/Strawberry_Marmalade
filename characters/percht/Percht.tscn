@@ -2624,9 +2624,9 @@ ExtResource( 426 ): {
 "x": 10,
 "y": -4
 },
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
 },
 ExtResource( 429 ): {
 "x": -30,
@@ -2636,13 +2636,13 @@ ExtResource( 430 ): {
 "x": 14,
 "y": -16
 },
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
+},
 ExtResource( 421 ): {
 "x": 5,
 "y": -2
-},
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
 },
 ExtResource( 431 ): {
 "x": -23,
@@ -2724,6 +2724,10 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2732,37 +2736,33 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 }
 }
 release_frame = 24
@@ -2784,6 +2784,10 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2792,37 +2796,33 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 }
 }
 release_frame = 24
@@ -2842,6 +2842,10 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2850,37 +2854,33 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 }
 }
 release_frame = 24
@@ -2899,6 +2899,10 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2907,37 +2911,33 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
-},
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 }
 }
 release_frame = 24
@@ -3179,7 +3179,7 @@ force_tick = 5
 sfx = ExtResource( 477 )
 sfx_tick = 3
 sfx_volume = -8.0
-title = "Whip Strike"
+title = "Juggle"
 type = 2
 data_ui_scene = ExtResource( 535 )
 button_texture = ExtResource( 388 )
@@ -3231,7 +3231,7 @@ force_tick = 5
 sfx = ExtResource( 477 )
 sfx_tick = 3
 sfx_volume = -8.0
-title = "Whip Strike"
+title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
@@ -3285,7 +3285,7 @@ force_tick = 5
 sfx = ExtResource( 477 )
 sfx_tick = 3
 sfx_volume = -8.0
-title = "Whip Strike"
+title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
@@ -3338,7 +3338,7 @@ force_tick = 5
 sfx = ExtResource( 477 )
 sfx_tick = 3
 sfx_volume = -8.0
-title = "Whip Strike"
+title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
@@ -5526,21 +5526,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 102 ): {
-"x": 29,
+ExtResource( 148 ): {
+"x": -33,
 "y": 3
 },
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
-},
-ExtResource( 148 ): {
-"x": -33,
-"y": 3
 }
 }
 title = "Dash Grab"
@@ -5636,17 +5636,33 @@ sfx_tick = 19
 sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
-SubResource( 52 ): {
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
+},
+ExtResource( 102 ): {
 "x": 29,
-"y": 0
+"y": 3
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 },
 SubResource( 54 ): {
 "x": -11,
 "y": 10
 },
+SubResource( 56 ): {
+"x": -20,
+"y": -14
+},
 SubResource( 53 ): {
 "x": 10,
 "y": 12
+},
+SubResource( 52 ): {
+"x": 29,
+"y": 0
 },
 SubResource( 55 ): {
 "x": -26,
@@ -5659,22 +5675,6 @@ SubResource( 57 ): {
 SubResource( 58 ): {
 "x": 26,
 "y": 22
-},
-SubResource( 56 ): {
-"x": -20,
-"y": -14
-},
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
 }
 }
 title = "Jumpscare Grab"
@@ -6776,9 +6776,9 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
 },
 ExtResource( 231 ): {
 "x": -3,
@@ -6788,9 +6788,9 @@ ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
 },
 ExtResource( 242 ): {
 "x": -31,
@@ -7031,13 +7031,17 @@ ExtResource( 344 ): {
 "x": 32,
 "y": -16
 },
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
 ExtResource( 348 ): {
 "x": 32,
 "y": -11
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
+ExtResource( 346 ): {
+"x": 34,
+"y": -16
 },
 ExtResource( 366 ): {
 "x": 8,
@@ -7047,17 +7051,13 @@ ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
 },
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
 },
 ExtResource( 365 ): {
 "x": 4,
@@ -7103,49 +7103,49 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
 ExtResource( 344 ): {
 "x": 32,
+"y": -17
+},
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 362 ): {
+"x": 33,
 "y": -17
 },
 ExtResource( 346 ): {
 "x": 36,
 "y": -16
 },
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
 ExtResource( 366 ): {
 "x": 7,
 "y": -1
+},
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
 },
 ExtResource( 355 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
 },
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
 },
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
 },
 ExtResource( 365 ): {
 "x": 5,

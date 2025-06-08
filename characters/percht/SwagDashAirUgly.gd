@@ -8,7 +8,7 @@ const MAX_IASA = 14
 const COMBO_IASA = 7
 const MAX_EXTRA_LAG_FRAMES = 5
 const NEUTRAL_MIN_IASA = 9
-var MOVE_DIST = "70"
+var MOVE_DIST = "100"
 
 export  var dir_x = "3.0"
 export  var dir_y = "-5.0"
@@ -32,13 +32,12 @@ func _frame_0():
 	host.consume_smoke()
 
 func _frame_4():
-	
-	if data["Teleport"].x == 0 || data["Teleport"].y == 0:
-		#MOVE_DIST = fixed.round(fixed.mul("1,414", MOVE_DIST))
-		MOVE_DIST = "100"
-	
-	var dir = xy_to_dir(data["Teleport"].x, data["Teleport"].y, MOVE_DIST, "1.0")
 
+	
+	var dir = xy_to_dir(data["Teleport"].x, data["Teleport"].y, "1.0", "1.0")
+	dir = fixed.normalized_vec_times(dir.x, dir.y, "1")
+	dir = fixed.vec_mul(dir.x, dir.y, MOVE_DIST)
+	
 	host.move_directly(dir.x, dir.y)
 	var vel = host.get_vel()
 

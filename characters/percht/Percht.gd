@@ -9,6 +9,8 @@ var peanut = preload("res://_Percht/characters/percht/Peanut/peanut.png")
 
 var SMOKE_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn")
 
+var SmokeTeleportParticle = preload("res://_Percht/characters/percht/SmokeVanishEffect.tscn")
+
 var smokeshift_penalty_frames = 0
 
 var smokeshift_pos_x
@@ -49,6 +51,7 @@ export var mask_color : Color
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 onready var smoke_cloak_particles = $"%SmokeCloakParticles"
 onready var scissors_sprite = $"%ScissorsSprite"
+
 
 func _ready():
 	#._ready()
@@ -377,6 +380,7 @@ func start_cloak():
 	smoke_cloak_particles.start_emitting()
 
 func end_cloak():
+	spawn_particle_effect_relative(SmokeTeleportParticle, Vector2(0.0, -18.0))
 	smoke_cloak = false
 	smoke_cloak_particles.stop_emitting()
 

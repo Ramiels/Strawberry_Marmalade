@@ -59,6 +59,7 @@ func _tick():
 		if hitbox.active and hitbox.overlaps(host.hurtbox) and valid_guard and not host.name in hitbox.hit_objects:
 			host.play_sound("Block2")
 			host.play_sound("Block3")
+			host.play_sound("Bell1") # ertra sfx for ugly
 			host.global_hitlag(6)
 			host.screen_bump()
 			var chip = fixed.round(fixed.mul(str(hitbox.damage / 3), hitbox.chip_damage_modifier))
@@ -74,6 +75,7 @@ func _tick():
 		if hitbox.active and hitbox.overlaps(host.hurtbox) and not host.name in hitbox.hit_objects and not hitbox is ThrowBox: #and hitbox != prev_hitbox:
 			host.play_sound("Block2")
 			host.play_sound("Block3")
+			host.play_sound("Bell1") # ertra sfx for ugly
 			host.global_hitlag(6)
 			host.screen_bump()
 			var chip = fixed.round(fixed.mul(str(hitbox.damage / 3), hitbox.chip_damage_modifier))

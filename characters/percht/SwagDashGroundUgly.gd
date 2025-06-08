@@ -38,6 +38,7 @@ func _frame_0():
 
 func _frame_4():
 	
+	
 	if data["Teleport"].x == 0 || data["Teleport"].y == 0:
 		#MOVE_DIST = fixed.round(fixed.mul("1,414", MOVE_DIST))
 		MOVE_DIST = "100"
@@ -46,6 +47,7 @@ func _frame_4():
 
 	host.move_directly(dir.x, dir.y)
 	var vel = host.get_vel()
+
 
 	host.update_data()
 

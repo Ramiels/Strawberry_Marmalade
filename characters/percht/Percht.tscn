@@ -1,4 +1,4 @@
-[gd_scene load_steps=655 format=2]
+[gd_scene load_steps=659 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -544,6 +544,10 @@
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglySwagdashAirUI.tscn" type="PackedScene" id=542]
 [ext_resource path="res://_Percht/characters/percht/SwagDashGroundUgly.gd" type="Script" id=543]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglySwagdashGroundUI.tscn" type="PackedScene" id=544]
+[ext_resource path="res://_Percht/characters/percht/action_icons/smokedash.png" type="Texture" id=545]
+[ext_resource path="res://_Percht/characters/percht/action_icons/juggle.png" type="Texture" id=546]
+[ext_resource path="res://_Percht/characters/percht/action_icons/jumpscare.png" type="Texture" id=547]
+[ext_resource path="res://_Percht/characters/percht/action_icons/incense_mace.png" type="Texture" id=548]
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 488 )
@@ -2624,9 +2628,9 @@ ExtResource( 426 ): {
 "x": 10,
 "y": -4
 },
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
 },
 ExtResource( 429 ): {
 "x": -30,
@@ -2636,13 +2640,13 @@ ExtResource( 430 ): {
 "x": 14,
 "y": -16
 },
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
-},
 ExtResource( 421 ): {
 "x": 5,
 "y": -2
+},
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
 },
 ExtResource( 431 ): {
 "x": -23,
@@ -2724,10 +2728,6 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2736,33 +2736,37 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2784,10 +2788,6 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2796,33 +2796,37 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2842,10 +2846,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2854,33 +2854,37 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2899,10 +2903,6 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
@@ -2911,33 +2911,37 @@ ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
+ExtResource( 380 ): {
+"x": 27,
+"y": -2
+},
 ExtResource( 433 ): {
 "x": 28,
 "y": 3
+},
+ExtResource( 436 ): {
+"x": -4,
+"y": -9
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
-},
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
 },
-ExtResource( 436 ): {
-"x": -4,
-"y": -9
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -3182,7 +3186,7 @@ sfx_volume = -8.0
 title = "Juggle"
 type = 2
 data_ui_scene = ExtResource( 535 )
-button_texture = ExtResource( 388 )
+button_texture = ExtResource( 546 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3235,7 +3239,7 @@ title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
-button_texture = ExtResource( 388 )
+button_texture = ExtResource( 546 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3289,7 +3293,7 @@ title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
-button_texture = ExtResource( 388 )
+button_texture = ExtResource( 546 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3342,7 +3346,7 @@ title = "Juggle"
 show_in_menu = false
 type = 2
 data_ui_scene = ExtResource( 535 )
-button_texture = ExtResource( 388 )
+button_texture = ExtResource( 546 )
 interrupt_from_string = "Grounded
 GroundedAttack"
 interrupt_into_string = "Grounded
@@ -3749,6 +3753,7 @@ sfx_tick = 16
 sfx_volume = -5.0
 title = "Incense Mace"
 type = 3
+button_texture = ExtResource( 548 )
 interrupt_from_string = "Grounded
 GroundedSuper"
 interrupt_into_string = "Grounded
@@ -3794,6 +3799,8 @@ plus_frames = 1
 group = 2
 whiff_sound = ExtResource( 481 )
 hit_sound = ExtResource( 506 )
+dir_y = "1.0"
+knockdown = true
 start_tick = 17
 active_ticks = 2
 
@@ -4249,7 +4256,7 @@ x = 25
 y = -42
 width = 10
 height = 10
-damage = 30
+damage = 35
 hitstun_ticks = 13
 plus_frames = 2
 dir_x = "0.5"
@@ -4546,7 +4553,7 @@ x = 19
 y = -28
 width = 31
 height = 27
-damage = 70
+damage = 100
 victim_hitlag = 2
 cancellable = false
 group = 1
@@ -4606,7 +4613,7 @@ x = 19
 y = -28
 width = 31
 height = 27
-damage = 60
+damage = 100
 victim_hitlag = 2
 cancellable = false
 hit_height = 0
@@ -4673,7 +4680,7 @@ x = 19
 y = -28
 width = 31
 height = 27
-damage = 60
+damage = 100
 victim_hitlag = 2
 cancellable = false
 hit_height = 0
@@ -4740,7 +4747,7 @@ x = 34
 y = -16
 width = 26
 height = 15
-damage = 40
+damage = 30
 hitstun_ticks = 12
 victim_hitlag = 2
 cancellable = false
@@ -4788,7 +4795,7 @@ x = 36
 y = -16
 width = 25
 height = 15
-damage = 40
+damage = 30
 hitstun_ticks = 12
 victim_hitlag = 2
 cancellable = false
@@ -5526,21 +5533,21 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 148 ): {
-"x": -33,
+ExtResource( 102 ): {
+"x": 29,
 "y": 3
 },
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
 },
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 148 ): {
+"x": -33,
+"y": 3
 }
 }
 title = "Dash Grab"
@@ -5577,7 +5584,7 @@ anim_length = 34
 endless = true
 title = "Jumpscare Grab"
 type = 3
-button_texture = ExtResource( 402 )
+button_texture = ExtResource( 547 )
 update_facing_on_exit = false
 can_feint_if_possible = false
 interrupt_from_string = "Grounded
@@ -5636,33 +5643,17 @@ sfx_tick = 19
 sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
-ExtResource( 102 ): {
+SubResource( 52 ): {
 "x": 29,
-"y": 3
-},
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
+"y": 0
 },
 SubResource( 54 ): {
 "x": -11,
 "y": 10
 },
-SubResource( 56 ): {
-"x": -20,
-"y": -14
-},
 SubResource( 53 ): {
 "x": 10,
 "y": 12
-},
-SubResource( 52 ): {
-"x": 29,
-"y": 0
 },
 SubResource( 55 ): {
 "x": -26,
@@ -5675,12 +5666,28 @@ SubResource( 57 ): {
 SubResource( 58 ): {
 "x": 26,
 "y": 22
+},
+SubResource( 56 ): {
+"x": -20,
+"y": -14
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 title = "Jumpscare Grab"
 show_in_menu = false
 type = 3
-button_texture = ExtResource( 402 )
+button_texture = ExtResource( 547 )
 selectable = false
 interrupt_into_string = "Aerial"
 release_opponent_on_exit = true
@@ -5743,6 +5750,7 @@ height = 11
 damage = 20
 hitstun_ticks = 15
 cancellable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 hit_sound = ExtResource( 506 )
@@ -5761,6 +5769,7 @@ height = 11
 damage = 20
 hitstun_ticks = 15
 cancellable = false
+block_cancel_allowed = false
 plus_frames = 1
 hit_height = 0
 hit_sound = ExtResource( 506 )
@@ -6488,7 +6497,7 @@ sprite_animation = "ChargePunch1Ugly"
 anim_length = 26
 force_dir_x = "1.0"
 force_speed = "5.0"
-force_tick = 10
+force_tick = 8
 title = "Charge Punch"
 type = 2
 data_ui_scene = ExtResource( 226 )
@@ -6516,6 +6525,7 @@ hitstun_ticks = 7
 hitlag_ticks = 7
 victim_hitlag = 15
 plus_frames = 1
+hit_sound = ExtResource( 529 )
 knockback = "7.0"
 start_tick = 11
 active_ticks = 3
@@ -6534,7 +6544,7 @@ sprite_animation = "ChargePunch2Ugly"
 anim_length = 25
 force_dir_x = "1.0"
 force_speed = "7.0"
-force_tick = 12
+force_tick = 10
 title = "Charge Punch"
 type = 2
 button_texture = ExtResource( 395 )
@@ -6562,6 +6572,7 @@ victim_hitlag = 15
 plus_frames = 2
 screenshake_amount = 5
 screenshake_frames = 11
+hit_sound = ExtResource( 505 )
 knockback = "8.0"
 start_tick = 13
 active_ticks = 3
@@ -6579,8 +6590,8 @@ apply_grav = true
 sprite_animation = "ChargePunch3Ugly"
 anim_length = 24
 force_dir_x = "1.0"
-force_speed = "9.0"
-force_tick = 14
+force_speed = "10.0"
+force_tick = 12
 title = "Charge Punch"
 type = 2
 button_texture = ExtResource( 395 )
@@ -6606,6 +6617,7 @@ hitstun_ticks = 16
 hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
+hit_sound = ExtResource( 256 )
 knockback = "9.0"
 start_tick = 15
 active_ticks = 3
@@ -6623,6 +6635,7 @@ hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
 screenshake_frames = 11
+hit_sound = ExtResource( 256 )
 knockback = "9.0"
 start_tick = 15
 active_ticks = 3
@@ -6639,6 +6652,7 @@ hitstun_ticks = 16
 hitlag_ticks = 12
 victim_hitlag = 15
 plus_frames = 3
+hit_sound = ExtResource( 256 )
 knockback = "9.0"
 start_tick = 15
 active_ticks = 3
@@ -6776,9 +6790,9 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 239 ): {
-"x": 35,
-"y": -1
+ExtResource( 251 ): {
+"x": -31,
+"y": -10
 },
 ExtResource( 231 ): {
 "x": -3,
@@ -6788,9 +6802,9 @@ ExtResource( 233 ): {
 "x": -22,
 "y": -7
 },
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
+ExtResource( 239 ): {
+"x": 35,
+"y": -1
 },
 ExtResource( 242 ): {
 "x": -31,
@@ -7031,17 +7045,13 @@ ExtResource( 344 ): {
 "x": 32,
 "y": -16
 },
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
-},
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
-},
 ExtResource( 346 ): {
 "x": 34,
 "y": -16
+},
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
 },
 ExtResource( 366 ): {
 "x": 8,
@@ -7051,13 +7061,17 @@ ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
 },
 ExtResource( 365 ): {
 "x": 4,
@@ -7103,49 +7117,49 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
+},
 ExtResource( 344 ): {
 "x": 32,
-"y": -17
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
-},
-ExtResource( 362 ): {
-"x": 33,
 "y": -17
 },
 ExtResource( 346 ): {
 "x": 36,
 "y": -16
 },
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 355 ): {
-"x": 32,
-"y": -11
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
 ExtResource( 363 ): {
 "x": 15,
 "y": -4
 },
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
-},
 ExtResource( 361 ): {
 "x": 30,
 "y": -25
 },
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
+},
+ExtResource( 355 ): {
+"x": 32,
+"y": -11
+},
 ExtResource( 356 ): {
 "x": 25,
 "y": -2
+},
+ExtResource( 351 ): {
+"x": 32,
+"y": 1
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
 },
 ExtResource( 365 ): {
 "x": 5,
@@ -7378,9 +7392,9 @@ enter_sfx = ExtResource( 512 )
 enter_sfx_volume = -10.0
 sfx = ExtResource( 526 )
 sfx_volume = -1.0
-title = "Swag Dash"
+title = "Smoke Dash"
 data_ui_scene = ExtResource( 521 )
-button_texture = ExtResource( 511 )
+button_texture = ExtResource( 545 )
 flip_with_facing = true
 air_type = 1
 uses_air_movement = true
@@ -7412,9 +7426,9 @@ enter_sfx = ExtResource( 512 )
 enter_sfx_volume = -10.0
 sfx = ExtResource( 526 )
 sfx_volume = -1.0
-title = "Swag Dash"
+title = "Smoke Dash"
 data_ui_scene = ExtResource( 542 )
-button_texture = ExtResource( 511 )
+button_texture = ExtResource( 545 )
 flip_with_facing = true
 air_type = 1
 uses_air_movement = true
@@ -7446,9 +7460,9 @@ enter_sfx = ExtResource( 512 )
 enter_sfx_volume = -10.0
 sfx = ExtResource( 526 )
 sfx_volume = -1.0
-title = "Swag Dash"
+title = "Smoke Dash"
 data_ui_scene = ExtResource( 544 )
-button_texture = ExtResource( 511 )
+button_texture = ExtResource( 545 )
 flip_with_facing = true
 interruptible_on_opponent_turn = true
 reversible = false
@@ -7477,9 +7491,9 @@ enter_sfx = ExtResource( 512 )
 enter_sfx_volume = -10.0
 sfx = ExtResource( 526 )
 sfx_volume = -1.0
-title = "Swag Dash"
+title = "Smoke Dash"
 data_ui_scene = ExtResource( 509 )
-button_texture = ExtResource( 511 )
+button_texture = ExtResource( 545 )
 flip_with_facing = true
 iasa_at = 10
 interruptible_on_opponent_turn = true

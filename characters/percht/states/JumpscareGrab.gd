@@ -15,4 +15,4 @@ func _frame_1():
 
 func _tick():
 	if current_tick > 2 and host.is_grounded():
-		return "Knockdown"
+		return "HardKnockdown"

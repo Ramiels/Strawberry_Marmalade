@@ -36,6 +36,9 @@ func get_velocity_forward_meter_gain_multiplier():
 func _frame_0():
 	host.consume_smoke()
 
+func _frame_3():
+	host.start_projectile_invulnerability() # if this is too op we can take it out I just wanna make a cool shot
+
 func _frame_4():
 	
 	
@@ -77,6 +80,10 @@ func _frame_5():
 		
 	host.spawn_particle_effect_relative(SmokeDashParticle, Vector2(0.0, -18.0), Vector2(host.get_facing_int(), 0))
 	host.spawn_particle_effect_relative(SmokeTeleportParticle, Vector2(0.0, -18.0))
+	
+
+func _frame_6():
+	host.start_projectile_invulnerability()
 
 func spawn_dash_particle():
 	spawn_particle_relative(preload("res://fx/DashParticle.tscn"), host.hurtbox_pos_relative_float(), Vector2(dir_x, 0))

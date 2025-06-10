@@ -82,8 +82,8 @@ func _frame_5():
 	host.spawn_particle_effect_relative(SmokeTeleportParticle, Vector2(0.0, -18.0))
 	
 
-func _frame_6():
-	host.start_projectile_invulnerability()
+func _frame_8():
+	host.end_projectile_invulnerability()
 
 func spawn_dash_particle():
 	spawn_particle_relative(preload("res://fx/DashParticle.tscn"), host.hurtbox_pos_relative_float(), Vector2(dir_x, 0))

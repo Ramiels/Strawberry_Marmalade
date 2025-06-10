@@ -2,6 +2,7 @@ extends "res://_Percht/PerchtMove.gd"
 
 func on_got_blocked():
 	hit()
+	
 
 func _on_hit_something(obj, hitbox):
 	if obj == host.opponent:

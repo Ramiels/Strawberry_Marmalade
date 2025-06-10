@@ -15,7 +15,7 @@ func is_usable():
 func _enter():
 	var next_state = ._enter()
 	
-	anim_name = "DashForwardPretty"
+	anim_name = "DashForwardUgly"
 	
 	if not host.sprite.is_connected("frame_changed", self, "on_sprite_frame_changed"):
 		host.sprite.connect("frame_changed", self, "on_sprite_frame_changed")
@@ -26,8 +26,8 @@ func _enter():
 func on_sprite_frame_changed():
 	if not active:
 		return 
-	if host.sprite.frame == 2 or host.sprite.frame == 10:
-		host.play_sound("Block2")
+	if host.sprite.frame == 4 or host.sprite.frame == 12:
+		host.play_sound("Block3")
 	#if host.sprite.frame == 3 or host.sprite.frame == 0:
 	#	host.play_sound("Walk2")
 

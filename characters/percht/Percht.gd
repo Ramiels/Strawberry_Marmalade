@@ -58,6 +58,11 @@ func _ready():
 	smokeshift_particles.visible = true
 	smoke_cloak_particles.visible = true
 
+func _init():
+	._init()
+	HOLD_RESTARTS.append("DashForwardUgly")
+	HOLD_FORCE_STATES["DashBackwardUgly"] = "Wait"
+
 func apply_style(style):
 	.apply_style(style)
 
@@ -102,7 +107,7 @@ func try_quickswap(swap_scaling_reduction = 0):
 	if quickswap_hit:
 		opponent.hitlag_ticks += QUICKSWAP_HITLAG
 
-	combo_count = max(1, combo_count - swap_scaling_reduction)
+	combo_count = max(0, combo_count - swap_scaling_reduction)
 	
 	change_state("Quickswap")
 
@@ -178,6 +183,17 @@ func tick():
 	if incense_mace_smoke and incense_mace_smoke in objs_map and is_instance_valid(objs_map[incense_mace_smoke]) and incense_mace_smoke in smoke_projectiles:
 		var smoke_obj = objs_map[incense_mace_smoke]
 		smoke_obj.set_pos(opponent.get_pos().x, opponent.get_pos().y - 20)
+	
+	if overlapping_smoke() != null:
+		current_smoke = overlapping_smoke()
+		can_smokeshift = true
+	else:
+		current_smoke = null
+		can_smokeshift = false
+		#print(smoke_projectiles)
+		if smoke_cloak and smoke_projectiles.size() > 0:
+			can_smokeshift = true
+			cloak_current = true
 	
 	.tick()
 	
@@ -347,6 +363,7 @@ func on_state_ended(state):
 func on_attack_blocked():
 	if quickswap:
 		quickswap = false
+		current_state().on_got_blocked()
 		change_state("QuickswapBlock")
 
 func can_block_cancel():
@@ -386,7 +403,7 @@ func end_cloak():
 
 func incense_mace():
 	if not (incense_mace_smoke and incense_mace_smoke in objs_map and is_instance_valid(objs_map[incense_mace_smoke]) and incense_mace_smoke in smoke_projectiles):
-		var smoke = spawn_object(SMOKE_SCENE, 0, 0, true)
+		var smoke = spawn_object(SMOKE_SCENE, opponent.get_pos().x, opponent.get_pos().y - 20, false, [], false)
 
 		smoke.set_grounded(false)
 		

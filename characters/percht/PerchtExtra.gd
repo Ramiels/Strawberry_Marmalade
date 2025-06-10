@@ -6,7 +6,7 @@ onready var goodie_bag = $VBoxContainer/GoodieBag
 onready var quickswap = $VBoxContainer/Quickswap
 onready var shift_cancel = $VBoxContainer/ShiftCancel
 
-var no_smokeshift = ["Jump", "DoubleJump", "SuperJump"]
+var no_smokeshift = ["Jump", "DoubleJump", "SuperJump", "JumpUgly", "DoubleJumpUgly", "SuperJumpUgly"]
 
 func get_extra():
 	var extra = {

@@ -12,6 +12,12 @@ func is_usable():
 
 	return .is_usable() and correct
 
+func _frame_6():
+	if fallback_state == "ChargeDashForward" or fallback_state == "ChargeDashForwardUgly":
+		queue_state_change(fallback_state, {"x":100, "charged":true})
+	else :
+		queue_state_change(fallback_state)
+
 func _enter():
 	var next_state = ._enter()
 	if host.kind == "Pretty":

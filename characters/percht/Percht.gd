@@ -107,7 +107,8 @@ func try_quickswap(swap_scaling_reduction = 0):
 	if quickswap_hit:
 		opponent.hitlag_ticks += QUICKSWAP_HITLAG
 
-	combo_count = max(0, combo_count - swap_scaling_reduction)
+	if combo_count > 0:
+		combo_count = max(1, combo_count - swap_scaling_reduction)
 	
 	change_state("Quickswap")
 

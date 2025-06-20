@@ -139,7 +139,18 @@ func overlapping_smoke():
 			if "percht_smoke" in obj and obj.name in smoke_projectiles:
 				overlapped_smoke = obj.name
 				#print('overlapped_smoke')
-
+	
+	if overlapped_smoke != null:
+		current_smoke = overlapped_smoke
+		can_smokeshift = true
+	else:
+		current_smoke = null
+		can_smokeshift = false
+		#print(smoke_projectiles)
+		if smoke_cloak and smoke_projectiles.size() > 0:
+			can_smokeshift = true
+			cloak_current = true
+	
 	return overlapped_smoke
 
 func tick():

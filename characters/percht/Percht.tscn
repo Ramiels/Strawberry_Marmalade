@@ -2570,13 +2570,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -2596,13 +2596,13 @@ anim_length = 60
 endless = true
 particle_scene = ExtResource( 442 )
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
-},
 ExtResource( 377 ): {
 "x": 23,
 "y": -3
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
 }
 }
 selectable = false
@@ -2624,9 +2624,13 @@ sprite_animation = "GrabThrowUgly"
 anim_length = 40
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
+ExtResource( 426 ): {
+"x": 10,
+"y": -4
+},
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
 },
 ExtResource( 428 ): {
 "x": -35,
@@ -2636,25 +2640,21 @@ ExtResource( 429 ): {
 "x": -30,
 "y": 8
 },
+ExtResource( 377 ): {
+"x": 23,
+"y": -3
+},
 ExtResource( 430 ): {
 "x": 14,
 "y": -16
 },
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
+},
 ExtResource( 431 ): {
 "x": -23,
 "y": 13
-},
-ExtResource( 426 ): {
-"x": 10,
-"y": -4
-},
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
-},
-ExtResource( 377 ): {
-"x": 23,
-"y": -3
 }
 }
 show_in_menu = false
@@ -2745,33 +2745,33 @@ ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 380 ): {
+"x": 27,
 "y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2805,33 +2805,33 @@ ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 380 ): {
+"x": 27,
 "y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2863,33 +2863,33 @@ ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 380 ): {
+"x": 27,
 "y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -2920,33 +2920,33 @@ ExtResource( 24 ): {
 "x": -22,
 "y": 0
 },
-ExtResource( 437 ): {
-"x": 14,
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
+ExtResource( 380 ): {
+"x": 27,
 "y": -2
 },
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 380 ): {
-"x": 27,
-"y": -2
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
 },
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
+ExtResource( 437 ): {
+"x": 14,
+"y": -2
 },
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
+},
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
 }
 }
 release_frame = 24
@@ -5760,13 +5760,13 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
 },
 ExtResource( 102 ): {
 "x": 29,
@@ -5872,29 +5872,33 @@ sfx_tick = 19
 sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
 ExtResource( 111 ): {
 "x": -23,
 "y": -2
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
 },
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
 },
+SubResource( 54 ): {
+"x": -11,
+"y": 10
+},
 SubResource( 58 ): {
 "x": 26,
 "y": 22
 },
+SubResource( 57 ): {
+"x": -16,
+"y": -16
+},
 SubResource( 53 ): {
 "x": 10,
 "y": 12
-},
-SubResource( 54 ): {
-"x": -11,
-"y": 10
 },
 SubResource( 56 ): {
 "x": -20,
@@ -5903,10 +5907,6 @@ SubResource( 56 ): {
 SubResource( 55 ): {
 "x": -26,
 "y": -5
-},
-SubResource( 57 ): {
-"x": -16,
-"y": -16
 },
 SubResource( 52 ): {
 "x": 29,
@@ -6975,13 +6975,13 @@ state_screenshake_amount = 15
 enter_sfx = ExtResource( 444 )
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 242 ): {
-"x": -31,
-"y": -9
-},
 ExtResource( 247 ): {
 "x": 36,
 "y": -1
+},
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
 },
 ExtResource( 233 ): {
 "x": -22,
@@ -7030,13 +7030,17 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 242 ): {
+"x": -31,
+"y": -9
+},
 ExtResource( 231 ): {
 "x": -3,
 "y": -1
 },
-ExtResource( 242 ): {
+ExtResource( 251 ): {
 "x": -31,
-"y": -9
+"y": -10
 },
 ExtResource( 233 ): {
 "x": -22,
@@ -7045,10 +7049,6 @@ ExtResource( 233 ): {
 ExtResource( 239 ): {
 "x": 35,
 "y": -1
-},
-ExtResource( 251 ): {
-"x": -31,
-"y": -10
 }
 }
 title = "Restand Grab"
@@ -7281,37 +7281,37 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 344 ): {
+ExtResource( 348 ): {
 "x": 32,
-"y": -16
-},
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
+"y": -11
 },
 ExtResource( 351 ): {
 "x": 30,
 "y": 1
 },
-ExtResource( 356 ): {
-"x": 26,
-"y": -1
-},
-ExtResource( 348 ): {
+ExtResource( 344 ): {
 "x": 32,
-"y": -11
+"y": -16
 },
 ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
+ExtResource( 356 ): {
+"x": 26,
+"y": -1
+},
+ExtResource( 346 ): {
+"x": 34,
+"y": -16
+},
 ExtResource( 362 ): {
 "x": 34,
 "y": -14
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
 },
 ExtResource( 366 ): {
 "x": 8,
@@ -7357,49 +7357,49 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 344 ): {
-"x": 32,
-"y": -17
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
 ExtResource( 351 ): {
 "x": 32,
 "y": 1
 },
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
+ExtResource( 344 ): {
+"x": 32,
+"y": -17
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
-},
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
 },
 ExtResource( 355 ): {
 "x": 32,
 "y": -11
 },
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
+},
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
 ExtResource( 362 ): {
 "x": 33,
 "y": -17
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
 },
 ExtResource( 366 ): {
 "x": 7,

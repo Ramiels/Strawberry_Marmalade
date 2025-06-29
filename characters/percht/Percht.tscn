@@ -2733,17 +2733,17 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 },
 ExtResource( 433 ): {
 "x": 28,
@@ -2793,17 +2793,17 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 },
 ExtResource( 433 ): {
 "x": 28,
@@ -2851,17 +2851,17 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 },
 ExtResource( 433 ): {
 "x": 28,
@@ -2908,17 +2908,17 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 49 ): {
 "x": -16,
 "y": -5
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 },
 ExtResource( 433 ): {
 "x": 28,
@@ -2962,13 +2962,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
 ExtResource( 24 ): {
 "x": -22,
 "y": 0
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
 },
 ExtResource( 375 ): {
 "x": 3,
@@ -3215,7 +3215,7 @@ x = 82
 y = -55
 width = 41
 height = 7
-damage = 60
+damage = 100
 hitstun_ticks = 20
 plus_frames = 2
 whiff_sound = ExtResource( 334 )
@@ -3268,7 +3268,7 @@ x = 82
 y = -55
 width = 41
 height = 9
-damage = 60
+damage = 70
 hitstun_ticks = 20
 plus_frames = 2
 whiff_sound = ExtResource( 334 )
@@ -3287,7 +3287,7 @@ x = 88
 y = -41
 width = 21
 height = 10
-damage = 60
+damage = 70
 hitstun_ticks = 20
 plus_frames = 2
 whiff_sound = ExtResource( 334 )
@@ -3341,7 +3341,7 @@ x = 87
 y = -49
 width = 6
 height = 34
-damage = 60
+damage = 70
 hitstun_ticks = 20
 plus_frames = 2
 whiff_sound = ExtResource( 334 )
@@ -3349,6 +3349,7 @@ hit_sound = ExtResource( 337 )
 whiff_sound_volume = 0.0
 dir_x = "0.0"
 knockback = "8.0"
+grounded_hit_state = "HurtAerial"
 start_tick = 11
 active_ticks = 2
 
@@ -3394,7 +3395,7 @@ x = 87
 y = -49
 width = 6
 height = 34
-damage = 60
+damage = 70
 hitstun_ticks = 20
 plus_frames = 2
 whiff_sound = ExtResource( 334 )
@@ -3403,6 +3404,8 @@ whiff_sound_volume = 0.0
 dir_x = "0.0"
 dir_y = "1.0"
 knockback = "5.0"
+grounded_hit_state = "HurtAerial"
+knockdown = true
 start_tick = 11
 active_ticks = 2
 
@@ -5911,6 +5914,22 @@ SubResource( 55 ): {
 SubResource( 52 ): {
 "x": 29,
 "y": 0
+},
+SubResource( 55 ): {
+"x": -26,
+"y": -5
+},
+SubResource( 54 ): {
+"x": -11,
+"y": 10
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
 }
 }
 title = "Jumpscare Grab"
@@ -7045,6 +7064,10 @@ ExtResource( 251 ): {
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
+},
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
 },
 ExtResource( 239 ): {
 "x": 35,

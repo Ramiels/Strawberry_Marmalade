@@ -29,15 +29,20 @@ func _enter():
 
 func _frame_0():
 	host.consume_smoke()
+	host.hitlag_ticks += 4
 	var next_state = ._frame_0()
 	#anim_name = anim_name + host.kind
 	anim_name = "SwagdashAerialPretty"
 	#print("frame0: ", anim_name)
 	return next_state
 
+func _frame_1():
+	
+	._frame_1()
 
 func _tick():
 	._tick()
+	host.whip_combo = true
 	host.apply_y_fric(fric)
 
 func _exit():

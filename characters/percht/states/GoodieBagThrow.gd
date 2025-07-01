@@ -16,15 +16,18 @@ func _frame_6():
 	var obj = host.spawn_object(PROJ_SCENE, 20, pos_y, true)
 
 	var force = xy_to_dir(data.x, data.y, SPEED)
-	force.x = fixed.mul(force.x, str(host.get_facing_int()))
+	# force.x = fixed.mul(force.x, str(host.get_facing_int()))
 	obj.set_grounded(false)
-	obj.apply_force_relative(force.x, force.y)
-	obj.apply_force(host.get_vel().x, "0")
+	obj.apply_force(force.x, force.y)
+	print(host.get_vel())
+	if fixed.gt(fixed.mul(host.get_vel().x, force.x), "0.0"):
+		# This checks if the sign of host vel x and bag force x is the same
+		obj.apply_force(host.get_vel().x, "0")
 	var vel_y = 0
-	if fixed.lt(host.get_vel().y, "0"):
+	if fixed.lt(host.get_vel().y, "0.0"):
 		vel_y = host.get_vel().y
 	else:
-		vel_y = "0"
+		vel_y = fixed.mul(host.get_vel().y, "0.5")
 	obj.apply_force("0", vel_y)
 	
 	host.goodie_bag = obj.obj_name

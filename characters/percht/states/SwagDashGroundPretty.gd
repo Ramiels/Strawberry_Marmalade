@@ -32,14 +32,19 @@ func _frame_0():
 	host.consume_smoke()
 	._frame_0()
 	host.colliding_with_opponent = false
+	startup_lag = 3
 
 func _tick():
 	host.apply_x_fric(fric)
+	host.whip_combo = true
 	
 	host.limit_speed(speed_limit)
 	var repeated = _previous_state() and _previous_state_name() == name
 	if (startup_lag > 0 and current_tick == startup_lag) and not repeated:
-		host.apply_force_relative(dash_force, "0")
+		dash_force = str(dir_x * dash_speed) if dash_speed_string == "0" else fixed.mul(str(dir_x), dash_speed_string)
+		host.apply_force_relative(fixed.mul(dash_force, fixed.add(fixed.mul(dist_ratio, fixed.sub(MAX_SPEED_RATIO, MIN_SPEED_RATIO)), MIN_SPEED_RATIO)), "0")
+	
+		print('test')
 		if spawn_particle:
 			spawn_particle_relative(preload("res://fx/DashParticle.tscn"), host.hurtbox_pos_relative_float(), Vector2(dir_x, 0))
 

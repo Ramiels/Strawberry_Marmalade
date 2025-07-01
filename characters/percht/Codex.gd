@@ -123,7 +123,7 @@ func register(codex):
 	codex.tags = ["Fire", "Quickswap", "Whip"]
 	
 	codex.tag_moves("Fire", ["Scorch", "AirScorch", "TorchJab", "Incinerate"])
-	codex.tag_moves("Whip", ["Taunt", "WhipStrike", "WhipStrikeAir", "Whipcopter", "WhipJuggleForward"])
+	codex.tag_moves("Whip", ["Taunt", "WhipStrike", "WhipStrikeAir", "Whipcopter", "WhipJuggleForward", "Whiplash"])
 	
 	var quickswap_frames = {
 		"PointyShoe": 15,

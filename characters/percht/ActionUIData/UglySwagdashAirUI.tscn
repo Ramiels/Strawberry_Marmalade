@@ -10,20 +10,26 @@
 
 [node name="Teleport" parent="." index="0" instance=ExtResource( 1 )]
 margin_bottom = 66.0
+NW = false
+N = false
+W = false
 
 [node name="Label" parent="Teleport" index="0"]
 text = "Teleport"
 
 [node name="NW" parent="Teleport/PanelContainer/Buttons/Top" index="0"]
+disabled = true
 group = SubResource( 1 )
 
 [node name="N" parent="Teleport/PanelContainer/Buttons/Top" index="1"]
+disabled = true
 group = SubResource( 1 )
 
 [node name="NE" parent="Teleport/PanelContainer/Buttons/Top" index="2"]
 group = SubResource( 1 )
 
 [node name="W" parent="Teleport/PanelContainer/Buttons/Middle" index="0"]
+disabled = true
 group = SubResource( 1 )
 
 [node name="Neutral" parent="Teleport/PanelContainer/Buttons/Middle" index="1"]
@@ -48,6 +54,10 @@ anchor_bottom = 0.0
 margin_left = 51.0
 margin_right = 111.0
 min_length = 0.5
+limit_angle = true
+limit_range_degrees = 225.0
+limit_center_degrees = 0.0
+limit_symmetrical = false
 default_value = Vector2( 0, -1 )
 
 [node name="Label" parent="Dash" index="2"]

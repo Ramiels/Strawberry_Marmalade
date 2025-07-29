@@ -21,4 +21,4 @@ func _frame_6():
 		var force = fixed.vec_mul(new_target.x, new_target.y, force_mult)
 		
 		var smoke = host.spawn_object(PROJ_SCENE, 20, -20, true)
-		smoke.apply_force_relative(force.x, force.y)
+		smoke.apply_force(force.x, force.y)

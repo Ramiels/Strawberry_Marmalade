@@ -22,3 +22,5 @@ func _frame_6():
 		
 		var smoke = host.spawn_object(PROJ_SCENE, 20, -20, true)
 		smoke.apply_force(force.x, force.y)
+		smoke.set_grounded(false)
+		host.smoke_projectiles.append(smoke.obj_name)

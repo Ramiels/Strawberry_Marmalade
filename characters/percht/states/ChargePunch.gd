@@ -13,6 +13,7 @@ export var guards_high = true
 export var guards_mid = true
 export var guards_low = true
 export var guards_guard_break = false # figured id put this here for the sake of it
+export var guards_throw_box = false
 export var guard_start_tick = 0
 export var guard_duration = 0
 
@@ -53,7 +54,7 @@ func _tick():
 		# you can pick which height this move guards against at the bottom of the inspector
 		valid_guard = (guards_guard_break or !hitbox.guard_break) and ((guards_high and hitbox.hit_height == 0) or (guards_mid and hitbox.hit_height == 1) or (guards_low and hitbox.hit_height == 2))
 		
-		if !valid_guard:
+		if !valid_guard or (!guards_throw_box and hitbox is ThrowBox):
 			host.end_invulnerability()
 		
 		if hitbox.active and hitbox.overlaps(host.hurtbox) and valid_guard and not host.name in hitbox.hit_objects:
@@ -92,7 +93,7 @@ func _exit():
 func get_hitboxes_inactive():
 	var all_hitbox_nodes = []
 	for child in host.opponent.current_state().get_children():
-		if child is Hitbox and not child is ThrowBox:
+		if child is Hitbox:
 			all_hitbox_nodes.append(child)
 			
 	return all_hitbox_nodes

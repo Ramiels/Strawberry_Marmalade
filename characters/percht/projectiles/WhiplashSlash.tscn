@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://_Percht/characters/percht/projectiles/WhipSlashDefault.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle2.png" type="Texture" id=8]
 [ext_resource path="res://_Percht/characters/percht/real_animations/slash_particle4.png" type="Texture" id=9]
 [ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=10]
+[ext_resource path="res://projectile/ProjectileHooks.gd" type="Script" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -28,6 +29,7 @@ animations = [ {
 script = ExtResource( 3 )
 max_fall_speed = "10"
 immunity_susceptible = true
+roll_immunity_susceptible = true
 deletes_other_projectiles = true
 fizzle_on_ceiling = false
 movable = true
@@ -38,6 +40,7 @@ free_cancel_on_hit = false
 apply_hitlag_when_hit_by_melee = true
 projectile_immune = false
 hitlag_modifier = "1.0"
+hookable = true
 
 [node name="Sprite" parent="Flip" index="0"]
 z_index = 5
@@ -108,3 +111,6 @@ theme = ExtResource( 1 )
 text = "P1"
 align = 1
 valign = 1
+
+[node name="Hooks" parent="." index="7"]
+script = ExtResource( 11 )

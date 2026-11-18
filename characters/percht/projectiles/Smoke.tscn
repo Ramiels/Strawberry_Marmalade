@@ -37,7 +37,19 @@ colors = PoolColorArray( 1, 1, 1, 0.207843, 1, 1, 1, 1 )
 [node name="Smoke" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 __meta__ = {
-"_editor_description_": "scheduled_disable"
+"_editor_description_": "scheduled_disable",
+"limb_data": {
+"Head": {
+},
+"LeftFoot": {
+},
+"LeftHand": {
+},
+"RightFoot": {
+},
+"RightHand": {
+}
+}
 }
 gravity = "0.2"
 extra_state_variables = "smokescreen

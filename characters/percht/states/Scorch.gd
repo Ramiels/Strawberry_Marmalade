@@ -1,5 +1,7 @@
 extends "res://_Percht/PerchtMove.gd"
 
+var torched_objs: Array = []
+
 func smoke_explosion():
 	var hitboxes = get_active_hitboxes()
 	
@@ -9,8 +11,20 @@ func smoke_explosion():
 			if obj and not obj.disabled and obj.id == host.id and hitbox.overlaps(obj.collision_box) and obj != Hitbox:
 				#print('overlapping', obj)
 				if "percht_smoke" in obj:
-					obj.explode()
+					if torched_objs:
+						for torched_name in torched_objs:
+							if obj_name != torched_name:
+								
+								obj.explode()
+								torched_objs.append(obj_name)
+					else:
+						obj.explode()
+						torched_objs.append(obj_name)
+					break
 	
 
 func _tick():
 	smoke_explosion()
+
+func _exit():
+	torched_objs.clear()

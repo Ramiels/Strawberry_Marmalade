@@ -1,7 +1,7 @@
 extends "res://_Percht/PerchtMove.gd"
 
-var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn")
-
+#var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/NewSmoke.tscn")
+onready var PROJ_SCENE = host.SMOKE_SCENE
 #func _frame_1():
 #	for smoke in host.smoke_projectiles:
 #		host.objs_map[smoke].disable()

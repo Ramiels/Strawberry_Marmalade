@@ -7,7 +7,7 @@ var incense_mace_smoke
 var mandarin = preload("res://_Percht/characters/percht/Mandarin/mandarin.png")
 var peanut = preload("res://_Percht/characters/percht/Peanut/peanut.png")
 
-var SMOKE_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn")
+var SMOKE_SCENE = preload("res://_Percht/characters/percht/projectiles/NewSmoke.tscn")
 
 var SmokeTeleportParticle = preload("res://_Percht/characters/percht/SmokeVanishEffect.tscn")
 
@@ -51,6 +51,7 @@ export var mask_color : Color
 onready var smokeshift_particles = $"%SmokeshiftParticles"
 onready var smoke_cloak_particles = $"%SmokeCloakParticles"
 onready var scissors_sprite = $"%ScissorsSprite"
+onready var whip_arm_sprite = $"%WhipArmSprite"
 
 
 func _ready():

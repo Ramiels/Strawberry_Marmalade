@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://projectile/BaseProjectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://_Percht/characters/percht/projectiles/SmokeState.gd" type="Script" id=2]
@@ -32,7 +32,26 @@ shader_param/use_outline = false
 shader_param/outline_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.991228 )
 colors = PoolColorArray( 1, 1, 1, 0.207843, 1, 1, 1, 1 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.836364 ), 0.0, 0.0, 0, 0, Vector2( 0.258964, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.756972, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.863636 ), -0.212262, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.72807, 0.859649, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 4.91469, 0, 0, Vector2( 0.203187, 1 ), 0.741591, 0.741591, 0, 0, Vector2( 0.613546, 0.709091 ), -0.906016, -0.906016, 0, 0, Vector2( 0.824701, 0.445455 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.281818 ), -0.255721, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0.00877193, 0.223684, 0.385965, 0.561404, 1 )
+colors = PoolColorArray( 1, 0.486275, 0.121569, 1, 1, 0.2, 0.239216, 1, 1, 0.2, 0.239216, 1, 0.203922, 0.207843, 0.215686, 1, 0.203922, 0.207843, 0.215686, 0.184314 )
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.171053, 0.27193, 0.407895, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 0.486275, 0.121569, 1, 1, 0.2, 0.239216, 1, 0.203922, 0.207843, 0.215686, 1, 0.203922, 0.207843, 0.215686, 0.184314 )
 
 [node name="Smoke" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -84,6 +103,88 @@ initial_velocity_random = 1.0
 scale_amount = 5.69
 color = Color( 0.882353, 0.839216, 0.839216, 1 )
 color_ramp = SubResource( 4 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="2"]
+visible = false
+z_index = -100
+amount = 20
+texture = ExtResource( 6 )
+emission_shape = 2
+emission_rect_extents = Vector2( 20, 20 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 9.38
+initial_velocity_random = 1.0
+scale_amount = 5.69
+scale_amount_curve = SubResource( 5 )
+color = Color( 0.882353, 0.839216, 0.839216, 1 )
+color_ramp = SubResource( 6 )
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="3"]
+visible = false
+z_index = -100
+amount = 20
+texture = ExtResource( 6 )
+emission_shape = 2
+emission_rect_extents = Vector2( 20, 20 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 9.38
+initial_velocity_random = 1.0
+scale_amount = 5.69
+scale_amount_curve = SubResource( 5 )
+color = Color( 0.882353, 0.839216, 0.839216, 1 )
+color_ramp = SubResource( 6 )
+
+[node name="FlameParticleEffect" parent="Flip/Particles" index="1" instance=ExtResource( 5 )]
+visible = false
+material = SubResource( 3 )
+free = false
+one_shot = false
+lifetime = -1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Flip/Particles/FlameParticleEffect" index="1"]
+z_index = -100
+amount = 70
+texture = ExtResource( 6 )
+emission_shape = 1
+emission_sphere_radius = 40.0
+direction = Vector2( 0, 1 )
+spread = 180.0
+gravity = Vector2( 0, -300 )
+initial_velocity = 40.0
+angular_velocity = -54.96
+angular_velocity_random = 0.77
+scale_amount = 10.0
+scale_amount_curve = SubResource( 7 )
+color = Color( 0.882353, 0.839216, 0.839216, 1 )
+color_ramp = SubResource( 9 )
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Flip/Particles/FlameParticleEffect" index="3"]
+z_index = -100
+amount = 20
+speed_scale = 2.0
+explosiveness = 1.0
+texture = ExtResource( 6 )
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2( 0, 1 )
+spread = 180.0
+gravity = Vector2( 0, -200 )
+initial_velocity = 150.0
+angular_velocity = -54.96
+angular_velocity_random = 0.77
+scale_amount = 10.0
+scale_amount_curve = SubResource( 7 )
+color = Color( 0.882353, 0.839216, 0.839216, 1 )
+color_ramp = SubResource( 8 )
+
+[node name="FlameBurstParticleEffect" parent="Flip/Particles" index="2" instance=ExtResource( 5 )]
+visible = false
+material = SubResource( 3 )
+free = false
+one_shot = false
+lifetime = -1.0
 
 [node name="CollisionBox" parent="." index="2"]
 width = 28

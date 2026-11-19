@@ -1,6 +1,7 @@
 extends "res://_Percht/PerchtMove.gd"
 
-var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/Smoke.tscn")
+#var PROJ_SCENE = preload("res://_Percht/characters/percht/projectiles/NewSmoke.tscn")
+onready var PROJ_SCENE = host.SMOKE_SCENE
 var number = 4 # must be even
 var distance = 55
 var force_mult = "5"

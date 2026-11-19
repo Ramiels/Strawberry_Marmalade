@@ -46,6 +46,8 @@ var guardpoint = false
 var restand_grab_used = false
 var swap_scaling_reduction = 2
 
+var button_dictionary = {}
+
 export var mask_color : Color
 
 onready var smokeshift_particles = $"%SmokeshiftParticles"
@@ -363,6 +365,10 @@ func on_state_started(state):
 		
 		whip_combo = false
 	
+	#for button in button_dictionary:
+	#	if button.action_name.contains("Whip"):
+			
+	
 	.on_state_started(state)
 
 func on_state_ended(state):
@@ -426,3 +432,19 @@ func incense_mace():
 		smoke_projectiles.append(smoke.obj_name)
 	else:
 		objs_map[incense_mace_smoke].state_machine.get_state("Default").lifetime += 100
+
+
+func setup_button_dictionary():
+	if button_dictionary:
+		return
+		
+	var action_container = get_node("/root/Main/%P" + str(id) + "ActionButtons")
+	for button in action_container.buttons:
+		button_dictionary[button.action_name] = button
+
+func change_action_e_hitbox_frame(state_name:String, new_value:int):
+	if is_ghost:
+		return
+	
+	setup_button_dictionary()
+	button_dictionary[state_name].earliest_hitbox = new_value

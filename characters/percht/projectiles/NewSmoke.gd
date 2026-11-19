@@ -6,6 +6,8 @@ var scheduled_disable = false
 var scheduled_explode = false
 var scheduled_explode_tick = 0
 var exploded = false
+var burn_time = 150
+var chain_penalty = 50
 
 var EXPLOSION = preload("res://_Percht/characters/percht/projectiles/NewSmokeExplosion.tscn")
 
@@ -52,12 +54,14 @@ func tick():
 			explode()
 		scheduled_explode_tick -= 1
 	
-	#check_explode()
+	check_explode()
 	
 
-func schedule_explode():
-	scheduled_explode = true
-	scheduled_explode_tick = 2
+func schedule_explode(var penalty):
+	if !scheduled_explode: # technically redundant check
+		scheduled_explode = true
+		scheduled_explode_tick = 2
+		burn_time = penalty
 
 func explode():
 	$Flip/Particles/ParticleEffect.stop_emitting()
@@ -69,17 +73,19 @@ func explode():
 	change_state("Burning")
 	
 	if exploded: current_state().lifetime -= 100
+	else: current_state().lifetime = burn_time
 	
 	exploded = true
 	
 	
-	
+	"""
 	for obj_name in objs_map:
 		var obj = objs_map[obj_name]
 		if obj and not obj.disabled and obj.id == id and collision_box.overlaps(obj.collision_box) and obj != Hitbox and obj != self:
 			#print('overlapping', obj)
 			if "percht_smoke" in obj:
 				obj.schedule_explode()
+	"""
 	
 
 func check_explode(): # makes smoke explode with a huge delay for some reason?
@@ -88,6 +94,9 @@ func check_explode(): # makes smoke explode with a huge delay for some reason?
 			var obj = objs_map[obj_name]
 			if obj and not obj.disabled and obj.id == id and collision_box.overlaps(obj.collision_box) and obj != Hitbox and obj != self:
 				#print('overlapping', obj)
-				if "percht_smoke" in obj:
-					obj.schedule_explode()
-	
+				if "percht_smoke" in obj and !obj.get_scheduled_explode():
+					obj.schedule_explode(current_state().lifetime - current_state().current_tick)
+					current_state().lifetime -= chain_penalty
+
+func get_scheduled_explode():
+	return scheduled_explode

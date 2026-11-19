@@ -37,9 +37,12 @@ func _tick():
 	host.whip_arm_sprite.frame = current_tick
 
 
-func _exit():
-	host.whip_arm_sprite.visible = false
 
 func check_previous_turn():
 	if host.whip_combo_previous_turn == false:
 		host.whip_combo = false
+
+
+
+func _exit():
+	host.whip_arm_sprite.visible = false

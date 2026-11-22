@@ -13,7 +13,7 @@ func smoke_explosion():
 				if "percht_smoke" in obj:
 					if torched_objs:
 						for torched_name in torched_objs:
-							if obj_name != torched_name and !obj.get_scheduled_explode():
+							if not obj_name in host.torched_objs:
 								
 								obj.explode()
 								torched_objs.append(obj_name)

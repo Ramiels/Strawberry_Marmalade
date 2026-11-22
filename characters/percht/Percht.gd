@@ -2,6 +2,7 @@ extends Fighter
 
 var kind : String = "Pretty"
 var smoke_projectiles = []
+var wisp_projectiles = []
 var incense_mace_smoke
 
 var mandarin = preload("res://_Percht/characters/percht/Mandarin/mandarin.png")
@@ -54,6 +55,8 @@ onready var smokeshift_particles = $"%SmokeshiftParticles"
 onready var smoke_cloak_particles = $"%SmokeCloakParticles"
 onready var scissors_sprite = $"%ScissorsSprite"
 onready var whip_arm_sprite = $"%WhipArmSprite"
+
+var air_zone_float = true
 
 
 func _ready():
@@ -232,8 +235,24 @@ func tick():
 			
 		
 	
+	if is_grounded():
+		air_zone_float = true
+	
 	if !is_grounded() and air_movements_left < 1:
 		can_smokeshift = false
+	
+	if combo_count > 0:
+		air_zone_float = true
+	
+		
+	# Wisp handling
+	
+	for wisp in wisp_projectiles:
+		if !obj_from_name(wisp):
+			#print('test')
+			wisp_projectiles.erase(wisp)	
+		
+	
 
 func state_tick():
 	if smokeshift_penalty_frames <= 0:

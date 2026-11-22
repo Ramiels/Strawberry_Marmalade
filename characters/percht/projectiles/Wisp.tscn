@@ -1,0 +1,354 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://projectile/BaseProjectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fx/ParticleEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fx/four_point_star.png" type="Texture" id=3]
+[ext_resource path="res://fx/particle_round_4x4.png" type="Texture" id=4]
+[ext_resource path="res://_Percht/characters/percht/projectiles/Wisp.gd" type="Script" id=5]
+[ext_resource path="res://fx/elec.png" type="Texture" id=6]
+[ext_resource path="res://fx/spiral.png" type="Texture" id=7]
+[ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=8]
+[ext_resource path="res://fx/particle_round_4x4_soft.png" type="Texture" id=9]
+[ext_resource path="res://_Percht/characters/percht/projectiles/WispDefault.gd" type="Script" id=10]
+[ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=11]
+[ext_resource path="res://_Percht/characters/percht/WispBurstEffect.tscn" type="PackedScene" id=12]
+[ext_resource path="res://_Percht/characters/percht/SFXs/WispChime.wav" type="AudioStream" id=13]
+[ext_resource path="res://framework/VariableSound2D.gd" type="Script" id=14]
+[ext_resource path="res://sound/common/explosion1.wav" type="AudioStream" id=15]
+[ext_resource path="res://_Percht/characters/percht/SFXs/fire_hit1.wav" type="AudioStream" id=16]
+[ext_resource path="res://_Percht/characters/percht/SFXs/WispBurst.wav" type="AudioStream" id=17]
+[ext_resource path="res://_Percht/characters/percht/SFXs/WispScream.wav" type="AudioStream" id=18]
+[ext_resource path="res://characters/robo/sound/fire.wav" type="AudioStream" id=19]
+[ext_resource path="res://sound/common/swish_long.wav" type="AudioStream" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/use_extra_color_1 = false
+shader_param/use_extra_color_2 = false
+shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
+shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
+shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
+shader_param/max_color_distance = 0.01
+shader_param/super_dim = false
+shader_param/use_outline = false
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.363636 ), 0.0, 4.90591, 0, 0, Vector2( 1, 0.129545 ), 0.185012, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.0921053, 0.592105, 0.710526, 0.741228, 1 )
+colors = PoolColorArray( 0.113725, 0.552941, 0.960784, 1, 0.294118, 0.168627, 0.85098, 1, 1, 0.2, 0.239216, 1, 1, 0.486275, 0.121569, 0.670588, 0, 0, 0, 0 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.363636 ), 0.0, 4.90591, 0, 0, Vector2( 0.306773, 0.909091 ), -2.35543, -2.35543, 0, 0, Vector2( 1, 0.129545 ), -0.517389, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.0350877, 0.0877193, 0.592105, 0.710526, 0.741228, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.113725, 0.552941, 0.960784, 1, 0.294118, 0.168627, 0.85098, 1, 1, 0.2, 0.239216, 1, 1, 0.486275, 0.121569, 0.670588, 0, 0, 0, 0 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.845455 ), 0.0, 0.936131, 0, 0, Vector2( 1, 0.427273 ), -0.643589, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.854545 ), 0.0, 2.73818, 0, 0, Vector2( 0.250996, 0.863636 ), -2.67524, -2.67524, 0, 0, Vector2( 0.996016, 0.163636 ), -0.0570454, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0.0701754, 0.368421, 0.570175, 0.605263, 0.925439 )
+colors = PoolColorArray( 0.113725, 0.552941, 0.960784, 1, 0.294118, 0.168627, 0.85098, 1, 1, 0.2, 0.239216, 1, 1, 0.486275, 0.121569, 0.670588, 0, 0, 0, 0 )
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0, 0.854545 ), 0.0, 2.73818, 0, 0, Vector2( 0.167331, 0.984091 ), -3.73389, -3.73389, 0, 0, Vector2( 0.430279, 0.420455 ), -1.05743, -1.05743, 0, 0, Vector2( 0.996016, 0.163636 ), -0.0570454, 0.0, 0, 0 ]
+
+[node name="BaseProjectile" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+max_fall_speed = "15"
+extra_state_variables = "base_move_dist
+speed_ramp_per_tick
+wisp_dir
+distance
+scheduled_disable
+scheduled_lock
+scheduled_lock_tick
+torched_objs"
+roll_immunity_susceptible = true
+
+[node name="Sprite" parent="Flip" index="0"]
+frames = SubResource( 1 )
+
+[node name="ParticleEffect" parent="Flip/Particles" index="0" instance=ExtResource( 2 )]
+material = SubResource( 6 )
+free = false
+one_shot = false
+lifetime = -1.0
+
+[node name="Ambient" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="2"]
+visible = false
+preprocess = 10.0
+speed_scale = 0.5
+texture = ExtResource( 6 )
+emission_shape = 3
+emission_points = PoolVector2Array( 0, -15 )
+emission_colors = PoolColorArray( 1, 1, 1, 1 )
+gravity = Vector2( 0, 0 )
+angular_velocity = -360.0
+orbit_velocity = 1.0
+hue_variation_random = 1.0
+
+[node name="BlueFireBreath" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="3"]
+amount = 10
+explosiveness = 0.75
+lifetime_randomness = 0.14
+local_coords = false
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2( 0, 1 )
+spread = 114.36
+gravity = Vector2( 0, -100 )
+initial_velocity = 65.0
+initial_velocity_random = 0.41
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+damping = 56.4
+angle = 45.0
+scale_amount = 2.0
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
+
+[node name="BlueFire" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="4"]
+visible = false
+amount = 30
+lifetime_randomness = 0.14
+local_coords = false
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2( 0, 1 )
+spread = 180.0
+gravity = Vector2( 0, -150 )
+initial_velocity = 10.0
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+damping = 56.4
+angle = 45.0
+angle_random = 0.16
+scale_amount = 4.0
+scale_amount_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[node name="BlueFire3" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="5"]
+visible = false
+amount = 5
+speed_scale = 3.0
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+damping = 56.4
+angle = 45.0
+angle_random = 1.0
+scale_amount = 4.0
+scale_amount_curve = SubResource( 10 )
+color = Color( 0.294118, 0.168627, 0.85098, 1 )
+
+[node name="BlueFire2" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="6"]
+visible = false
+amount = 50
+lifetime_randomness = 0.32
+local_coords = false
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2( 0, 1 )
+spread = 180.0
+gravity = Vector2( 0, -200 )
+initial_velocity = 10.0
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+damping = 100.0
+damping_random = 0.5
+angle = 45.0
+angle_random = 0.21
+scale_amount = 4.0
+scale_amount_curve = SubResource( 8 )
+color_ramp = SubResource( 9 )
+
+[node name="BlueFire4" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="7"]
+amount = 30
+lifetime = 0.5
+speed_scale = 0.5
+lifetime_randomness = 0.32
+local_coords = false
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2( 0, -1 )
+spread = 10.0
+gravity = Vector2( 0, -200 )
+initial_velocity = 50.0
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+linear_accel = 100.0
+radial_accel = 100.0
+damping = 100.0
+damping_random = 0.5
+angle = 45.0
+angle_random = 0.8
+scale_amount = 5.0
+scale_amount_curve = SubResource( 11 )
+color_ramp = SubResource( 9 )
+
+[node name="Eye2" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="8"]
+visible = false
+amount = 1
+speed_scale = 2.0
+texture = ExtResource( 7 )
+emission_shape = 3
+emission_points = PoolVector2Array( 0, 1 )
+emission_colors = PoolColorArray(  )
+gravity = Vector2( 0, 0 )
+angular_velocity = -360.0
+orbit_velocity = 1.0
+
+[node name="EyeSocket" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="9"]
+amount = 1
+speed_scale = 10.0
+texture = ExtResource( 9 )
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector2( 0, 0 )
+orbit_velocity = 0.3
+orbit_velocity_random = 1.0
+angle = 45.0
+scale_amount = 2.5
+color = Color( 0, 0, 0, 1 )
+
+[node name="Eye" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="10"]
+amount = 1
+speed_scale = 10.0
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector2( 0, 0 )
+orbit_velocity = 0.5
+orbit_velocity_random = 1.0
+
+[node name="WispChime" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
+stream = ExtResource( 13 )
+volume_db = -6.0
+script = ExtResource( 14 )
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
+stream = ExtResource( 19 )
+volume_db = -20.0
+bus = "Fx"
+script = ExtResource( 14 )
+
+[node name="Swish" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
+stream = ExtResource( 20 )
+volume_db = -20.0
+bus = "Fx"
+script = ExtResource( 14 )
+
+[node name="Default" parent="StateMachine" index="0"]
+script = ExtResource( 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+move_x = 0
+lifetime = 150
+fizzle_on_ground = false
+fizzle_on_walls = false
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Default" index="0"]
+z_index = 1000
+script = ExtResource( 11 )
+width = 12
+height = 12
+damage = 40
+hitstun_ticks = 20
+whiff_sound = null
+hit_sound = ExtResource( 16 )
+start_tick = 1
+always_on = true
+
+[node name="Burst" type="Node2D" parent="StateMachine" index="1"]
+script = ExtResource( 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+fallback_state = "Default"
+sprite_animation = "Default"
+anim_length = 10
+particle_scene = ExtResource( 12 )
+spawn_particle_on_enter = true
+enter_sfx = ExtResource( 17 )
+enter_sfx_volume = -3.0
+sfx = ExtResource( 18 )
+sfx_volume = -6.0
+move_x = 0
+num_hits = 2
+fizzle_on_ground = false
+fizzle_on_walls = false
+
+[node name="Hitbox" type="Node2D" parent="StateMachine/Burst" index="0"]
+z_index = 1000
+script = ExtResource( 11 )
+width = 25
+height = 25
+damage = 10
+parriable = false
+whiff_sound = ExtResource( 15 )
+hit_sound = ExtResource( 16 )
+whiff_sound_volume = -10.0
+knockback = "5.0"
+send_away_from_center = true
+start_tick = 1
+active_ticks = 6
+
+[node name="Hitbox2" type="Node2D" parent="StateMachine/Burst" index="1"]
+z_index = 1000
+script = ExtResource( 11 )
+width = 30
+height = 15
+damage = 10
+parriable = false
+whiff_sound = ExtResource( 15 )
+hit_sound = ExtResource( 16 )
+whiff_sound_volume = -10.0
+knockback = "5.0"
+send_away_from_center = true
+start_tick = 1
+active_ticks = 6
+
+[node name="Hitbox3" type="Node2D" parent="StateMachine/Burst" index="2"]
+z_index = 1000
+script = ExtResource( 11 )
+width = 15
+height = 30
+damage = 10
+parriable = false
+whiff_sound = ExtResource( 15 )
+hit_sound = ExtResource( 16 )
+whiff_sound_volume = -10.0
+knockback = "5.0"
+send_away_from_center = true
+start_tick = 1
+active_ticks = 6

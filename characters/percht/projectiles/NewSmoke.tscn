@@ -97,6 +97,7 @@ one_shot = false
 lifetime = -1.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="1"]
+visible = false
 z_index = -100
 amount = 20
 lifetime = 0.5
@@ -112,7 +113,6 @@ color = Color( 0.882353, 0.839216, 0.839216, 1 )
 color_ramp = SubResource( 4 )
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="Flip/Particles/ParticleEffect" index="2"]
-visible = false
 z_index = -100
 amount = 20
 texture = ExtResource( 6 )
@@ -122,6 +122,8 @@ spread = 180.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 9.38
 initial_velocity_random = 1.0
+angle = 90.0
+angle_random = 0.11
 scale_amount = 5.69
 scale_amount_curve = SubResource( 5 )
 color = Color( 0.882353, 0.839216, 0.839216, 1 )

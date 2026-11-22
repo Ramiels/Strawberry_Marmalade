@@ -46,3 +46,14 @@ func _tick_before():
 
 func _frame_13():
 	apply_fric = true
+
+func is_usable():
+	var earliest_base = 99999
+	for child in get_children():
+		if child is Hitbox:
+			if child.start_tick < earliest_base:
+				earliest_base = child.start_tick
+	if host.whip_combo: host.change_action_e_hitbox_frame(get_name(), earliest_base-3)
+	else: host.change_action_e_hitbox_frame(get_name(), earliest_base)
+	
+	return .is_usable()

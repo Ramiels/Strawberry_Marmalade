@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://fx/ParticleEffect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fx/particle_round_4x4.png" type="Texture" id=2]
+[ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=3]
+[ext_resource path="res://fx/four_point_star.png" type="Texture" id=4]
+[ext_resource path="res://fx/particle_round_4x4_soft.png" type="Texture" id=5]
+[ext_resource path="res://fx/big_hollow_circle.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/use_extra_color_1 = false
+shader_param/use_extra_color_2 = false
+shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
+shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
+shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
+shader_param/max_color_distance = 0.01
+shader_param/super_dim = false
+shader_param/use_outline = false
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0.854545 ), 0.0, 2.73818, 0, 0, Vector2( 0.167331, 0.984091 ), -3.73389, -3.73389, 0, 0, Vector2( 0.430279, 0.420455 ), -1.05743, -1.05743, 0, 0, Vector2( 0.996016, 0.163636 ), -0.0570454, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.0701754, 0.368421, 0.570175, 0.605263, 0.925439 )
+colors = PoolColorArray( 0.113725, 0.552941, 0.960784, 1, 0.294118, 0.168627, 0.85098, 1, 1, 0.2, 0.239216, 1, 1, 0.486275, 0.121569, 0.670588, 0, 0, 0, 0 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.9125 ), 0.0, 4.90591, 0, 0, Vector2( 0.0836653, 1 ), -2.31639, -2.31639, 0, 0, Vector2( 1, 0.129545 ), 0.185012, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.0921053, 0.320175, 0.578947, 0.741228, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.113725, 0.552941, 0.960784, 1, 0.294118, 0.168627, 0.85098, 1, 1, 0.2, 0.239216, 1, 1, 0.486275, 0.121569, 0.670588, 0, 0, 0, 0 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.149123, 0.714912, 0.907895 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.554545 ), 0.0, 1.67333, 0, 0, Vector2( 0.155378, 0.945454 ), 1.00177, 1.00177, 0, 0, Vector2( 0.788845, 0.854545 ), -0.597619, -0.597619, 0, 0, Vector2( 0.988048, 0.527273 ), -1.66511, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.0570175, 0.864035, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.145455 ), 0.0, 2.24501, 0, 0, Vector2( 0.984064, 0.990909 ), -0.0223707, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0.219298, 0.442982, 0.947368 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0.2, 0.239216, 1, 1, 0.2, 0.239216, 0 )
+
+[node name="ParticleEffect" instance=ExtResource( 1 )]
+material = SubResource( 2 )
+
+[node name="BlueFire4" type="CPUParticles2D" parent="." index="1"]
+amount = 30
+lifetime = 0.5
+speed_scale = 0.5
+explosiveness = 0.3
+lifetime_randomness = 0.3
+local_coords = false
+texture = ExtResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, -1 )
+spread = 58.72
+gravity = Vector2( 0, -200 )
+initial_velocity = 70.0
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+linear_accel = 100.0
+radial_accel = 100.0
+damping = 44.36
+damping_random = 0.5
+angle = 45.0
+angle_random = 0.8
+scale_amount = 7.0
+scale_amount_curve = SubResource( 5 )
+color_ramp = SubResource( 6 )
+
+[node name="Splode" type="CPUParticles2D" parent="." index="2"]
+amount = 50
+explosiveness = 1.0
+lifetime_randomness = 0.93
+local_coords = false
+texture = ExtResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2( 0, 1 )
+spread = 180.0
+gravity = Vector2( 0, -100 )
+initial_velocity = 250.0
+initial_velocity_random = 0.41
+angular_velocity = 54.14
+angular_velocity_random = 0.14
+linear_accel = -100.0
+linear_accel_random = 0.29
+damping = 100.0
+angle = 45.0
+scale_amount = 5.0
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EyeSocket" type="CPUParticles2D" parent="." index="3"]
+amount = 1
+texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2( 0, 0 )
+orbit_velocity = -10.0
+angle = 45.0
+scale_amount = 3.0
+color = Color( 0, 0, 0, 1 )
+color_ramp = SubResource( 7 )
+
+[node name="Eye" type="CPUParticles2D" parent="." index="4"]
+amount = 1
+texture = ExtResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2( 0, 0 )
+orbit_velocity = 80.0
+scale_amount = 2.0
+scale_amount_curve = SubResource( 8 )
+color_ramp = SubResource( 9 )
+
+[node name="Shock" type="CPUParticles2D" parent="." index="5"]
+amount = 1
+speed_scale = 3.0
+texture = ExtResource( 6 )
+gravity = Vector2( 0, 0 )
+scale_amount = 5.0
+scale_amount_curve = SubResource( 10 )
+color_ramp = SubResource( 11 )

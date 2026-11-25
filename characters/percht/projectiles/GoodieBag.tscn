@@ -23,7 +23,6 @@ gravity = "0.25"
 max_ground_speed = "30"
 max_air_speed = "30"
 max_fall_speed = "15"
-hookable = true
 
 [node name="Sprite" parent="Flip" index="0"]
 frames = SubResource( 1 )
@@ -53,6 +52,7 @@ z_index = 1000
 script = ExtResource( 7 )
 width = 8
 height = 8
+activated = false
 damage = 50
 hitstun_ticks = 21
 plus_frames = 1

@@ -12,5 +12,6 @@ func _frame_5():
 	
 	if data:
 		var wisp = host.spawn_object(WHISP_SCENE, 40, -30, true)
-		wisp.set_data(str(data.x * host.get_facing_int()), str(data.y), x_mult, y_mult)
+		var fast = data.get("Fast")
+		wisp.set_data(str(data["Aim"].x * host.get_facing_int()), str(data["Aim"].y), x_mult, y_mult, fast)
 		host.wisp_projectiles.append(wisp.obj_name)

@@ -14,23 +14,31 @@ func _tick():
 	pass
 
 func smoke_explosion():
+	
 	var hitboxes = get_active_hitboxes()
 	
 	for hitbox in hitboxes:
-		for obj_name in host.objs_map:
-			var obj = host.objs_map[obj_name]
-			if obj and not obj.disabled and obj.id == host.id and hitbox.overlaps(obj.collision_box) and obj != Hitbox:
-				#print('overlapping', obj)
-				if "percht_smoke" in obj:
-					if host.torched_objs:
-						for torched_name in host.torched_objs:
-							if not obj_name in host.torched_objs:
-								obj.explode()
-								host.torched_objs.append(obj_name)
-					else:
-						obj.explode()
-						host.torched_objs.append(obj_name)
-					break
+		check_burn_contact(hitbox)
+	
+	var collisionbox = $"../../CollisionBox"
+	check_burn_contact(collisionbox)
+	
+
+func check_burn_contact(burnbox):
+	for obj_name in host.objs_map:
+		var obj = host.objs_map[obj_name]
+		if obj and not obj.disabled and obj.id == host.id and burnbox.overlaps(obj.collision_box) and obj != Hitbox:
+			#print('overlapping', obj)
+			if "percht_smoke" in obj:
+				if host.torched_objs:
+					for torched_name in host.torched_objs:
+						if not obj_name in host.torched_objs:
+							obj.explode()
+							host.torched_objs.append(obj_name)
+				else:
+					obj.explode()
+					host.torched_objs.append(obj_name)
+				break
 
 func on_got_blocked():
 	.on_got_blocked()

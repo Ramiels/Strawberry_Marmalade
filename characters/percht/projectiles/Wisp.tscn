@@ -76,6 +76,7 @@ script = ExtResource( 5 )
 max_fall_speed = "15"
 extra_state_variables = "base_move_dist
 speed_ramp_per_tick
+enable_accel
 wisp_dir
 distance
 scheduled_disable
@@ -267,6 +268,10 @@ volume_db = -20.0
 bus = "Fx"
 script = ExtResource( 14 )
 
+[node name="CollisionBox" parent="." index="2"]
+width = 15
+height = 15
+
 [node name="Default" parent="StateMachine" index="0"]
 script = ExtResource( 10 )
 __meta__ = {
@@ -294,7 +299,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_editor_description_": ""
 }
-fallback_state = "Default"
+fallback_state = "Resting"
 sprite_animation = "Default"
 anim_length = 10
 particle_scene = ExtResource( 12 )
@@ -311,8 +316,8 @@ fizzle_on_walls = false
 [node name="Hitbox" type="Node2D" parent="StateMachine/Burst" index="0"]
 z_index = 1000
 script = ExtResource( 11 )
-width = 25
-height = 25
+width = 30
+height = 30
 damage = 10
 parriable = false
 whiff_sound = ExtResource( 15 )
@@ -326,7 +331,7 @@ active_ticks = 6
 [node name="Hitbox2" type="Node2D" parent="StateMachine/Burst" index="1"]
 z_index = 1000
 script = ExtResource( 11 )
-width = 30
+width = 40
 height = 15
 damage = 10
 parriable = false
@@ -342,7 +347,7 @@ active_ticks = 6
 z_index = 1000
 script = ExtResource( 11 )
 width = 15
-height = 30
+height = 40
 damage = 10
 parriable = false
 whiff_sound = ExtResource( 15 )
@@ -352,3 +357,16 @@ knockback = "5.0"
 send_away_from_center = true
 start_tick = 1
 active_ticks = 6
+
+[node name="Resting" type="Node2D" parent="StateMachine" index="2"]
+script = ExtResource( 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+fallback_state = "Default"
+sprite_animation = "Default"
+endless = true
+move_x = 0
+lifetime = 150
+fizzle_on_ground = false
+fizzle_on_walls = false

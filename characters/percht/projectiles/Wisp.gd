@@ -2,8 +2,9 @@ extends BaseProjectile
 
 var WISPVANISHEFFECT = preload("res://_Percht/characters/percht/WispVanishEffect.tscn")
 
-const base_move_dist = "2"
-const speed_ramp_per_tick = "0.6"
+const base_move_dist = "3"
+const speed_ramp_per_tick = "0.5"
+var enable_accel = true
 var wisp_dir = {
 	
 }
@@ -14,6 +15,8 @@ var scheduled_lock = false
 var scheduled_lock_tick = 0
 
 var torched_objs: Array = []
+
+
 
 func _ready():
 	pass
@@ -31,7 +34,7 @@ func tick():
 			lock_wisp()
 		scheduled_lock_tick -= 1
 	
-	var move_dist = fixed.add(base_move_dist, fixed.mul(speed_ramp_per_tick, str(current_tick)))
+	var move_dist = fixed.add(base_move_dist, fixed.mul(speed_ramp_per_tick, str(current_tick)) if enable_accel else "0")
 	
 	if fixed.gt(distance, "0"):
 		if fixed.gt(distance, move_dist):
@@ -56,10 +59,10 @@ func lock_wisp():
 	torched_objs.clear()
 	has_projectile_parry_window = false
 
-func set_data(data_x, data_y, x_mult, y_mult):
-	
+func set_data(data_x, data_y, x_mult, y_mult, fast = true):
 	wisp_dir = fixed.normalized_vec(data_x, data_y)
 	distance = fixed.vec_len(fixed.mul(data_x, x_mult), fixed.mul(data_y, y_mult))
+	enable_accel = fast
 	pass
 
 func disable():

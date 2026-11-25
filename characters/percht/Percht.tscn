@@ -1,4 +1,4 @@
-[gd_scene load_steps=691 format=2]
+[gd_scene load_steps=713 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -562,6 +562,10 @@
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/HauntActionUIData.tscn" type="PackedScene" id=560]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/WhipReelAirActionUIData.tscn" type="PackedScene" id=561]
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/ImpaleActionUIData.tscn" type="PackedScene" id=562]
+[ext_resource path="res://_Percht/characters/percht/real_animations/flame_low_ugly.png" type="Texture" id=563]
+[ext_resource path="res://_Percht/characters/percht/real_animations/flame_mid_ugly.png" type="Texture" id=564]
+[ext_resource path="res://_Percht/characters/percht/real_animations/flame_high_ugly.png" type="Texture" id=565]
+[ext_resource path="res://_Percht/characters/percht/FlameSpitUgly.gd" type="Script" id=566]
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 488 )
@@ -610,6 +614,78 @@ region = Rect2( 256, 0, 128, 128 )
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 488 )
 region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=148]
+atlas = ExtResource( 565 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=149]
+atlas = ExtResource( 565 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 565 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 565 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 565 )
+region = Rect2( 1024, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 565 )
+region = Rect2( 1280, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 563 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 563 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=156]
+atlas = ExtResource( 563 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=157]
+atlas = ExtResource( 563 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=158]
+atlas = ExtResource( 563 )
+region = Rect2( 1024, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=159]
+atlas = ExtResource( 563 )
+region = Rect2( 1280, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=160]
+atlas = ExtResource( 564 )
+region = Rect2( 0, 0, 512, 64 )
+
+[sub_resource type="AtlasTexture" id=161]
+atlas = ExtResource( 564 )
+region = Rect2( 512, 0, 512, 64 )
+
+[sub_resource type="AtlasTexture" id=162]
+atlas = ExtResource( 564 )
+region = Rect2( 1024, 0, 512, 64 )
+
+[sub_resource type="AtlasTexture" id=163]
+atlas = ExtResource( 564 )
+region = Rect2( 1536, 0, 512, 64 )
+
+[sub_resource type="AtlasTexture" id=164]
+atlas = ExtResource( 564 )
+region = Rect2( 2048, 0, 512, 64 )
+
+[sub_resource type="AtlasTexture" id=165]
+atlas = ExtResource( 564 )
+region = Rect2( 2560, 0, 512, 64 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 492 )
@@ -1174,6 +1250,21 @@ animations = [ {
 "frames": [ ExtResource( 27 ), ExtResource( 373 ), ExtResource( 371 ), ExtResource( 370 ) ],
 "loop": true,
 "name": "DoubleJumpUgly",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 148 ), SubResource( 148 ), SubResource( 149 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ) ],
+"loop": true,
+"name": "FlameHighUgly",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 154 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 156 ), SubResource( 157 ), SubResource( 158 ), SubResource( 159 ) ],
+"loop": true,
+"name": "FlameLowUgly",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 160 ), SubResource( 160 ), SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ), SubResource( 165 ) ],
+"loop": true,
+"name": "FlameMidUgly",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 433 ), ExtResource( 380 ), ExtResource( 380 ), ExtResource( 437 ), ExtResource( 437 ), ExtResource( 440 ), ExtResource( 440 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 436 ), ExtResource( 436 ), ExtResource( 439 ), ExtResource( 439 ), ExtResource( 434 ), ExtResource( 434 ) ],
@@ -2324,8 +2415,8 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 78 )
-animation = "CleavePretty"
-frame = 4
+animation = "FlameHighUgly"
+frame = 3
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
 unique_name_in_owner = true
@@ -2742,33 +2833,33 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 428 ): {
-"x": -35,
-"y": 5
-},
-ExtResource( 431 ): {
-"x": -23,
-"y": 13
-},
 ExtResource( 429 ): {
 "x": -30,
 "y": 8
-},
-ExtResource( 427 ): {
-"x": 3,
-"y": -21
-},
-ExtResource( 421 ): {
-"x": 5,
-"y": -2
 },
 ExtResource( 426 ): {
 "x": 10,
 "y": -4
 },
+ExtResource( 428 ): {
+"x": -35,
+"y": 5
+},
+ExtResource( 421 ): {
+"x": 5,
+"y": -2
+},
+ExtResource( 427 ): {
+"x": 3,
+"y": -21
+},
 ExtResource( 430 ): {
 "x": 14,
 "y": -16
+},
+ExtResource( 431 ): {
+"x": -23,
+"y": 13
 }
 }
 show_in_menu = false
@@ -2855,37 +2946,37 @@ ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
-"y": -5
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 49 ): {
-"x": -16,
 "y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 }
 }
 release_frame = 24
@@ -2915,37 +3006,37 @@ ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
-"y": -5
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 49 ): {
-"x": -16,
 "y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 }
 }
 release_frame = 24
@@ -2973,37 +3064,37 @@ ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
-"y": -5
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 49 ): {
-"x": -16,
 "y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 }
 }
 release_frame = 24
@@ -3030,37 +3121,37 @@ ExtResource( 380 ): {
 "x": 27,
 "y": -2
 },
+ExtResource( 433 ): {
+"x": 28,
+"y": 3
+},
 ExtResource( 436 ): {
 "x": -4,
 "y": -9
-},
-ExtResource( 439 ): {
-"x": 72,
-"y": -4
 },
 ExtResource( 437 ): {
 "x": 14,
 "y": -2
 },
+ExtResource( 439 ): {
+"x": 72,
+"y": -4
+},
 ExtResource( 440 ): {
 "x": -3,
-"y": -5
-},
-ExtResource( 433 ): {
-"x": 28,
-"y": 3
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
-ExtResource( 49 ): {
-"x": -16,
 "y": -5
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 }
 }
 release_frame = 24
@@ -3080,13 +3171,13 @@ ExtResource( 375 ): {
 "x": 3,
 "y": 6
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
-},
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
+},
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 }
 }
 
@@ -6024,13 +6115,13 @@ ExtResource( 111 ): {
 "x": -23,
 "y": -2
 },
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
 },
 ExtResource( 148 ): {
 "x": -33,
@@ -6132,6 +6223,22 @@ sfx_tick = 19
 sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
+},
+SubResource( 52 ): {
+"x": 29,
+"y": 0
+},
 SubResource( 53 ): {
 "x": 10,
 "y": 12
@@ -6140,37 +6247,21 @@ SubResource( 54 ): {
 "x": -11,
 "y": 10
 },
-SubResource( 52 ): {
-"x": 29,
-"y": 0
-},
-SubResource( 57 ): {
-"x": -16,
-"y": -16
+SubResource( 56 ): {
+"x": -20,
+"y": -14
 },
 SubResource( 55 ): {
 "x": -26,
 "y": -5
 },
-SubResource( 56 ): {
-"x": -20,
-"y": -14
+SubResource( 57 ): {
+"x": -16,
+"y": -16
 },
 SubResource( 58 ): {
 "x": 26,
 "y": 22
-},
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
 }
 }
 title = "Jumpscare Grab"
@@ -7293,13 +7384,13 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 231 ): {
-"x": -3,
-"y": -1
-},
 ExtResource( 233 ): {
 "x": -22,
 "y": -7
+},
+ExtResource( 231 ): {
+"x": -3,
+"y": -1
 },
 ExtResource( 239 ): {
 "x": 35,
@@ -7544,13 +7635,21 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 344 ): {
-"x": 32,
-"y": -16
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
 },
-ExtResource( 348 ): {
-"x": 32,
-"y": -11
+ExtResource( 366 ): {
+"x": 8,
+"y": -3
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
+},
+ExtResource( 346 ): {
+"x": 34,
+"y": -16
 },
 ExtResource( 351 ): {
 "x": 30,
@@ -7560,25 +7659,17 @@ ExtResource( 355 ): {
 "x": 31,
 "y": -13
 },
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
+ExtResource( 348 ): {
+"x": 32,
+"y": -11
+},
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
 },
 ExtResource( 356 ): {
 "x": 26,
 "y": -1
-},
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
-ExtResource( 366 ): {
-"x": 8,
-"y": -3
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
 }
 }
 title = "Hustle"
@@ -7620,17 +7711,29 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 344 ): {
-"x": 32,
+ExtResource( 362 ): {
+"x": 33,
 "y": -17
 },
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
+ExtResource( 366 ): {
+"x": 7,
+"y": -1
 },
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
+},
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
 },
 ExtResource( 351 ): {
 "x": 32,
@@ -7640,33 +7743,21 @@ ExtResource( 355 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
 },
-ExtResource( 362 ): {
-"x": 33,
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
+},
+ExtResource( 344 ): {
+"x": 32,
 "y": -17
 },
 ExtResource( 356 ): {
 "x": 25,
 "y": -2
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 366 ): {
-"x": 7,
-"y": -1
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
 }
 }
 instant_cancellable = false
@@ -8108,6 +8199,206 @@ kind_locked = true
 [node name="HostCommand" type="Node" parent="StateMachine/HauntUgly" index="0"]
 script = ExtResource( 304 )
 tick = 8
+command = "try_quickswap"
+
+[node name="FlameHighUgly" type="Node2D" parent="StateMachine" index="147"]
+script = ExtResource( 566 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "FlameHighUgly"
+anim_length = 30
+ticks_per_frame = 3
+title = "Flame"
+type = 2
+button_texture = ExtResource( 393 )
+interrupt_from_string = "Grounded
+Aerial"
+interrupt_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+hit_cancel_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox_2_0" type="Node2D" parent="StateMachine/FlameHighUgly" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 30
+y = -50
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_1" type="Node2D" parent="StateMachine/FlameHighUgly" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 40
+y = -60
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_2" type="Node2D" parent="StateMachine/FlameHighUgly" index="2"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 50
+y = -70
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_3" type="Node2D" parent="StateMachine/FlameHighUgly" index="3"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 60
+y = -80
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_4" type="Node2D" parent="StateMachine/FlameHighUgly" index="4"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 70
+y = -90
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_5" type="Node2D" parent="StateMachine/FlameHighUgly" index="5"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 80
+y = -100
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_6" type="Node2D" parent="StateMachine/FlameHighUgly" index="6"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 90
+y = -110
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_7" type="Node2D" parent="StateMachine/FlameHighUgly" index="7"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 100
+y = -120
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+parriable = false
+block_cancel_allowed = false
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="HostCommand" type="Node" parent="StateMachine/FlameHighUgly" index="8"]
+script = ExtResource( 304 )
+tick = 14
 command = "try_quickswap"
 
 [node name="GuardpointLabel" type="Node2D" parent="." index="15"]

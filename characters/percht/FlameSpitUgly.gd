@@ -2,17 +2,38 @@ extends "res://_Percht/PerchtMove.gd"
 
 var torched_objs: Array = []
 
-var times_flame_hit = 0
-var hitcancel_theshold = 1
+#var times_flame_hit = 0
+#var hitcancel_theshold = 1
+
+var flame_has_hit = false
+var ticks_since_hit = 0
+
+onready var flame_spit_particle = $"%FlameSpitParticle"
 
 func _enter():
+	for child in host.current_state().get_children():
+		if child is Hitbox:
+			child.activated = true
+	iasa_on_hit = -1
+	flame_has_hit = false
+	ticks_since_hit = 0
+	
 	if data:
 		print(data.y)
 		if data.y == -1:
+			flame_spit_particle.position.x = 50
+			flame_spit_particle.position.y = -70
+			flame_spit_particle.rotation_degrees = -45
 			return "FlameHighUgly"
 		elif data.y == 1:
+			flame_spit_particle.position.x = 45
+			flame_spit_particle.position.y = 20
+			flame_spit_particle.rotation_degrees = 45
 			return "FlameLowUgly"
 		else:
+			flame_spit_particle.position.x = 70
+			flame_spit_particle.position.y = -20
+			flame_spit_particle.rotation_degrees = 0
 			return "FlameMidUgly"
 
 func smoke_explosion():
@@ -37,13 +58,20 @@ func smoke_explosion():
 	
 
 func _on_hit_something(obj, hitbox):
-	times_flame_hit += 1
-	print(times_flame_hit)
+	#times_flame_hit += 1
+	flame_has_hit = true
+	ticks_since_hit = 0
+	
 	._on_hit_something(obj, hitbox)
 
 func _tick():
 	smoke_explosion()
 	
+	ticks_since_hit += 1
+	if ticks_since_hit > 3 and flame_has_hit:
+		iasa_on_hit = current_tick + 1
+	
+	"""
 	if current_tick == 1:
 		for child in host.current_state().get_children():
 			if child is Hitbox:
@@ -54,9 +82,20 @@ func _tick():
 		for child in host.current_state().get_children():
 			if child is Hitbox:
 				child.cancellable = true
+	"""
 	
-	
+
+func _frame_6():
+	flame_spit_particle.start_emitting()
+
+func _frame_26():
+	#timed_particle_scene
+	flame_spit_particle.stop_emitting()
+	for child in host.current_state().get_children():
+		if child is Hitbox:
+			child.activated = false
 
 func _exit():
 	torched_objs.clear()
-	times_flame_hit = 0
+	flame_spit_particle.stop_emitting()
+	#times_flame_hit = 0

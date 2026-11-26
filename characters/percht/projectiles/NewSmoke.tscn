@@ -257,6 +257,7 @@ hitbox_type = 5
 hitstun_ticks = 10
 cancellable = false
 can_clash = false
+hits_projectiles = false
 parriable = false
 block_cancel_allowed = false
 hit_height = 0

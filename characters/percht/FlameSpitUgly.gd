@@ -3,7 +3,17 @@ extends "res://_Percht/PerchtMove.gd"
 var torched_objs: Array = []
 
 var times_flame_hit = 0
-var hitcancel_theshold = 3
+var hitcancel_theshold = 1
+
+func _enter():
+	if data:
+		print(data.y)
+		if data.y == -1:
+			return "FlameHighUgly"
+		elif data.y == 1:
+			return "FlameLowUgly"
+		else:
+			return "FlameMidUgly"
 
 func smoke_explosion():
 	var hitboxes = get_active_hitboxes()
@@ -16,7 +26,7 @@ func smoke_explosion():
 				if "percht_smoke" in obj:
 					if torched_objs:
 						for torched_name in torched_objs:
-							if not obj_name in host.torched_objs:
+							if not obj_name in torched_objs:
 								
 								obj.explode()
 								torched_objs.append(obj_name)
@@ -29,7 +39,7 @@ func smoke_explosion():
 func _on_hit_something(obj, hitbox):
 	times_flame_hit += 1
 	print(times_flame_hit)
-	pass
+	._on_hit_something(obj, hitbox)
 
 func _tick():
 	smoke_explosion()
@@ -45,6 +55,8 @@ func _tick():
 			if child is Hitbox:
 				child.cancellable = true
 	
+	
 
 func _exit():
 	torched_objs.clear()
+	times_flame_hit = 0

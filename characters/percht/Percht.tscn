@@ -1,4 +1,4 @@
-[gd_scene load_steps=713 format=2]
+[gd_scene load_steps=714 format=2]
 
 [ext_resource path="res://_Percht/characters/percht/ActionUIData/UglyGrabAirActionUIData.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=2]
@@ -566,6 +566,7 @@
 [ext_resource path="res://_Percht/characters/percht/real_animations/flame_mid_ugly.png" type="Texture" id=564]
 [ext_resource path="res://_Percht/characters/percht/real_animations/flame_high_ugly.png" type="Texture" id=565]
 [ext_resource path="res://_Percht/characters/percht/FlameSpitUgly.gd" type="Script" id=566]
+[ext_resource path="res://_Percht/characters/percht/ActionUIData/FlameSpitActionUIData.tscn" type="PackedScene" id=567]
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 488 )
@@ -2415,7 +2416,7 @@ mask_color = Color( 0.431373, 0.52549, 0.588235, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = ExtResource( 451 )
 frames = SubResource( 78 )
-animation = "FlameHighUgly"
+animation = "FlameMidUgly"
 frame = 3
 
 [node name="SmokeshiftParticles" parent="Flip/Particles" index="0" instance=ExtResource( 138 )]
@@ -2833,10 +2834,6 @@ ExtResource( 377 ): {
 "x": 23,
 "y": -3
 },
-ExtResource( 429 ): {
-"x": -30,
-"y": 8
-},
 ExtResource( 426 ): {
 "x": 10,
 "y": -4
@@ -2844,6 +2841,10 @@ ExtResource( 426 ): {
 ExtResource( 428 ): {
 "x": -35,
 "y": 5
+},
+ExtResource( 430 ): {
+"x": 14,
+"y": -16
 },
 ExtResource( 421 ): {
 "x": 5,
@@ -2853,9 +2854,9 @@ ExtResource( 427 ): {
 "x": 3,
 "y": -21
 },
-ExtResource( 430 ): {
-"x": 14,
-"y": -16
+ExtResource( 429 ): {
+"x": -30,
+"y": 8
 },
 ExtResource( 431 ): {
 "x": -23,
@@ -2938,6 +2939,18 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -2965,18 +2978,6 @@ ExtResource( 439 ): {
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
 }
 }
 release_frame = 24
@@ -2998,6 +2999,18 @@ ticks_per_frame = 2
 sfx = ExtResource( 481 )
 sfx_tick = 8
 throw_positions = {
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -3025,18 +3038,6 @@ ExtResource( 439 ): {
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
 }
 }
 release_frame = 24
@@ -3056,6 +3057,18 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -3083,18 +3096,6 @@ ExtResource( 439 ): {
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
 }
 }
 release_frame = 24
@@ -3113,6 +3114,18 @@ sprite_animation = "ForwardThrowPretty"
 anim_length = 30
 ticks_per_frame = 2
 throw_positions = {
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
+},
+ExtResource( 42 ): {
+"x": -1,
+"y": -18
+},
+ExtResource( 49 ): {
+"x": -16,
+"y": -5
+},
 ExtResource( 375 ): {
 "x": 3,
 "y": 6
@@ -3140,18 +3153,6 @@ ExtResource( 439 ): {
 ExtResource( 440 ): {
 "x": -3,
 "y": -5
-},
-ExtResource( 42 ): {
-"x": -1,
-"y": -18
-},
-ExtResource( 49 ): {
-"x": -16,
-"y": -5
-},
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
 }
 }
 release_frame = 24
@@ -3167,17 +3168,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 throw_positions = {
-ExtResource( 375 ): {
-"x": 3,
-"y": 6
+ExtResource( 24 ): {
+"x": -22,
+"y": 0
 },
 ExtResource( 42 ): {
 "x": -1,
 "y": -18
 },
-ExtResource( 24 ): {
-"x": -22,
-"y": 0
+ExtResource( 375 ): {
+"x": 3,
+"y": 6
 }
 }
 
@@ -6111,10 +6112,6 @@ force_speed = "5.0"
 force_tick = 28
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
 ExtResource( 102 ): {
 "x": 29,
 "y": 3
@@ -6122,6 +6119,10 @@ ExtResource( 102 ): {
 ExtResource( 110 ): {
 "x": -27,
 "y": 2
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 },
 ExtResource( 148 ): {
 "x": -33,
@@ -6223,22 +6224,6 @@ sfx_tick = 19
 sfx_volume = -3.0
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 111 ): {
-"x": -23,
-"y": -2
-},
-ExtResource( 102 ): {
-"x": 29,
-"y": 3
-},
-ExtResource( 110 ): {
-"x": -27,
-"y": 2
-},
-SubResource( 52 ): {
-"x": 29,
-"y": 0
-},
 SubResource( 53 ): {
 "x": 10,
 "y": 12
@@ -6247,9 +6232,9 @@ SubResource( 54 ): {
 "x": -11,
 "y": 10
 },
-SubResource( 56 ): {
-"x": -20,
-"y": -14
+SubResource( 58 ): {
+"x": 26,
+"y": 22
 },
 SubResource( 55 ): {
 "x": -26,
@@ -6259,9 +6244,25 @@ SubResource( 57 ): {
 "x": -16,
 "y": -16
 },
-SubResource( 58 ): {
-"x": 26,
-"y": 22
+SubResource( 52 ): {
+"x": 29,
+"y": 0
+},
+SubResource( 56 ): {
+"x": -20,
+"y": -14
+},
+ExtResource( 102 ): {
+"x": 29,
+"y": 3
+},
+ExtResource( 110 ): {
+"x": -27,
+"y": 2
+},
+ExtResource( 111 ): {
+"x": -23,
+"y": -2
 }
 }
 title = "Jumpscare Grab"
@@ -6521,6 +6522,7 @@ apply_grav = true
 sprite_animation = "ScorchUgly"
 anim_length = 19
 title = "Scorch"
+show_in_menu = false
 type = 2
 button_texture = ExtResource( 393 )
 interrupt_from_string = "Grounded
@@ -6587,6 +6589,7 @@ custom_grav_max_fall_speed = "8.0"
 sprite_animation = "AirScorchUgly"
 anim_length = 24
 title = "Scorch"
+show_in_menu = false
 type = 2
 button_texture = ExtResource( 393 )
 air_type = 1
@@ -6793,6 +6796,7 @@ apply_grav = true
 sprite_animation = "IncinerateUgly"
 anim_length = 24
 title = "Incinerate"
+show_in_menu = false
 type = 2
 button_texture = ExtResource( 407 )
 interrupt_from_string = "Grounded
@@ -7384,13 +7388,13 @@ state_screenshake_length = 0.5
 state_screenshake_amount = 15
 force_same_direction_as_previous_state = true
 throw_positions = {
-ExtResource( 233 ): {
-"x": -22,
-"y": -7
-},
 ExtResource( 231 ): {
 "x": -3,
 "y": -1
+},
+ExtResource( 233 ): {
+"x": -22,
+"y": -7
 },
 ExtResource( 239 ): {
 "x": 35,
@@ -7635,41 +7639,41 @@ sprite_animation = "TauntUgly"
 anim_length = 46
 ticks_per_frame = 4
 throw_positions = {
-ExtResource( 362 ): {
-"x": 34,
-"y": -14
-},
 ExtResource( 366 ): {
 "x": 8,
 "y": -3
-},
-ExtResource( 365 ): {
-"x": 4,
-"y": 0
-},
-ExtResource( 346 ): {
-"x": 34,
-"y": -16
-},
-ExtResource( 351 ): {
-"x": 30,
-"y": 1
-},
-ExtResource( 355 ): {
-"x": 31,
-"y": -13
 },
 ExtResource( 348 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 344 ): {
-"x": 32,
-"y": -16
+ExtResource( 355 ): {
+"x": 31,
+"y": -13
 },
 ExtResource( 356 ): {
 "x": 26,
 "y": -1
+},
+ExtResource( 344 ): {
+"x": 32,
+"y": -16
+},
+ExtResource( 346 ): {
+"x": 34,
+"y": -16
+},
+ExtResource( 362 ): {
+"x": 34,
+"y": -14
+},
+ExtResource( 351 ): {
+"x": 30,
+"y": 1
+},
+ExtResource( 365 ): {
+"x": 4,
+"y": 0
 }
 }
 title = "Hustle"
@@ -7711,53 +7715,53 @@ sprite_animation = "TauntUglyThrow"
 anim_length = 36
 ticks_per_frame = 3
 throw_positions = {
-ExtResource( 362 ): {
-"x": 33,
-"y": -17
+ExtResource( 361 ): {
+"x": 30,
+"y": -25
 },
 ExtResource( 366 ): {
 "x": 7,
 "y": -1
 },
-ExtResource( 361 ): {
-"x": 30,
-"y": -25
-},
-ExtResource( 363 ): {
-"x": 15,
-"y": -4
-},
-ExtResource( 365 ): {
-"x": 5,
-"y": -1
-},
-ExtResource( 346 ): {
-"x": 36,
-"y": -16
-},
-ExtResource( 351 ): {
-"x": 32,
-"y": 1
+ExtResource( 348 ): {
+"x": 34,
+"y": -12
 },
 ExtResource( 355 ): {
 "x": 32,
 "y": -11
 },
-ExtResource( 347 ): {
-"x": 35,
-"y": 2
-},
-ExtResource( 348 ): {
-"x": 34,
-"y": -12
+ExtResource( 356 ): {
+"x": 25,
+"y": -2
 },
 ExtResource( 344 ): {
 "x": 32,
 "y": -17
 },
-ExtResource( 356 ): {
-"x": 25,
-"y": -2
+ExtResource( 347 ): {
+"x": 35,
+"y": 2
+},
+ExtResource( 346 ): {
+"x": 36,
+"y": -16
+},
+ExtResource( 362 ): {
+"x": 33,
+"y": -17
+},
+ExtResource( 363 ): {
+"x": 15,
+"y": -4
+},
+ExtResource( 351 ): {
+"x": 32,
+"y": 1
+},
+ExtResource( 365 ): {
+"x": 5,
+"y": -1
 }
 }
 instant_cancellable = false
@@ -8212,9 +8216,13 @@ apply_grav = true
 sprite_animation = "FlameHighUgly"
 anim_length = 30
 ticks_per_frame = 3
-title = "Flame"
+title = "Incinerate"
+show_in_menu = false
 type = 2
+data_ui_scene = ExtResource( 567 )
 button_texture = ExtResource( 393 )
+air_type = 2
+self_interruptable = false
 interrupt_from_string = "Grounded
 Aerial"
 interrupt_into_string = "Grounded
@@ -8238,8 +8246,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8259,8 +8271,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8280,8 +8296,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8301,8 +8321,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8322,8 +8346,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8343,8 +8371,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8364,8 +8396,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8385,8 +8421,12 @@ height = 10
 damage = 30
 chip_damage_modifier = "1.2"
 hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
 parriable = false
 block_cancel_allowed = false
+plus_frames = -1
 group = 1
 whiff_sound = ExtResource( 384 )
 knockback = "1.0"
@@ -8397,6 +8437,327 @@ looping = true
 loop_inactive_ticks = 1
 
 [node name="HostCommand" type="Node" parent="StateMachine/FlameHighUgly" index="8"]
+script = ExtResource( 304 )
+tick = 14
+command = "try_quickswap"
+
+[node name="FlameLowUgly" type="Node2D" parent="StateMachine" index="148"]
+script = ExtResource( 566 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "FlameLowUgly"
+anim_length = 30
+ticks_per_frame = 3
+title = "Incinerate"
+type = 2
+data_ui_scene = ExtResource( 567 )
+button_texture = ExtResource( 393 )
+air_type = 2
+self_interruptable = false
+interrupt_from_string = "Grounded
+Aerial"
+interrupt_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+hit_cancel_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox_2_0" type="Node2D" parent="StateMachine/FlameLowUgly" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 30
+y = 5
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_1" type="Node2D" parent="StateMachine/FlameLowUgly" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 40
+y = 15
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_2" type="Node2D" parent="StateMachine/FlameLowUgly" index="2"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 50
+y = 25
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_3" type="Node2D" parent="StateMachine/FlameLowUgly" index="3"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 60
+y = 35
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_4" type="Node2D" parent="StateMachine/FlameLowUgly" index="4"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 70
+y = 45
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_5" type="Node2D" parent="StateMachine/FlameLowUgly" index="5"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 80
+y = 55
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_6" type="Node2D" parent="StateMachine/FlameLowUgly" index="6"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 90
+y = 65
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_7" type="Node2D" parent="StateMachine/FlameLowUgly" index="7"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 100
+y = 70
+width = 10
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = 1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="HostCommand" type="Node" parent="StateMachine/FlameLowUgly" index="8"]
+script = ExtResource( 304 )
+tick = 14
+command = "try_quickswap"
+
+[node name="FlameMidUgly" type="Node2D" parent="StateMachine" index="149"]
+script = ExtResource( 566 )
+__meta__ = {
+"_editor_description_": ""
+}
+apply_forces = true
+apply_fric = true
+apply_grav = true
+sprite_animation = "FlameMidUgly"
+anim_length = 30
+ticks_per_frame = 3
+title = "Incinerate"
+show_in_menu = false
+type = 2
+data_ui_scene = ExtResource( 567 )
+button_texture = ExtResource( 393 )
+air_type = 2
+self_interruptable = false
+interrupt_from_string = "Grounded
+Aerial"
+interrupt_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+hit_cancel_into_string = "Grounded
+GroundedAttack
+Aerial
+AerialAttack"
+kind = "Ugly"
+kind_locked = true
+
+[node name="Hitbox_2_0" type="Node2D" parent="StateMachine/FlameMidUgly" index="0"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 67
+y = -23
+width = 40
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = -1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 7
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="Hitbox_2_4" type="Node2D" parent="StateMachine/FlameMidUgly" index="1"]
+z_index = 1000
+script = ExtResource( 15 )
+x = 130
+y = -23
+width = 30
+height = 10
+damage = 30
+chip_damage_modifier = "1.2"
+hitstun_ticks = 14
+damage_proration = -1
+cancellable = false
+sdi_modifier = "0.4"
+parriable = false
+block_cancel_allowed = false
+plus_frames = -1
+group = 1
+whiff_sound = ExtResource( 384 )
+knockback = "1.0"
+start_tick = 10
+active_ticks = 2
+always_on = true
+looping = true
+loop_inactive_ticks = 1
+
+[node name="HostCommand" type="Node" parent="StateMachine/FlameMidUgly" index="2"]
 script = ExtResource( 304 )
 tick = 14
 command = "try_quickswap"
